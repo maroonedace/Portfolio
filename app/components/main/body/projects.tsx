@@ -1,8 +1,11 @@
+"use client"
+
 import Project from "./project";
 import Image from "next/image";
 import OPLogo from "../../../assets/opLogo.jpeg";
-import StreamerRealityLogo from "../../../assets/StreamerRealityLogo.jpeg"
-import TritonXRLogo from "../../../assets/TritonXR.png"
+import StreamerRealityLogo from "../../../assets/StreamerRealityLogo.jpeg";
+import TritonXRLogo from "../../../assets/TritonXR.png";
+import { useRef, useState } from "react";
 
 const projects = [
   {
@@ -23,32 +26,36 @@ const projects = [
 ];
 
 const Projects = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const [selected, setSelected] = useState<string | null>(null)
+
+  // const width = containerRef?.current?.clientWidth;
+
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-white">Projects</h1>
-      <h3 className="text-white">Click the following to learn more about each project</h3>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* <Project
-        key="NZero"
-        title="Software Engineer II"
-        company="NZero"
-        picture={
-          <Image src={NZeroLogo} alt="NZero Logo" width="200" height="200" />
-        }
-      /> */}
+      <h3 className="text-white">
+        Click the following to learn more about each project
+      </h3>
+      <div
+        ref={containerRef}
+        className="grid grid-cols-1 gap-8"
+      >
         {projects.map((project) => {
           return (
             <Project
               key={project.company}
               title={project.title}
               company={project.company}
+              selected={selected}
+              setSelected={setSelected}
               picture={
                 <Image
                   draggable={false}
+                  className="max-h-[200px] w-[200px]"
                   src={project.image}
                   alt={`${project.company} Logo`}
-                  width="200"
-                  height="200"
                 />
               }
             />

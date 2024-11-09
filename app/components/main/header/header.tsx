@@ -28,7 +28,8 @@ const Header = () => {
             }}
           >
             <Link
-              href="/"
+              href="/resume.pdf"
+              target="_blank"
               className="flex gap-2 border py-2 px-4 rounded border-black"
             >
               <FontAwesomeIcon icon={faFileAlt} size="xl" />
