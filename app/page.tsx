@@ -1,19 +1,37 @@
+"use client";
+
 import PageWrapper from "./pageWrapper";
-import Header from "./components/main/header/header";
-import Projects from "./components/main/body/projects";
-import AboutMe from "./components/main/body/aboutMe";
+import CardList from "./components/main/body/work/cardList";
+import CardDisplay from "./components/main/body/work/cardDisplay";
+import { useState } from "react";
 
 export default function Page() {
+  const [isModalClicked, setIsModalClicked] = useState(false);
+  const [modalContent, setModalContent] = useState<string | null>(null);
+
+  const onModalOpen = (content: string) => {
+    setIsModalClicked(true);
+    setModalContent(content);
+  };
+
+  const onModalClose = () => {
+    setIsModalClicked(false);
+    setModalContent(null);
+  };
   return (
     <PageWrapper>
       <div>
-        <Header />
-        <div className="flex flex-col px-12 py-8 gap-2">
-          <div>
-            <h1>Software Engineer</h1>
-          </div>
-          <AboutMe />
-          <Projects />
+        <div className="p-4">
+          <h1>
+            Software Engineer
+          </h1>
+        </div>
+        <div className="bg-cyan-700 p-4 flex flex-col gap-4 relative">
+          <h1>Featured Works</h1>
+          <CardList onModalOpen={onModalOpen} />
+          {isModalClicked && (
+            <CardDisplay name={modalContent} onModalClose={onModalClose} />
+          )}
         </div>
       </div>
     </PageWrapper>

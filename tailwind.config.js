@@ -9,11 +9,12 @@ module.exports = {
     extend: {
       colors: {
         linkedIn: "#0A66C2",
+        nZero: "#19181a",
       },
       screens: {
         xs: "425px",
         sm: "768px",
-        md: "1034px",
+        md: "1024px",
         lg: "1440px",
         xl: "2560px",
       },

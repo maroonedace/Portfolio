@@ -9,7 +9,6 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="flex flex-row items-center justify-between bg-slate-200 p-4">
-      <h1 className="text-black">Anthony Ostia</h1>
       <div className="flex flex-row items-center gap-6">
         <motion.div
           key="resume"
