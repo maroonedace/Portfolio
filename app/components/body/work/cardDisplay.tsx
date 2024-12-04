@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { works } from "../../../../models/work";
 import { FC } from "react";
+import { works } from "../../../models/work";
 
 interface CardDisplayProps {
   name: string;
@@ -18,15 +18,15 @@ const CardDisplay: FC<CardDisplayProps> = ({ name, onModalClose }) => {
   };
 
   return (
-    <motion.div className={`flex justify-center absolute top-4 left-0 mx-4`}>
+    <motion.div className={`absolute top-4 left-0 mx-4`}>
       <motion.div
-        className="bg-cyan-800 rounded-2xl p-4 cursor-pointer"
+        className="bg-[#800000] rounded-2xl p-4 cursor-pointer"
         layoutId={`card-container-${work.name}`}
         onClick={handleClick}
       >
         <div className="flex">
           <motion.div
-            className={`bg-${work.backgroundColor} p-4 rounded-2xl w-[200px] h-[200px] flex items-center justify-center`}
+            className={`bg-white p-4 rounded-2xl w-[200px] h-[200px] flex items-center justify-center`}
             layoutId={`card-${work.name}`}
           >
             <Image src={work.logo} alt="" />

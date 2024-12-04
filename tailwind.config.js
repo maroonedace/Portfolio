@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        clash: ["var(--font-clash-display)"],
+      },
       colors: {
         linkedIn: "#0A66C2",
         nZero: "#19181a",

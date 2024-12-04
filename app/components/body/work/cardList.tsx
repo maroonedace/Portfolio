@@ -1,6 +1,6 @@
 import Card from "./card";
 
-import { works } from "../../../../models/work";
+import { works } from "../../../models/work";
 import { Dispatch, FC, SetStateAction } from "react";
 
 interface CardListProps {
@@ -9,7 +9,7 @@ interface CardListProps {
 
 const CardList: FC<CardListProps> = ({onModalOpen}) => {
   return (
-    <ul className="flex flex-row gap-8">
+    <ul className="flex flex-wrap gap-8 justify-center">
       {works.map((work) => (
         <Card work={work} key={work.name} onModalOpen={onModalOpen} />
       ))}

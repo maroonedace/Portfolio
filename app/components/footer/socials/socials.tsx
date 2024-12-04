@@ -11,7 +11,6 @@ const socials = [
   {
     icon: faLinkedin,
     href: "https://www.linkedin.com/in/aostia",
-    color: "text-linkedIn",
   },
 ];
 
@@ -31,7 +30,6 @@ const Socials = () => {
             damping: 20,
             delay: 0.75,
           }}
-          className="flex"
         >
           <motion.button
             whileHover={{
@@ -40,6 +38,7 @@ const Socials = () => {
             whileTap={{
               scale: 0.9,
             }}
+            className="border p-2 rounded-full border-black"
           >
             <Link
               className="flex gap-2 items-center"
@@ -49,7 +48,6 @@ const Socials = () => {
               <FontAwesomeIcon
                 icon={btn.icon}
                 size="xl"
-                className={btn?.color ? btn.color : ""}
               />
             </Link>
           </motion.button>
