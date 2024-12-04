@@ -30,7 +30,7 @@ const clashDisplay = localFont({
       weight: "500",
     },
     {
-      path: "./assets/fonts/clash-display/ClashDisplaySemiBold.otf",
+      path: "./assets/fonts/clash-display/ClashDisplaySemibold.otf",
       weight: "600",
     },
     {
