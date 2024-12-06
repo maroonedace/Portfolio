@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
-import { works } from "../../../models/work";
+import { works } from "../../../../models/work";
 
 interface CardDisplayProps {
   name: string;

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import Image from "next/image";
-import { Work } from "../../../models/work";
+import { Work } from "../../../../models/work";
 
 interface CardProps {
   work: Work;

@@ -1,6 +1,6 @@
 import { FC, MutableRefObject, useState } from "react";
-import CardList from "./cardList";
-import CardDisplay from "./cardDisplay";
+import CardDisplay from "./card/cardDisplay";
+import CardList from "./card/cardList";
 
 interface WorkProps {
   componentRef: MutableRefObject<HTMLDivElement>

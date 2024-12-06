@@ -1,15 +1,17 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+
+import linkedInSvg from "../../../../assets/home/linkedin.svg"
+import githubSvg from "../../../../assets/home/github.svg"
 
 const socials = [
   {
-    icon: faGithub,
+    icon: githubSvg,
     href: "https://github.com/meximanian",
   },
   {
-    icon: faLinkedin,
+    icon: linkedInSvg,
     href: "https://www.linkedin.com/in/aostia",
   },
 ];
@@ -38,16 +40,18 @@ const Socials = () => {
             whileTap={{
               scale: 0.9,
             }}
-            className="border p-2 rounded-full border-black"
+            className="border p-2 rounded-full border-white"
           >
             <Link
               className="flex gap-2 items-center"
               href={btn.href}
               target="_blank"
             >
-              <FontAwesomeIcon
-                icon={btn.icon}
-                size="xl"
+              <Image
+                width="40"
+                height="40"
+                src={btn.icon}
+                alt={btn.href}
               />
             </Link>
           </motion.button>

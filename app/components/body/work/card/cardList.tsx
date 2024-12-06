@@ -1,6 +1,6 @@
 import Card from "./card";
 
-import { works } from "../../../models/work";
+import { works } from "../../../../models/work";
 import { Dispatch, FC, SetStateAction } from "react";
 
 interface CardListProps {
