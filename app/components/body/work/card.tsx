@@ -20,11 +20,6 @@ const Card: FC<CardProps> = ({ work, onModalOpen }) => {
     hidden: { opacity: 0 },
   };
 
-  // const imageVariants = {
-  //   visible: { opacity: 0.5 },
-  //   hidden: { opacity: 1 },
-  // };
-
   return (
     <motion.li
       className={`w-[300px] h-[300px] relative cursor-pointer`}
@@ -39,12 +34,12 @@ const Card: FC<CardProps> = ({ work, onModalOpen }) => {
         className="w-full h-full"
       >
         <motion.div
-          className={`relative w-full h-full bg-slate-200 rounded-2xl`}
+          className={`relative w-full h-full bg-slate-100 rounded-2xl`}
           layoutId={`card-${work.name}`}
         >
           <motion.div
             className="absolute inset-0 flex items-center justify-center"
-            // variants={imageVariants}
+
           >
             <Image className="w-[60%]" src={work.logo} alt="" />
           </motion.div>

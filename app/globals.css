@@ -24,6 +24,6 @@
     }
 
     body {
-        @apply bg-[#008080];
+        @apply bg-cyan-500;
     }
 }

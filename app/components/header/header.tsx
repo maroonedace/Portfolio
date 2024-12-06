@@ -1,42 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Socials from "../footer/socials/socials";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
+import Image from "next/image";
+import marace from "../../assets/header/marace.png";
+import { Links } from "../../page";
+import { FC, MutableRefObject } from "react";
+import { animate } from "framer-motion";
 
-const Header = () => {
+interface HeaderProps {
+  links: Links[];
+}
+
+const Header: FC<HeaderProps> = ({ links }) => {
+  const handleScrollToWork = (ref: MutableRefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      animate(
+        window.scrollY,
+        ref.current.offsetTop,
+        {
+          duration: 0.8,
+          ease: [0.22, 1, 0.36, 1],
+          onUpdate: (value) => window.scrollTo(0, value),
+        }
+      );
+    }
+  };
+
   return (
-    <div className="flex flex-row items-center justify-between bg-slate-200 p-4">
-      <div className="flex flex-row items-center gap-6">
-        <motion.div
-          key="resume"
-          initial={{scale: 0, opacity: 0.5}}
-          animate={{scale: 1, opacity: 1}}
-          transition={{
-            delay: 0.75,
-          }}
-        >
-          <motion.button
-            whileHover={{
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
-          >
-            <Link
-              href="/resume.pdf"
-              target="_blank"
-              className="flex gap-2 border py-2 px-4 rounded border-black"
-            >
-              <FontAwesomeIcon icon={faFileAlt} size="xl" />
-              Resume
-            </Link>
-          </motion.button>
-        </motion.div>
-        <Socials />
+    <div className="bg-white p-2 sticky top-0 flex justify-between z-10">
+      <Link href="/">
+        <Image className="h-14 w-12" src={marace} alt="logo" />
+      </Link>
+      <div className="flex gap-4">
+        {links.map((link) => {
+          return <button key={link.name} onClick={() => handleScrollToWork(link.ref)}>{link.name}</button>;
+        })}
       </div>
     </div>
   );

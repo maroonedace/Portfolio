@@ -20,7 +20,7 @@ const CardDisplay: FC<CardDisplayProps> = ({ name, onModalClose }) => {
   return (
     <motion.div className={`absolute top-4 left-0 mx-4`}>
       <motion.div
-        className="bg-[#800000] rounded-2xl p-4 cursor-pointer"
+        className="bg-cyan-700 rounded-2xl p-4 cursor-pointer"
         layoutId={`card-container-${work.name}`}
         onClick={handleClick}
       >
