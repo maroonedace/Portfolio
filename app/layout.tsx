@@ -7,7 +7,6 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { AnimatePresence } from "framer-motion";
 
 import { Inter } from "next/font/google";
