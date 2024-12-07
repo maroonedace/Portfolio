@@ -18,9 +18,9 @@ const CardDisplay: FC<CardDisplayProps> = ({ name, onModalClose }) => {
   };
 
   return (
-    <motion.div className={`absolute top-4 left-0 mx-4`}>
+    <div className="absolute inset-0 flex items-center mx-4">
       <motion.div
-        className="bg-cyan-700 rounded-2xl p-4 cursor-pointer"
+        className="bg-cyan-800 rounded-2xl p-4 cursor-pointer"
         layoutId={`card-container-${work.name}`}
         onClick={handleClick}
       >
@@ -36,9 +36,8 @@ const CardDisplay: FC<CardDisplayProps> = ({ name, onModalClose }) => {
             <p className="text-white text-lg text-wrap">{work.summary}</p>
           </div>
         </div>
-        <>Banana</>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

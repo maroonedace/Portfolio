@@ -21,8 +21,8 @@ const Work: FC<WorkProps> = ({componentRef}) => {
     };
     
   return (
-    <div className="px-4 py-8 flex flex-col gap-4 relative items-center justify-center" ref={componentRef}>
-      <h2>Featured Works</h2>
+    <div className="px-4 flex flex-col gap-4 relative items-center justify-center bg-cyan-700 h-[75vh]" ref={componentRef}>
+      <h1 className="text-white">Featured Works</h1>
       <CardList onModalOpen={onModalOpen} />
       {isModalClicked && (
         <CardDisplay name={modalContent} onModalClose={onModalClose} />

@@ -8,7 +8,7 @@ import githubSvg from "../../../../assets/home/github.svg"
 const socials = [
   {
     icon: githubSvg,
-    href: "https://github.com/meximanian",
+    href: "https://github.com/maroonedace",
   },
   {
     icon: linkedInSvg,

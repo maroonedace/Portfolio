@@ -39,10 +39,10 @@ const skillList = [
 const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
     <div
-      className="flex bg-gray-500 items-center px-4 pt-4 pb-8 flex-col gap-4"
+      className="flex items-center px-4 py-14 flex-col gap-4"
       ref={componentRef}
     >
-      <h2>Skills</h2>
+      <h1 className="text-white">Skills</h1>
       <div className="flex gap-8 w-[80%] flex-wrap">
         {skillList.map((skill, index) => {
           return (
