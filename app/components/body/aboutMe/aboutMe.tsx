@@ -7,7 +7,7 @@ interface AboutMeProps {
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   return (
     <div
-      className="flex flex-col gap-4 p-4 bg-cyan-700 h-[75vh] text-center items-center justify-center bg-gradient-to-b from-[#010005] from-1% to-cyan-700 text-white"
+      className="flex flex-col gap-4 p-4 bg-cyan-700 py-60 text-center items-center justify-center bg-gradient-to-b from-[#010005] from-1% to-cyan-700 text-white"
       ref={componentRef}
     >
       <h1>About Me</h1>
