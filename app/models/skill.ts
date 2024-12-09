@@ -53,7 +53,7 @@ export const skillList = [
       logo: css3Svg,
     },
     {
-      name: "React",
+      name: "React.js",
       logo: reactSvg,
     },
     {
@@ -77,7 +77,7 @@ export const skillList = [
       logo: mongodbSvg,
     },
     {
-      name: "SupabaseSvg",
+      name: "Supabase",
       logo: supbaseSvg,
     },
     {
