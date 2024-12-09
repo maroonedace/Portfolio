@@ -20,8 +20,10 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
             <motion.div
               key={skill.name}
               className="bg-white rounded-2xl w-[128px] h-[128px] flex items-center justify-center"
-              initial={{ transform: "translateX(-100px)" }}
-              animate={{ transform: "translateX(0px)" }}
+              initial={{ transform: "translateX(-200px)", opacity: 0, }}
+              whileInView={{ transform: "translateX(0px)", opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 + index * 0.05}}
             >
               <Image width="80" height="80" src={skill.logo} alt="icon" />
             </motion.div>
