@@ -21,7 +21,7 @@ const Work: FC<WorkProps> = ({componentRef}) => {
     };
     
   return (
-    <div className="px-4 flex flex-col gap-4 relative items-center justify-center bg-cyan-700 py-60" ref={componentRef}>
+    <div className="px-4 flex flex-col gap-16 relative items-center justify-center bg-cyan-700 py-40" ref={componentRef}>
       <h1 className="text-white">Featured Works</h1>
       <CardList onModalOpen={onModalOpen} />
       {isModalClicked && (

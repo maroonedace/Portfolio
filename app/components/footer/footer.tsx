@@ -5,7 +5,7 @@ import marace from "../../assets/marace.png"
 
 const Footer = () => {
   return (
-    <div className="bg-gray-700 flex items-center justify-between px-4 py-6">
+    <div className="bg-gray-800 flex items-center justify-between px-4 py-6">
       <Link href="/">
         <Image className={`h-14 w-12`} src={marace} alt="logo" />
       </Link>

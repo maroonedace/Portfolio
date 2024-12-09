@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ links }) => {
   };
 
   return (
-    <div className={`bg-gray-700 p-${headerPadding} sticky top-0 flex justify-between z-10`}>
+    <div className={`bg-gray-800 p-${headerPadding} sticky top-0 flex justify-between z-10`}>
       <Link href="/">
         <Image className={`h-${headerHeight} w-12`} src={marace} alt="logo" />
       </Link>

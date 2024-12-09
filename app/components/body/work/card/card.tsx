@@ -8,48 +8,36 @@ import { Work } from "../../../../models/work";
 interface CardProps {
   work: Work;
   onModalOpen: (content: string) => void;
+  index: number;
 }
 
-const Card: FC<CardProps> = ({ work, onModalOpen }) => {
+const Card: FC<CardProps> = ({ work, onModalOpen, index }) => {
   const handleClick = () => {
     onModalOpen(work.name);
   };
 
-  const variants = {
-    visible: { opacity: 0.3 },
-    hidden: { opacity: 0 },
-  };
-
   return (
     <motion.li
-      className={`w-[300px] h-[300px] relative cursor-pointer`}
+      className={`w-[250px] h-[250px] cursor-pointer`}
       onClick={handleClick}
+      initial={{ transform: "translateY(-200px)", opacity: 0 }}
+      whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+      transition={{delay: 0.3 + index * 0.3}}
+      viewport={{ once: true }}
       key={work.name}
-      initial="hidden"
-      whileHover="visible"
       layoutId="modal"
     >
       <motion.div
         layoutId={`card-container-${work.name}`}
-        className="w-full h-full"
+        className="w-full h-full bg-white rounded-2xl"
+        whileHover={{ background: "rgb(156 163 175)"}}
       >
         <motion.div
-          className={`relative w-full h-full bg-slate-100 rounded-2xl`}
+          className={`relative w-full h-full`}
           layoutId={`card-${work.name}`}
         >
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center"
-
-          >
-            <Image className="w-[60%]" src={work.logo} alt="" />
-          </motion.div>
-          <motion.div
-            className="w-full h-full bg-black rounded-2xl relative"
-            variants={variants}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="absolute inset-x-4 bottom-[15%] z-10 flex justify-center">
-            </div>
+          <motion.div className="absolute inset-0 flex items-center justify-center">
+            <Image width={200} height={200} src={work.logo} alt="" />
           </motion.div>
         </motion.div>
       </motion.div>

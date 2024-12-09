@@ -7,7 +7,7 @@ interface SkillsProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
 
-const hoverColor = "rgb(15 23 42)"
+const hoverColor = "rgb(31 41 55)"
 
 const variants = {
   hidden: {
