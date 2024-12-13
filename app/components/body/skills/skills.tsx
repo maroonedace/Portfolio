@@ -11,10 +11,10 @@ const hoverColor = "rgb(31 41 55)"
 
 const variants = {
   hidden: {
-    background: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
   },
   visible: {
-    background: hoverColor,
+    backgroundColor: hoverColor,
     opacity: 0.8,
   },
 };
@@ -41,7 +41,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
     <div className="bg-cyan-700 p-4">
       <div
-        className="flex items-center flex-col gap-4 bg-gray-700 rounded-2xl py-16"
+        className="flex items-center flex-col gap-4 bg-gray-700 rounded-2xl py-[280px]"
         ref={componentRef}
       >
         <h1 className="text-white">Skills</h1>
@@ -52,10 +52,10 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
                 key={skill.name}
                 className="bg-white rounded-2xl w-[120px] h-[120px]"
                 initial={{ transform: "translateX(-200px)", opacity: 0 }}
-                whileHover={{background: hoverColor, transition: {duration: 0}}}
+                whileHover={{backgroundColor: hoverColor, transition: {duration: 0}}}
                 whileInView={{ transform: "translateX(0px)", opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 + index * 0.05 }}
+                transition={{ delay: 0.3 + index * 0.05 }}
               >
                 <motion.div
                   className="flex items-center justify-center w-full h-full rounded-2xl"

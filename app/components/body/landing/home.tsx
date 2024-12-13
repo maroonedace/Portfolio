@@ -14,7 +14,7 @@ interface HomeProps {
 const Home: FC<HomeProps> = ({ componentRef }) => {
   return (
     <div className="h-[80vh] text-white relative bg-black" ref={componentRef}>
-      <Image className="absolute h-full opacity-85" src={back} alt="back" />
+      <Image className="absolute h-full opacity-85" priority src={back} alt="back" />
       <div>
         <div className="flex flex-col absolute inset-0 justify-center items-center text-center">
           <h1>Software Engineer</h1>
