@@ -1,32 +1,20 @@
 import { FC, MutableRefObject, useState } from "react";
-import CardDisplay from "./card/cardDisplay";
 import CardList from "./card/cardList";
 
 interface WorkProps {
   componentRef: MutableRefObject<HTMLDivElement>
+  onModalOpen: (content: string) => void
 }
 
-const Work: FC<WorkProps> = ({componentRef}) => {
-    const [isModalClicked, setIsModalClicked] = useState(false);
-    const [modalContent, setModalContent] = useState<string | null>(null);
-  
-    const onModalOpen = (content: string) => {
-      setIsModalClicked(true);
-      setModalContent(content);
-    };
-  
-    const onModalClose = () => {
-      setIsModalClicked(false);
-      setModalContent(null);
-    };
-    
+const Work: FC<WorkProps> = ({componentRef, onModalOpen}) => {
+
   return (
-    <div className="px-4 flex flex-col gap-16 relative items-center justify-center bg-cyan-700 py-40" ref={componentRef}>
+    <div className="px-4 flex flex-col gap-16 items-center justify-center bg-cyan-700 py-40" ref={componentRef}>
       <h1 className="text-white">Featured Works</h1>
       <CardList onModalOpen={onModalOpen} />
-      {isModalClicked && (
+      {/* {isModalClicked && (
         <CardDisplay name={modalContent} onModalClose={onModalClose} />
-      )}
+      )} */}
     </div>
   );
 };

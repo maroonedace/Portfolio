@@ -18,8 +18,45 @@ import nextjsSvg from "../assets/skills/nextjs.svg";
 import rubySvg from "../assets/skills/ruby.svg";
 import materialUISvg from "../assets/skills/materialUI.svg";
 
+export interface Skill {
+  name: string
+  logo: any
+}
 
-export const skillList = [
+export const nZeroList: Skill[] = [
+  {
+    name: "Typescript",
+    logo: typeScriptSvg,
+  },
+  {
+    name: "React.js",
+    logo: reactSvg,
+  },
+  {
+    name: "Ruby on Rails",
+    logo: rubyOnRailsSvg,
+  },
+  {
+    name: "Node.js",
+    logo: nodeJsSvg,
+  },
+  {
+    name: "PostgreSQL",
+    logo: postgresqlSvg,
+  },
+  {
+    name: "Docker",
+    logo: dockerSvg,
+  },
+  {
+    name: "Material UI",
+    logo: materialUISvg,
+  },
+
+]
+
+
+export const skillList: Skill[] = [
     {
       name: "Javascript",
       logo: javascriptSvg,

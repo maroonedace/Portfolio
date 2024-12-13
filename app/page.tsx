@@ -1,6 +1,6 @@
 "use client";
 
-import { MutableRefObject, useRef } from "react";
+import { MutableRefObject, useRef, useState } from "react";
 import AboutMe from "./components/body/aboutMe/aboutMe";
 import Home from "./components/body/landing/home";
 import Work from "./components/body/work/work";
@@ -8,6 +8,7 @@ import Header from "./components/header/header";
 import PageWrapper from "./pageWrapper";
 import Footer from "./components/footer/footer";
 import Skills from "./components/body/skills/skills";
+import CardDisplay from "./components/body/work/card/cardDisplay";
 
 export interface Links {
   name: string;
@@ -40,6 +41,19 @@ export default function Page() {
     },
   ];
 
+  const [isModalClicked, setIsModalClicked] = useState(false);
+  const [modalContent, setModalContent] = useState<string | null>(null);
+
+  const onModalOpen = (content: string) => {
+    setIsModalClicked(true);
+    setModalContent(content);
+  };
+
+  const onModalClose = () => {
+    setIsModalClicked(false);
+    setModalContent(null);
+  };
+
   return (
     <PageWrapper>
       <>
@@ -47,8 +61,11 @@ export default function Page() {
         <Home componentRef={homeRef} />
         <AboutMe componentRef={aboutMeRef} />
         <Skills componentRef={skillsRef} />
-        <Work componentRef={workRef} />
+        <Work componentRef={workRef} onModalOpen={onModalOpen} />
         <Footer />
+        {isModalClicked && (
+          <CardDisplay name={modalContent} onModalClose={onModalClose} />
+        )}
       </>
     </PageWrapper>
   );
