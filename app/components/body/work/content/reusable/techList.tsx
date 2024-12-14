@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
-import { Skill } from "../../../../models/skill";
+import { Skill } from "../../../../../models/skill";
 
 const hoverColor = "rgb(31 41 55)";
 
