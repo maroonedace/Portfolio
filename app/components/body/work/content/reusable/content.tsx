@@ -5,7 +5,6 @@ import { Work } from "../../../../../models/work";
 import { Skill } from "../../../../../models/skill";
 import { FC } from "react";
 import { format } from "date-fns";
-import { TZDate } from "@date-fns/tz";
 
 interface ContentProps {
   work: Work
