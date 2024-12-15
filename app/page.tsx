@@ -9,6 +9,7 @@ import PageWrapper from "./pageWrapper";
 import Footer from "./components/footer/footer";
 import Skills from "./components/body/skills/skills";
 import CardDisplay from "./components/body/work/card/cardDisplay";
+import Contact from "./components/body/contact/contact";
 
 export interface Links {
   name: string;
@@ -62,6 +63,7 @@ export default function Page() {
         <AboutMe componentRef={aboutMeRef} />
         <Skills componentRef={skillsRef} />
         <Work componentRef={workRef} onModalOpen={onModalOpen} />
+        <Contact />
         <Footer />
         {isModalClicked && (
           <CardDisplay name={modalContent} onModalClose={onModalClose} />

@@ -12,6 +12,8 @@ export type Work = {
   title: string;
   logo: StaticImageData;
   content: JSX.Element;
+  startDate: Date
+  endDate: Date | null
 };
 
 export const works: Work[] = [
@@ -20,6 +22,8 @@ export const works: Work[] = [
     url: "nZero",
     title: "Software Engineer II",
     logo: NZeroSVG,
+    startDate: new Date("2021-09-01T00:00:00"),
+    endDate: new Date("2024-03-01T00:00:00"),
     content: <NZero />,
   },
   {
@@ -27,6 +31,8 @@ export const works: Work[] = [
     url: "oceansidePerspective",
     title: "Software Engineer Project Lead",
     logo: OPLogo,
+    startDate: new Date("2024-05-01T00:00:00"),
+    endDate: null,
     content: <OP />,
   },
   {
@@ -34,6 +40,8 @@ export const works: Work[] = [
     url: "tritonXR",
     title: "Project Manager",
     logo: TritonXRLogo,
+    startDate: new Date("2018-11-01T00:00:00"),
+    endDate: new Date("2020-06-01T00:00:00"),
     content: <TritonXR />,
   },
 ];

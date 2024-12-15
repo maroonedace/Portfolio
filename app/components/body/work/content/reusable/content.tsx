@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import TechSkillList from "./techList";
+import { Work } from "../../../../../models/work";
+import { Skill } from "../../../../../models/skill";
+import { FC } from "react";
+import { format } from "date-fns";
+import { TZDate } from "@date-fns/tz";
 
-const Content = ({ work, listOfSkills }) => {
+interface ContentProps {
+  work: Work
+  listOfSkills: Skill[] 
+}
+
+const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
+  const startDate = format(work.startDate, "MMMM yyyy")
+  const endDate = work.endDate ? format(work.endDate, "MMMM yyyy") : null
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-center gap-4">
@@ -20,8 +32,8 @@ const Content = ({ work, listOfSkills }) => {
           transition={{ delay: 0.3 }}
         >
           <div>
-            <h2>Software Engineer II</h2>
-            <h3>September 2019 - March 2024</h3>
+            <h2>{work.title}</h2>
+            <h3>{startDate} {endDate ? `- ${endDate}`: ""}</h3>
           </div>
           <div className="flex flex-col gap-2">
             <h3>Technologies Utilized</h3>

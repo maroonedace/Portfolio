@@ -39,33 +39,27 @@ interface TechSkillListProps {
 
 const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
   return (
-    <motion.div
-      className="flex gap-4"
-    >
+    <motion.div className="flex gap-4">
       {listOfSkills.map((skill) => {
         return (
-          <motion.div
-            key={skill.name}
-            className="bg-white rounded-2xl p-2"
-            whileHover={{
-              backgroundColor: hoverColor,
-              transition: { duration: 0 },
-            }}
-          >
             <motion.div
-              className="flex items-center justify-center w-full h-full rounded-2xl"
+              key={skill.name}
+              className="flex items-center justify-center rounded-2xl p-2"
               variants={variants}
               whileHover="visible"
               initial="hidden"
             >
               <motion.div variants={imageVariants}>
-                <Image className="w-[80px] h-[80px]" src={skill.logo} alt="icon" />
+                <Image
+                  className="w-[80px] h-[80px]"
+                  src={skill.logo}
+                  alt="icon"
+                />
               </motion.div>
               <motion.p variants={textVariants} className="text-white absolute">
                 {skill.name}
               </motion.p>
             </motion.div>
-          </motion.div>
         );
       })}
     </motion.div>

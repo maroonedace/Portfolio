@@ -55,6 +55,44 @@ export const nZeroList: Skill[] = [
 
 ]
 
+export const opList: Skill[] = [
+  {
+    name: "Typescript",
+    logo: typeScriptSvg,
+  },
+  {
+    name: "React.js",
+    logo: reactSvg,
+  },
+  {
+    name: "Node.js",
+    logo: nodeJsSvg,
+  },
+  {
+    name: "Supabase",
+    logo: supbaseSvg,
+  },
+  {
+    name: "Tailwind CSS",
+    logo: tailwindCssSvg,
+  }
+
+
+]
+
+export const tritonXRList: Skill[] = [
+  {
+    name: "C#",
+    logo: cSvg,
+  },
+  {
+    name: "Unity",
+    logo: unitySvg,
+  },
+
+
+]
+
 
 export const skillList: Skill[] = [
     {

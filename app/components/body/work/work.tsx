@@ -12,9 +12,6 @@ const Work: FC<WorkProps> = ({componentRef, onModalOpen}) => {
     <div className="px-4 flex flex-col gap-16 items-center justify-center bg-cyan-700 py-40" ref={componentRef}>
       <h1 className="text-white">Featured Works</h1>
       <CardList onModalOpen={onModalOpen} />
-      {/* {isModalClicked && (
-        <CardDisplay name={modalContent} onModalClose={onModalClose} />
-      )} */}
     </div>
   );
 };
