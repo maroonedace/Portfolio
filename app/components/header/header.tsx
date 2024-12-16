@@ -35,7 +35,9 @@ const Header: FC<HeaderProps> = ({ links }) => {
       </Link>
       <div className="flex gap-4">
         {links.map((link) => {
-          return <button key={link.name} className="text-white hover:underline underline-offset-2" onClick={() => handleScrollToWork(link.ref)}>{link.name}</button>;
+          return <button key={link.name} className="text-white hover:underline underline-offset-2 text-sm sm:text-base md:text-lg lg:text-xl" onClick={() => handleScrollToWork(link.ref)}>
+            {link.name}
+            </button>;
         })}
       </div>
     </div>

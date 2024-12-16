@@ -42,8 +42,8 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
     return (
       <motion.div
         key={skill.name}
-        className="bg-white rounded-2xl w-[120px] h-[120px]"
-        initial={{ transform: "translateX(-200px)", opacity: 0 }}
+        className="bg-white rounded-2xl"
+        initial={{ transform: "translateX(-100px)", opacity: 0 }}
         whileHover={{
           backgroundColor: hoverColor,
           transition: { duration: 0 },
@@ -53,13 +53,13 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
         transition={{ delay: 0.3 + index * 0.05 }}
       >
         <motion.div
-          className="flex items-center justify-center w-full h-full rounded-2xl"
+          className="flex items-center justify-center w-full h-full rounded-2xl p-2"
           variants={variants}
           whileHover="visible"
           initial="hidden"
         >
           <motion.div variants={imageVariants}>
-            <Image width="80" height="80" src={skill.logo} alt="icon" />
+            <Image className="w-[48px] h-[48px] md:w-[64px] md:h-[64px] lg:w-[80px] lg:h-[80px]" src={skill.logo} alt="icon" />
           </motion.div>
           <motion.p variants={textVariants} className="text-white absolute">
             {skill.name}

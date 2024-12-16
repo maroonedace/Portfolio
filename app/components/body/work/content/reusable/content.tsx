@@ -16,10 +16,10 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
   const endDate = work.endDate ? format(work.endDate, "MMMM yyyy") : null
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4 xs:max-sm:flex-wrap lg:flex-nowrap">
         <motion.div className="flex shrink-0" layoutId={`card-${work.name}`}>
           <Image
-            className="rounded-2xl bg-white w-[300px] h-[300px] p-8"
+            className="rounded-2xl bg-white w-[100px] h-[100px] lg:w-[300px] lg:h-[300px] p-8"
             src={work.logo}
             alt="Logo"
           />
@@ -31,11 +31,11 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           transition={{ delay: 0.3 }}
         >
           <div>
-            <h2>{work.title}</h2>
-            <h3>{startDate} {endDate ? `- ${endDate}`: ""}</h3>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">{work.title}</h2>
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl">{startDate} {endDate ? `- ${endDate}`: ""}</h3>
           </div>
           <div className="flex flex-col gap-2">
-            <h3>Technologies Utilized</h3>
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl">Technologies Utilized</h3>
             <TechSkillList listOfSkills={listOfSkills} />
           </div>
         </motion.div>
@@ -44,14 +44,14 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
         initial={{ transform: "translateX(-200px)", opacity: 0 }}
         whileInView={{ transform: "translateX(0px)", opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="bg-gray-700 rounded-2xl p-4 flex"
+        className="bg-gray-700 rounded-2xl p-4 flex xs:max-sm:flex-wrap lg:flex-nowrap"
       >
         <Image
-          className="rounded-2xl bg-white w-[800px] h-[400px] p-8"
+          className="rounded-2xl bg-white w-[264px] h-[100px] lg:w-[800px] lg:h-[400px] p-8"
           src={work.logo}
           alt="Dashboard Page"
         />
-        <p className="text-white p-4 text-lg">
+        <p className="text-white p-4 text-lg text-sm sm:text-base md:text-lg lg:text-xl">
           NZero is a real-time data decarbonization platform for sustainability
           leaders focusing on performance tracking and delivering a carbon ROI.
           I was hired on the spot during an interview with the CEO and was

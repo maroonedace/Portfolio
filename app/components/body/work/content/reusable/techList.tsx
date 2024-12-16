@@ -39,7 +39,7 @@ interface TechSkillListProps {
 
 const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
   return (
-    <motion.div className="flex gap-4">
+    <motion.div className="flex gap-4 flex-wrap">
       {listOfSkills.map((skill) => {
         return (
             <motion.div
@@ -51,7 +51,7 @@ const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
             >
               <motion.div variants={imageVariants}>
                 <Image
-                  className="w-[80px] h-[80px]"
+                  className="w-[32px] h-[32px] md:w-[48px] md:h-[48px] lg:w-[64px] lg:h-[64px]"
                   src={skill.logo}
                   alt="icon"
                 />

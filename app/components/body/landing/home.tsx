@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Socials from "./socials/socials";
 import { FC, MutableRefObject } from "react";
 
 import back from "../../../assets/home/back.jpg";
@@ -13,14 +12,14 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ componentRef }) => {
   return (
-    <div className="h-[80vh] text-white relative bg-black" ref={componentRef}>
+    <div className="text-white relative bg-black h-[40vh] md:h-[60vh] lg:h-[80vh]" ref={componentRef}>
       <Image className="absolute h-full opacity-85" priority src={back} alt="back" />
       <div>
         <div className="flex flex-col absolute inset-0 justify-center items-center text-center">
-          <h1>Software Engineer</h1>
-          <h2>
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl">Software Engineer</h1>
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
             Always looking for new opportunities to grow and engage in
-            insightful conversations.
+            insightful conversations
           </h2>
         </div>
         <div className="flex flex-col items-center gap-4 absolute inset-x-0 bottom-8">
@@ -45,12 +44,11 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
                 target="_blank"
                 className="flex gap-2 border py-2 px-4 rounded border-white items-center"
               >
-                <Image src={fileSvg} width="40" height="40" alt="resume" />
-                View Resume
+                <Image src={fileSvg} className="w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]" alt="resume" />
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl">View Resume</p>
               </Link>
             </motion.button>
           </motion.div>
-          <Socials />
         </div>
       </div>
     </div>
