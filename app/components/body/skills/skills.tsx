@@ -46,7 +46,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
         ref={componentRef}
       >
         <h1 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">Skills</h1>
-        <div className="flex flex-row gap-4 flex-wrap justify-center items-center p-4">
+        <div className="flex flex-row gap-4 flex-wrap justify-center items-center p-4 w-[85%]">
           <SkillList listOfSkills={skillList}/>
         </div>
       </div>

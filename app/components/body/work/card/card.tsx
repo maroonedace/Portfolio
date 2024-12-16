@@ -19,7 +19,7 @@ const Card: FC<CardProps> = ({ work, onModalOpen, index }) => {
   return (
     <motion.div whileHover={{scale: 1.1}} initial={{scale: 1}}>
       <motion.div
-        className={`w-[200px] h-[200px] lg:w-[248px] lg:h-[248px] cursor-pointer`}
+        className={`w-[100px] h-[100px] lg:w-[248px] lg:h-[248px] cursor-pointer`}
         onClick={handleClick}
         initial={{ transform: "translateY(200px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0px)", opacity: 1 }}

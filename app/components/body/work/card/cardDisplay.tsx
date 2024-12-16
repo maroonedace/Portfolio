@@ -18,9 +18,9 @@ const CardDisplay: FC<CardDisplayProps> = ({ name, onModalClose }) => {
   };
 
   return (
-    <div className="sticky bottom-0 flex items-center justify-center mx-4">
+    <div className="sticky bottom-0 sm:bottom-[72px] md:bottom-[72px] lg:bottom-[64px] flex items-center justify-center mx-4">
       <motion.div
-        className="bg-cyan-900 rounded-2xl p-8 cursor-pointer w-full"
+        className="bg-cyan-900 rounded-2xl p-4 lg:p-8 cursor-pointer w-full"
         layoutId={`card-container-${work.name}`}
         onClick={handleClick}
       >

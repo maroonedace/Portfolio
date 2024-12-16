@@ -9,7 +9,7 @@ interface CardListProps {
 
 const CardList: FC<CardListProps> = ({onModalOpen}) => {
   return (
-    <div className="flex flex-wrap gap-12 justify-center">
+    <div className="flex flex-wrap gap-4 lg:gap-12 justify-center">
       {works.map((work, index) => (
         <Card work={work} key={work.name} onModalOpen={onModalOpen} index={index} />
       ))}

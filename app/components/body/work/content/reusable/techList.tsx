@@ -9,7 +9,7 @@ interface TechSkillListProps {
 
 const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
   return (
-    <motion.div className="flex gap-4 flex-wrap">
+    <motion.div className="flex gap-2 lg:gap-4 flex-wrap">
       {listOfSkills.map((skill) => {
         return (
             <motion.div
