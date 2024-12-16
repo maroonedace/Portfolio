@@ -51,10 +51,10 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
         initial={{ transform: "translateX(-200px)", opacity: 0 }}
         whileInView={{ transform: "translateX(0px)", opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="bg-gray-700 rounded-2xl p-4 flex xs:max-sm:flex-wrap lg:flex-nowrap"
+        className="bg-gray-700 rounded-2xl p-4 flex flex-col md:flex-row"
       >
         <Image
-          className="rounded-2xl bg-white w-full h-[100px] lg:w-[800px] lg:h-[400px] p-8"
+          className="rounded-2xl bg-white w-full h-[124px] lg:w-[800px] lg:h-[400px] p-8"
           src={work.logo}
           alt="Dashboard Page"
         />
