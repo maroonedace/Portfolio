@@ -5,10 +5,15 @@ import Link from "next/link";
 import mailSvg from "../../../assets/contact/mail.svg";
 import linkedInSvg from "../../../assets/home/linkedin.svg"
 import githubSvg from "../../../assets/home/github.svg"
+import { FC, MutableRefObject } from "react";
 
-const Contact = () => {
+interface ContactProps {
+  componentRef: MutableRefObject<HTMLDivElement> 
+}
+
+const Contact: FC<ContactProps> = ({componentRef}) => {
   return (
-    <div className="p-8 flex flex-col gap-2 items-center">
+    <div className="p-8 flex flex-col gap-2 items-center" ref={componentRef}>
       <h2 className="text-white">Contact Me</h2>
       <div className="flex gap-2">
         <motion.div

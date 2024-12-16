@@ -51,7 +51,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           src={work.logo}
           alt="Dashboard Page"
         />
-        <p className="text-white p-4 text-lg text-sm sm:text-base md:text-lg lg:text-xl">
+        <p className="text-white p-4 text-sm sm:text-base md:text-lg lg:text-xl">
           NZero is a real-time data decarbonization platform for sustainability
           leaders focusing on performance tracking and delivering a carbon ROI.
           I was hired on the spot during an interview with the CEO and was

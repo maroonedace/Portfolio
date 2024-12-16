@@ -40,7 +40,7 @@ const textVariants = {
 
 const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
-    <div className="bg-cyan-700 px-4">
+    <div className="bg-cyan-700 px-8">
       <div
         className="flex items-center flex-col gap-4 bg-gray-700 rounded-2xl py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px]"
         ref={componentRef}

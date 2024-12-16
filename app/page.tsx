@@ -22,6 +22,7 @@ export default function Page() {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const links: Links[] = [
     {
@@ -40,6 +41,10 @@ export default function Page() {
       name: "Work",
       ref: workRef,
     },
+    {
+      name: "Contact",
+      ref: contactRef,
+    }
   ];
 
   const [isModalClicked, setIsModalClicked] = useState(false);
@@ -63,7 +68,7 @@ export default function Page() {
         <AboutMe componentRef={aboutMeRef} />
         <Skills componentRef={skillsRef} />
         <Work componentRef={workRef} onModalOpen={onModalOpen} />
-        <Contact />
+        <Contact componentRef={contactRef} />
         <Footer />
         {isModalClicked && (
           <CardDisplay name={modalContent} onModalClose={onModalClose} />
