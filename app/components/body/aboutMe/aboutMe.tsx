@@ -10,10 +10,10 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
       className="flex flex-col gap-4 px-4 py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px] bg-cyan-700 text-center items-center justify-center bg-gradient-to-b from-[#010005] from-1% to-cyan-700 text-white"
       ref={componentRef}
     >
-      <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+      <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">
         About Me
-      </h1>
-      <p className="w-full sm:max-xl:w-3/4 text-sm sm:text-base md:text-lg lg:text-xl">
+      </h2>
+      <p className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] sm:text-base md:text-lg lg:text-2xl">
         As a software engineer who has over 5 years of software development
         experience, I have found myself working on a variety of opportunities
         ranging from working in virtual reality experiences in Unity, focused on

@@ -5,7 +5,6 @@ import AboutMe from "./components/body/aboutMe/aboutMe";
 import Home from "./components/body/landing/home";
 import Work from "./components/body/work/work";
 import Header from "./components/header/header";
-import PageWrapper from "./pageWrapper";
 import Footer from "./components/footer/footer";
 import Skills from "./components/body/skills/skills";
 import CardDisplay from "./components/body/work/card/cardDisplay";
@@ -61,19 +60,17 @@ export default function Page() {
   };
 
   return (
-    <PageWrapper>
-      <>
-        <Header links={links} />
-        <Home componentRef={homeRef} />
-        <AboutMe componentRef={aboutMeRef} />
-        <Skills componentRef={skillsRef} />
-        <Work componentRef={workRef} onModalOpen={onModalOpen} />
-        <Contact componentRef={contactRef} />
-        <Footer />
-        {isModalClicked && (
-          <CardDisplay name={modalContent} onModalClose={onModalClose} />
-        )}
-      </>
-    </PageWrapper>
+    <div className="relative">
+      <Header links={links} />
+      <Home componentRef={homeRef} />
+      <AboutMe componentRef={aboutMeRef} />
+      <Skills componentRef={skillsRef} />
+      <Work componentRef={workRef} onModalOpen={onModalOpen} />
+      <Contact componentRef={contactRef} />
+      <Footer />
+      {isModalClicked && (
+        <CardDisplay name={modalContent} onModalClose={onModalClose} />
+      )}
+    </div>
   );
 }

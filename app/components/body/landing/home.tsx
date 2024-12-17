@@ -15,12 +15,12 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
     <div className="text-white relative bg-black h-[40vh] md:h-[60vh] lg:h-[80vh]" ref={componentRef}>
       <Image className="absolute h-full opacity-85" priority src={back} alt="back" />
       <div>
-        <div className="flex flex-col absolute inset-0 justify-center items-center text-center">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl">Software Engineer</h1>
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
+        <div className="flex flex-col absolute inset-0 justify-center items-center text-center p-2 gap-2">
+          <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">Software Engineer</h2>
+          <h4 className="sm:text-lg md:text-xl lg:text-2xl">
             Always looking for new opportunities to grow and engage in
             insightful conversations
-          </h2>
+          </h4>
         </div>
         <div className="flex flex-col items-center gap-4 absolute inset-x-0 bottom-8">
           <motion.div
@@ -45,7 +45,7 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
                 className="flex gap-2 border py-2 px-4 rounded border-white items-center"
               >
                 <Image src={fileSvg} className="w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]" alt="resume" />
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl">View Resume</p>
+                <p className="sm:text-base md:text-lg lg:text-xl">View Resume</p>
               </Link>
             </motion.button>
           </motion.div>

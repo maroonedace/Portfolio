@@ -40,12 +40,12 @@ const textVariants = {
 
 const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
-    <div className="bg-cyan-700 px-8">
+    <div className="bg-cyan-700 px-4">
       <div
-        className="flex items-center flex-col gap-4 bg-gray-700 rounded-2xl py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px]"
+        className="flex items-center flex-col gap-4 bg-gray-700 rounded-2xl py-[20px] sm:py-[40px] md:py-[60px] lg:py-[80px]"
         ref={componentRef}
       >
-        <h1 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">Skills</h1>
+        <h2 className="text-white sm:text-2xl md:text-3xl lg:text-4xl">Skills</h2>
         <div className="flex flex-row gap-4 flex-wrap justify-center items-center p-4 w-[85%]">
           <SkillList listOfSkills={skillList}/>
         </div>

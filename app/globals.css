@@ -4,23 +4,26 @@
 
 @layer base {
     h1 {
-        @apply text-3xl;
-    }
-    h2 {
         @apply text-2xl;
     }
-    h3 {
+    h2 {
         @apply text-xl;
     }
-    h4{
+    h3 {
         @apply text-lg;
     }
-    h5 {
+    h4{
         @apply text-base;
     }
+    h5 {
+        @apply text-sm;
+    }
     h6 {
-        @apply text-base;
+        @apply text-sm;
         @apply font-bold;
+    }
+    p {
+        @apply text-sm;
     }
 
     body {
