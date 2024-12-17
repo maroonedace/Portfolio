@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import NZeroSVG from "../assets/work/nZero/nZero.svg";
+import NZeroPic from "../assets/work/nZero/nzeroDashboard.jpeg"
 import OPLogo from "../assets/work/opLogo.jpeg";
 import TritonXRLogo from "../assets/work/TritonXR.png";
 import NZero from "../components/body/work/content/nzero";
@@ -13,6 +14,7 @@ export type Work = {
   logo: StaticImageData;
   content: JSX.Element;
   startDate: Date;
+  pic?: StaticImageData;
   endDate: Date | null;
   website: string;
   github?: string;
@@ -29,6 +31,7 @@ export const works: Work[] = [
     startDate: new Date("2021-09-01T00:00:00"),
     endDate: new Date("2024-03-01T00:00:00"),
     content: <NZero />,
+    pic: NZeroPic,
     website: "https://nzero.com",
     description: `NZero is a real-time data decarbonization platform for
             sustainability leaders focusing on performance tracking and

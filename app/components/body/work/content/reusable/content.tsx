@@ -22,7 +22,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           <Image
             className="rounded-2xl bg-white w-[100px] h-[100px] p-4 lg:w-[264px] lg:h-[264px] lg:p-8"
             src={work.logo}
-            alt="Logo"
+            alt="Logo"  
           />
         </motion.div>
         <motion.div
