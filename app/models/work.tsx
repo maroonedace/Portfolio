@@ -1,7 +1,8 @@
 import { StaticImageData } from "next/image";
 import NZeroSVG from "../assets/work/nZero/nZero.svg";
 import NZeroPic from "../assets/work/nZero/nzeroDashboard.jpeg"
-import OPLogo from "../assets/work/opLogo.jpeg";
+import OPLogo from "../assets/work/op/opLogo.jpeg";
+import OPPic from "../assets/work/op/opdashboard.png";
 import TritonXRLogo from "../assets/work/TritonXR.png";
 import NZero from "../components/body/work/content/nzero";
 import OP from "../components/body/work/content/op";
@@ -15,6 +16,7 @@ export type Work = {
   content: JSX.Element;
   startDate: Date;
   pic?: StaticImageData;
+  embedLink?: string;
   endDate: Date | null;
   website: string;
   github?: string;
@@ -53,6 +55,7 @@ export const works: Work[] = [
     startDate: new Date("2024-05-01T00:00:00"),
     endDate: null,
     content: <OP />,
+    pic: OPPic,
     website: "https://www.oceansideperspective.org",
     description:
       "Worked on the non-profit learning platform created to integrate classic concepts and modern technology by building an intellectual bridge and connecting multi-generational thought leaders. ",
@@ -71,6 +74,7 @@ export const works: Work[] = [
     startDate: new Date("2018-11-01T00:00:00"),
     endDate: new Date("2020-06-01T00:00:00"),
     content: <TritonXR />,
+    embedLink: "https://www.youtube.com/embed/z-KPfnebmsY?si=Bq1rsKqwuddQ_xxN",
     website: "https://www.facebook.com/tritonxr/",
     github: "https://github.com/TritonXR/FoodQuest",
     description:

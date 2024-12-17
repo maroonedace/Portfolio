@@ -5,31 +5,17 @@ import { FC, useCallback } from "react";
 import Image from "next/image";
 import { Work } from "../../../../models/work";
 import { useRouter } from "next/navigation";
-import tailwindConfig from "../../../../../tailwind.config";
-import resolveConfig from "tailwindcss/resolveConfig";
 
 interface CardProps {
   work: Work;
-  onModalOpen: (content: string) => void;
   index: number;
 }
 
-const convertBreakpoint = (breakPoint: string): number => {
-  return Number(breakPoint.replace("px", ""));
-};
-
-const Card: FC<CardProps> = ({ work, onModalOpen, index }) => {
+const Card: FC<CardProps> = ({ work, index }) => {
   const router = useRouter();
-  const fullConfig = resolveConfig(tailwindConfig);
 
   const handleClick = useCallback(() => {
-    const breakpoints = fullConfig.theme.screens;
-    const screenW = window.innerWidth;
-    if (screenW > convertBreakpoint(breakpoints["sm"])) {
-      onModalOpen(work.name);
-    } else {
-      router.push(`/${work.url}`);
-    }
+    router.push(`/${work.url}`);
   }, []);
 
   return (

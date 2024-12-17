@@ -22,7 +22,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           <Image
             className="rounded-2xl bg-white w-[100px] h-[100px] p-4 lg:w-[264px] lg:h-[264px] lg:p-8"
             src={work.logo}
-            alt="Logo"  
+            alt="Logo"
           />
         </motion.div>
         <motion.div
@@ -32,9 +32,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           transition={{ delay: 0.3 }}
         >
           <div>
-            <h3 className="sm:text-xl md:text-2xl lg:text-3xl">
-              {work.title}
-            </h3>
+            <h3 className="sm:text-xl md:text-2xl lg:text-3xl">{work.title}</h3>
             <h4 className="sm:text-lg md:text-xl lg:text-2xl">
               {startDate} {endDate ? `- ${endDate}` : ""}
             </h4>
@@ -51,21 +49,42 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
         initial={{ transform: "translateX(-200px)", opacity: 0 }}
         animate={{ transform: "translateX(0px)", opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="bg-gray-700 rounded-2xl p-4 flex flex-col md:flex-row"
+        className="bg-gray-700 rounded-2xl p-4 flex flex-col"
       >
-        <Image
-          className="rounded-2xl bg-white w-full h-[124px] lg:w-[800px] lg:h-[400px] p-8"
-          src={work.logo}
-          alt="Dashboard Page"
-        />
+        <div className="flex justify-center">
+          {work.pic && (
+            <Image
+              className="rounded-2xl bg-white w-[80%] max-h-[400px] p-8"
+              src={work.pic}
+              alt="Dashboard Page"
+            />
+          )}
+          {work.embedLink && (
+            <iframe
+              className="w-[80%] h-[400px]"
+              src={work.embedLink}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          )}
+        </div>
         <div className="p-4 flex flex-col gap-4">
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl">
+          <p className="text-white sm:text-base md:text-lg lg:text-xl xl:text-2xlx">
             {work.description}
           </p>
           <div>
             <ul className="list-disc pl-4">
               {work.points.map((point, index) => {
-                return <li className="text-white text-sm lg:text-base" key={"point " + index}>{point}</li>;
+                return (
+                  <li
+                    className="text-white text-sm md:text-base lg:text-lg xl:text-xl"
+                    key={"point " + index}
+                  >
+                    {point}
+                  </li>
+                );
               })}
             </ul>
           </div>

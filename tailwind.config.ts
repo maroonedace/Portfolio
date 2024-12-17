@@ -9,6 +9,7 @@ const tailwindConfig = {
     extend: {
       fontFamily: {
         clash: ["var(--font-clash-display)"],
+        nunito: ["Nunito", "sans-serif"],
       },
       colors: {
         linkedIn: "#0A66C2",

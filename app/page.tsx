@@ -46,31 +46,15 @@ export default function Page() {
     }
   ];
 
-  const [isModalClicked, setIsModalClicked] = useState(false);
-  const [modalContent, setModalContent] = useState<string | null>(null);
-
-  const onModalOpen = (content: string) => {
-    setIsModalClicked(true);
-    setModalContent(content);
-  };
-
-  const onModalClose = () => {
-    setIsModalClicked(false);
-    setModalContent(null);
-  };
-
   return (
     <div className="relative">
       <Header links={links} />
       <Home componentRef={homeRef} />
       <AboutMe componentRef={aboutMeRef} />
       <Skills componentRef={skillsRef} />
-      <Work componentRef={workRef} onModalOpen={onModalOpen} />
+      <Work componentRef={workRef} />
       <Contact componentRef={contactRef} />
       <Footer />
-      {isModalClicked && (
-        <CardDisplay name={modalContent} onModalClose={onModalClose} />
-      )}
     </div>
   );
 }

@@ -1,42 +1,10 @@
 import { FC, MutableRefObject } from "react";
-import Image from "next/image";
 import { skillList } from "../../../models/skill";
-import { motion } from "framer-motion";
 import SkillList from "../reusable/skillList";
 
 interface SkillsProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
-
-const hoverColor = "rgb(31 41 55)"
-
-const variants = {
-  hidden: {
-    backgroundColor: "#FFFFFF",
-  },
-  visible: {
-    backgroundColor: hoverColor,
-    opacity: 0.8,
-  },
-};
-
-const imageVariants = {
-  hidden: {
-    opacity: 1,
-  },
-  visible: {
-    opacity: 0.5,
-  },
-};
-
-const textVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
 
 const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
