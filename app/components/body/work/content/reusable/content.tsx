@@ -26,7 +26,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
           />
         </motion.div>
         <motion.div
-          className="p-4 bg-gray-700 rounded-2xl flex flex-col w-full justify-between gap-4 text-white"
+          className="p-4 bg-cyan-800 rounded-2xl flex flex-col w-full justify-between gap-4 text-white"
           initial={{ transform: "translateX(-200px)", opacity: 0 }}
           animate={{ transform: "translateX(0px)", opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -49,7 +49,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
         initial={{ transform: "translateX(-200px)", opacity: 0 }}
         animate={{ transform: "translateX(0px)", opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="bg-gray-700 rounded-2xl p-4 flex flex-col"
+        className="bg-cyan-800 rounded-2xl p-4 flex flex-col"
       >
         <div className="flex justify-center">
           {work.pic && (
@@ -92,7 +92,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
             <Link
               href={work.website}
               target="_blank"
-              className="py-2 px-4 rounded-2xl border border-white text-white cursor-pointer hover:bg-gray-600"
+              className="py-2 px-4 rounded-2xl border border-white text-white cursor-pointer hover:bg-cyan-600"
             >
               View Website
             </Link>
@@ -100,7 +100,7 @@ const Content: FC<ContentProps> = ({ work, listOfSkills }) => {
               <Link
                 href={work.github}
                 target="_blank"
-                className="py-2 px-4 rounded-2xl border border-white text-white cursor-pointer hover:bg-gray-600"
+                className="py-2 px-4 rounded-2xl border border-white text-white cursor-pointer hover:bg-cyan-600"
               >
                 View Github
               </Link>

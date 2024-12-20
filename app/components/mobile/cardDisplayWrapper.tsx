@@ -5,7 +5,7 @@ const CardDisplayWrapper = ({children}) => {
         <div className="bg-gray-700 p-4 flex flex-col gap-4 h-full">
         <div>
           <Link
-            className="px-4 py-2 rounded-2xl border border-white bg-gray-800 hover:bg-gray-100 text-white"
+            className="px-4 py-2 rounded-2xl border border-white bg-gray-800 hover:bg-gray-600 text-white"
             href="/"
           >
             Return to Page
