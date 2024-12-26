@@ -12,7 +12,7 @@ interface AboutMeProps {
 
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   const fullConfig = resolveConfig(tailwindConfig);
-  const width = window.screen.width;
+  const width = window?.screen?.width;
 
   const [initial, setInitial] = useState<string>(
     calculateInitial(fullConfig, width)

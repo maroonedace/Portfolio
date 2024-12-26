@@ -42,7 +42,7 @@ interface SkillListProps {
 
 const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
   const fullConfig = resolveConfig(tailwindConfig);
-  const width = window.screen.width;
+  const width = window?.screen?.width;
 
   const [initial, setInitial] = useState<string>(
     calculateInitialSkills(fullConfig, width)
