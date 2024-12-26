@@ -1,13 +1,29 @@
-import { FC, MutableRefObject } from "react";
+import { FC, MutableRefObject, useCallback, useEffect, useState } from "react";
 import mePic from "../../../assets/home/me.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../../../tailwind.config";
+import { calculateInitial, calculateView, pxToNumber } from "../../../util/converter";
 
 interface AboutMeProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
 
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
+  const fullConfig = resolveConfig(tailwindConfig);
+  const width = window.screen.width;
+
+  const [initial, setInitial] = useState<string>(
+    calculateInitial(fullConfig, width)
+  );
+  const [view, setView] = useState<string>(calculateView(fullConfig, width));
+
+  useEffect(() => {
+    setInitial(calculateInitial(fullConfig, width));
+    setView(calculateView(fullConfig, width));
+  }, [width]);
+
   return (
     <div
       className="px-8 py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 text-white"
@@ -15,10 +31,10 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
     >
       <motion.div
         className="flex flex-col gap-8 md:flex-row items-center justify-center text-center"
-        initial={{ transform: "translateX(-100px)", opacity: 0 }}
-        whileInView={{transform: "translateX(0px)", opacity: 1}}
+        initial={{ transform: initial, opacity: 0 }}
+        whileInView={{ transform: view, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{delay: 0.3}}
+        transition={{ delay: 0.3 }}
       >
         <Image
           src={mePic}
