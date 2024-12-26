@@ -1,4 +1,4 @@
-export const pxToNumber = (value: string): number => {
+const pxToNumber = (value: string): number => {
     return Number(value.replace("px", ""))
 }
 

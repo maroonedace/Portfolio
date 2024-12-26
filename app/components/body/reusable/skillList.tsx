@@ -42,7 +42,7 @@ interface SkillListProps {
 
 const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
   const fullConfig = resolveConfig(tailwindConfig);
-  const width = window?.screen?.width;
+  const [width, setWidth] = useState<number | undefined>(undefined);
 
   const [initial, setInitial] = useState<string>(
     calculateInitialSkills(fullConfig, width)
@@ -50,11 +50,16 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
   const [view, setView] = useState<string>(calculateView(fullConfig, width));
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.screen.width);
+    }
+  }, []);
+
+  useEffect(() => {
     setInitial(calculateInitialSkills(fullConfig, width));
     setView(calculateView(fullConfig, width));
   }, [width]);
 
-  
   return listOfSkills.map((skill, index) => {
     return (
       <motion.div
@@ -76,9 +81,16 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
           initial="hidden"
         >
           <motion.div variants={imageVariants}>
-            <Image className="w-[48px] h-[48px] md:w-[64px] md:h-[64px] lg:w-[80px] lg:h-[80px]" src={skill.logo} alt="icon" />
+            <Image
+              className="w-[48px] h-[48px] md:w-[64px] md:h-[64px] lg:w-[80px] lg:h-[80px]"
+              src={skill.logo}
+              alt="icon"
+            />
           </motion.div>
-          <motion.p variants={textVariants} className="text-white absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center">
+          <motion.p
+            variants={textVariants}
+            className="text-white absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center"
+          >
             {skill.name}
           </motion.p>
         </motion.div>

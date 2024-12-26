@@ -4,7 +4,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../../../tailwind.config";
-import { calculateInitial, calculateView, pxToNumber } from "../../../util/converter";
+import {
+  calculateInitial,
+  calculateView,
+} from "../../../util/converter";
 
 interface AboutMeProps {
   componentRef: MutableRefObject<HTMLDivElement>;
@@ -12,12 +15,18 @@ interface AboutMeProps {
 
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   const fullConfig = resolveConfig(tailwindConfig);
-  const width = window?.screen?.width;
+  const [width, setWidth] = useState<number | undefined>(undefined);
 
   const [initial, setInitial] = useState<string>(
     calculateInitial(fullConfig, width)
   );
   const [view, setView] = useState<string>(calculateView(fullConfig, width));
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.screen.width);
+    }
+  }, []);
 
   useEffect(() => {
     setInitial(calculateInitial(fullConfig, width));
