@@ -24,7 +24,7 @@ const WorkDetailHeader: FC<WorkDetailHeaderProps> = ({
         animate={{ transform: "translateX(0px)", opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <motion.div className="flex shrink-0" layoutId={`card-${name}`}>
+        <motion.div className="flex shrink-0" layoutId={`card-${work.name}`}>
           <Image
             className="rounded-2xl bg-white w-[200px] h-[200px] p-4 md:w-[264px] md:h-[264px] lg:p-8"
             src={work.logo}
