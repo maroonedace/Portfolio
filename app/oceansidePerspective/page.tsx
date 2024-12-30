@@ -1,16 +1,16 @@
 "use client";
 
-import Content from "../components/body/work/content/reusable/content";
-import { opList } from "../models/skill";
-import { works } from "../models/work";
-import CardDisplayWrapper from "../components/mobile/cardDisplayWrapper";
+import WorkDetail from "../components/workDetail/details";
+import WorkDetailLayout from "../components/workDetail/layout";
+import Content from "./content";
 
 const OPPage = (): JSX.Element => {
-  const work = works.find((work) => work.name === "Oceanside Perspective");
   return (
-    <CardDisplayWrapper>
-      <Content work={work} listOfSkills={opList} />
-    </CardDisplayWrapper>
+    <WorkDetailLayout>
+      <WorkDetail workTitle="Oceanside Perspective">
+        <Content />
+      </WorkDetail>
+    </WorkDetailLayout>
   );
 };
 

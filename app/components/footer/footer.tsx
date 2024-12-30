@@ -9,7 +9,7 @@ const Footer = () => {
       <Link href="/">
         <Image className={`h-14 w-12`} src={marace} alt="logo" />
       </Link>
-      <p className="text-white">
+      <p className="">
         Icons by{" "}
         <Link className="underline" href="https://icons8.com" target="_blank">
           Icons8

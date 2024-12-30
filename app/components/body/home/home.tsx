@@ -13,7 +13,7 @@ interface HomeProps {
 const Home: FC<HomeProps> = ({ componentRef }) => {
   return (
     <div
-      className="text-white relative bg-black h-[40vh] md:h-[60vh] lg:h-[80vh]"
+      className=" relative bg-black h-[40vh] md:h-[60vh] lg:h-[80vh]"
       ref={componentRef}
     >
       <Image

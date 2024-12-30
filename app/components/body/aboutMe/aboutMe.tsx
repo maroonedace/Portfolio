@@ -1,4 +1,4 @@
-import { FC, MutableRefObject, useCallback, useEffect, useState } from "react";
+import { FC, MutableRefObject } from "react";
 import mePic from "../../../assets/home/me.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ interface AboutMeProps {
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   return (
     <div
-      className="px-8 py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 text-white"
+      className="px-8 py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
       ref={componentRef}
     >
       <motion.div

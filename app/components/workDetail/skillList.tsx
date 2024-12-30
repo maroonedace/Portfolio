@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
-import { Skill } from "../../../../../models/skill";
+import { Skill } from "../../models/skill";
 
-interface TechSkillListProps {
+interface WorkSkillListProps {
   listOfSkills: Skill[];
 }
 
-const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
+const WorkSkillList: FC<WorkSkillListProps> = ({ listOfSkills }) => {
   return (
     <motion.div className="flex gap-2 lg:gap-4 flex-wrap">
       {listOfSkills.map((skill) => {
@@ -30,4 +30,4 @@ const TechSkillList: FC<TechSkillListProps> = ({ listOfSkills }) => {
   );
 };
 
-export default TechSkillList;
+export default WorkSkillList;

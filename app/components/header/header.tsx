@@ -40,7 +40,7 @@ const Header: FC<HeaderProps> = ({ links }) => {
           return (
             <button
               key={link.name}
-              className="text-white hover:underline underline-offset-2 text-sm sm:text-md lg:text-lg"
+              className=" hover:underline underline-offset-2 text-sm sm:text-md lg:text-lg"
               onClick={() => handleScrollToWork(link.ref)}
             >
               {link.name}

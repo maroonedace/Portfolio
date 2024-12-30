@@ -23,7 +23,7 @@ export interface Skill {
   logo: any
 }
 
-export const nZeroList: Skill[] = [
+export const nZeroSkillList: Skill[] = [
   {
     name: "Typescript",
     logo: typeScriptSvg,
@@ -55,7 +55,7 @@ export const nZeroList: Skill[] = [
 
 ]
 
-export const opList: Skill[] = [
+export const opSkillList: Skill[] = [
   {
     name: "Typescript",
     logo: typeScriptSvg,
@@ -80,7 +80,7 @@ export const opList: Skill[] = [
 
 ]
 
-export const tritonXRList: Skill[] = [
+export const tritonXRSkillList: Skill[] = [
   {
     name: "C#",
     logo: cSvg,

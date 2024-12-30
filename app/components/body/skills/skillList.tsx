@@ -67,7 +67,7 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
           </motion.div>
           <motion.p
             variants={textVariants}
-            className="text-white absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center"
+            className=" absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center"
           >
             {skill.name}
           </motion.p>

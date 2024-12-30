@@ -1,16 +1,16 @@
 "use client";
 
-import Content from "../components/body/work/content/reusable/content";
-import { works } from "../models/work";
-import { tritonXRList } from "../models/skill";
-import CardDisplayWrapper from "../components/mobile/cardDisplayWrapper";
+import WorkDetail from "../components/workDetail/details";
+import WorkDetailLayout from "../components/workDetail/layout";
+import Content from "./content";
 
 const TritonXRPage = (): JSX.Element => {
-  const work = works.find((work) => work.name === "TritonXR");
   return (
-    <CardDisplayWrapper>
-      <Content work={work} listOfSkills={tritonXRList} />
-    </CardDisplayWrapper>
+    <WorkDetailLayout>
+      <WorkDetail workTitle="TritonXR">
+        <Content />
+      </WorkDetail>
+    </WorkDetailLayout>
   );
 };
 

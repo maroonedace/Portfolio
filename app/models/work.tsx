@@ -4,16 +4,14 @@ import NZeroPic from "../assets/work/nZero/nzeroDashboard.jpeg"
 import OPLogo from "../assets/work/op/opLogo.jpeg";
 import OPPic from "../assets/work/op/opdashboard.png";
 import TritonXRLogo from "../assets/work/TritonXR.png";
-import NZero from "../components/body/work/content/nzero";
-import OP from "../components/body/work/content/op";
-import TritonXR from "../components/body/work/content/tritonXR";
+import { nZeroSkillList, opSkillList, Skill, tritonXRSkillList } from "./skill";
 
 export type Work = {
   name: string;
   url: string;
   title: string;
   logo: StaticImageData;
-  content: JSX.Element;
+  listOfSkills: Skill[];
   startDate: Date;
   pic?: StaticImageData;
   embedLink?: string;
@@ -32,7 +30,7 @@ export const works: Work[] = [
     logo: NZeroSVG,
     startDate: new Date("2021-09-01T00:00:00"),
     endDate: new Date("2024-03-01T00:00:00"),
-    content: <NZero />,
+    listOfSkills: nZeroSkillList,
     pic: NZeroPic,
     website: "https://nzero.com",
     description: `NZero is a real-time data decarbonization platform for
@@ -54,7 +52,7 @@ export const works: Work[] = [
     logo: OPLogo,
     startDate: new Date("2024-05-01T00:00:00"),
     endDate: null,
-    content: <OP />,
+    listOfSkills: opSkillList,
     pic: OPPic,
     website: "https://www.oceansideperspective.org",
     description:
@@ -73,7 +71,7 @@ export const works: Work[] = [
     logo: TritonXRLogo,
     startDate: new Date("2018-11-01T00:00:00"),
     endDate: new Date("2020-06-01T00:00:00"),
-    content: <TritonXR />,
+    listOfSkills: tritonXRSkillList,
     embedLink: "https://www.youtube.com/embed/z-KPfnebmsY?si=Bq1rsKqwuddQ_xxN",
     website: "https://www.facebook.com/tritonxr/",
     github: "https://github.com/TritonXR/FoodQuest",

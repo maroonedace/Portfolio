@@ -2,12 +2,11 @@
 
 import { MutableRefObject, useRef, useState } from "react";
 import AboutMe from "./components/body/aboutMe/aboutMe";
-import Home from "./components/body/landing/home";
+import Home from "./components/body/home/home";
 import Work from "./components/body/work/work";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Skills from "./components/body/skills/skills";
-import CardDisplay from "./components/body/work/card/cardDisplay";
 import Contact from "./components/body/contact/contact";
 
 export interface Links {
@@ -47,7 +46,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="relative">
+    <>
       <Header links={links} />
       <Home componentRef={homeRef} />
       <AboutMe componentRef={aboutMeRef} />
@@ -55,6 +54,6 @@ export default function Page() {
       <Work componentRef={workRef} />
       <Contact componentRef={contactRef} />
       <Footer />
-    </div>
+    </>
   );
 }
