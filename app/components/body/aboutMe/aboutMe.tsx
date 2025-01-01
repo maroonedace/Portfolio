@@ -10,7 +10,7 @@ interface AboutMeProps {
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   return (
     <div
-      className="flex items-center px-8 h-[85vh] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
+      className="flex items-center px-8 h-[90vh] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
       ref={componentRef}
     >
       <motion.div

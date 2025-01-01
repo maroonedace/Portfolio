@@ -14,7 +14,7 @@ const Content = () => {
           When I first got employed by NZero, I was very uncertain about
           performing well as it as my first professional job working in my
           field. However, I was able to quickly adapt to the environment and
-          able to exceed the expectations of my leaders. Thw work revolved
+          able to exceed the expectations of my leaders. The work revolved
           around a data platform that allowed our customers to better understand
           where their emissions is coming from. I mainly focused on developing
           on the front end of the application, but I also had opportunities to
