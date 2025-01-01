@@ -10,11 +10,11 @@ interface AboutMeProps {
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
   return (
     <div
-      className="px-8 py-[60px] sm:py-[80px] md:py-[100px] lg:py-[120px] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
+      className="flex items-center px-8 h-[85vh] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
       ref={componentRef}
     >
       <motion.div
-        className="flex flex-col gap-8 md:flex-row items-center justify-center text-center"
+        className="flex flex-col gap-8 md:flex-row items-center text-center"
         initial={{ transform: "translateY(200px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0px)", opacity: 1 }}
         viewport={{ once: true }}
@@ -27,7 +27,7 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
         />
         <div className="flex flex-col gap-4 items-center">
           <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">About Me</h2>
-          <p className="w-full sm:text-base md:text-lg lg:text-2xl">
+          <p className="w-full sm:text-base md:text-lg lg:text-xl">
             As a software engineer who has over 5 years of software development
             experience, I have found myself working on a variety of
             opportunities ranging from working in virtual reality experiences in

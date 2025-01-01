@@ -60,14 +60,14 @@ const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
         >
           <motion.div variants={imageVariants}>
             <Image
-              className="w-[48px] h-[48px] md:w-[64px] md:h-[64px] lg:w-[80px] lg:h-[80px]"
+              className="w-[48px] h-[48px] sm:w-[64px] sm:h-[64px] md:w-[80px] md:h-[80px] lg:w-[96px] lg:h-[96px]"
               src={skill.logo}
               alt="icon"
             />
           </motion.div>
           <motion.p
             variants={textVariants}
-            className=" absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center"
+            className="absolute text-xs sm:text-sm md:text-base lg:text-lg p-2 text-center"
           >
             {skill.name}
           </motion.p>

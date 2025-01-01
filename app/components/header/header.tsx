@@ -33,7 +33,7 @@ const Header: FC<HeaderProps> = ({ links }) => {
       className={`bg-gray-800 p-${headerPadding} sticky top-0 flex justify-between z-10`}
     >
       <Link href="/">
-        <Image className={`h-${headerHeight} w-12`} src={marace} alt="logo" />
+        <Image className={`h-${headerHeight} w-12`} src={marace} alt="logo" priority />
       </Link>
       <div className="flex gap-4">
         {links.map((link) => {

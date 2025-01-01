@@ -45,6 +45,7 @@ const Contact: FC<ContactProps> = ({ componentRef }) => {
         {contactItems.map((item) => {
           return (
             <motion.div
+              key={item.name}
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}

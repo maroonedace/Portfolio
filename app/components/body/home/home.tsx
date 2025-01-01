@@ -13,7 +13,7 @@ interface HomeProps {
 const Home: FC<HomeProps> = ({ componentRef }) => {
   return (
     <div
-      className=" relative bg-black h-[40vh] md:h-[60vh] lg:h-[80vh]"
+      className="relative bg-black h-[85vh]"
       ref={componentRef}
     >
       <Image
@@ -23,29 +23,22 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
         alt="back"
       />
       <motion.div
-        className="flex flex-col absolute inset-0 justify-center items-center text-center p-2 gap-2"
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
+        className="h-full"
       >
-        <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">
-          Software Engineer
-        </h2>
-        <h4 className="sm:text-lg md:text-xl lg:text-2xl">
-          Always looking for new opportunities to grow and engage in insightful
-          conversations
-        </h4>
-      </motion.div>
-      <div className="flex flex-col items-center gap-4 absolute inset-x-0 bottom-8">
-        <motion.div
-          key="resume"
-          initial={{ scale: 0, opacity: 0.5 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            delay: 0.3,
-          }}
-        >
+        <div className="flex flex-col absolute inset-0 justify-center items-center text-center p-2 gap-2">
+          <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">
+            Software Engineer
+          </h2>
+          <h4 className="sm:text-lg md:text-xl lg:text-2xl">
+            Always looking for new opportunities to grow and engage in
+            insightful conversations
+          </h4>
+        </div>
+        <div className="flex flex-col items-center gap-4 absolute inset-x-0 bottom-8">
           <motion.button
             whileHover={{
               scale: 1.1,
@@ -67,8 +60,8 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
               <p className="sm:text-base md:text-lg lg:text-xl">View Resume</p>
             </Link>
           </motion.button>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

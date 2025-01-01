@@ -6,8 +6,6 @@ import javaSvg from "../assets/skills/java.svg";
 import pythonSvg from "../assets/skills/python.svg";
 import reactSvg from "../assets/skills/react.svg";
 import nodeJsSvg from "../assets/skills/nodejs.svg";
-import html5Svg from "../assets/skills/html5.svg";
-import css3Svg from "../assets/skills/css3.svg";
 import rubyOnRailsSvg from "../assets/skills/rubyOnRails.svg";
 import cSvg from "../assets/skills/c.svg";
 import unitySvg from "../assets/skills/unity.svg";
@@ -17,6 +15,10 @@ import supbaseSvg from "../assets/skills/supabase.svg";
 import nextjsSvg from "../assets/skills/nextjs.svg";
 import rubySvg from "../assets/skills/ruby.svg";
 import materialUISvg from "../assets/skills/materialUI.svg";
+import reduxSvg from "../assets/skills/redux.svg";
+import gitSvg from "../assets/skills/git.svg";
+import herokuSvg from "../assets/skills/heroku.svg";
+import awsSvg from "../assets/skills/aws.svg";
 
 export interface Skill {
   name: string
@@ -93,40 +95,35 @@ export const tritonXRSkillList: Skill[] = [
 
 ]
 
+export const languageSkillList: Skill[] = [
+  {
+    name: "Javascript",
+    logo: javascriptSvg,
+  },
+  {
+    name: "Typescript",
+    logo: typeScriptSvg,
+  },
+  {
+    name: "Python",
+    logo: pythonSvg,
+  },
+  {
+    name: "C#",
+    logo: cSvg,
+  },
+  {
+    name: "Ruby",
+    logo: rubySvg,
+  },
+  {
+    name: "Java",
+    logo: javaSvg,
+  },
+]
 
-export const skillList: Skill[] = [
-    {
-      name: "Javascript",
-      logo: javascriptSvg,
-    },
-    {
-      name: "Typescript",
-      logo: typeScriptSvg,
-    },
-    {
-      name: "Python",
-      logo: pythonSvg,
-    },
-    {
-      name: "C#",
-      logo: cSvg,
-    },
-    {
-      name: "Ruby",
-      logo: rubySvg,
-    },
-    {
-      name: "Java",
-      logo: javaSvg,
-    },
-    {
-      name: "HTML",
-      logo: html5Svg,
-    },
-    {
-      name: "CSS",
-      logo: css3Svg,
-    },
+
+export const technologySkillList: Skill[] = [
     {
       name: "React.js",
       logo: reactSvg,
@@ -134,6 +131,14 @@ export const skillList: Skill[] = [
     {
       name: "Next.js",
       logo: nextjsSvg,
+    },
+    {
+      name: "Redux",
+      logo: reduxSvg,
+    },
+    {
+      name: "Git",
+      logo: gitSvg,
     },
     {
       name: "Ruby on Rails",
@@ -158,6 +163,14 @@ export const skillList: Skill[] = [
     {
       name: "Docker",
       logo: dockerSvg,
+    },
+    {
+      name: "Heroku",
+      logo: herokuSvg,
+    },
+    {
+      name: "AWS",
+      logo: awsSvg,
     },
     {
       name: "Tailwind CSS",
