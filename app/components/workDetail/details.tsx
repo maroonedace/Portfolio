@@ -23,7 +23,7 @@ const WorkDetail: FC<WorkDetailProps> = ({ workTitle, children }) => {
         className="bg-cyan-800 rounded-2xl py-4 px-8 flex flex-col"
       >
         {children}
-        <div className="p-4 flex flex-col gap-4">
+        <div className="py-4 flex flex-col gap-4">
           <div className="flex gap-4">
             <Link
               href={workDetails.website}

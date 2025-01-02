@@ -1,6 +1,5 @@
 import { StaticImageData } from "next/image";
 import NZeroSVG from "../assets/work/nZero/nZero.svg";
-import NZeroPic from "../assets/work/nZero/nzeroDashboard.jpeg"
 import OPLogo from "../assets/work/op/opLogo.jpeg";
 import OPPic from "../assets/work/op/opdashboard.png";
 import TritonXRLogo from "../assets/work/TritonXR.png";
@@ -13,7 +12,6 @@ export type Work = {
   logo: StaticImageData;
   listOfSkills: Skill[];
   startDate: Date;
-  pic?: StaticImageData;
   embedLink?: string;
   endDate: Date | null;
   website: string;
@@ -31,7 +29,6 @@ export const works: Work[] = [
     startDate: new Date("2021-09-01T00:00:00"),
     endDate: new Date("2024-03-01T00:00:00"),
     listOfSkills: nZeroSkillList,
-    pic: NZeroPic,
     website: "https://nzero.com",
     description: `NZero is a real-time data decarbonization platform for
             sustainability leaders focusing on performance tracking and
@@ -53,7 +50,6 @@ export const works: Work[] = [
     startDate: new Date("2024-05-01T00:00:00"),
     endDate: null,
     listOfSkills: opSkillList,
-    pic: OPPic,
     website: "https://www.oceansideperspective.org",
     description:
       "Worked on the non-profit learning platform created to integrate classic concepts and modern technology by building an intellectual bridge and connecting multi-generational thought leaders. ",

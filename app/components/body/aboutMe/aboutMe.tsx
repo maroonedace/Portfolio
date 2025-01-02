@@ -14,7 +14,7 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
       ref={componentRef}
     >
       <motion.div
-        className="flex flex-col gap-8 md:flex-row items-center text-center"
+        className="flex flex-col gap-8 md:flex-row items-center"
         initial={{ transform: "translateY(200px)", opacity: 0 }}
         whileInView={{ transform: "translateY(0px)", opacity: 1 }}
         viewport={{ once: true }}
@@ -25,8 +25,10 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
           className=" w-[200px] md:w-[300px] rounded-2xl"
           alt="Self Portrait"
         />
-        <div className="flex flex-col gap-4 items-center">
-          <h2 className="sm:text-2xl md:text-3xl lg:text-4xl">About Me</h2>
+        <div className="flex flex-col gap-4">
+          <h2 className="sm:text-2xl md:text-3xl lg:text-4xl text-center">
+            About Me
+          </h2>
           <p className="w-full sm:text-base md:text-lg lg:text-xl">
             As a software engineer who has over 5 years of software development
             experience, I have found myself working on a variety of
@@ -35,6 +37,11 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
             with Python, and getting familiar with the full stack development
             utilizing many frameworks such as React.js, Ruby on Rails, and
             PostgreSQL.
+          </p>
+          <p className="w-full sm:text-base md:text-lg lg:text-xl">
+            In my free time, I enjoy taking casual walks to reflect and
+            destress, embarking on adventures like exploring new cities or
+            hiking, and spending quality time with family and friends.
           </p>
         </div>
       </motion.div>
