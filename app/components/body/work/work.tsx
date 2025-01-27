@@ -10,6 +10,7 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
   return (
     <div
       className="px-4 flex flex-col gap-8 items-center justify-center bg-cyan-700 py-10 md:py-20"
+      id="work"
       ref={componentRef}
     >
       <motion.div

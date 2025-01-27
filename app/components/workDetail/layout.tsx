@@ -6,7 +6,7 @@ const WorkDetailLayout = ({ children }) => {
       <div>
         <Link
           className="px-4 py-2 rounded-2xl border border-white bg-gray-800 hover:bg-gray-600 "
-          href="/"
+          href="/#work"
         >
           Return to Page
         </Link>
