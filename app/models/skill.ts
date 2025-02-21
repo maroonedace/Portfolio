@@ -6,11 +6,12 @@ import javaSvg from "../assets/skills/java.svg";
 import pythonSvg from "../assets/skills/python.svg";
 import reactSvg from "../assets/skills/react.svg";
 import nodeJsSvg from "../assets/skills/nodejs.svg";
-import rubyOnRailsSvg from "../assets/skills/rubyOnRails.svg";
+import rubyOnRailsSvg from "../assets/skills/ruby-on-rails.svg";
 import cSvg from "../assets/skills/c.svg";
 import unitySvg from "../assets/skills/unity.svg";
 import postgresqlSvg from "../assets/skills/postgresql.svg";
 import mongodbSvg from "../assets/skills/mongodb.svg";
+import microsoftSqlServerSvg from "../assets/skills/microsoft-sql-server.svg"
 import supbaseSvg from "../assets/skills/supabase.svg";
 import nextjsSvg from "../assets/skills/nextjs.svg";
 import rubySvg from "../assets/skills/ruby.svg";
@@ -19,6 +20,12 @@ import reduxSvg from "../assets/skills/redux.svg";
 import gitSvg from "../assets/skills/git.svg";
 import herokuSvg from "../assets/skills/heroku.svg";
 import awsSvg from "../assets/skills/aws.svg";
+import rustSvg from "../assets/skills/rust.svg"
+import chatGptSvg from "../assets/skills/chatgpt.svg"
+import claudeSvg from "../assets/skills/claude.svg"
+import deepSeekSvg from "../assets/skills/deepseek.svg"
+import githubCopilotSvg from "../assets/skills/github-copilot.svg"
+import figmaSvg from "../assets/skills/figma.svg"
 
 export interface Skill {
   name: string
@@ -120,6 +127,10 @@ export const languageSkillList: Skill[] = [
     name: "Java",
     logo: javaSvg,
   },
+  {
+    name: "Rust",
+    logo: rustSvg
+  }
 ]
 
 
@@ -161,6 +172,10 @@ export const technologySkillList: Skill[] = [
       logo: supbaseSvg,
     },
     {
+      name: "Microsoft SQL Server",
+      logo: microsoftSqlServerSvg,
+    },
+    {
       name: "Docker",
       logo: dockerSvg,
     },
@@ -181,7 +196,27 @@ export const technologySkillList: Skill[] = [
       logo: materialUISvg,
     },
     {
+      name: "Figma",
+      logo: figmaSvg,
+    },
+    {
       name: "Unity",
       logo: unitySvg,
     },
+    {
+      name: "ChatGPT",
+      logo: chatGptSvg,
+    },
+    {
+      name: "Claude",
+      logo: claudeSvg,
+    },
+    {
+      name: "DeepSeek",
+      logo: deepSeekSvg,
+    },
+    {
+      name: "Github Copilot",
+      logo: githubCopilotSvg
+    }
   ];
