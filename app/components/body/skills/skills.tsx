@@ -11,7 +11,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
     <div ref={componentRef}>
       <div className="bg-cyan-700 px-4">
-        <div className="flex flex-col gap-4 bg-gray-700 rounded-2xl h-[90vh] p-8">
+        <div className="flex flex-col gap-4 bg-gray-700 rounded-2xl md:h-[90vh] p-8">
           <div className="flex flex-col text-center gap-8 h-full justify-center items-center">
             <div className="flex flex-col gap-4">
               <motion.h3
