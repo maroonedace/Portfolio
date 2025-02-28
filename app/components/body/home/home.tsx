@@ -1,21 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FC, MutableRefObject } from "react";
+import { FC, MutableRefObject, useEffect, useState } from "react";
 
 import back from "../../../assets/home/back.jpg";
 import fileSvg from "../../../assets/home/file.svg";
+import { checkAboveThreshold } from "../utils/check";
 
 interface HomeProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
 
 const Home: FC<HomeProps> = ({ componentRef }) => {
+  const [isAboveThreshold, setIsAboveThreshold] = useState(false);
+
+  useEffect(() => {
+    if (componentRef?.current) {
+      setIsAboveThreshold(checkAboveThreshold(componentRef));
+    }
+  }, [componentRef]);
+
   return (
-    <div
-      className="relative bg-black h-[90vh]"
-      ref={componentRef}
-    >
+    <div className="relative bg-black h-[90vh]" ref={componentRef}>
       <Image
         className="absolute h-full opacity-85"
         priority
@@ -24,7 +30,8 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
       />
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
+        animate={isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
+        whileInView={!isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
         className="h-full"
@@ -43,13 +50,12 @@ const Home: FC<HomeProps> = ({ componentRef }) => {
             whileHover={{
               scale: 1.1,
             }}
-            whileTap={{
-              scale: 0.9,
-            }}
+            tabIndex={-1}
           >
             <Link
               href="/resume.pdf"
               target="_blank"
+              tabIndex={0}
               className="flex gap-2 border py-2 px-4 rounded border-white items-center"
             >
               <Image

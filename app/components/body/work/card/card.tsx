@@ -9,9 +9,10 @@ import { useRouter } from "next/navigation";
 interface CardProps {
   work: Work;
   index: number;
+  isAboveThreshold: boolean;
 }
 
-const Card: FC<CardProps> = ({ work, index }) => {
+const Card: FC<CardProps> = ({ work, index, isAboveThreshold }) => {
   const router = useRouter();
 
   const handleClick = useCallback(() => {
@@ -23,7 +24,8 @@ const Card: FC<CardProps> = ({ work, index }) => {
       <motion.div
         className={`w-[100px] h-[100px] sm:w-[148px] sm:h-[148px] md:w-[248px] md:h-[248px] cursor-pointer`}
         initial={{ transform: "translateY(200px)", opacity: 0 }}
-        whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+        animate={isAboveThreshold ? { transform: "translateY(0px)", opacity: 1 }: {}}
+        whileInView={!isAboveThreshold ? { transform: "translateY(0px)", opacity: 1 }: {}}
         transition={{ delay: 0.3 + index * 0.3 }}
         onClick={handleClick}
         viewport={{ once: true }}

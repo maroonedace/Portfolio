@@ -54,9 +54,8 @@ const Contact: FC<ContactProps> = ({ componentRef }) => {
               <motion.div
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1 }}
               >
-                <Link href={item.href} className="flex items-center">
+                <Link href={item.href} tabIndex={0} className="flex items-center" target="_blank">
                   <Image
                     width="48"
                     height="48"

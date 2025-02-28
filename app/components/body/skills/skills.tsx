@@ -1,13 +1,24 @@
-import { FC, MutableRefObject } from "react";
+import { FC, MutableRefObject, useEffect, useState } from "react";
 import { languageSkillList, technologySkillList } from "../../../models/skill";
 import SkillList from "./skillList";
 import { motion } from "framer-motion";
+import { checkAboveThreshold } from "../utils/check";
 
 interface SkillsProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
 
 const Skills: FC<SkillsProps> = ({ componentRef }) => {
+
+    const [isAboveThreshold, setIsAboveThreshold] = useState(false);
+  
+    useEffect(() => {
+      if (componentRef?.current) {
+        setIsAboveThreshold(checkAboveThreshold(componentRef));
+      }
+    }, [componentRef]);
+
+    
   return (
     <div ref={componentRef}>
       <div className="bg-cyan-700 px-4">
@@ -16,7 +27,8 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
             <div className="flex flex-col gap-4">
               <motion.h3
                 initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                animate={isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
+                whileInView={!isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 className="sm:text-xl md:text-2xl lg:text-3xl"
@@ -24,13 +36,14 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
                 Languages
               </motion.h3>
               <div className="flex flex-row gap-4 flex-wrap justify-center items-center">
-                <SkillList listOfSkills={languageSkillList} />
+                <SkillList listOfSkills={languageSkillList} isAboveThreshold={isAboveThreshold} />
               </div>
             </div>
             <div className="flex flex-col gap-4">
               <motion.h3
                 initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                animate={isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
+                whileInView={!isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 className="sm:text-xl md:text-2xl lg:text-3xl"
@@ -38,7 +51,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
                 Technologies
               </motion.h3>
               <div className="flex flex-row gap-4 flex-wrap justify-center items-center">
-                <SkillList listOfSkills={technologySkillList} />
+                <SkillList listOfSkills={technologySkillList} isAboveThreshold={isAboveThreshold} />
               </div>
             </div>
           </div>

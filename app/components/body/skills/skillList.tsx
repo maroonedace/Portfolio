@@ -35,20 +35,22 @@ const textVariants = {
 
 interface SkillListProps {
   listOfSkills: Skill[];
+  isAboveThreshold: boolean;
 }
 
-const SkillList: FC<SkillListProps> = ({ listOfSkills }) => {
+const SkillList: FC<SkillListProps> = ({ listOfSkills, isAboveThreshold }) => {
   return listOfSkills.map((skill, index) => {
     return (
       <motion.div
         key={skill.name}
         className="bg-white rounded-2xl"
         initial={{ transform: "translateY(24px)", opacity: 0 }}
+        animate={isAboveThreshold ? { transform: "translateY(0px)", opacity: 1 } : {}}
         whileHover={{
           backgroundColor: hoverColor,
           transition: { duration: 0 },
         }}
-        whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+        whileInView={!isAboveThreshold? { transform: "translateY(0px)", opacity: 1 }: {}}
         viewport={{ once: true }}
         transition={{ delay: 0.3 + index * 0.05 }}
       >

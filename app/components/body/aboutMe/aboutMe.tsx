@@ -1,13 +1,22 @@
-import { FC, MutableRefObject } from "react";
+import { FC, MutableRefObject, useEffect, useState } from "react";
 import mePic from "../../../assets/home/me.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { checkAboveThreshold } from "../utils/check";
 
 interface AboutMeProps {
   componentRef: MutableRefObject<HTMLDivElement>;
 }
 
 const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
+  const [isAboveThreshold, setIsAboveThreshold] = useState(false);
+
+  useEffect(() => {
+    if (componentRef?.current) {
+      setIsAboveThreshold(checkAboveThreshold(componentRef));
+    }
+  }, [componentRef]);
+
   return (
     <div
       className="flex items-center px-8 h-[90vh] bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700 "
@@ -16,7 +25,12 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
       <motion.div
         className="flex flex-col gap-8 md:flex-row items-center"
         initial={{ transform: "translateY(200px)", opacity: 0 }}
-        whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+        animate={
+          isAboveThreshold ? { transform: "translateY(0px)", opacity: 1 } : {}
+        }
+        whileInView={
+          !isAboveThreshold ? { transform: "translateY(0px)", opacity: 1 } : {}
+        }
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
       >
