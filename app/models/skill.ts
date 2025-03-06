@@ -23,7 +23,6 @@ import awsSvg from "../assets/skills/aws.svg";
 import rustSvg from "../assets/skills/rust.svg"
 import chatGptSvg from "../assets/skills/chatgpt.svg"
 import claudeSvg from "../assets/skills/claude.svg"
-import deepSeekSvg from "../assets/skills/deepseek.svg"
 import githubCopilotSvg from "../assets/skills/github-copilot.svg"
 import figmaSvg from "../assets/skills/figma.svg"
 
@@ -210,10 +209,6 @@ export const technologySkillList: Skill[] = [
     {
       name: "Claude",
       logo: claudeSvg,
-    },
-    {
-      name: "DeepSeek",
-      logo: deepSeekSvg,
     },
     {
       name: "Github Copilot",
