@@ -33,15 +33,15 @@ const WorkDetailHeader: FC<WorkDetailHeaderProps> = ({
         </motion.div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col">
-            <h3 className="sm:text-xl md:text-2xl lg:text-3xl">{work.title}</h3>
-            <h4 className="sm:text-lg md:text-xl lg:text-2xl">
+            <span className="sm:text-xl md:text-2xl lg:text-3xl">{work.title}</span>
+            <span className="sm:text-lg md:text-xl lg:text-2xl">
               {startDate} {endDate ? `- ${endDate}` : ""}
-            </h4>
+            </span>
           </div>
           <div className="flex flex-col gap-2">
-            <h4 className="sm:text-lg md:text-xl lg:text-2xl">
+            <span className="sm:text-lg md:text-xl lg:text-2xl">
               Technologies Utilized
-            </h4>
+            </span>
             <WorkSkillList listOfSkills={work.listOfSkills} />
           </div>
         </div>

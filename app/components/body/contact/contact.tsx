@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import mailSvg from "../../../assets/contact/mail.svg";
-import linkedInSvg from "../../../assets/home/linkedin.svg";
-import githubSvg from "../../../assets/home/github.svg";
+import linkedInSvg from "../../../assets/socials/linkedin.svg";
+import githubSvg from "../../../assets/socials/github.svg";
 import { FC, MutableRefObject } from "react";
 
 type ContactItem = {

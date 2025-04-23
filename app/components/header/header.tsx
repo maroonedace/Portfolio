@@ -6,6 +6,9 @@ import marace from "../../assets/marace.png";
 import { Links } from "../../page";
 import { FC, MutableRefObject } from "react";
 import { animate } from "framer-motion";
+import MobileLinks from "./mobileLinks/mobileLinks";
+import Socials from "./socials/socials";
+import NavigationLinks from "./navigationLinks/navigationLinks";
 
 interface HeaderProps {
   links: Links[];
@@ -13,7 +16,8 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ links }) => {
   const headerHeight = 14;
-  const headerPadding = 2;
+  const headerPadding = 4;
+
   const handleScrollToWork = (ref: MutableRefObject<HTMLDivElement>) => {
     if (ref.current) {
       animate(
@@ -30,24 +34,26 @@ const Header: FC<HeaderProps> = ({ links }) => {
 
   return (
     <div
-      className={`bg-gray-800 p-${headerPadding} sticky top-0 flex justify-between z-10`}
+      className={`bg-gray-800 p-${headerPadding} sticky top-0 flex z-10 justify-between items-center`}
     >
-      <Link href="/">
-        <Image className={`h-${headerHeight} w-12`} src={marace} alt="logo" priority />
-      </Link>
-      <div className="flex gap-4">
-        {links.map((link) => {
-          return (
-            <button
-              key={link.name}
-              className=" hover:underline underline-offset-2 text-sm sm:text-md lg:text-lg"
-              onClick={() => handleScrollToWork(link.ref)}
-            >
-              {link.name}
-            </button>
-          );
-        })}
+      <div className="flex items-center gap-4">
+        <Link href="/">
+          <Image
+            className={`h-${headerHeight} w-12`}
+            src={marace}
+            alt="logo"
+            priority
+          />
+        </Link>
+        <MobileLinks links={links} handleScrollToWork={handleScrollToWork} />
+        <div className="hidden gap-4 sm:flex">
+          <NavigationLinks
+            links={links}
+            handleScrollToWork={handleScrollToWork}
+          />
+        </div>
       </div>
+      <Socials />
     </div>
   );
 };
