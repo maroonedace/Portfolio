@@ -41,12 +41,12 @@ const Header: FC<HeaderProps> = ({ links }) => {
           <Image
             className={`h-${headerHeight} w-12`}
             src={marace}
-            alt="logo"
+            alt="Brand Logo"
             priority
           />
         </Link>
         <MobileLinks links={links} handleScrollToWork={handleScrollToWork} />
-        <div className="hidden gap-4 sm:flex">
+        <div className="hidden gap-4 md:flex">
           <NavigationLinks
             links={links}
             handleScrollToWork={handleScrollToWork}

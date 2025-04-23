@@ -5,7 +5,8 @@ const NavigationLinks = ({ links, handleScrollToWork }) => {
         return (
           <button
             key={link.name}
-            className="text-md px-4 py-2 hover:bg-gray-700 rounded-full duration-150"
+            tabIndex={0}
+            className="text-xl md:text-md px-4 py-2 hover:bg-gray-700 rounded-full duration-150"
             onClick={() => handleScrollToWork(link.ref)}
           >
             {link.name}
