@@ -6,7 +6,6 @@ import marace from "../../assets/marace.png";
 import menu from "../../assets/home/menu.svg";
 import close from "../../assets/header/close.svg";
 import { FC, useEffect, useRef, useState } from "react";
-import Socials from "./socials/socials";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -64,12 +63,12 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 flex z-50 backdrop-blur-md bg-white/70 dark:bg-zinc-900/70 shadow-sm`}
+      className={`fixed inset-x-0 top-0 flex z-50 backdrop-blur-md bg-white/70 dark:bg-zinc-900/70`}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <Link href="#home">
           <Image
-            className={`h-12 w-10 mr-6`}
+            className="h-12 w-10 mr-6"
             src={marace}
             alt="Brand Logo"
             priority
@@ -93,7 +92,7 @@ const Header: FC = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-xl border border-primary bg-primary text-white px-4 py-2 text-sm font-medium"
+            className="rounded-xl border px-4 py-2 text-sm font-medium hover:bg-slate-800"
           >
             Resume
           </Link>

@@ -16,39 +16,15 @@ export interface Links {
 
 const Page = () => {
   // References
-  const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  // const links: Links[] = [
-  //   {
-  //     name: "Home",
-  //     ref: homeRef,
-  //   },
-  //   {
-  //     name: "About Me",
-  //     ref: aboutMeRef,
-  //   },
-  //   {
-  //     name: "Skills",
-  //     ref: skillsRef,
-  //   },
-  //   {
-  //     name: "Work",
-  //     ref: workRef,
-  //   },
-  //   {
-  //     name: "Contact",
-  //     ref: contactRef,
-  //   }
-  // ];
-
   return (
     <>
       <Header />
-      <Home componentRef={homeRef} />
+      <Home />
       <AboutMe componentRef={aboutMeRef} />
       <Skills componentRef={skillsRef} />
       <Work componentRef={workRef} />

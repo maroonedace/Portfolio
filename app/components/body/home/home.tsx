@@ -1,77 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FC, MutableRefObject, useEffect, useState } from "react";
+import { FC } from "react";
 
-import back from "../../../assets/home/back.jpg";
-import fileSvg from "../../../assets/home/file.svg";
-import { checkAboveThreshold } from "../utils/check";
+import hero from "../../../assets/home/hero.jpg";
 
-interface HomeProps {
-  componentRef: MutableRefObject<HTMLDivElement>;
-}
+// Simple stagger helper for sequential fade‑ins
+const fadeUp = (i: number) => ({
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  },
+});
 
-const Home: FC<HomeProps> = ({ componentRef }) => {
-  const [isAboveThreshold, setIsAboveThreshold] = useState(false);
-
-  useEffect(() => {
-    if (componentRef?.current) {
-      setIsAboveThreshold(checkAboveThreshold(componentRef));
-    }
-  }, [componentRef]);
-
+const Home: FC = () => {
   return (
-    <div className="relative bg-black h-[90vh]" ref={componentRef} id="home">
+    <div
+      className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
+      id="home"
+    >
+      {/* Background image with a blur effect */}
       <Image
-        className="absolute h-full opacity-85"
+        className="absolute h-full opacity-85 -z-10"
         priority
-        src={back}
-        alt="back"
+        src={hero}
+        alt="Hero Background"
       />
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
-        whileInView={!isAboveThreshold ? { scale: 1, opacity: 1 } : {}}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="h-full"
+
+      {/* Headline */}
+      <motion.h1
+        className="text-4xl md:text-6xl font-extrabold"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp(0)}
       >
-        <div className="absolute inset-x-0 top-[18%] flex justify-center text-center">
-          <h1 className="text-[100px]">
-            Anthony Ostia
-          </h1>
-        </div>
-        <div className="flex flex-col absolute inset-0 justify-center items-center text-center gap-4">
-          <h2>
-            Software Engineer
-          </h2>
-          <span className="text-2xl">
-            Always looking for new opportunities to grow and engage in
-            insightful conversations
-          </span>
-        </div>
-        <div className="flex flex-col items-center gap-4 absolute inset-x-0 bottom-8">
-          <motion.button
-            whileHover={{
-              scale: 1.1,
-            }}
-            tabIndex={-1}
-          >
-            <Link
-              href="/resume.pdf"
-              target="_blank"
-              tabIndex={0}
-              className="flex gap-2 border py-2 px-4 rounded border-white items-center"
-            >
-              <Image
-                src={fileSvg}
-                className="w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]"
-                alt="resume"
-              />
-              <p className="sm:text-base md:text-lg lg:text-xl">View Resume</p>
-            </Link>
-          </motion.button>
-        </div>
+        Hi, I'm Anthony Ostia
+      </motion.h1>
+
+      {/* Subheadline */}
+      <motion.p
+        className="text-lg md:text-xl"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp(1)}
+      >
+        Always looking for new opportunities to grow and engage in
+        insightful conversations
+      </motion.p>
+
+      {/* Call‑to‑action buttons */}
+      <motion.div
+        className="flex flex-wrap justify-center gap-4"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp(2)}
+      >
+        <Link
+          href="#work"
+          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800"
+        >
+          View Work
+        </Link>
+        <Link
+          href="#contact"
+          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800"
+        >
+          Let's Connect
+        </Link>
       </motion.div>
     </div>
   );

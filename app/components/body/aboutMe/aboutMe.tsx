@@ -1,5 +1,5 @@
 import { FC, MutableRefObject, useEffect, useState } from "react";
-import mePic from "../../../assets/home/me.jpeg";
+import portrait from "../../../assets/home/portrait.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { checkAboveThreshold } from "../utils/check";
@@ -36,7 +36,7 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
         transition={{ delay: 0.3 }}
       >
         <Image
-          src={mePic}
+          src={portrait}
           className=" w-[200px] md:w-[300px] rounded-2xl"
           alt="Self Portrait"
         />
