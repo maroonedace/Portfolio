@@ -77,12 +77,13 @@ const Header: FC = () => {
 
         {/* Desktop navigation */}
         <div className="hidden sm:flex items-center justify-between w-full">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 ">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium underline-offset-4 hover:underline"
+                tabIndex={0}
+                className="text-sm font-medium underline-offset-4 hover:underline p-2"
               >
                 {item.label}
               </Link>
@@ -91,8 +92,9 @@ const Header: FC = () => {
           <Link
             href="/resume.pdf"
             target="_blank"
+            tabIndex={0}
             rel="noopener noreferrer"
-            className="rounded-xl border px-4 py-2 text-sm font-medium hover:bg-slate-800"
+            className="rounded-xl border border-white px-4 py-2 text-sm font-medium hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             Resume
           </Link>
@@ -100,7 +102,7 @@ const Header: FC = () => {
 
         {/* Mobile toggle */}
         <button
-          className="sm:hidden rounded p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="sm:hidden rounded p-2"
           onClick={onMenuClick}
           aria-label="Toggle Navigation"
           ref={buttonRef}
@@ -135,7 +137,7 @@ const Header: FC = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-primary bg-primary text-white px-6 py-2 font-medium shadow"
+                className="rounded-xl border border-primary bg-primary text-white px-6 py-2 font-medium"
                 onClick={onMenuClick}
               >
                 Resume

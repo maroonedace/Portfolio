@@ -59,13 +59,15 @@ const Home: FC = () => {
       >
         <Link
           href="#work"
-          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800"
+          tabIndex={0}
+          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           View Work
         </Link>
         <Link
           href="#contact"
-          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800"
+          tabIndex={0}
+          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           Let's Connect
         </Link>
