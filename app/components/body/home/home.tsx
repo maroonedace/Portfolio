@@ -17,7 +17,7 @@ const fadeUp = (i: number) => ({
 
 const Home: FC = () => {
   return (
-    <div
+    <section
       className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
       id="home"
     >
@@ -46,8 +46,8 @@ const Home: FC = () => {
         animate="visible"
         variants={fadeUp(1)}
       >
-        Always looking for new opportunities to grow and engage in
-        insightful conversations
+        Always looking for new opportunities to grow and engage in insightful
+        conversations
       </motion.p>
 
       {/* Call‑to‑action buttons */}
@@ -70,7 +70,7 @@ const Home: FC = () => {
           Let's Connect
         </Link>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
