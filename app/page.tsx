@@ -14,7 +14,7 @@ export interface Links {
   ref: MutableRefObject<HTMLDivElement>;
 }
 
-export default function Page() {
+const Page = () => {
   // References
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -22,32 +22,32 @@ export default function Page() {
   const workRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const links: Links[] = [
-    {
-      name: "Home",
-      ref: homeRef,
-    },
-    {
-      name: "About Me",
-      ref: aboutMeRef,
-    },
-    {
-      name: "Skills",
-      ref: skillsRef,
-    },
-    {
-      name: "Work",
-      ref: workRef,
-    },
-    {
-      name: "Contact",
-      ref: contactRef,
-    }
-  ];
+  // const links: Links[] = [
+  //   {
+  //     name: "Home",
+  //     ref: homeRef,
+  //   },
+  //   {
+  //     name: "About Me",
+  //     ref: aboutMeRef,
+  //   },
+  //   {
+  //     name: "Skills",
+  //     ref: skillsRef,
+  //   },
+  //   {
+  //     name: "Work",
+  //     ref: workRef,
+  //   },
+  //   {
+  //     name: "Contact",
+  //     ref: contactRef,
+  //   }
+  // ];
 
   return (
     <>
-      <Header links={links} />
+      <Header />
       <Home componentRef={homeRef} />
       <AboutMe componentRef={aboutMeRef} />
       <Skills componentRef={skillsRef} />
@@ -57,3 +57,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

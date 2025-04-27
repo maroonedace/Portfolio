@@ -37,7 +37,7 @@ interface ContactProps {
 
 const Contact: FC<ContactProps> = ({ componentRef }) => {
   return (
-    <div className="p-8 flex flex-col gap-2 items-center" ref={componentRef}>
+    <div className="p-8 flex flex-col gap-2 items-center" ref={componentRef} id="contact">
       <h2 className=" sm:text-2xl md:text-3xl lg:text-4xl">
         Contact Me
       </h2>
