@@ -2,7 +2,7 @@
 import NZeroSVG from "../assets/work/nZero/nZero.svg";
 import OPLogo from "../assets/work/op/opLogo.jpeg";
 import MercorLogo from "../assets/work/mercor/mercor.png";
-import { nZeroSkillList, opSkillList, Skill, tritonXRSkillList } from "./skill";
+import { nZeroSkillList, opSkillList, Skill } from "./skill";
 import { StaticImageData } from "next/image";
 
 export type Work = {

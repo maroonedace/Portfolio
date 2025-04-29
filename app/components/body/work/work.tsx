@@ -1,5 +1,4 @@
 import { FC, MutableRefObject, useEffect, useState } from "react";
-import CardList from "./card/cardList";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { checkAboveThreshold } from "../utils/check";
