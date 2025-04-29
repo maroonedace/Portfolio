@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
-import hero from "../../../assets/home/hero.jpg";
+import hero from "../../../assets/body/home/hero.jpg";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({

@@ -1,7 +1,7 @@
 
-import NZeroSVG from "../assets/work/nZero/nZero.svg";
-import OPLogo from "../assets/work/op/opLogo.jpeg";
-import MercorLogo from "../assets/work/mercor/mercor.png";
+import NZeroSVG from "../assets/body/work/nZero/nZero.svg";
+import OPLogo from "../assets/body/work/op/opLogo.jpeg";
+import MercorLogo from "../assets/body/work/mercor/mercor.png";
 import { StaticImageData } from "next/image";
 
 export type Work = {
