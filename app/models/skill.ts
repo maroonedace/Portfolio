@@ -21,85 +21,12 @@ import gitSvg from "../assets/skills/git.svg";
 import herokuSvg from "../assets/skills/heroku.svg";
 import awsSvg from "../assets/skills/aws.svg";
 import rustSvg from "../assets/skills/rust.svg"
-import chatGptSvg from "../assets/skills/chatgpt.svg"
-import claudeSvg from "../assets/skills/claude.svg"
-import githubCopilotSvg from "../assets/skills/github-copilot.svg"
 import figmaSvg from "../assets/skills/figma.svg"
 
 export interface Skill {
   name: string
   logo: any
 }
-
-export const nZeroSkillList: Skill[] = [
-  {
-    name: "Typescript",
-    logo: typeScriptSvg,
-  },
-  {
-    name: "React.js",
-    logo: reactSvg,
-  },
-  {
-    name: "Ruby on Rails",
-    logo: rubyOnRailsSvg,
-  },
-  {
-    name: "Node.js",
-    logo: nodeJsSvg,
-  },
-  {
-    name: "PostgreSQL",
-    logo: postgresqlSvg,
-  },
-  {
-    name: "Docker",
-    logo: dockerSvg,
-  },
-  {
-    name: "Material UI",
-    logo: materialUISvg,
-  },
-
-]
-
-export const opSkillList: Skill[] = [
-  {
-    name: "Typescript",
-    logo: typeScriptSvg,
-  },
-  {
-    name: "React.js",
-    logo: reactSvg,
-  },
-  {
-    name: "Node.js",
-    logo: nodeJsSvg,
-  },
-  {
-    name: "Supabase",
-    logo: supbaseSvg,
-  },
-  {
-    name: "Tailwind CSS",
-    logo: tailwindCssSvg,
-  }
-
-
-]
-
-export const tritonXRSkillList: Skill[] = [
-  {
-    name: "C#",
-    logo: cSvg,
-  },
-  {
-    name: "Unity",
-    logo: unitySvg,
-  },
-
-
-]
 
 export const languageSkillList: Skill[] = [
   {
