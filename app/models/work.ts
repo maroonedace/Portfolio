@@ -2,7 +2,6 @@
 import NZeroSVG from "../assets/work/nZero/nZero.svg";
 import OPLogo from "../assets/work/op/opLogo.jpeg";
 import MercorLogo from "../assets/work/mercor/mercor.png";
-import TritonXRLogo from "../assets/work/TritonXR.png";
 import { nZeroSkillList, opSkillList, Skill, tritonXRSkillList } from "./skill";
 import { StaticImageData } from "next/image";
 
@@ -39,10 +38,10 @@ export const works: Work[] = [
     listOfSkills: opSkillList,
     website: "https://www.oceansideperspective.org",
     points: [
-      "Revamped website to highlight video logs and existing content",
-      "Modified and enhanced search functionality, ultimately resulting in quicker load times of content retrieval",
-      "Identified and decreased bugs and leakage",
-      "Drove development projects to evolve the platform and project",
+      "Increased user engagement by 20% through implementation of animations, skeleton screens, and seamless visual transitions.",
+      "Improved search functionality to reduce query response time by 25%, leveraging TypeScript and Supabase optimizations.",
+      "Spearheaded a codebase refactor to eliminate redundancy and improve work efficiency by 20%, converting legacy code to TypeScript.",
+      "Directed a team of 3-6 developers, creating detailed agile stories, prioritizing tasks, and ensuring timely delivery.",
     ],
   },
   {
@@ -53,32 +52,10 @@ export const works: Work[] = [
     listOfSkills: nZeroSkillList,
     website: "https://nzero.com",
     points: [
-      "Facilitated a new data management page by precisely outlining the roadmap and writing detailed tickets to provide an efficient work structure",
-      "Work directly with business stakeholders to refine requirements, iterate and finalize design, deliver working proofs of concept, and develop final data solutions",
-      "Designed a user-friendly web interface that allowed customers to upload, search, and manage their data",
-      "Utilized Material UI to create reusable React function components that implemented structured code techniques",
-      "Refactored fragile TypeScript code to clean the application for optimal performance, improving systems performance by 70%"
+      "Designed and delivered a new data management platform that increased data accessibility and usability for customers by 30%.",
+      "Streamlined API performance with Ruby, reducing data transmission times by 15% and improving front-end responsiveness.",
+      "Enhanced codebase stability with 25% fewer breakages by designing 100+ robust test cases and comprehensive documentation.",
+      "Partnered with product, design, and external stakeholders to turn requirements into shipped features.",
     ],
   },
-  // {
-  //   name: "TritonXR",
-  //   url: "tritonXR",
-  //   title: "Project Manager",
-  //   logo: TritonXRLogo,
-  //   period: "2021 - 2024",
-  //   startDate: new Date("2018-11-01T00:00:00"),
-  //   endDate: new Date("2020-06-01T00:00:00"),
-  //   listOfSkills: tritonXRSkillList,
-  //   embedLink: "https://www.youtube.com/embed/z-KPfnebmsY?si=Bq1rsKqwuddQ_xxN",
-  //   website: "https://www.facebook.com/tritonxr/",
-  //   github: "https://github.com/TritonXR/FoodQuest",
-  //   description:
-  //     "Led the Food Quest project that introduced virtual reality to nutrition, teaching users how to nourish themselves through nutrition.",
-  //   points: [
-  //     "Extracted and transformed disparate data into actionable insights",
-  //     "Developed rage, fireball, and ice ball mechanics for various classes",
-  //     "Created cutting, mixing, and stirring mechanics that allowed the player to cook virtually",
-  //     "Delegated project members on specific tasks and various mechanics, such as model creations for the monsters and food products",
-  //   ],
-  // },
 ];
