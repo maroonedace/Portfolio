@@ -11,7 +11,6 @@ import cSvg from "../assets/skills/c.svg";
 import unitySvg from "../assets/skills/unity.svg";
 import postgresqlSvg from "../assets/skills/postgresql.svg";
 import mongodbSvg from "../assets/skills/mongodb.svg";
-import microsoftSqlServerSvg from "../assets/skills/microsoft-sql-server.svg"
 import supbaseSvg from "../assets/skills/supabase.svg";
 import nextjsSvg from "../assets/skills/nextjs.svg";
 import rubySvg from "../assets/skills/ruby.svg";
