@@ -37,10 +37,11 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
 
   return (
     <section
-      className="mx-auto px-6 py-24 md:py-32 bg-cyan-700 bg-gradient-to-b from-[#010005] from-1% to-cyan-700"
+      className="mx-auto flex flex-col items-center px-6 py-16 md:py-24 bg-cyan-700 bg-gradient-to-b from-zinc-900 to-cyan-700"
       id="about"
       ref={componentRef}
     >
+      <Image src={portrait} alt="Portrait" width={256} className="rounded mb-6" />
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-8 text-center"
         initial="hidden"
@@ -51,16 +52,18 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
         About Me
       </motion.h2>
       <motion.div
-        className="space-y-6 text-lg leading-relaxed"
+        className="flex items-center justify-center flex-col gap-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={container}
       >
-        <motion.p variants={item}>{intro}</motion.p>
+        <motion.p variants={item} className="text-lg md:text-xl max-w-7xl text-center">
+          {intro}
+        </motion.p>
 
         {/* Hobbies icons */}
-        <motion.ul
+        {/* <motion.ul
           variants={item}
           className="flex justify-center gap-12 pt-10"
           aria-label="Hobbies"
@@ -77,7 +80,7 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
             <Image src={portrait} alt="Pickleball" width={64} height={64} />
             <span>Pickleball</span>
           </li>
-        </motion.ul>
+        </motion.ul> */}
       </motion.div>
     </section>
   );

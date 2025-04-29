@@ -10,10 +10,11 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^11.3.30",
     "next": "^14.2.7",
+    "next-themes": "^0.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f",
+  "packageManager": "pnpm@10.10.0",
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/eslint__js": "^8.42.3",

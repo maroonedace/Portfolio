@@ -2,6 +2,7 @@ import { FC, MutableRefObject, useEffect, useState } from "react";
 import { languageSkillList, technologySkillList } from "../../../models/skill";
 import SkillList from "./skillList";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { checkAboveThreshold } from "../utils/check";
 
 interface SkillsProps {
@@ -18,9 +19,9 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
   }, [componentRef]);
 
   return (
-    <section ref={componentRef}>
+    <section ref={componentRef} className="mx-auto px-6 py-16 md:py-24 bg:cyan-900">
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-center mb-10"
+        className="text-3xl md:text-4xl text-cyan-400 font-bold text-center mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -30,7 +31,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
       </motion.h2>
 
       <motion.ul
-        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 place-items-center"
+        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -43,36 +44,41 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
           },
         }}
       >
+        {languageSkillList.map((skill) => (
+          <motion.li
+            key={skill.name}
+            className="flex flex-col items-center justify-center"
+            variants={{
+              hidden: { opacity: 0, scale: 0.9 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+            }}
+          >
+            <Image
+              src={skill.logo}
+              alt={skill.name}
+              className="w-20 h-20 mb-2 bg-zinc-900/50 p-2 rounded"
+            />
+            <span className="text-sm text-cyan-400">{skill.name}</span>
+          </motion.li>
+        ))}
 
-        {
-          languageSkillList.map((skill, index) => (
-            <motion.li
-              key={skill.name}
-              variants={{
-                hidden: { opacity: 0, scale: 0.9 },
-                visible: {opacity: 1, scale: 1, transition: {duration: 0.4} },
-              }}
-            >
-              <img src={skill.logo} alt={skill.name} className="w-12 h-12 mb-2" />
-              <span className="text-sm">{skill.name}</span>
-            </motion.li>
-          ))
-        }
-
-        {
-          technologySkillList.map((skill, index) => (
-            <motion.li
-              key={index}
-              className="flex flex-col items-center text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: (languageSkillList.length + index) * 0.05 }}
-            >
-              <img src={skill.logo} alt={skill.name} className="w-12 h-12 mb-2" />
-              <span className="text-sm">{skill.name}</span>
-            </motion.li>
-          ))
-        }
+        {technologySkillList.map((skill) => (
+          <motion.li
+            key={skill.name}
+            className="flex flex-col items-center justify-center"
+            variants={{
+              hidden: { opacity: 0, scale: 0.9 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+            }}
+          >
+            <Image
+              src={skill.logo}
+              alt={skill.name}
+              className="w-20 h-20 mb-2 bg-zinc-900/50 p-2 rounded"
+            />
+            <span className="text-sm text-cyan-400">{skill.name}</span>
+          </motion.li>
+        ))}
       </motion.ul>
       {/* <div className="bg-cyan-700 px-4">
         <div className="flex flex-col gap-4 bg-gray-700 rounded-2xl md:h-[90vh] p-8">

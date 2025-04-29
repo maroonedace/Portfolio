@@ -171,10 +171,6 @@ export const technologySkillList: Skill[] = [
       logo: supbaseSvg,
     },
     {
-      name: "Microsoft SQL Server",
-      logo: microsoftSqlServerSvg,
-    },
-    {
       name: "Docker",
       logo: dockerSvg,
     },
@@ -202,16 +198,4 @@ export const technologySkillList: Skill[] = [
       name: "Unity",
       logo: unitySvg,
     },
-    {
-      name: "ChatGPT",
-      logo: chatGptSvg,
-    },
-    {
-      name: "Claude",
-      logo: claudeSvg,
-    },
-    {
-      name: "Github Copilot",
-      logo: githubCopilotSvg
-    }
   ];

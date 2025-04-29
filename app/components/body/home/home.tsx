@@ -31,7 +31,7 @@ const Home: FC = () => {
 
       {/* Headline */}
       <motion.h1
-        className="text-4xl md:text-6xl font-extrabold"
+        className="text-4xl md:text-6xl font-extrabold text-white"
         initial="hidden"
         animate="visible"
         variants={fadeUp(0)}
@@ -41,7 +41,7 @@ const Home: FC = () => {
 
       {/* Subheadline */}
       <motion.p
-        className="text-lg md:text-xl"
+        className="text-lg md:text-xl text-white/90"
         initial="hidden"
         animate="visible"
         variants={fadeUp(1)}
@@ -60,14 +60,14 @@ const Home: FC = () => {
         <Link
           href="#work"
           tabIndex={0}
-          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
         >
           View Work
         </Link>
         <Link
           href="#contact"
           tabIndex={0}
-          className="rounded-xl border px-6 py-3 font-medium hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
         >
           Let's Connect
         </Link>
