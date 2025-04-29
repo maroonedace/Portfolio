@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import TritonXRLogo from "../assets/work/TritonXR.png";
+import TritonXRLogo from "../assets/body/project/TritonXR.png";
 
 export type Project = {
   name: string;

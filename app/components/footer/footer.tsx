@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-import mailSvg from "../../assets/contact/mail.svg";
-import linkedInSvg from "../../assets/socials/linkedin.svg";
-import githubSvg from "../../assets/socials/github.svg";
+import mailSvg from "../../assets/footer/mail.svg";
+import linkedInSvg from "../../assets/footer/linkedin.svg";
+import githubSvg from "../../assets/footer/github.svg";
 import { useEffect, useState } from "react";
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
               href="mailto:aostia@msn.com"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
-              <Image className="h-12 w-12" src={mailSvg} alt="logo" />
+              <Image className="h-10 w-10" src={mailSvg} alt="logo" />
             </Link>
             <Link
               href="https://github.com/maroonedace"
@@ -40,7 +40,7 @@ const Footer = () => {
               aria-label="GitHub"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
-              <Image className="h-12 w-12" src={githubSvg} alt="logo" />
+              <Image className="h-10 w-10" src={githubSvg} alt="logo" />
             </Link>
             <Link
               href="https://linkedin.com/in/aostia"
@@ -49,7 +49,7 @@ const Footer = () => {
               aria-label="LinkedIn"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             >
-              <Image className="h-12 w-12" src={linkedInSvg} alt="logo" />
+              <Image className="h-10 w-10" src={linkedInSvg} alt="logo" />
             </Link>
           </div>
         </div>

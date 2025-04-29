@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import marace from "../../assets/marace.png";
-import menu from "../../assets/home/menu.svg";
+import menu from "../../assets/header/menu.svg";
 import close from "../../assets/header/close.svg";
 import { FC, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -84,7 +84,7 @@ const Header: FC = () => {
                 key={item.href}
                 href={item.href}
                 tabIndex={0}
-                className="text-sm font-medium underline-offset-4 text-cyan-400 hover:underline hover:text-cyan-300 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+                className="text-sm font-medium underline-offset-4 text-cyan-500 hover:text-cyan-400 hover:underline  p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
               >
                 {item.label}
               </Link>
@@ -132,7 +132,7 @@ const Header: FC = () => {
                   key={item.href}
                   href={item.href}
                   onClick={onMenuClick}
-                  className="text-lg font-medium text-cyan-400 hover:text-cyan-300"
+                  className="text-lg font-medium text-cyan-700 hover:text-cyan-600"
                 >
                   {item.label}
                 </Link>

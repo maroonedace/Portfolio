@@ -1,9 +1,8 @@
 import { FC, MutableRefObject, useEffect, useState } from "react";
 import { languageSkillList, technologySkillList } from "../../../models/skill";
-import SkillList from "./skillList";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { checkAboveThreshold } from "../utils/check";
+import { checkAboveThreshold } from "../../../utils/check";
 
 interface SkillsProps {
   componentRef: MutableRefObject<HTMLDivElement>;
@@ -21,7 +20,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
   return (
     <section ref={componentRef} className="mx-auto px-6 py-16 md:py-24 bg:cyan-900">
       <motion.h2
-        className="text-3xl md:text-4xl text-cyan-400 font-bold text-center mb-10"
+        className="text-3xl md:text-4xl text-cyan-500 font-bold text-center mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -58,7 +57,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
               alt={skill.name}
               className="w-20 h-20 mb-2 bg-zinc-900/50 p-2 rounded"
             />
-            <span className="text-sm text-cyan-400">{skill.name}</span>
+            <span className="text-sm text-cyan-500">{skill.name}</span>
           </motion.li>
         ))}
 
@@ -76,7 +75,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
               alt={skill.name}
               className="w-20 h-20 mb-2 bg-zinc-900/50 p-2 rounded"
             />
-            <span className="text-sm text-cyan-400">{skill.name}</span>
+            <span className="text-sm text-cyan-500">{skill.name}</span>
           </motion.li>
         ))}
       </motion.ul>

@@ -1,7 +1,7 @@
 import { FC, MutableRefObject, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { checkAboveThreshold } from "../utils/check";
+import { checkAboveThreshold } from "../../../utils/check";
 import Link from "next/link";
 import { works } from "../../../models/work";
 import { projects } from "../../../models/project";
@@ -90,14 +90,12 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-zinc-200 dark:ring-zinc-800 transition"
+              className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-zinc-200 dark:ring-zinc-800 transition bg-zinc-900"
             >
-              <div className="relative h-48">
+              <div className="flex items-center justify-center">
                 <Image
                   src={p.logo}
                   alt={`${p.title} screenshot`}
-                  fill
-                  priority={false}
                   className="transition-transform duration-300"
                 />
               </div>
