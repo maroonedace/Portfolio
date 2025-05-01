@@ -50,7 +50,7 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
                   />
                   <div>
                     <h3 className="font-semibold">{exp.title}</h3>
-                    <p>{exp.name}</p>
+                    <span>{exp.name}</span>
                   </div>
                 </div>
                 <time>{exp.period}</time>
@@ -58,7 +58,7 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
 
               <ul className="mt-4 list-disc pl-5 text-sm space-y-1">
                 {exp.points.map((b) => (
-                  <li key={b}>
+                  <li key={b} className="text-base">
                     {b}
                   </li>
                 ))}
@@ -85,22 +85,23 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p) => (
             <motion.article
-              key={p.title}
+              key={p.name}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-zinc-200 dark:ring-zinc-800 transition bg-zinc-900"
+              className="rounded-2xl py-4 px-2 bg-zinc-900"
             >
               <div className="flex items-center justify-center">
                 <Image
                   src={p.logo}
-                  alt={`${p.title} screenshot`}
+                  alt={`${p.name} Logo`}
+                  width="256"
                   className="transition-transform duration-300"
                 />
               </div>
               <div className="p-6 space-y-3">
-                <h3 className="font-semibold text-lg">{p.title}</h3>
+                <h3 className="font-semibold text-lg">{p.name}</h3>
                 <p className="text-sm text-muted-foreground">{p.description}</p>
                 <ul className="flex flex-wrap gap-2 text-xs font-medium">
                   {p.tech.map((t) => (

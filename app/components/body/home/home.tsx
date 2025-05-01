@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 
 import hero from "../../../assets/body/home/hero.jpg";
+import downArrowSvg from "../../../assets/body/home/down.svg";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -70,6 +71,24 @@ const Home: FC = () => {
           className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
         >
           Let's Connect
+        </Link>
+      </motion.div>
+
+      {/* Scroll down indicator */}
+      <motion.div
+        className="absolute bottom-8"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp(3)}
+      >
+        <Link href="#about" className="flex flex-col items-center gap-2">
+          <span className="text-lg">Learn More About Me</span>
+          <Image
+            src={downArrowSvg}
+            width={40}
+            className="animate-bounce"
+            alt="Scroll Down Arrow"
+          />
         </Link>
       </motion.div>
     </section>

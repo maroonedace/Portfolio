@@ -8,31 +8,8 @@ html {
 }
 
 @layer base {
-    h1 {
-        @apply text-6xl;
-    }
-    h2 {
-        @apply text-5xl;
-    }
-    h3 {
-        @apply text-lg;
-    }
-    h4{
-        @apply text-base;
-    }
-    h5 {
-        @apply text-sm;
-    }
-    h6 {
-        @apply text-sm;
-        @apply font-bold;
-    }
-    p {
-        @apply text-sm;
-    }
-
     body {
-        @apply bg-gray-700;
+        @apply bg-zinc-900;
         @apply text-white;
     }
 }
