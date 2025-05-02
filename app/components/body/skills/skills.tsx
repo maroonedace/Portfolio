@@ -1,24 +1,15 @@
-import { FC, MutableRefObject, useEffect, useState } from "react";
+"use client";
+
+import { FC } from "react";
 import { languageSkillList, technologySkillList } from "../../../models/skill";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { checkAboveThreshold } from "../../../utils/check";
+import MotionWrapper from "../../motionWrapper";
 
-interface SkillsProps {
-  componentRef: MutableRefObject<HTMLDivElement>;
-}
-
-const Skills: FC<SkillsProps> = ({ componentRef }) => {
-  const [isAboveThreshold, setIsAboveThreshold] = useState(false);
-
-  useEffect(() => {
-    if (componentRef?.current) {
-      setIsAboveThreshold(checkAboveThreshold(componentRef));
-    }
-  }, [componentRef]);
-
+const Skills: FC = () => {
   return (
-    <section ref={componentRef} className="px-6 py-16 md:py-24 bg-cyan-700">
+    <MotionWrapper>
+    <section className="px-6 py-16 md:py-24 bg-cyan-700">
       <div className="px-6 py-16 bg-zinc-900 rounded-lg">
         <motion.h2
           className="text-3xl md:text-4xl text-cyan-500 font-bold text-center mb-10"
@@ -90,6 +81,7 @@ const Skills: FC<SkillsProps> = ({ componentRef }) => {
         </motion.ul>
       </div>
     </section>
+    </MotionWrapper>
   );
 };
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -6,6 +8,7 @@ import mailSvg from "../../assets/footer/mail.svg";
 import linkedInSvg from "../../assets/footer/linkedin.svg";
 import githubSvg from "../../assets/footer/github.svg";
 import { useEffect, useState } from "react";
+import MotionWrapper from "../motionWrapper";
 
 const Footer = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -16,6 +19,7 @@ const Footer = () => {
   useEffect(() => setMounted(true), []);
 
   return (
+    <MotionWrapper>
     <footer
       id="contact"
       className="border-t border-zinc-800 bg-zinc-900 py-8 px-6"
@@ -71,6 +75,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </MotionWrapper>
   );
 };
 

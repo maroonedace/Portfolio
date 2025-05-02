@@ -1,13 +1,9 @@
-"use client";
-
 import { FC, ReactNode } from "react";
 import "./globals.css";
 
 interface RootLayoutProps {
   children: ReactNode;
 }
-
-import { AnimatePresence } from "framer-motion";
 
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
@@ -44,7 +40,7 @@ const RootLayout:FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en" className={`${inter.className}`}>
       <body className={`${clashDisplay.variable} font-clash`}>
-        <AnimatePresence>{children}</AnimatePresence>
+      {children}
       </body>
     </html>
   );

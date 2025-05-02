@@ -1,29 +1,19 @@
-import { FC, MutableRefObject, useEffect, useState } from "react";
+"use client";
+
+import { FC } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { checkAboveThreshold } from "../../../utils/check";
 import Link from "next/link";
 import { works } from "../../../models/work";
 import { projects } from "../../../models/project";
+import MotionWrapper from "../../motionWrapper";
 
-interface WorkProps {
-  componentRef: MutableRefObject<HTMLDivElement>;
-}
-
-const Work: FC<WorkProps> = ({ componentRef }) => {
-  const [isAboveThreshold, setIsAboveThreshold] = useState(false);
-
-  useEffect(() => {
-    if (componentRef?.current) {
-      setIsAboveThreshold(checkAboveThreshold(componentRef));
-    }
-  }, [componentRef]);
-
+const Work: FC = () => {
   return (
+    <MotionWrapper>
     <section
       className="px-4 flex flex-col gap-8 items-center justify-center bg-cyan-700 py-10 md:py-20"
       id="work"
-      ref={componentRef}
     >
       {/* ---------- Experience ---------- */}
       <motion.div
@@ -142,6 +132,7 @@ const Work: FC<WorkProps> = ({ componentRef }) => {
         </div>
       </motion.div>
     </section>
+    </MotionWrapper>
   );
 };
 

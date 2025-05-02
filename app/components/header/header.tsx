@@ -7,6 +7,7 @@ import menu from "../../assets/header/menu.svg";
 import close from "../../assets/header/close.svg";
 import { FC, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import MotionWrapper from "../motionWrapper";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -35,7 +36,6 @@ const Header: FC = () => {
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as Node;
-
       if (
         panelRef.current &&
         buttonRef.current &&
@@ -63,6 +63,7 @@ const Header: FC = () => {
   }, []);
 
   return (
+    <MotionWrapper>
     <header
       className={`fixed inset-x-0 top-0 flex z-50 backdrop-blur-md bg-zinc-900/70`}
     >
@@ -123,7 +124,9 @@ const Header: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 h-screen flex items-center justify-center "
+          className="fixed inset-0 z-40 h-screen flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
         >
           <div className="bg-zinc-900/95 px-12 py-6 rounded-2xl" ref={panelRef}>
             <div className="flex flex-col items-center gap-6 py-6">
@@ -151,6 +154,7 @@ const Header: FC = () => {
         </motion.div>
       )}
     </header>
+    </MotionWrapper>
   );
 };
 

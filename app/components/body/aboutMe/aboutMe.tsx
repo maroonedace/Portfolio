@@ -1,9 +1,10 @@
-import { FC, MutableRefObject } from "react";
+"use client";
+
+import { FC } from "react";
 import portrait from "../../../assets/body/aboutMe/portrait.jpeg";
-import cycling from "../../../assets/body/aboutMe/cycling.png";
-import game from "../../../assets/body/aboutMe/game.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import MotionWrapper from "../../motionWrapper";
 
 // simple motion variants
 const container = {
@@ -23,16 +24,12 @@ const intro = `As a software engineer who has over 5 years of software developme
             utilizing many frameworks such as React.js, Ruby on Rails, and
             PostgreSQL.`;
 
-interface AboutMeProps {
-  componentRef: MutableRefObject<HTMLDivElement>;
-}
-
-const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
+const AboutMe: FC = () => {
   return (
+    <MotionWrapper>
     <section
       className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 py-16 md:py-24 bg-gradient-to-b from-zinc-900 to-cyan-700"
       id="about"
-      ref={componentRef}
     >
       <motion.div
         initial="hidden"
@@ -100,6 +97,7 @@ const AboutMe: FC<AboutMeProps> = ({ componentRef }) => {
         </motion.div>
       </div>
     </section>
+    </MotionWrapper>
   );
 };
 

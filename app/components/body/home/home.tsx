@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -5,6 +7,7 @@ import { FC } from "react";
 
 import hero from "../../../assets/body/home/hero.jpg";
 import downArrowSvg from "../../../assets/body/home/down.svg";
+import MotionWrapper from "../../motionWrapper";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -18,6 +21,7 @@ const fadeUp = (i: number) => ({
 
 const Home: FC = () => {
   return (
+    <MotionWrapper>
     <section
       className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
       id="home"
@@ -92,6 +96,7 @@ const Home: FC = () => {
         </Link>
       </motion.div>
     </section>
+    </MotionWrapper>
   );
 };
 
