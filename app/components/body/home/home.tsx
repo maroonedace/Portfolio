@@ -87,7 +87,7 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(3)}
         >
-          <Link href="#about" className="flex flex-col items-center gap-2">
+          <Link href="#about" className="flex flex-col items-center gap-2 focus-ring" tabIndex={0}>
             <span className="text-lg">Learn More About Me</span>
             <Image
               src={downArrowSvg}

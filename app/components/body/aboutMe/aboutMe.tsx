@@ -27,39 +27,35 @@ const intro = `As a software engineer who has over 5 years of software developme
 const AboutMe: FC = () => {
   return (
     <MotionWrapper>
-    <section
-      className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 py-16 md:py-24 bg-gradient-to-b from-zinc-900 to-cyan-700"
+    <motion.section
+      className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 py-16 md:py-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[82px]"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once:true, margin:"-100px" }}
+      variants={container}
       id="about"
     >
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
         variants={item}
       >
         <Image
           src={portrait}
-          alt="Portrait"
+          alt="Anthony Ostia headshot"
           width={300}
-          className="rounded mb-6"
+          height={400}
+          sizes="(min-width:768px) 300px, 60vw"
+          className="w-48 h-auto md:w-[300px] rounded mb-6"
         />
       </motion.div>
       <div className="flex flex-col items-center justify-center">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
           variants={item}
         >
           About Me
         </motion.h2>
         <motion.div
           className="flex items-center justify-center flex-col"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={container}
         >
           <motion.p
             variants={item}
@@ -68,35 +64,62 @@ const AboutMe: FC = () => {
             {intro}
           </motion.p>
 
-          {/* <div className="flex flex-col items-center justify-center gap-4">
-            <motion.h2
+          <div className="flex flex-col items-center justify-center gap-6">
+            <motion.h3
               className="text-2xl md:text-3xl font-bold text-center"
               variants={item}
             >
               Hobbies
-            </motion.h2>
+            </motion.h3>
+
             <motion.ul
-              variants={item}
-              className="flex justify-center gap-12"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 place-items-center"
               aria-label="Hobbies"
             >
-              <li className="flex flex-col items-center" tabIndex={0}>
-                <Image src={cycling} alt="Cycling" width={64} height={64} />
+              <motion.li
+                variants={item}
+                className="flex flex-col items-center gap-2 text-cyan-300 focus-ring"
+              >
+                <i className="ph-fill ph-bicycle text-[32px]" aria-hidden="true" />
                 <span>Cycling</span>
-              </li>
-              <li className="flex flex-col items-center" tabIndex={0}>
-                <Image src={game} alt="Gaming" width={64} height={64} />
+              </motion.li>
+
+              <motion.li
+                variants={item}
+                className="flex flex-col items-center gap-2 text-cyan-300 focus-ring"
+              >
+                <i className="ph-fill ph-game-controller text-[32px]" aria-hidden="true" />
                 <span>Gaming</span>
-              </li>
-              <li className="flex flex-col items-center" tabIndex={0}>
-                <Image src={portrait} alt="Pickleball" width={64} height={64} />
+              </motion.li>
+
+              <motion.li
+                variants={item}
+                className="flex flex-col items-center gap-2 text-cyan-300 focus-ring"
+              >
+                <i className="ph-fill ph-dice-six text-[32px]" aria-hidden="true" />
+                <span>Board Games</span>
+              </motion.li>
+
+              <motion.li
+                variants={item}
+                className="flex flex-col items-center gap-2 text-cyan-300 focus-ring"
+              >
+                <i className="ph-fill ph-puzzle-piece text-[32px]" aria-hidden="true" />
+                <span>Puzzles</span>
+              </motion.li>
+
+              <motion.li
+                variants={item}
+                className="flex flex-col items-center gap-2 text-cyan-300 focus-ring"
+              >
+                <i className="ph-fill ph-racquet text-[32px]" aria-hidden="true" />
                 <span>Pickleball</span>
-              </li>
+              </motion.li>
             </motion.ul>
-          </div> */}
+          </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
     </MotionWrapper>
   );
 };
