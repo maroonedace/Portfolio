@@ -22,80 +22,84 @@ const fadeUp = (i: number) => ({
 const Home: FC = () => {
   return (
     <MotionWrapper>
-    <section
-      className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
-      id="home"
-    >
-      {/* Background image with a blur effect */}
-      <Image
-        className="absolute h-full opacity-85 -z-10"
-        priority
-        src={hero}
-        alt="Hero Background"
-      />
-
-      {/* Headline */}
-      <motion.h1
-        className="text-4xl md:text-6xl font-extrabold text-white"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp(0)}
+      <section
+        className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
+        id="home"
       >
-        Hi, I'm Anthony Ostia
-      </motion.h1>
+        <div className="pointer-events-none absolute inset-0 -z-20 bg-black/30" />
+        <Image
+          className="object-cover -z-30"
+          fill
+          src={hero}
+          priority
+          sizes="100vw"
+          alt="Hero Background"
+        />
 
-      {/* Subheadline */}
-      <motion.p
-        className="text-lg md:text-xl text-white/90"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp(1)}
-      >
-        Always looking for new opportunities to grow and engage in insightful
-        conversations
-      </motion.p>
-
-      {/* Call‑to‑action buttons */}
-      <motion.div
-        className="flex flex-wrap justify-center gap-4"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp(2)}
-      >
-        <Link
-          href="#work"
-          tabIndex={0}
-          className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+        {/* Headline */}
+        <motion.h1
+          className="text-4xl md:text-6xl font-extrabold text-white"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(0)}
         >
-          View Work
-        </Link>
-        <Link
-          href="#contact"
-          tabIndex={0}
-          className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
-        >
-          Let's Connect
-        </Link>
-      </motion.div>
+          Hi, I'm Anthony Ostia
+        </motion.h1>
 
-      {/* Scroll down indicator */}
-      <motion.div
-        className="absolute bottom-8"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp(3)}
-      >
-        <Link href="#about" className="flex flex-col items-center gap-2">
-          <span className="text-lg">Learn More About Me</span>
-          <Image
-            src={downArrowSvg}
-            width={40}
-            className="animate-bounce"
-            alt="Scroll Down Arrow"
-          />
-        </Link>
-      </motion.div>
-    </section>
+        {/* Subheadline */}
+        <motion.p
+          className="text-lg md:text-xl text-white/90"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(1)}
+        >
+          Always looking for new opportunities to grow and engage in insightful
+          conversations
+        </motion.p>
+
+        {/* Call‑to‑action buttons */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(2)}
+        >
+          <Link
+            href="#work"
+            tabIndex={0}
+            className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring"
+          >
+            View Work
+          </Link>
+          <Link
+            href="#contact"
+            tabIndex={0}
+            className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-ring"
+          >
+            Let's Connect
+          </Link>
+        </motion.div>
+
+        {/* Scroll down indicator */}
+        <motion.div
+          className="absolute bottom-8"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(3)}
+        >
+          <Link href="#about" className="flex flex-col items-center gap-2">
+            <span className="text-lg">Learn More About Me</span>
+            <Image
+              src={downArrowSvg}
+              width={40}
+              height={40}
+              className="motion-safe:animate-bounce"
+              alt="Scroll Down Arrow"
+              aria-hidden="true"
+            />
+          </Link>
+        </motion.div>
+      </section>
     </MotionWrapper>
   );
 };
