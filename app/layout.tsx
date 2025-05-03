@@ -36,12 +36,16 @@ const clashDisplay = localFont({
   variable: "--font-clash-display",
 });
 
-const RootLayout:FC<RootLayoutProps> = ({ children }) => {
+const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en" className={`${inter.className}`}>
-      <body className={`${clashDisplay.variable} font-clash`}>
-      {children}
-      </body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </head>
+      <body className={`${clashDisplay.variable} font-clash`}>{children}</body>
     </html>
   );
 };
