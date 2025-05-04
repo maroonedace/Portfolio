@@ -31,7 +31,7 @@ const Work: FC = () => {
 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 rounded-md bg-white relative">
+                    <div className="w-20 h-20 flex-none rounded-md bg-white relative">
                       <Image
                         src={exp.logo}
                         alt={`${exp.name} logo`}

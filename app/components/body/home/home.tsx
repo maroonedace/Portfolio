@@ -22,7 +22,7 @@ const Home: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="relative flex flex-col items-center justify-center gap-8 min-h-screen text-center"
+        className="relative flex flex-col items-center justify-center gap-8 min-h-screen text-center px-6"
         id="home"
       >
         <div className="pointer-events-none absolute inset-0 -z-20 bg-zinc-900/30" />
