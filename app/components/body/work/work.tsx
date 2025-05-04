@@ -33,11 +33,13 @@ const Work: FC = () => {
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <Image
-                    src={exp.logo}
-                    alt={`${exp.name} logo`}
-                    className="h-20 w-20 rounded-md object-contain bg-white p-2"
-                  />
+                  <div className="w-20 h-20 rounded-md p-2 bg-white">
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.name} logo`}
+                      fill
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">{exp.title}</h3>
                     <span>{exp.name}</span>
