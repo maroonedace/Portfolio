@@ -16,10 +16,10 @@ const item = {
 const Skills: FC = () => {
   return (
     <MotionWrapper>
-      <section className="px-6 py-16 md:py-24 bg-cyan-700">
+      <section className="px-6 py-16 md:py-24">
         <div className="px-6 py-16 bg-zinc-900 rounded-lg">
           <motion.h2
-            className="text-3xl md:text-4xl text-cyan-500 font-bold text-center mb-10"
+            className="text-3xl md:text-4xl text-white/90 font-bold text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

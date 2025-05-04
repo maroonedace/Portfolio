@@ -10,7 +10,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-zinc-900;
+    @apply bg-cyan-900;
     @apply text-white;
   }
 }

@@ -1,13 +1,13 @@
-
-import NZeroSVG from "../assets/body/work/nZero/nZero.svg";
-import OPLogo from "../assets/body/work/op/opLogo.jpeg";
-import MercorLogo from "../assets/body/work/mercor/mercor.png";
+import NZeroSVG from "../../../../assets/body/work/nZero/nZero.svg";
+import OPLogo from "../../../../assets/body/work/op/opLogo.jpeg";
+import MercorLogo from "../../../../assets/body/work/mercor/mercor.png";
 import { StaticImageData } from "next/image";
 
 export type Work = {
   name: string;
   title: string;
   period: string;
+  skills: string[];
   logo: StaticImageData;
   website: string;
   points: string[];
@@ -15,23 +15,30 @@ export type Work = {
 
 export const works: Work[] = [
   {
-    name: "Mercor",
-    title: "Web Development & Design Expert",
+    name: "Mercor Intelligence",
+    title: "Web Application Evaluation Engineer",
     logo: MercorLogo,
     period: "2025 - Present",
+    skills: [
+      "UI/UX Evaluation",
+      "Web Standards",
+      "Technical Writing",
+      "Front-End Design",
+    ],
     website: "https://www.mercor.com",
     points: [
-      "Assess the functionality, usability, and visual appeal of web applications to ensure high-quality user experiences.",
-      "Develop structured prompt ideas and grading criteria to evaluate web applications effectively.",
-      "Conducted manual UI/UX quality assurance testing to evaluate design system robustness.",
-      "Collaborate with fellow experts by asking and answering technical questions to improve evaluation standards and prompt engineering quality",
+      "Built and modified web applications to test model behavior and identify performance or design limitations.",
+      "Created and documented visual UI/UX defects to support dataset generation for model training and improvement.",
+      "Collaborated asynchronously with a distributed team of engineers and designers to refine evaluation frameworks and resolve ambiguous rubric interpretations.",
+      "Contributed to the development of prompt libraries and task collections used to benchmark frontier AI model capabilities.",
     ],
   },
   {
     name: "Oceanside Perspective",
-    title: "Software Engineer Project Lead",
+    title: "Lead Software Development Engineer",
     logo: OPLogo,
     period: "2024 - Present",
+    skills: ["Next.js", "Tailwind CSS", "Supabase", "Typescript", "Vercel"],
     website: "https://www.oceansideperspective.org",
     points: [
       "Increased user engagement by 20% through implementation of animations, skeleton screens, and seamless visual transitions.",
@@ -46,6 +53,7 @@ export const works: Work[] = [
     logo: NZeroSVG,
     period: "2021 - 2024",
     website: "https://nzero.com",
+    skills: ["Ruby on Rails", "React", "Docker", "PostgreSQL", "Material UI"],
     points: [
       "Designed and delivered a new data management platform that increased data accessibility and usability for customers by 30%.",
       "Streamlined API performance with Ruby, reducing data transmission times by 15% and improving front-end responsiveness.",

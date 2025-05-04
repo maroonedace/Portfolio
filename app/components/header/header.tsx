@@ -94,7 +94,7 @@ const Header: FC = () => {
                 key={item.href}
                 href={item.href}
                 tabIndex={0}
-                className="text-sm font-medium underline-offset-4 text-cyan-500 hover:text-cyan-400 hover:underline p-2 focus-ring"
+                className="text-sm font-medium underline-offset-4 text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
               >
                 {item.label}
               </Link>

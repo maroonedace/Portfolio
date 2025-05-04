@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
-import TritonXRLogo from "../assets/body/project/TritonXR.png";
-import PokedexAceLogo from "../assets/body/project/pokedexAce.png";
+import TritonXRLogo from "../../../../assets/body/project/TritonXR.png";
+import PokedexAceLogo from "../../../../assets/body/project/pokedexAce.png";
 
 export type Project = {
   name: string;
