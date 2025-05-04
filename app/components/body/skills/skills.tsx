@@ -16,7 +16,7 @@ const item = {
 const Skills: FC = () => {
   return (
     <MotionWrapper>
-      <section className="px-6 py-16 md:py-24">
+      <section className="px-6 pt-16 md:pt-24 scroll-mt-[82px]" id="skills">
         <div className="px-6 py-16 bg-zinc-900 rounded-lg">
           <motion.h2
             className="text-3xl md:text-4xl text-white/90 font-bold text-center mb-10"
@@ -29,7 +29,7 @@ const Skills: FC = () => {
           </motion.h2>
 
           <motion.ul
-            className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8"
+            className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 md:gap-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}

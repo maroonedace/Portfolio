@@ -22,10 +22,10 @@ const Home: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="relative flex flex-col items-center justify-center gap-8 pt-28 pb-24 p-2 min-h-screen text-center"
+        className="relative flex flex-col items-center justify-center gap-8 min-h-screen text-center"
         id="home"
       >
-        <div className="pointer-events-none absolute inset-0 -z-20 bg-black/30" />
+        <div className="pointer-events-none absolute inset-0 -z-20 bg-zinc-900/30" />
         <Image
           className="object-cover -z-30"
           fill
@@ -88,7 +88,7 @@ const Home: FC = () => {
         >
           <Link
             href="#about"
-            className="flex flex-col items-center gap-2 focus-ring"
+            className="flex flex-col items-center gap-2 focus-ring hover:text-zinc-300"
             tabIndex={0}
           >
             <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />

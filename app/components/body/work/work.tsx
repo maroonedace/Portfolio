@@ -10,10 +10,11 @@ const Work: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[82px]"
+        className="px-6 pt-16 md:pt-24 scroll-mt-[82px]"
         id="work"
       >
         <motion.div
+          className="px-4 md:px-8 py-16 bg-zinc-900 rounded-lg flex flex-col"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -49,7 +50,7 @@ const Work: FC = () => {
                 <div className="mt-4 flex flex-wrap gap-2">
                   {exp.skills.map((skill) => {
                     return (
-                      <span className="bg-zinc-900 py-1 px-2 rounded-xl text-sm" key={skill}>
+                      <span className="bg-zinc-700 py-1 px-2 rounded-xl text-sm" key={skill}>
                         {skill}
                       </span>
                     );

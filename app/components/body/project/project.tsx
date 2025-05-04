@@ -9,10 +9,9 @@ import Link from "next/link";
 const Project = () => {
   return (
     <section
-      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20"
-      id="project"
+      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[82px]"
+      id="projects"
     >
-      {/* ---------- Projects ---------- */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -46,10 +45,10 @@ const Project = () => {
                   className="transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 flex flex-col space-between">
+              <div className="p-6 flex flex-col">
                 <div className="flex flex-col gap-4">
                   <h3 className="font-semibold text-lg">{p.name}</h3>
-                  <p className="text-sm">{p.description}</p>
+                  <p className="min-h-12">{p.description}</p>
                   <ul className="flex flex-wrap gap-2 text-xs font-medium">
                     {p.tech.map((t) => (
                       <li
@@ -61,14 +60,14 @@ const Project = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="flex gap-4 pt-2">
+                <div className="flex gap-4 pt-6">
                   {p.embedLink && (
                     <Link
                       href={p.embedLink}
                       target="_blank"
                       tabIndex={0}
                       rel="noopener noreferrer"
-                      className="text-sm font-medium underline underline-offset-4 focus-ring"
+                      className="text-sm font-medium underline hover:text-zinc-300 underline-offset-4 focus-ring"
                     >
                       Live demo
                     </Link>
@@ -79,7 +78,7 @@ const Project = () => {
                       target="_blank"
                       tabIndex={0}
                       rel="noopener noreferrer"
-                      className="text-sm font-medium underline underline-offset-4 focus-ring"
+                      className="text-sm font-medium underline hover:text-zinc-300 underline-offset-4 focus-ring"
                     >
                       Source
                     </Link>

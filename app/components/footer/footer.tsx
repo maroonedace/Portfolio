@@ -19,7 +19,7 @@ const Footer = () => {
             <Link
               href="mailto:aostia@msn.com"
               tabIndex={0}
-              className="bg-white focus-ring p-2 rounded-full flex"
+              className="bg-white focus-ring p-2 rounded-full flex hover:scale-105 active:scale-95 transition motion-reduce:transform-none"
             >
               <i className="ph-fill ph-envelope text-[32px] text-black" />
             </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               tabIndex={0}
               aria-label="GitHub"
-              className="bg-white focus-ring p-2 rounded-full flex"
+              className="bg-white focus-ring p-2 rounded-full flex hover:scale-105 active:scale-95 transition motion-reduce:transform-none"
             >
               <Image
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
@@ -44,7 +44,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               tabIndex={0}
               aria-label="LinkedIn"
-              className="bg-white focus-ring p-2 rounded-full flex"
+              className="bg-white focus-ring p-2 rounded-full flex hover:scale-105 active:scale-95 transition motion-reduce:transform-none"
             >
               <Image
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"

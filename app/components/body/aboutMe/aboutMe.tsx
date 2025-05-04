@@ -16,19 +16,11 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const intro = `As a software engineer who has over 5 years of software development
-            experience, I have found myself working on a variety of
-            opportunities ranging from working in virtual reality experiences in
-            Unity, focused on creating data analysis visualizations and reports
-            with Python, and getting familiar with the full stack development
-            utilizing many frameworks such as React.js, Ruby on Rails, and
-            PostgreSQL.`;
-
 const AboutMe: FC = () => {
   return (
     <MotionWrapper>
       <motion.section
-        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 py-16 md:py-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[82px]"
+        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 pt-16 md:pt-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[82px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -57,7 +49,41 @@ const AboutMe: FC = () => {
               variants={item}
               className="text-lg md:text-xl max-w-7xl text-center mb-8"
             >
-              {intro}
+              I've spent the past&nbsp;
+              <span className="font-semibold text-cyan-400">
+                five&nbsp;years
+              </span>
+              &nbsp;building end-to-end products—from&nbsp;
+              <span className="font-semibold text-cyan-400">
+                immersive VR prototypes in Unity,
+              </span>{" "}
+              &nbsp;
+              <span className="font-semibold text-cyan-400">
+                data-driven analytics in Python
+              </span>{" "}
+              , to&nbsp;
+              <span className="font-semibold text-cyan-400">
+                full-stack web applications
+              </span>{" "}
+              . More recently I've pushed the frontier of&nbsp;
+              <span className="font-semibold text-cyan-400">
+                AI tooling
+              </span>{" "}
+              evaluating model performance and designing prompt libraries and
+              task suites. Whatever the stack, I show up with a&nbsp;
+              <span className="font-semibold text-cyan-400">
+                relentless focus on time optimization
+              </span>
+              ,&nbsp;
+              <span className="font-semibold text-cyan-400">
+                a quick learning curve
+              </span>
+              , and the&nbsp;
+              <span className="font-semibold text-cyan-400">
+                drive to turn concepts into experiences that outperform
+                expectations
+              </span>
+              .
             </motion.p>
 
             <div className="flex flex-col items-center justify-center gap-6">

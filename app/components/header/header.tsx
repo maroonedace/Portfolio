@@ -11,7 +11,9 @@ import MotionWrapper from "../motionWrapper";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -113,7 +115,7 @@ const Header: FC = () => {
 
         {/* Mobile toggle */}
         <button
-          className={`sm:hidden p-2 focus-ring flex ${isModalOpen ? "invisible" : ""}`}
+          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-300 ${isModalOpen ? "invisible" : ""}`}
           onClick={openMenu}
           aria-label="Toggle Navigation"
           aria-expanded={isModalOpen}
@@ -138,7 +140,7 @@ const Header: FC = () => {
               onClick={closeMenu}
               onPointerDownCapture={(e) => e.stopPropagation()}
               aria-label="Close navigation"
-              className="absolute top-4 right-4 p-2 text-cyan-400 focus-ring"
+              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-300"
             >
               <span className="material-icons" style={{ fontSize: 32 }}>
                 close
