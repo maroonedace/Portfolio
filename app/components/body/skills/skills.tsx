@@ -54,7 +54,7 @@ const Skills: FC = () => {
                   loading="lazy"
                   width={80}
                   height={80}
-                  className="mb-2 bg-zinc-700/50 p-2 rounded"
+                  className="mb-2 bg-zinc-500/70 p-2 rounded"
                 />
                 <span className="text-sm text-white/90">{skill.name}</span>
               </motion.li>
