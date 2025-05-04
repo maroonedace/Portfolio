@@ -80,9 +80,9 @@ const Header: FC = () => {
             width={40}
             height={48}
             className="w-10 h-auto mr-6"
+            priority
             src={marace}
             alt="Brand Logo"
-            priority
           />
         </Link>
 

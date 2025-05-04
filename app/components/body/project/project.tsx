@@ -40,28 +40,35 @@ const Project = () => {
                 <Image
                   src={p.logo}
                   alt={`${p.name} Logo`}
+                  priority
                   width="256"
+                  height="256"
                   className="transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 space-y-3">
-                <h3 className="font-semibold text-lg">{p.name}</h3>
-                <p className="text-sm text-muted-foreground">{p.description}</p>
-                <ul className="flex flex-wrap gap-2 text-xs font-medium">
-                  {p.tech.map((t) => (
-                    <li key={t} className="rounded px-2 py-0.5 text-primary">
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-
+              <div className="p-6 flex flex-col space-between">
+                <div className="flex flex-col gap-4">
+                  <h3 className="font-semibold text-lg">{p.name}</h3>
+                  <p className="text-sm">{p.description}</p>
+                  <ul className="flex flex-wrap gap-2 text-xs font-medium">
+                    {p.tech.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-xl bg-cyan-500/10 px-2 py-0.5"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <div className="flex gap-4 pt-2">
                   {p.embedLink && (
                     <Link
                       href={p.embedLink}
                       target="_blank"
+                      tabIndex={0}
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                      className="text-sm font-medium underline underline-offset-4 focus-ring"
                     >
                       Live demo
                     </Link>
@@ -70,8 +77,9 @@ const Project = () => {
                     <Link
                       href={p.github}
                       target="_blank"
+                      tabIndex={0}
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                      className="text-sm font-medium underline underline-offset-4 focus-ring"
                     >
                       Source
                     </Link>

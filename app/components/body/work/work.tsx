@@ -3,16 +3,14 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { works } from "./models/work";
-import { projects } from "../project/models/project";
 import MotionWrapper from "../../motionWrapper";
 
 const Work: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20"
+        className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[82px]"
         id="work"
       >
         <motion.div
@@ -20,7 +18,6 @@ const Work: FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          // className="bg-cyan-700 py-8 px-20 rounded"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Professional Experience
@@ -52,7 +49,7 @@ const Work: FC = () => {
                 <div className="mt-4 flex flex-wrap gap-2">
                   {exp.skills.map((skill) => {
                     return (
-                      <span className="bg-zinc-900 py-1 px-2 rounded-xl text-sm">
+                      <span className="bg-zinc-900 py-1 px-2 rounded-xl text-sm" key={skill}>
                         {skill}
                       </span>
                     );

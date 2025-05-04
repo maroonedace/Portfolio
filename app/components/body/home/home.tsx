@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 
 import hero from "../../../assets/body/home/hero.jpg";
-import downArrowSvg from "../../../assets/body/home/down.svg";
 import MotionWrapper from "../../motionWrapper";
 
 // Simple stagger helper for sequential fade‑ins
@@ -87,15 +86,12 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(3)}
         >
-          <Link href="#about" className="flex flex-col items-center gap-2 focus-ring" tabIndex={0}>
-            <Image
-              src={downArrowSvg}
-              width={40}
-              height={40}
-              className="motion-safe:animate-bounce"
-              alt="Scroll Down Arrow"
-              aria-hidden="true"
-            />
+          <Link
+            href="#about"
+            className="flex flex-col items-center gap-2 focus-ring"
+            tabIndex={0}
+          >
+            <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />
           </Link>
         </motion.div>
       </section>
