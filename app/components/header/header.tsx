@@ -102,7 +102,7 @@ const Header: FC = () => {
               </Link>
             ))}
           </div>
-          <Link
+          {/* <Link
             href="/resume.pdf"
             target="_blank"
             tabIndex={0}
@@ -110,7 +110,7 @@ const Header: FC = () => {
             className="rounded-xl bg-cyan-500 text-zinc-900 px-4 py-2 text-sm font-medium transition hover:bg-cyan-400 focus-ring"
           >
             Resume
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile toggle */}
@@ -161,7 +161,7 @@ const Header: FC = () => {
                     {item.label}
                   </Link>
                 ))}
-                <Link
+                {/* <Link
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -169,7 +169,7 @@ const Header: FC = () => {
                   onClick={closeMenu}
                 >
                   Resume
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>
