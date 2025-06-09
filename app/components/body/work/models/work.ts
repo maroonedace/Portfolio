@@ -35,7 +35,7 @@ export const works: Work[] = [
   },
   {
     name: "Oceanside Perspective",
-    title: "Lead Software Development Engineer",
+    title: "Lead Full Stack Engineer",
     logo: OPLogo,
     period: "2024 - Present",
     skills: ["Next.js", "Tailwind CSS", "Supabase", "Typescript", "Vercel"],
