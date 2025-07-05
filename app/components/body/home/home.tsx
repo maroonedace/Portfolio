@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
 import hero from "../../../assets/body/home/hero.jpg";
 import MotionWrapper from "../../motionWrapper";
+import { onLinkClick } from "../utils";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -63,20 +63,20 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(2)}
         >
-          <Link
-            href="#work"
+          <button
+            onClick={() => onLinkClick("work")}
             tabIndex={0}
             className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring"
           >
             View Work
-          </Link>
-          <Link
-            href="#contact"
+          </button>
+          <button
+            onClick={() => onLinkClick("contact")}
             tabIndex={0}
             className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-ring"
           >
             Let's Connect
-          </Link>
+          </button>
         </motion.div>
 
         {/* Scroll down indicator */}
@@ -86,13 +86,13 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(3)}
         >
-          <Link
-            href="#about"
-            className="flex flex-col items-center gap-2 focus-ring hover:text-zinc-300"
+          <span
+            onClick={() => onLinkClick("about")}
+            className="flex flex-col items-center cursor-pointer gap-2 focus-ring hover:text-zinc-300"
             tabIndex={0}
           >
             <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />
-          </Link>
+          </span>
         </motion.div>
       </section>
     </MotionWrapper>

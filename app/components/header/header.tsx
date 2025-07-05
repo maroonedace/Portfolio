@@ -1,28 +1,34 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import marace from "../../assets/header/marace.png";
 import { FC, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MotionWrapper from "../motionWrapper";
-
+import { onLinkClick } from "../body/utils";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "home" },
+  { label: "About", href: "about" },
+  { label: "Skills", href: "skills" },
+  { label: "Work", href: "work" },
+  { label: "Projects", href: "projects" },
+  { label: "Contact", href: "contact" },
 ];
 
 const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  const openMenu = () => setIsModalOpen(true);
-  const closeMenu = () => setIsModalOpen(false);
+  const onMenuOpen = () => setIsModalOpen(true);
+  const onMenuClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const onNavItemClick = (id: string) => {
+    onMenuClose();
+    onLinkClick(id);
+  };
 
   // Prevent background scroll when the mobile menu is open
   useEffect(() => {
@@ -40,10 +46,7 @@ const Header: FC = () => {
 
     const handlePointer = (e: Event) => {
       const target = e.target as Node;
-      if (
-        panelRef.current &&
-        !panelRef.current.contains(target)
-      ) {
+      if (panelRef.current && !panelRef.current.contains(target)) {
         setIsModalOpen(false);
       }
     };
@@ -77,7 +80,7 @@ const Header: FC = () => {
       className={`fixed inset-x-0 top-0 flex z-40 backdrop-blur-md bg-zinc-900/70`}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <Link href="#home">
+        <span onClick={() => onLinkClick("home")}>
           <Image
             width={40}
             height={48}
@@ -86,41 +89,34 @@ const Header: FC = () => {
             src={marace}
             alt="Brand Logo"
           />
-        </Link>
+        </span>
 
         {/* Desktop navigation */}
         <div className="hidden sm:flex items-center justify-between w-full">
           <div className="flex items-center gap-4">
             {navItems.map((item) => (
-              <Link
+              <span
                 key={item.href}
-                href={item.href}
+                onClick={() => onLinkClick(item.href)}
                 tabIndex={0}
-                className="text-sm font-medium underline-offset-4 text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
+                className="text-sm font-medium cursor-pointer underline-offset-4 text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
               >
                 {item.label}
-              </Link>
+              </span>
             ))}
           </div>
-          {/* <Link
-            href="/resume.pdf"
-            target="_blank"
-            tabIndex={0}
-            rel="noopener noreferrer"
-            className="rounded-xl bg-cyan-500 text-zinc-900 px-4 py-2 text-sm font-medium transition hover:bg-cyan-400 focus-ring"
-          >
-            Resume
-          </Link> */}
         </div>
 
         {/* Mobile toggle */}
         <button
           className={`sm:hidden p-2 focus-ring flex hover:text-zinc-300 ${isModalOpen ? "invisible" : ""}`}
-          onClick={openMenu}
+          onClick={onMenuOpen}
           aria-label="Toggle Navigation"
           aria-expanded={isModalOpen}
         >
-          <span className="material-icons" style={{ fontSize: 32 }}>menu</span>
+          <span className="material-icons" style={{ fontSize: 32 }}>
+            menu
+          </span>
         </button>
       </nav>
 
@@ -137,7 +133,7 @@ const Header: FC = () => {
             aria-modal="true"
           >
             <button
-              onClick={closeMenu}
+              onClick={onMenuClose}
               onPointerDownCapture={(e) => e.stopPropagation()}
               aria-label="Close navigation"
               className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-300"
@@ -152,24 +148,14 @@ const Header: FC = () => {
             >
               <div className="flex flex-col items-center gap-6 py-6">
                 {navItems.map((item) => (
-                  <Link
+                  <span
+                    onClick={() => onNavItemClick(item.href)}
                     key={item.href}
-                    href={item.href}
-                    onClick={closeMenu}
                     className="text-lg font-medium text-cyan-400 hover:text-cyan-300"
                   >
                     {item.label}
-                  </Link>
+                  </span>
                 ))}
-                {/* <Link
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-900 px-6 py-2 font-medium"
-                  onClick={closeMenu}
-                >
-                  Resume
-                </Link> */}
               </div>
             </div>
           </motion.div>
