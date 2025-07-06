@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Hi, I'm Anthony Ostia. Always looking for new opportunities to grow and engage in insightful conversations.",
     images: [
       {
-        url: `${baseUrl}/preview.jpg`,
+        url: `${baseUrl}/preview.png`,
         width: 1200,
         height: 630,
       },
