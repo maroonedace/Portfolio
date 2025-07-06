@@ -9,14 +9,14 @@ import MotionWrapper from "../../motionWrapper";
 import { onLinkClick } from "../utils";
 
 // Simple stagger helper for sequential fade‑ins
-// const fadeUp = (i: number) => ({
-//   hidden: { opacity: 0, y: 20 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
-//   },
-// });
+const fadeUp = (i: number) => ({
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  },
+});
 
 const Home: FC = () => {
   return (
@@ -36,32 +36,32 @@ const Home: FC = () => {
         />
 
         {/* Headline */}
-        <h1
+        <motion.h1
           className="text-4xl md:text-6xl font-extrabold text-white"
-          // initial="hidden"
-          // animate="visible"
-          // variants={fadeUp(0)}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(0)}
         >
           Hi, I'm Anthony Ostia
-        </h1>
+        </motion.h1>
 
         {/* Subheadline */}
-        <p
+        <motion.p
           className="text-lg md:text-xl text-white/90"
-          // initial="hidden"
-          // animate="visible"
-          // variants={fadeUp(1)}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(1)}
         >
           Always looking for new opportunities to grow and engage in insightful
           conversations
-        </p>
+        </motion.p>
 
         {/* Call‑to‑action buttons */}
-        <div
+        <motion.div
           className="flex flex-wrap justify-center gap-4"
-          // initial="hidden"
-          // animate="visible"
-          // variants={fadeUp(2)}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(2)}
         >
           <button
             onClick={() => onLinkClick("work")}
@@ -77,14 +77,14 @@ const Home: FC = () => {
           >
             Let's Connect
           </button>
-        </div>
+        </motion.div>
 
         {/* Scroll down indicator */}
-        <div
+        <motion.div
           className="absolute bottom-8"
-          // initial="hidden"
-          // animate="visible"
-          // variants={fadeUp(3)}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(3)}
         >
           <span
             onClick={() => onLinkClick("about")}
@@ -93,7 +93,7 @@ const Home: FC = () => {
           >
             <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />
           </span>
-        </div>
+        </motion.div>
       </section>
     </MotionWrapper>
   );
