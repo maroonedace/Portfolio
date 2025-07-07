@@ -25,7 +25,7 @@ export const projects: Project[] = [
     logo: TritonXRLogo,
     tech: ["Unity", "C#", "XR", "3D Modeling"],
     description: "XR app teaching users how to nourish themselves through nutrition.",
-    embedLink: "https://youtu.be/z-KPfnebmsY?si=HTrXGv4j_Mzx7e0n",
+    embedLink: "https://youtu.be/CGiiyc2ylgk",
     github: "https://github.com/TritonXR/FoodQuest",
   },
 ]
