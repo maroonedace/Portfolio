@@ -77,7 +77,7 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 flex z-40 backdrop-blur-md bg-zinc-900/70`}
+      className={`fixed inset-x-0 top-0 flex z-40 bg-zinc-800`}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <span onClick={() => onLinkClick("home")}>
@@ -95,21 +95,21 @@ const Header: FC = () => {
         <div className="hidden sm:flex items-center justify-between w-full">
           <div className="flex items-center gap-4">
             {navItems.map((item) => (
-              <span
+              <button
                 key={item.href}
                 onClick={() => onLinkClick(item.href)}
                 tabIndex={0}
-                className="text-sm font-medium cursor-pointer underline-offset-4 text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
+                className="text-sm font-medium underline-offset-4 text-white/90 hover:text-zinc-400 hover:underline p-2 focus-ring"
               >
                 {item.label}
-              </span>
+              </button>
             ))}
           </div>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-300 ${isModalOpen ? "invisible" : ""}`}
+          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-400 ${isModalOpen ? "invisible" : ""}`}
           onClick={onMenuOpen}
           aria-label="Toggle Navigation"
           aria-expanded={isModalOpen}
@@ -136,7 +136,7 @@ const Header: FC = () => {
               onClick={onMenuClose}
               onPointerDownCapture={(e) => e.stopPropagation()}
               aria-label="Close navigation"
-              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-300"
+              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-400"
             >
               <span className="material-icons" style={{ fontSize: 32 }}>
                 close
@@ -148,13 +148,13 @@ const Header: FC = () => {
             >
               <div className="flex flex-col items-center gap-6 py-6">
                 {navItems.map((item) => (
-                  <span
+                  <button
                     onClick={() => onNavItemClick(item.href)}
                     key={item.href}
                     className="text-lg font-medium text-cyan-400 hover:text-cyan-300"
                   >
                     {item.label}
-                  </span>
+                  </button>
                 ))}
               </div>
             </div>

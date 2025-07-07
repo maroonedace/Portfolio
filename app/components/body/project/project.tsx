@@ -67,7 +67,7 @@ const Project = () => {
                       target="_blank"
                       tabIndex={0}
                       rel="noopener noreferrer"
-                      className="text-sm font-medium underline hover:text-zinc-300 underline-offset-4 focus-ring"
+                      className="text-sm font-medium underline hover:text-zinc-400 underline-offset-4 focus-ring"
                     >
                       Live demo
                     </Link>
@@ -78,7 +78,7 @@ const Project = () => {
                       target="_blank"
                       tabIndex={0}
                       rel="noopener noreferrer"
-                      className="text-sm font-medium underline hover:text-zinc-300 underline-offset-4 focus-ring"
+                      className="text-sm font-medium underline hover:text-zinc-400 underline-offset-4 focus-ring"
                     >
                       Source
                     </Link>

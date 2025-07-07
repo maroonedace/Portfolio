@@ -88,7 +88,7 @@ const Home: FC = () => {
         >
           <span
             onClick={() => onLinkClick("about")}
-            className="flex flex-col items-center cursor-pointer gap-2 focus-ring hover:text-zinc-300"
+            className="flex flex-col items-center cursor-pointer gap-2 focus-ring hover:text-zinc-400"
             tabIndex={0}
           >
             <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />
