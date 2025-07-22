@@ -69,11 +69,11 @@ export const machineLearningSkills: Skill[] = [
 ];
 
 export const techStackList: SkillList[] = [
-  { title: "Programming Languages", skills: programmingLanguages },
-  { title: "Back End", skills: backendSkills },
-  { title: "Front End", skills: frontendSkills },
-  { title: "Databases", skills: databaseSkills },
+  { title: "Core Languages", skills: programmingLanguages },
+  { title: "Frontend Development", skills: frontendSkills },
+  { title: "Backend Development", skills: backendSkills },
+  { title: "Data Management", skills: databaseSkills },
   { title: "Machine Learning", skills: machineLearningSkills },
-  { title: "Testing", skills: testingSkills },
-  { title: "DevOps", skills: devOpsSkills },
+  { title: "Quality Assurance & Testing", skills: testingSkills },
+  { title: "Development & DevOps", skills: devOpsSkills },
 ];

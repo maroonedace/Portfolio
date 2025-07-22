@@ -46,7 +46,7 @@ const Skills: FC = () => {
                   variants={item}
                   className={`flex flex-col gap-4 text-center`}
                 >
-                  <h3 className="text-2xl md:text-3xl">{list.title}</h3>
+                  <h4 className="text-xl md:text-2xl">{list.title}</h4>
                   <ul className="flex flex-wrap gap-8 justify-center">
                     {list.skills.map((skill) => (
                       <li
