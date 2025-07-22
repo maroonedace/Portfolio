@@ -10,7 +10,7 @@ const Work: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="px-6 pt-16 md:pt-24 scroll-mt-[82px]"
+        className="px-6 pt-16 md:pt-24"
         id="work"
       >
         <motion.div

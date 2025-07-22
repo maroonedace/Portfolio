@@ -9,7 +9,7 @@ import Link from "next/link";
 const Project = () => {
   return (
     <section
-      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[82px]"
+      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20"
       id="projects"
     >
       <motion.div

@@ -38,7 +38,7 @@ export const works: Work[] = [
     title: "Lead Full Stack Engineer",
     logo: OPLogo,
     period: "2024 - Present",
-    skills: ["Next.js", "Tailwind CSS", "Supabase", "Typescript", "Vercel"],
+    skills: ["Next.js", "Tailwind CSS", "Node.js", "Supabase", "Vercel"],
     website: "https://www.oceansideperspective.org",
     points: [
       "Increased user engagement by 20% through implementation of animations, skeleton screens, and seamless visual transitions.",
@@ -53,7 +53,7 @@ export const works: Work[] = [
     logo: NZeroSVG,
     period: "2021 - 2024",
     website: "https://nzero.com",
-    skills: ["Ruby on Rails", "React", "Docker", "PostgreSQL", "Material UI"],
+    skills: ["React", "Material UI", "Ruby on Rails", "PostgreSQL", "AWS"],
     points: [
       "Designed and delivered a new data management platform that increased data accessibility and usability for customers by 30%.",
       "Streamlined API performance with Ruby, reducing data transmission times by 15% and improving front-end responsiveness.",

@@ -1,9 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import {
-  techStackList,
-} from "../../../models/skill";
+import { techStackList } from "../../../models/skill";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import MotionWrapper from "../../motionWrapper";
@@ -16,8 +14,8 @@ const item = {
 const Skills: FC = () => {
   return (
     <MotionWrapper>
-      <section className="px-6 pt-16 md:pt-24 scroll-mt-[82px]" id="skills">
-        <div className="px-6 py-16 bg-zinc-900 rounded-lg">
+      <section className="px-6 pt-16 md:pt-24" id="skills">
+        <div className="px-8 py-16 bg-zinc-900 rounded-lg">
           <motion.h2
             className="text-3xl md:text-4xl text-white/90 font-bold text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
@@ -27,9 +25,8 @@ const Skills: FC = () => {
           >
             Skills & Tech Stack
           </motion.h2>
-
-          <motion.ul
-            className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 md:gap-12"
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -42,24 +39,38 @@ const Skills: FC = () => {
               },
             }}
           >
-            {techStackList.map((skill) => (
-              <motion.li
-                key={`${skill.name} logo`}
-                className="flex flex-col gap-2 items-center"
-                variants={item}
-              >
-                <Image
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.className}`}
-                  alt={skill.name}
-                  loading="lazy"
-                  width={80}
-                  height={80}
-                  className="mb-2 bg-zinc-500/70 p-2 rounded"
-                />
-                <span className="text-sm text-white/90">{skill.name}</span>
-              </motion.li>
-            ))}
-          </motion.ul>
+            {techStackList.map((list) => {
+              return (
+                <motion.div
+                  key={list.title}
+                  variants={item}
+                  className={`flex flex-col gap-4 text-center`}
+                >
+                  <h3 className="text-2xl md:text-3xl">{list.title}</h3>
+                  <ul className="flex flex-wrap gap-8 justify-center">
+                    {list.skills.map((skill) => (
+                      <li
+                        key={`${skill.name} logo`}
+                        className="flex flex-col gap-2 items-center"
+                      >
+                        <Image
+                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${skill.className}`}
+                          alt={skill.name}
+                          loading="lazy"
+                          width={80}
+                          height={80}
+                          className="mb-2 bg-zinc-500/70 p-2 rounded"
+                        />
+                        <span className="text-sm text-white/90">
+                          {skill.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
     </MotionWrapper>
