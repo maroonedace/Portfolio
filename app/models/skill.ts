@@ -13,8 +13,7 @@ export interface SkillList {
   skills: Skill[];
 }
 
-
-export const programmingLanguages: Skill[] =[
+export const programmingLanguages: Skill[] = [
   { name: "JavaScript", className: "javascript/javascript-original.svg" },
   { name: "TypeScript", className: "typescript/typescript-original.svg" },
   { name: "Python", className: "python/python-original.svg" },
@@ -22,7 +21,7 @@ export const programmingLanguages: Skill[] =[
   { name: "Java", className: "java/java-original.svg" },
   { name: "C#", className: "csharp/csharp-original.svg" },
   { name: "Rust", className: "rust/rust-original.svg" },
-]
+];
 
 export const frontendSkills: Skill[] = [
   { name: "React.js", className: "react/react-original.svg" },
@@ -34,6 +33,7 @@ export const frontendSkills: Skill[] = [
 
 export const backendSkills: Skill[] = [
   { name: "Node.js", className: "nodejs/nodejs-original-wordmark.svg" },
+  { name: "FastAPI", className: "fastapi/fastapi-original.svg" },
   { name: "Ruby on Rails", className: "rails/rails-plain-wordmark.svg" },
   { name: "Express", className: "express/express-original.svg" },
 ];
