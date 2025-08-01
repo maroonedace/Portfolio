@@ -96,13 +96,13 @@ export const documentationSkills: Skill[] = [
 ]
 
 export const techStackList: SkillList[] = [
-  { title: "🧠 Core Programming Languages", skills: programmingLanguages },
-  { title: "🎨 Web & Client-Side Technologies", skills: frontendSkills },
-  { title: "⚙️ Server-Side Technologies", skills: backendSkills },
-  { title: "💾 Databases & Data Management", skills: databaseSkills },
-  { title: "🧪 Testing & Quality Assurance", skills: testingSkills },
-  { title: "🤖 Machine Learning & Data Science", skills: machineLearningSkills },
-  { title: "⚡ DevOps & CI/CD", skills: devOpsSkills },
-  { title: "🧰 Design Systems & Prototyping", skills: designSkills}, 
-  { title: "📚 Documentation & Productivity", skills: documentationSkills },
+  { title: "Core Programming Languages", skills: programmingLanguages },
+  { title: "Web & Client-Side Technologies", skills: frontendSkills },
+  { title: "Server-Side Technologies", skills: backendSkills },
+  { title: "Databases & Data Management", skills: databaseSkills },
+  { title: "Testing & Quality Assurance", skills: testingSkills },
+  { title: "Machine Learning & Data Science", skills: machineLearningSkills },
+  { title: "DevOps & CI/CD", skills: devOpsSkills },
+  { title: "Design Systems & Prototyping", skills: designSkills}, 
+  { title: "Documentation & Productivity", skills: documentationSkills },
 ];
