@@ -17,7 +17,7 @@ const Footer = () => {
           </h3>
           <div className="flex gap-2">
             <Link
-              href="mailto:aostia@msn.com"
+              href="mailto:aostia815@gmail.com"
               tabIndex={0}
               className="bg-white focus-ring p-2 rounded-full flex hover:scale-105 active:scale-95 transition motion-reduce:transform-none"
             >

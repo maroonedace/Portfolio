@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 import TritonXRLogo from "../../../../assets/body/project/TritonXR.png";
 import AceDexLogo from "../../../../assets/body/project/pokedexAce.png";
+import ADokiToRememberLogo from "../../../../assets/body/project/aDokiToRemember.png";
 
 export type Project = {
   name: string;
@@ -12,7 +13,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-    {
+  {
+    name: "A Doki To Remember",
+    logo: ADokiToRememberLogo,
+    tech: ["GDScript", "Asperite", "Godot"],
+    description: "A game jam project developed over two weeks.",
+    embedLink: "https://maroonedace.itch.io/a-doki-to-remember",
+    github: "https://github.com/maroonedace/A-Doki-To-Remember/",
+  },
+  {
     name: "AceDex",
     logo: AceDexLogo,
     tech: ["React", "Rust", "Supabase", "Tauri"],
