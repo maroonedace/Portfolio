@@ -91,7 +91,6 @@ export const designSkills: Skill[] = [
 export const documentationSkills: Skill[] = [
   { name: "Confluence", className: "confluence/confluence-original.svg" },
   { name: "Notion", className: "notion/notion-original.svg" },
-  { name: "Storybook", className: "storybook/storybook-original.svg" },
   { name: "Markdown", className: "markdown/markdown-original.svg" },
 ]
 
