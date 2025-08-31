@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.85.6",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.3.30",
     "gsap": "^3.13.0",
