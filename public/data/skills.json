@@ -1,0 +1,136 @@
+{
+  "skills": [
+    {
+      "name": "JavaScript",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "TypeScript",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "Python",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "Ruby",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "C#",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "Rust",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+      "category": "languages"
+    },
+    {
+      "name": "React.js",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "Next.js",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "Tailwind CSS",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "Material UI",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "Vite",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "Tauri",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tauri/tauri-original.svg",
+      "category": "frontend"
+    },
+
+    {
+      "name": "Node.js",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+    },
+    {
+      "name": "Rails",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain-wordmark.svg"
+    },
+
+    {
+      "name": "PostgreSQL",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+    },
+    {
+      "name": "Supabase",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+    },
+    {
+      "name": "Redis",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg"
+    },
+
+    {
+      "name": "Jest",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg"
+    },
+    {
+      "name": "RSpec",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rspec/rspec-original.svg"
+    },
+    {
+      "name": "Cypress",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg"
+    },
+    {
+      "name": "Postman",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
+    },
+
+    {
+      "name": "AWS",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+    },
+    {
+      "name": "Docker",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg"
+    },
+    {
+      "name": "Vercel",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+    },
+    {
+      "name": "Heroku",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-plain.svg"
+    },
+    {
+      "name": "CircleCI",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/circleci/circleci-plain.svg"
+    },
+    {
+      "name": "Git",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+    },
+    {
+      "name": "Figma",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+    },
+    {
+      "name": "Storybook",
+      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg"
+    }
+  ]
+}

@@ -7,6 +7,8 @@ interface RootLayoutProps {
 
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import Splash from "./components/splash";
+import ReactQueryProvider from "./utils/providers/reactQueryProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 const clashDisplay = localFont({
@@ -54,7 +56,13 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
         />
       </head>
-      <body className={`${clashDisplay.variable} font-clash`}>{children}</body>
+
+      <body className={`${clashDisplay.variable} font-clash`}>
+        {/* <Splash oncePerSession minDuration={0} /> */}
+        <ReactQueryProvider>
+          {children}
+        </ReactQueryProvider>
+      </body>
     </html>
   );
 };

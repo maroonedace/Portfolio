@@ -10,7 +10,6 @@ import { onLinkClick } from "../body/utils";
 const navItems = [
   { label: "Home", href: "home" },
   { label: "About", href: "about" },
-  { label: "Skills", href: "skills" },
   { label: "Work", href: "work" },
   { label: "Projects", href: "projects" },
   { label: "Contact", href: "contact" },
@@ -77,7 +76,7 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 flex z-40 bg-zinc-800`}
+      className={`fixed inset-x-0 top-0 flex z-40 `}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <span onClick={() => onLinkClick("home")}>

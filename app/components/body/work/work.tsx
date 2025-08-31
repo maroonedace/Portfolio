@@ -56,14 +56,6 @@ const Work: FC = () => {
                     );
                   })}
                 </div>
-
-                <ul className="mt-4 list-disc pl-5 text-sm space-y-1">
-                  {exp.points.map((b) => (
-                    <li key={b} className="text-base">
-                      {b}
-                    </li>
-                  ))}
-                </ul>
               </li>
             ))}
           </ul>

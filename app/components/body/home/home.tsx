@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
-import hero from "../../../assets/body/home/hero.jpg";
 import MotionWrapper from "../../motionWrapper";
 import { onLinkClick } from "../utils";
+import Hero from "./hero";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -14,7 +13,7 @@ const fadeUp = (i: number) => ({
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.08, duration: 0.35, ease: "easeOut" },
   },
 });
 
@@ -25,16 +24,19 @@ const Home: FC = () => {
         className="relative flex flex-col items-center justify-center gap-8 min-h-screen text-center px-6"
         id="home"
       >
-        <div className="pointer-events-none absolute inset-0 -z-20 bg-zinc-900/30" />
-        <Image
-          className="object-cover -z-30"
-          fill
-          src={hero}
-          priority
-          sizes="100vw"
-          alt="Hero Background"
-        />
-
+        <div className="h-full w-full absolute z-[-30] bg-zinc-900">
+          <Hero
+            dotSize={10}
+            gap={15}
+            baseColor="#164e63"
+            activeColor="#FFFFFF"
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
+          />
+        </div>
         {/* Headline */}
         <motion.h1
           className="text-4xl md:text-6xl font-extrabold text-white"
@@ -42,26 +44,36 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(0)}
         >
-          Hi, I'm Anthony Ostia
+          Software Engineer
         </motion.h1>
 
-        {/* Subheadline */}
-        <motion.p
-          className="text-lg md:text-xl text-white/90"
+        {/* Headline */}
+        <motion.h1
+          className="text-4xl md:text-6xl font-extrabold text-white"
           initial="hidden"
           animate="visible"
           variants={fadeUp(1)}
         >
+          Anthony Ostia
+        </motion.h1>
+
+        {/* Subheadline */}
+        {/* <motion.p
+          className="text-lg md:text-xl text-white/90"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp(2)}
+        >
           Always looking for new opportunities to grow and engage in insightful
           conversations
-        </motion.p>
+        </motion.p> */}
 
         {/* Call‑to‑action buttons */}
         <motion.div
           className="flex flex-wrap justify-center gap-4"
           initial="hidden"
           animate="visible"
-          variants={fadeUp(2)}
+          variants={fadeUp(3)}
         >
           <button
             onClick={() => onLinkClick("work")}
