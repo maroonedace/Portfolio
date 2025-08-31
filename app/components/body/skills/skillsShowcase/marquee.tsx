@@ -18,7 +18,7 @@ const Marquee = ({ children, direction }: MarqueeProps) => {
       <div
         className={clsx(
           a1,
-          "inline-flex items-center gap-2 whitespace-nowrap w-max will-change-transform"
+          "inline-flex items-center whitespace-nowrap w-max will-change-transform"
         )}
       >
         {children}
@@ -26,7 +26,7 @@ const Marquee = ({ children, direction }: MarqueeProps) => {
       <div
         className={clsx(
           a2,
-          "absolute top-0 inline-flex items-center gap-2 whitespace-nowrap w-max will-change-transform left-0"
+          "absolute top-0 inline-flex items-center whitespace-nowrap w-max will-change-transform left-0"
         )}
       >
         {children}
