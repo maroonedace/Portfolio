@@ -10,7 +10,7 @@ const SkillShowcase = () => {
 
   const skillArray = chunkArray(skills, 3);
   return (
-    <div className="flex flex-col gap-4 w-[90%]">
+    <div className="flex flex-col gap-4">
       {skillArray.map((skillList, index) => {
         return (
           <Marquee

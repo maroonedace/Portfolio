@@ -1,37 +1,62 @@
 "use client";
-import React from "react";
-import clsx from "clsx";
+import { motion } from "framer-motion";
+import { ReactNode, useEffect, useRef, useState } from "react";
+import { useWindowSize } from "@react-hook/window-size";
 
 type MarqueeProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   direction: "left" | "right";
 };
 
+const MARQUEE_SPEED = 20;
+const REPEAT = 3;
+
 const Marquee = ({ children, direction }: MarqueeProps) => {
-  const a1 =
-    direction === "left" ? "animate-marqueeLeft" : "animate-marqueeRight";
-  const a2 =
-    direction === "left" ? "animate-marqueeLeft2" : "animate-marqueeRight2";
+  const marquee = useRef<null | HTMLDivElement>(null);
+  const [width] = useWindowSize();
+  const [marqueeWidth, setMarqueeWidth] = useState(0);
+
+  useEffect(() => {
+    if (global.window !== undefined) {
+      setMarqueeWidth(marquee.current!.scrollWidth);
+    }
+  }, [width]);
+
+  const duplicateChildren = new Array(REPEAT).fill(children);
+
+  const x =
+    direction == "left"
+      ? [0, -marqueeWidth / REPEAT]
+      : [-marqueeWidth / REPEAT, 0];
 
   return (
-    <div className="relative overflow-hidden">
-      <div
-        className={clsx(
-          a1,
-          "inline-flex items-center whitespace-nowrap w-max will-change-transform"
-        )}
+    <motion.div className="overflow-hidden w-[90vw]">
+      <motion.div
+        animate={{
+          x,
+          scale: 1,
+        }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "linear",
+          duration: MARQUEE_SPEED,
+        }}
+        ref={marquee}
+        className="flex"
       >
-        {children}
-      </div>
-      <div
-        className={clsx(
-          a2,
-          "absolute top-0 inline-flex items-center whitespace-nowrap w-max will-change-transform left-0"
-        )}
-      >
-        {children}
-      </div>
-    </div>
+        {duplicateChildren.map((child, index) => {
+          return (
+            <div
+              key={index}
+              className={`flex flex-row flex-shrink-0`}
+            >
+              {child}
+            </div>
+          );
+        })}
+      </motion.div>
+    </motion.div>
   );
 };
 
