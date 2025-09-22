@@ -5,7 +5,9 @@ import { FC } from "react";
 
 import MotionWrapper from "../../motionWrapper";
 import { onLinkClick } from "../utils";
-import Hero from "./hero";
+import Image from "next/image";
+
+import bgImg from "../../../assets/body/home/hero.jpg"
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -25,17 +27,7 @@ const Home: FC = () => {
         id="home"
       >
         <div className="h-full w-full absolute z-[-30] bg-zinc-900">
-          <Hero
-            dotSize={10}
-            gap={15}
-            baseColor="#164e63"
-            activeColor="#FFFFFF"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
-          />
+          <Image src={bgImg} alt="Background" />
         </div>
         {/* Headline */}
         <motion.h1
@@ -56,17 +48,6 @@ const Home: FC = () => {
         >
           Anthony Ostia
         </motion.h1>
-
-        {/* Subheadline */}
-        {/* <motion.p
-          className="text-lg md:text-xl text-white/90"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp(2)}
-        >
-          Always looking for new opportunities to grow and engage in insightful
-          conversations
-        </motion.p> */}
 
         {/* Call‑to‑action buttons */}
         <motion.div
