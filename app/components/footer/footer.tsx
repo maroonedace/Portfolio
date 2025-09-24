@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="border-t border-zinc-800 bg-zinc-900 py-8 px-6"
+      className="border-t border-zinc-800 bg-zinc-800 py-8 px-6"
     >
       <div className="flex items-end justify-between">
         {/* Contact */}

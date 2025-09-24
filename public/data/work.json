@@ -1,0 +1,44 @@
+{
+    "work": [
+        {
+            "name": "Oceanside Perspective",
+            "title": "Senior Software Engineer",
+            "logo": "/images/work/opLogo.jpeg",
+            "period": "2024 - Present",
+            "skills": [
+                "Next.js",
+                "Tailwind CSS",
+                "Node.js",
+                "Supabase",
+                "Vercel"
+            ],
+            "website": "https://www.oceansideperspective.org",
+            "points": [
+                "Led a team of 3 developers to launch a content subscription demo using Next.js, Node.js, and Supabase.",
+                "Increased user engagement by 30% with UI/UX improvements (search filtering, navigation, animations).",
+                "Designed backend API routes for dynamic content retrieval; integrated Tailwind CSS and Framer Motion."
+            ]
+        },
+        {
+            "name": "NZero",
+            "title": "Software Engineer II",
+            "logo": "/images/work/nZero.svg",
+            "period": "2021 - 2024",
+            "website": "https://nzero.com",
+            "skills": [
+                "React",
+                "Material UI",
+                "Rails",
+                "PostgreSQL",
+                "AWS"
+            ],
+            "points": [
+                "Promoted twice for ownership and delivery across front-end and back-end using React, Rails, and PostgreSQL.",
+                "Led development of a data management portal that reduced manual data handling by 60%.",
+                "Implemented new metric visualizations, client filtering, and unit conversions in a full UI refresh.",
+                "Boosted API efficiency with React Query, improved coverage by 35% via unit testing (Jest/RSpec).",
+                "Set up CI/CD pipelines with GitHub Actions, deployed infrastructure on AWS EC2/S3 and previously Heroku."
+            ]
+        }
+    ]
+}

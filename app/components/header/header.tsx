@@ -127,7 +127,7 @@ const Header: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-zinc-900/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-zinc-800/60 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
           >
@@ -142,7 +142,7 @@ const Header: FC = () => {
               </span>
             </button>
             <div
-              className="bg-zinc-900/95 px-12 py-6 rounded-2xl"
+              className="bg-zinc-800/95 px-12 py-6 rounded-2xl"
               ref={panelRef}
             >
               <div className="flex flex-col items-center gap-6 py-6">

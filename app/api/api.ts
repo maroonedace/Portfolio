@@ -8,4 +8,19 @@ const fetchSkills = async () => {
   return NextResponse.json(data)
 };
 
-export default fetchSkills;
+const fetchWork = async () => {
+  const file = await fs.readFile(process.cwd() + "public/data/work.json", "utf8");
+  const data = JSON.parse(file);
+  return NextResponse.json(data)
+};
+
+const fetchProjects = async () => {
+  const file = await fs.readFile(process.cwd() + "public/data/work.json", "utf8");
+  const data = JSON.parse(file);
+  return NextResponse.json(data)
+};
+
+
+export default { fetchSkills, fetchWork, fetchProjects };
+
+

@@ -3,147 +3,207 @@
     {
       "name": "JavaScript",
       "slug": "js",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+      "src": "/images/skills/javascript.svg"
     },
     {
       "name": "TypeScript",
       "slug": "ts",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+      "src": "/images/skills/typescript.svg"
     },
     {
       "name": "Python",
       "slug": "python",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+      "src": "/images/skills/python.svg"
     },
     {
       "name": "Ruby",
       "slug": "ruby",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg"
+      "src": "/images/skills/ruby.svg"
     },
     {
       "name": "C#",
       "slug": "csharp",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+      "src": "/images/skills/csharp.svg"
     },
     {
       "name": "Rust",
       "slug": "rust",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
+      "src": "/images/skills/rust.svg"
     },
     {
-      "name": "React.js",
+      "name": "React",
       "slug": "react",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+      "src": "/images/skills/react.svg"
+    },
+    {
+      "name": "React Router",
+      "slug": "reactrouter",
+      "src": "/images/skills/reactrouter.svg"
     },
     {
       "name": "Next.js",
       "slug": "next",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+      "src": "/images/skills/nextjs.svg"
+    },
+    {
+      "name": "Redux",
+      "slug": "redux",
+      "src": "/images/skills/redux.svg"
     },
     {
       "name": "Tailwind CSS",
       "slug": "tw",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      "src": "/images/skills/tailwindcss.svg"
     },
     {
       "name": "Material UI",
       "slug": "mui",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg"
+      "src": "/images/skills/materialui.svg"
+    },
+    {
+      "name": "Framer Motion",
+      "slug": "framermotion",
+      "src": "/images/skills/framermotion.svg"
     },
     {
       "name": "Vite",
       "slug": "vite",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+      "src": "/images/skills/vitejs.svg"
     },
     {
       "name": "Tauri",
       "slug": "tauri",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tauri/tauri-original.svg"
+      "src": "/images/skills/tauri.svg"
     },
     {
       "name": "Node.js",
       "slug": "node",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+      "src": "/images/skills/nodejs.svg"
     },
     {
       "name": "Rails",
       "slug": "rails",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain-wordmark.svg"
+      "src": "/images/skills/rails.svg"
     },
     {
       "name": "PostgreSQL",
       "slug": "pgsql",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+      "src": "/images/skills/postgresql.svg"
     },
     {
       "name": "Supabase",
       "slug": "supabase",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+      "src": "/images/skills/supabase.svg"
     },
     {
       "name": "Redis",
       "slug": "redis",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg"
+      "src": "/images/skills/redis.svg"
     },
     {
       "name": "Jest",
       "slug": "jest",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg"
+      "src": "/images/skills/jest.svg"
     },
     {
       "name": "RSpec",
       "slug": "rspec",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rspec/rspec-original.svg"
+      "src": "/images/skills/rspec.svg"
     },
     {
       "name": "Cypress",
       "slug": "cypress",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg"
+      "src": "/images/skills/cypressio.svg"
     },
     {
       "name": "Postman",
       "slug": "postman",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
+      "src": "/images/skills/postman.svg"
     },
     {
       "name": "AWS",
       "slug": "aws",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+      "src": "/images/skills/aws.svg"
     },
     {
       "name": "Docker",
       "slug": "docker",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg"
+      "src": "/images/skills/docker.svg"
     },
     {
       "name": "Vercel",
       "slug": "vercel",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+      "src": "/images/skills/vercel.svg"
     },
     {
       "name": "Heroku",
       "slug": "heroku",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-plain.svg"
+      "src": "/images/skills/heroku.svg"
     },
     {
       "name": "CircleCI",
       "slug": "circleci",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/circleci/circleci-plain.svg"
+      "src": "/images/skills/circleci.svg"
+    },
+    {
+      "name": "Debian",
+      "slug": "debian",
+      "src": "/images/skills/debian.svg"
+    },
+    {
+      "name": "Anaconda",
+      "slug": "anaconda",
+      "src": "/images/skills/anaconda.svg"
+    },
+    {
+      "name": "Jupyter",
+      "slug": "jupyter",
+      "src": "/images/skills/jupyter.svg"
+    },
+    {
+      "name": "Numpy",
+      "slug": "numpy",
+      "src": "/images/skills/numpy.svg"
+    },
+    {
+      "name": "Sckit-learn",
+      "slug": "sckitlearn",
+      "src": "/images/skills/scikitlearn.svg"
     },
     {
       "name": "Git",
       "slug": "git",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+      "src": "/images/skills/git.svg"
+    },
+    {
+      "name": "Github Actions",
+      "slug": "githubactions",
+      "src": "/images/skills/githubactions.svg"
     },
     {
       "name": "Figma",
       "slug": "figma",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+      "src": "/images/skills/figma.svg"
     },
     {
-      "name": "Storybook",
-      "slug": "storybook",
-      "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg"
+      "name": "Canva",
+      "slug": "canva",
+      "src": "/images/skills/canva.svg"
+    },
+    {
+      "name": "Aseprite",
+      "slug": "aseprite",
+      "src": "/images/skills/aseprite.svg"
+    },
+    {
+      "name": "Godot",
+      "slug": "godot",
+      "src": "/images/skills/godot.svg"
+    },
+    {
+      "name": "Unity",
+      "slug": "unity",
+      "src": "/images/skills/unity.svg"
     }
   ]
 }

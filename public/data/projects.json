@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "name": "A Doki To Remember",
+            "logo": "/images/projects/aDokiToRemember.png",
+            "skills": [
+                "Aseprite",
+                "Godot"
+            ],
+            "description": "A game jam project developed over two weeks.",
+            "embedLink": "https://maroonedace.itch.io/a-doki-to-remember",
+            "github": "https://github.com/maroonedace/A-Doki-To-Remember/"
+        },
+        {
+            "name": "AceDex",
+            "logo": "/images/projects/aceDex.png",
+            "skills": [
+                "React",
+                "Rust",
+                "Supabase",
+                "Tauri"
+            ],
+            "description": "A lightweight cross-platform app that allows the user to view Pokemon in a TCG-styled card format.",
+            "github": "https://github.com/maroonedace/AceDex",
+            "embedLink": "https://youtu.be/saD8ZQIfyYg"
+        },
+        {
+            "name": "Food Quest",
+            "logo": "/images/projects/tritonXR.png",
+            "skills": [
+                "Unity",
+                "C#"
+            ],
+            "description": "XR app teaching users how to nourish themselves through nutrition.",
+            "embedLink": "https://youtu.be/CGiiyc2ylgk",
+            "github": "https://github.com/TritonXR/FoodQuest"
+        }
+    ]
+}

@@ -26,8 +26,8 @@ const Home: FC = () => {
         className="relative flex flex-col items-center justify-center gap-8 min-h-screen text-center px-6"
         id="home"
       >
-        <div className="h-full w-full absolute z-[-30] bg-zinc-900">
-          <Image src={bgImg} alt="Background" />
+        <div className="absolute inset-0 z-[-30] bg-zinc-800">
+          <Image src={bgImg} alt="Background" className="object-cover h-full w-full" />
         </div>
         {/* Headline */}
         <motion.h1

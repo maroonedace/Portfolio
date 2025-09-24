@@ -4,7 +4,7 @@ import Work from "./components/body/work/work";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Skills from "./components/body/skills/skills";
-import Project from "./components/body/project/project";
+import Project from "./components/body/projects/project";
 
 import type { Metadata } from "next";
 
