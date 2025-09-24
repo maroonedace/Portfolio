@@ -6,9 +6,9 @@ export type Work = {
   title: string;
   logo: string;
   period: string;
+  description: string;
   skills: string[];
   website?: string;
-  description?: string;
 };
 
 const fetchWork = async (): Promise<Work[]> => {

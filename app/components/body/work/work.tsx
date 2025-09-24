@@ -67,6 +67,7 @@ const Work: FC = () => {
                       );
                     })}
                   </div>
+                  <p className="mt-4 text-md">{exp.description}</p>
                 </li>
               ))}
             </ul>

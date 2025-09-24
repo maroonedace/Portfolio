@@ -75,6 +75,7 @@ const Project = () => {
                           )
                         })}
                       </div>
+                      <p className="text-md">{p.description}</p>
                     </div>
                     <div className="flex gap-4 pt-6">
                       {p.embedLink && (

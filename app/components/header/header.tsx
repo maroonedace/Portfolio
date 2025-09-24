@@ -76,7 +76,7 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 flex z-40 `}
+      className="fixed inset-x-0 top-0 flex z-40 bg-black/70"
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <span onClick={() => onLinkClick("home")}>

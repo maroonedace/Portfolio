@@ -12,6 +12,7 @@
                 "Supabase",
                 "Vercel"
             ],
+            "description": "Oceanside Perspective is a non-profit organization dedicated to promoting ocean conservation and awareness through educational programs, community events, and advocacy initiatives.",
             "website": "https://www.oceansideperspective.org",
             "points": [
                 "Led a team of 3 developers to launch a content subscription demo using Next.js, Node.js, and Supabase.",
@@ -25,6 +26,7 @@
             "logo": "/images/work/nZero.svg",
             "period": "2021 - 2024",
             "website": "https://nzero.com",
+            "description": "Oceanside Perspective is a non-profit organization dedicated to promoting ocean conservation and awareness through educational programs, community events, and advocacy initiatives.",
             "skills": [
                 "React",
                 "Material UI",
