@@ -4,7 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 export type Skill = {
   name: string;
   src: string;
-  category?: string;
+  bgColor: string;
+  slug: string;
 };
 
 const fetchSkills = async (): Promise<Skill[]> => {

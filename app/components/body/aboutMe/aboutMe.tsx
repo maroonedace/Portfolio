@@ -49,111 +49,26 @@ const AboutMe: FC = () => {
               variants={item}
               className="text-lg md:text-xl max-w-7xl text-center mb-8"
             >
-              I've spent the past&nbsp;
-              <span className="font-semibold text-cyan-400">
-                five&nbsp;years
-              </span>
-              &nbsp;building end-to-end products—from&nbsp;
-              <span className="font-semibold text-cyan-400">
-                immersive VR prototypes in Unity,
-              </span>{" "}
-              &nbsp;
-              <span className="font-semibold text-cyan-400">
-                data-driven analytics in Python
-              </span>{" "}
-              , to&nbsp;
-              <span className="font-semibold text-cyan-400">
-                full-stack web applications
-              </span>{" "}
-              . More recently I've pushed the frontier of&nbsp;
-              <span className="font-semibold text-cyan-400">
-                AI tooling
-              </span>{" "}
-              evaluating model performance and designing prompt libraries and
-              task suites. Whatever the stack, I show up with a&nbsp;
-              <span className="font-semibold text-cyan-400">
-                relentless focus on time optimization
-              </span>
-              ,&nbsp;
-              <span className="font-semibold text-cyan-400">
-                a quick learning curve
-              </span>
-              , and the&nbsp;
-              <span className="font-semibold text-cyan-400">
-                drive to turn concepts into experiences that outperform
-                expectations
-              </span>
-              .
+              I am a senior software engineer with 4 + years of experience
+              delivering high-impact solutions for fast-growing startups and
+              mission-driven nonprofit organizations. My primary expertise lies
+              in front-end development using React, where I design responsive,
+              user-centric interfaces and implement performance-optimized UI
+              patterns. Complementing this, I have solid full-stack experience
+              with Ruby on Rails and Node.js, enabling me to architect robust
+              APIs and data pipelines that scale with business needs.
             </motion.p>
-
-            <div className="flex flex-col items-center justify-center gap-6">
-              <motion.h3
-                className="text-2xl md:text-3xl font-bold text-center"
-                variants={item}
-              >
-                Hobbies
-              </motion.h3>
-
-              <motion.ul
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 place-items-center"
-                aria-label="Hobbies"
-              >
-                <motion.li
-                  variants={item}
-                  className="flex flex-col items-center gap-2 text-white/90 focus-ring"
-                >
-                  <i
-                    className="ph-fill ph-bicycle text-[32px]"
-                    aria-hidden="true"
-                  />
-                  <span>Cycling</span>
-                </motion.li>
-
-                <motion.li
-                  variants={item}
-                  className="flex flex-col items-center gap-2 text-white/90 focus-ring"
-                >
-                  <i
-                    className="ph-fill ph-game-controller text-[32px]"
-                    aria-hidden="true"
-                  />
-                  <span>Gaming</span>
-                </motion.li>
-
-                <motion.li
-                  variants={item}
-                  className="flex flex-col items-center gap-2 text-white/90 focus-ring"
-                >
-                  <i
-                    className="ph-fill ph-dice-six text-[32px]"
-                    aria-hidden="true"
-                  />
-                  <span>Board Games</span>
-                </motion.li>
-
-                <motion.li
-                  variants={item}
-                  className="flex flex-col items-center gap-2 text-white/90 focus-ring"
-                >
-                  <i
-                    className="ph-fill ph-puzzle-piece text-[32px]"
-                    aria-hidden="true"
-                  />
-                  <span>Puzzles</span>
-                </motion.li>
-
-                <motion.li
-                  variants={item}
-                  className="flex flex-col items-center gap-2 text-white/90 focus-ring"
-                >
-                  <i
-                    className="ph-fill ph-racquet text-[32px]"
-                    aria-hidden="true"
-                  />
-                  <span>Pickleball</span>
-                </motion.li>
-              </motion.ul>
-            </div>
+            <motion.p
+              variants={item}
+              className="text-lg md:text-xl max-w-7xl text-center mb-8"
+            >
+              Passionate about emerging technologies, I am actively integrating
+              generative-AI tools into my development workflow to automate
+              repetitive tasks, enhance code quality, and prototype intelligent
+              features. In my spare time I explore game development, building
+              small prototypes that blend creative design with solid engineering
+              practices.
+            </motion.p>
           </motion.div>
         </div>
       </motion.section>
