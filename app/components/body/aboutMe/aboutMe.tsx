@@ -20,7 +20,7 @@ const AboutMe: FC = () => {
   return (
     <MotionWrapper>
       <motion.section
-        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 pt-16 md:pt-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[82px]"
+        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 pt-16 md:pt-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[32px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -49,7 +49,7 @@ const AboutMe: FC = () => {
               variants={item}
               className="text-lg md:text-xl max-w-7xl text-center mb-8"
             >
-              I am a senior software engineer with 4 + years of experience
+              I am a software engineer with 4 + years of experience
               delivering high-impact solutions for fast-growing startups and
               mission-driven nonprofit organizations. My primary expertise lies
               in front-end development using React, where I design responsive,

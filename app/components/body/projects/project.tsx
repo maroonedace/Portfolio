@@ -13,7 +13,7 @@ const Project = () => {
   const { skills, isSkillsFetched } = useSkills();
   return (
     <section
-      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20"
+      className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[32px]"
       id="projects"
     >
       <motion.div
@@ -66,7 +66,7 @@ const Project = () => {
                               className="rounded-xl bg-cyan-500/10 px-2 py-1 flex gap-2 items-center"
                             >
                               <div className="h-6 w-6 relative">
-                                <Image layout="fill" src={skill.src} alt={skill.name} loading="lazy" />
+                                <Image fill src={skill.src} alt={skill.name} loading="lazy" />
                               </div>
                               <span>
                                 {skillName}

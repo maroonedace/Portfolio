@@ -36,7 +36,7 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(0)}
         >
-          Senior Software Engineer
+          Software Engineer
         </motion.h1>
 
         {/* Headline */}

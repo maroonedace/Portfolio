@@ -26,9 +26,24 @@
       "src": "/images/skills/csharp.svg"
     },
     {
+      "name": "Java",
+      "slug": "java",
+      "src": "/images/skills/java.svg"
+    },
+    {
       "name": "Rust",
       "slug": "rust",
       "src": "/images/skills/rust.svg"
+    },
+    {
+      "name": "HTML",
+      "slug": "html",
+      "src": "/images/skills/html.svg"
+    },
+    {
+      "name": "CSS",
+      "slug": "css",
+      "src": "/images/skills/css.svg"
     },
     {
       "name": "React",
@@ -71,11 +86,6 @@
       "src": "/images/skills/vitejs.svg"
     },
     {
-      "name": "Tauri",
-      "slug": "tauri",
-      "src": "/images/skills/tauri.svg"
-    },
-    {
       "name": "Node.js",
       "slug": "node",
       "src": "/images/skills/nodejs.svg"
@@ -84,6 +94,16 @@
       "name": "Rails",
       "slug": "rails",
       "src": "/images/skills/rails.svg"
+    },
+    {
+      "name": "Tauri",
+      "slug": "tauri",
+      "src": "/images/skills/tauri.svg"
+    },
+    {
+      "name": "Electron",
+      "slug": "electron",
+      "src": "/images/skills/electron.svg"
     },
     {
       "name": "PostgreSQL",
@@ -141,14 +161,29 @@
       "src": "/images/skills/heroku.svg"
     },
     {
+      "name": "Debian",
+      "slug": "debian",
+      "src": "/images/skills/debian.svg"
+    },
+    {
+      "name": "Proxmox",
+      "slug": "proxmox",
+      "src": "/images/skills/proxmox.svg"
+    },
+    {
       "name": "CircleCI",
       "slug": "circleci",
       "src": "/images/skills/circleci.svg"
     },
     {
-      "name": "Debian",
-      "slug": "debian",
-      "src": "/images/skills/debian.svg"
+      "name": "Git",
+      "slug": "git",
+      "src": "/images/skills/git.svg"
+    },
+    {
+      "name": "Github Actions",
+      "slug": "githubactions",
+      "src": "/images/skills/githubactions.svg"
     },
     {
       "name": "Anaconda",
@@ -171,14 +206,9 @@
       "src": "/images/skills/scikitlearn.svg"
     },
     {
-      "name": "Git",
-      "slug": "git",
-      "src": "/images/skills/git.svg"
-    },
-    {
-      "name": "Github Actions",
-      "slug": "githubactions",
-      "src": "/images/skills/githubactions.svg"
+      "name": "Pandas",
+      "slug": "pandas",
+      "src": "/images/skills/pandas.svg"
     },
     {
       "name": "Figma",

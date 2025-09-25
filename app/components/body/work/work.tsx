@@ -14,7 +14,7 @@ const Work: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="px-6 pt-16 md:pt-24"
+        className="px-6 pt-16 md:pt-24 scroll-mt-[32px]"
         id="work"
       >
         <motion.div
@@ -58,7 +58,7 @@ const Work: FC = () => {
                       return (
                         <div className="py-1 px-2 rounded-xl flex gap-2 items-center" style={{backgroundColor: colorConfig.bg}} key={skillName}>
                           <div className="h-6 w-6 relative">
-                            <Image layout="fill" src={skill.src} alt={skill.name} loading="lazy" />
+                            <Image fill src={skill.src} alt={skill.name} loading="lazy" />
                           </div>
                           <span className="text-sm">
                             {skillName}

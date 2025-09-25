@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import marace from "../../assets/header/marace.png";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MotionWrapper from "../motionWrapper";
 import { onLinkClick } from "../body/utils";
@@ -17,17 +17,17 @@ const navItems = [
 
 const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOverThreshold, setIsOverThreshold] = useState(false);
+  const headerRef = useRef<HTMLHeadElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  const onMenuOpen = () => setIsModalOpen(true);
-  const onMenuClose = () => {
-    setIsModalOpen(false);
-  };
+  const onMenuOpen = useCallback(() => setIsModalOpen(true), []);
+  const onMenuClose = useCallback(() => setIsModalOpen(false), []);
 
-  const onNavItemClick = (id: string) => {
+  const onNavItemClick = useCallback((id: string) => {
     onMenuClose();
     onLinkClick(id);
-  };
+  }, []);
 
   // Prevent background scroll when the mobile menu is open
   useEffect(() => {
@@ -45,7 +45,11 @@ const Header: FC = () => {
 
     const handlePointer = (e: Event) => {
       const target = e.target as Node;
-      if (panelRef.current && !panelRef.current.contains(target)) {
+      if (
+        panelRef.current &&
+        !panelRef.current.contains(target) &&
+        isModalOpen
+      ) {
         setIsModalOpen(false);
       }
     };
@@ -74,12 +78,55 @@ const Header: FC = () => {
     return () => mq.removeEventListener("change", handleChange);
   }, []);
 
+  useEffect(() => {
+    // Create sentinel element at the bottom of the header
+    const heroSection = document.getElementById("home");
+    const header = headerRef.current;
+    if (!heroSection  || !header) return;
+
+    const sentinel = document.createElement("div");
+    sentinel.style.cssText = `
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      pointer-events: none;
+    `;
+    sentinel.setAttribute("aria-hidden", "true");
+
+    heroSection.appendChild(sentinel);
+
+    // Observe when sentinel enters viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsOverThreshold(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: `-${header.offsetHeight}px 0px 0px 0px`,
+      }
+    );
+
+    observer.observe(sentinel);
+
+    return () => {
+      observer.disconnect();
+      if (sentinel.parentElement) {
+        sentinel.parentElement.removeChild(sentinel);
+      }
+    };
+  }, []);
+
   return (
     <header
-      className="fixed inset-x-0 top-0 flex z-40 bg-black/70"
+      ref={headerRef}
+      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300
+          ${isOverThreshold ? "bg-zinc-800" : ""}
+        `}
     >
-      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <span onClick={() => onLinkClick("home")}>
+      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full cursor-pointer">
+        <span onClick={() => onLinkClick("home")} aria-label="Home">
           <Image
             width={40}
             height={48}
@@ -98,7 +145,7 @@ const Header: FC = () => {
                 key={item.href}
                 onClick={() => onLinkClick(item.href)}
                 tabIndex={0}
-                className="text-sm font-medium underline-offset-4 text-white/90 hover:text-zinc-400 hover:underline p-2 focus-ring"
+                className="text-sm font-medium underline-offset-4 rounded-2xl text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
               >
                 {item.label}
               </button>
@@ -108,7 +155,7 @@ const Header: FC = () => {
 
         {/* Mobile toggle */}
         <button
-          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-400 ${isModalOpen ? "invisible" : ""}`}
+          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-300 ${isModalOpen ? "invisible" : ""}`}
           onClick={onMenuOpen}
           aria-label="Toggle Navigation"
           aria-expanded={isModalOpen}

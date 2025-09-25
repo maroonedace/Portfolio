@@ -13,7 +13,7 @@ const SkillLabel: FC<SkillProps> = ({ skill }) => {
       key={skill.name}
     >
       <div className="h-6 w-6 md:h-12 md:w-12 relative">
-        <Image layout="fill" src={skill.src} alt={skill.name} loading="lazy" />
+        <Image fill src={skill.src} alt={skill.name} loading="lazy" />
       </div>
       <span className="text-white text-sm md:text-xl">{skill.name}</span>
     </div>
