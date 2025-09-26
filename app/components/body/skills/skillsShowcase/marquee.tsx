@@ -8,7 +8,7 @@ type MarqueeProps = {
   direction: "left" | "right";
 };
 
-const MARQUEE_SPEED = 20;
+const MARQUEE_SPEED = 32;
 const REPEAT = 3;
 
 const Marquee = ({ children, direction }: MarqueeProps) => {
