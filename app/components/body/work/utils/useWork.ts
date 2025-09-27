@@ -5,9 +5,9 @@ export type Work = {
   name: string;
   title: string;
   logo: string;
+  skills: string[];
   period: string;
   description: string;
-  skills: string[];
   website?: string;
 };
 

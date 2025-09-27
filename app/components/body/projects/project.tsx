@@ -29,83 +29,99 @@ const Project = () => {
           Featured Projects
         </h2>
 
-        {
-          isProjectsFetched && projects && skills && isSkillsFetched && (
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((p) => (
-                <motion.article
-                  key={p.name}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  className="rounded-2xl py-4 px-2 bg-zinc-800"
-                >
-                  <div className="flex items-center justify-center">
-                    <Image
-                      src={p.logo}
-                      alt={`${p.name} Logo`}
-                      priority
-                      width="256"
-                      height="256"
-                      className="transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col">
-                    <div className="flex flex-col gap-4">
-                      <h3 className="font-semibold text-lg">{p.name}</h3>
-                      <div className="flex flex-wrap gap-2 text-xs font-medium">
-                        {p.skills.map((skillName) => {
-                          const skill = skills.find(s => s.name === skillName);
-                          const colorConfig = skillColorMap[skill.slug] || { bg: "#6B7280", text: "#FFFFFF" };
-                          return (
-                            <div
-                              key={skillName}
-                              style={{backgroundColor: colorConfig.bg}}
-                              className="rounded-xl bg-cyan-500/10 px-2 py-1 flex gap-2 items-center"
-                            >
-                              <div className="h-6 w-6 relative">
-                                <Image fill src={skill.src} alt={skill.name} loading="lazy" />
-                              </div>
-                              <span>
-                                {skillName}
-                              </span>
+        {isProjectsFetched && projects && skills && isSkillsFetched && (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((p) => (
+              <motion.article
+                key={p.name}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                className="rounded-2xl py-4 px-2 bg-zinc-800"
+              >
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={p.logo}
+                    alt={`${p.name} Logo`}
+                    priority
+                    width="256"
+                    height="256"
+                    className="transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 flex flex-col">
+                  <div className="flex flex-col gap-4">
+                    <h3 className="font-semibold text-lg">{p.name}</h3>
+                    <div className="flex flex-wrap gap-2 text-xs font-medium">
+                      {p.skills.map((skillName) => {
+                        const skill = skills.find((s) => s.name === skillName);
+                        const colorConfig = skillColorMap[skill.slug] || {
+                          bg: "#6B7280",
+                          text: "#FFFFFF",
+                        };
+                        return (
+                          <div
+                            key={skillName}
+                            style={{ backgroundColor: colorConfig.bg }}
+                            className="rounded-xl bg-cyan-500/10 px-2 py-1 flex gap-2 items-center"
+                          >
+                            <div className="h-6 w-6 relative">
+                              <Image
+                                fill
+                                src={skill.src}
+                                alt={skill.name}
+                                loading="lazy"
+                              />
                             </div>
-                          )
-                        })}
-                      </div>
-                      <p className="text-md">{p.description}</p>
+                            <span>{skillName}</span>
+                          </div>
+                        );
+                      })}
                     </div>
-                    <div className="flex gap-4 pt-6">
-                      {p.embedLink && (
-                        <Link
-                          href={p.embedLink}
-                          target="_blank"
-                          tabIndex={0}
-                          rel="noopener noreferrer"
-                          className="text-sm font-medium underline hover:text-zinc-400 underline-offset-4 focus-ring"
-                        >
-                          Live demo
-                        </Link>
-                      )}
-                      {p.github && (
-                        <Link
-                          href={p.github}
-                          target="_blank"
-                          tabIndex={0}
-                          rel="noopener noreferrer"
-                          className="text-sm font-medium underline hover:text-zinc-400 underline-offset-4 focus-ring"
-                        >
-                          Source
-                        </Link>
-                      )}
-                    </div>
+                    <p className="text-md">{p.description}</p>
                   </div>
-                </motion.article>
-              ))}
-            </div>
-          )}
+                  <div className="flex gap-4 pt-6">
+                    {p.github && (
+                      <Link
+                        href={p.github}
+                        target="_blank"
+                        tabIndex={0}
+                        rel="noopener noreferrer"
+                        className="hover:bg-gray-500 transition duration-150 focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                      >
+                        <Image
+                          src="/images/skills/github.svg"
+                          alt="github"
+                          width="24"
+                          height="24"
+                        />
+                        <span className="text-sm font-medium">Repo</span>
+                      </Link>
+                    )}
+                    {p.embedLink && (
+                      <Link
+                        href={p.embedLink}
+                        target="_blank"
+                        tabIndex={0}
+                        rel="noopener noreferrer"
+                        className="hover:bg-gray-500 transition duration-150 focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                      >
+                        <span className="text-sm font-medium">Demo</span>
+                        <Image
+                          src="/images/skills/arrowupward.svg"
+                          alt="github"
+                          width="24"
+                          height="24"
+                        />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        )}
       </motion.div>
     </section>
   );
