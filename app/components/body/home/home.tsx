@@ -7,8 +7,6 @@ import MotionWrapper from "../../motionWrapper";
 import { onLinkClick } from "../utils";
 import Image from "next/image";
 
-import bgImg from "../../../assets/body/home/hero.jpg"
-
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
   hidden: { opacity: 0, y: 20 },
@@ -27,7 +25,7 @@ const Home: FC = () => {
         id="home"
       >
         <div className="absolute inset-0 z-[-30] bg-zinc-800">
-          <Image src={bgImg} alt="Background" className="object-cover h-full w-full" />
+          <Image src="/images/hero/hero.jpg" alt="Background" fill />
         </div>
         {/* Headline */}
         <motion.h1

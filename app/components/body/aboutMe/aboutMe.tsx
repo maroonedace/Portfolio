@@ -1,7 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import portrait from "../../../assets/body/aboutMe/portrait.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionWrapper from "../../motionWrapper";
@@ -29,7 +28,7 @@ const AboutMe: FC = () => {
       >
         <motion.div variants={item}>
           <Image
-            src={portrait}
+            src="/images/aboutMe/portrait.jpg"
             alt="Anthony Ostia headshot"
             width={300}
             height={400}

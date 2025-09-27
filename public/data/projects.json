@@ -2,9 +2,9 @@
   "projects": [
     {
       "name": "Criwin",
-      "logo": "/images/projects/aDokiToRemember.png",
+      "logo": "/images/projects/criwin.png",
       "skills": ["Python", "Debian", "Proxmox"],
-      "description": "A game jam project developed over two weeks.",
+      "description": "Discord bot that can do some features",
       "github": "https://github.com/maroonedace/CriWin"
     },
     {
@@ -33,9 +33,9 @@
     },
     {
       "name": "The Necessity for Nutrition",
-      "logo": "/images/projects/tritonXR.png",
+      "logo": "/images/skills/jupyter.svg",
       "skills": ["Sckit-learn", "Numpy", "Jupyter", "Anaconda", "Pandas"],
-      "description": "XR app teaching users how to nourish themselves through nutrition.",
+      "description": "Small project that focused on nutrition facts",
       "github": "https://github.com/maroonedace/The-Necessity-for-Nutrition"
     }
   ]

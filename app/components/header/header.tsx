@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import marace from "../../assets/header/marace.png";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MotionWrapper from "../motionWrapper";
@@ -132,7 +131,7 @@ const Header: FC = () => {
             height={48}
             className="w-10 h-auto mr-6"
             priority
-            src={marace}
+            src="/images/header/marace.png"
             alt="Brand Logo"
           />
         </span>
