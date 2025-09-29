@@ -83,12 +83,14 @@ const Project = () => {
                   </div>
                   <div className="flex gap-4 pt-6">
                     {p.github && (
-                      <Link
+                      <motion.a
                         href={p.github}
                         target="_blank"
                         tabIndex={0}
                         rel="noopener noreferrer"
-                        className="hover:bg-gray-500 transition duration-150 focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                        className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
                       >
                         <Image
                           src="/images/skills/github.svg"
@@ -97,15 +99,17 @@ const Project = () => {
                           height="24"
                         />
                         <span className="text-sm font-medium">Repo</span>
-                      </Link>
+                      </motion.a>
                     )}
                     {p.embedLink && (
-                      <Link
+                      <motion.a
                         href={p.embedLink}
                         target="_blank"
                         tabIndex={0}
                         rel="noopener noreferrer"
-                        className="hover:bg-gray-500 transition duration-150 focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                        className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
                       >
                         <span className="text-sm font-medium">Demo</span>
                         <Image
@@ -114,7 +118,7 @@ const Project = () => {
                           width="24"
                           height="24"
                         />
-                      </Link>
+                      </motion.a>
                     )}
                   </div>
                 </div>
