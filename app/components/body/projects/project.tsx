@@ -3,13 +3,17 @@
 import { motion } from "framer-motion";
 
 import Image from "next/image";
-import useProjects from "./utils/useProjects";
-import useSkills from "../skills/utils/useSkills";
+import { ProjectType } from "./utils/useProjects";
+import { Skill } from "../skills/utils/useSkills";
 import skillColorMap from "../models/colors";
+import { FC } from "react";
 
-const Project = () => {
-  const { projects, isProjectsFetched } = useProjects();
-  const { skills, isSkillsFetched } = useSkills();
+interface WorkProps {
+  projects: ProjectType[]
+  skills: Skill[]
+}
+
+const Project: FC<WorkProps> = ({projects, skills}) => {
   return (
     <section
       className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[32px]"
@@ -20,7 +24,7 @@ const Project = () => {
           Featured Projects
         </h2>
 
-        {isProjectsFetched && projects && skills && isSkillsFetched && (
+        {projects && skills && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p) => (
               <div

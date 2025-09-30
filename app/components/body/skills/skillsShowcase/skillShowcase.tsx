@@ -1,13 +1,14 @@
 import chunkArray from "../../../../utils/utils";
 import Marquee from "./marquee";
-import useSkills from "../utils/useSkills";
+import { Skill } from "../utils/useSkills";
 import SkillLabel from "./skillLabel";
+import { FC } from "react";
 
-const SkillShowcase = () => {
-  const { skills, isSkillsFetched } = useSkills();
+interface SkillShowcaseProps {
+  skills: Skill[]
+}
 
-  if (!isSkillsFetched) return;
-
+const SkillShowcase: FC<SkillShowcaseProps> = ({skills}) => {
   const skillArray = chunkArray(skills, 3);
   return (
     <div className="flex flex-col gap-4">

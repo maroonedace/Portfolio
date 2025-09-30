@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 
-export type Project = {
+export type ProjectType = {
   name: string;
   logo: string;
   skills: string[];
@@ -10,7 +10,7 @@ export type Project = {
   github?: string;
 };
 
-const fetchProjects = async (): Promise<Project[]> => {
+const fetchProjects = async (): Promise<ProjectType[]> => {
   const res = await fetch("/api/projects", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load /api/projects");
   const json = await res.json();

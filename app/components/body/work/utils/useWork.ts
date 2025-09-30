@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 
-export type Work = {
+export type WorkType = {
   name: string;
   title: string;
   logo: string;
@@ -11,7 +11,7 @@ export type Work = {
   website?: string;
 };
 
-const fetchWork = async (): Promise<Work[]> => {
+const fetchWork = async (): Promise<WorkType[]> => {
   const res = await fetch("/api/work", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load /api/work");
   const json = await res.json();

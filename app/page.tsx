@@ -1,12 +1,5 @@
-import AboutMe from "./components/body/aboutMe/aboutMe";
-import Home from "./components/body/home/home";
-import Work from "./components/body/work/work";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-import Skills from "./components/body/skills/skills";
-import Project from "./components/body/projects/project";
-
 import type { Metadata } from "next";
+import Content from "./components/content";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -43,15 +36,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <>
-      <Header />
-      <Home />
-      <AboutMe />
-      <Skills />
-      <Work />
-      <Project />
-      <Footer />
-    </>
+    <Content />
   );
 };
 

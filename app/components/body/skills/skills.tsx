@@ -4,8 +4,13 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import MotionWrapper from "../../motionWrapper";
 import SkillShowcase from "./skillsShowcase/skillShowcase";
+import { Skill } from "./utils/useSkills";
 
-const Skills: FC = () => {
+interface SkillsProp {
+  skills: Skill[]
+}
+
+const Skills: FC<SkillsProp> = ({skills}) => {
   return (
     <MotionWrapper>
       <section className="px-6 pt-16 md:pt-24" id="skills">
@@ -19,7 +24,7 @@ const Skills: FC = () => {
           >
             Skills
           </motion.h2>
-          <SkillShowcase />
+          <SkillShowcase skills={skills} />
         </div>
       </section>
     </MotionWrapper>

@@ -4,14 +4,16 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import MotionWrapper from "../../motionWrapper";
-import useWork from "./utils/useWork";
-import useSkills from "../skills/utils/useSkills";
 import skillColorMap from "../models/colors";
-import Link from "next/link";
+import { Skill } from "../skills/utils/useSkills";
+import { WorkType } from "../work/utils/useWork";
 
-const Work: FC = () => {
-  const { works, isWorkFetched } = useWork();
-  const { skills, isSkillsFetched } = useSkills();
+interface WorkProps {
+  works: WorkType[]
+  skills: Skill[]
+}
+
+const Work: FC<WorkProps> = ({works, skills}) => {
   return (
     <MotionWrapper>
       <section className="px-6 pt-16 md:pt-24 scroll-mt-[32px]" id="work">
@@ -25,7 +27,7 @@ const Work: FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Professional Experience
           </h2>
-          {isWorkFetched && works && skills && isSkillsFetched && (
+          { works && skills && (
             <div className="px-4 md:px-12">
               <div className="relative border-l border-white pl-6">
                 {works.map((exp) => (
