@@ -5,13 +5,14 @@ import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MotionWrapper from "../motionWrapper";
 import { onLinkClick } from "../body/utils";
+import Link from "next/link";
 
 const navItems = [
-  { label: "Home", href: "home" },
-  { label: "About", href: "about" },
-  { label: "Work", href: "work" },
-  { label: "Projects", href: "projects" },
-  { label: "Contact", href: "contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Header: FC = () => {
@@ -103,7 +104,7 @@ const Header: FC = () => {
       },
       {
         threshold: 0,
-        rootMargin: `-${header.offsetHeight}px 0px 0px 0px`,
+        rootMargin: `-${heroSection.offsetHeight - header.offsetHeight}px 0px 0px 0px`,
       }
     );
 
@@ -124,7 +125,7 @@ const Header: FC = () => {
           ${isOverThreshold ? "bg-zinc-800" : ""}
         `}
     >
-      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full cursor-pointer">
+      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <span onClick={() => onLinkClick("home")} aria-label="Home">
           <Image
             width={40}
@@ -140,14 +141,14 @@ const Header: FC = () => {
         <div className="hidden sm:flex items-center justify-between w-full">
           <div className="flex items-center gap-4">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => onLinkClick(item.href)}
+                href={item.href}
                 tabIndex={0}
                 className="text-sm font-medium underline-offset-4 rounded-2xl text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
