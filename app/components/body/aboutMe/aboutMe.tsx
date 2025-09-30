@@ -19,7 +19,7 @@ const AboutMe: FC = () => {
   return (
     <MotionWrapper>
       <motion.section
-        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-6 pt-16 md:pt-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[32px]"
+        className="flex flex-col md:flex-row items-center justify-center gap-8 px-6 pt-16 md:pt-24 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-[32px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}

@@ -30,7 +30,7 @@ const Project = () => {
         </h2>
 
         {isProjectsFetched && projects && skills && isSkillsFetched && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((p) => (
               <motion.article
                 key={p.name}

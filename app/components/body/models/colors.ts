@@ -32,6 +32,7 @@ const skillColorMap: Record<string, { bg: string }> = {
   proxmox: {bg: "#753900"},
   aseprite: {bg: "#596D78"},
   sckitlearn: {bg: "#CA6F07"},
+  matplotlib: {bg: "#329F56"},
   numpy: {bg: "#2C83A5"},
   jupyter: {bg: "#9B4008"},
   anaconda: {bg: "#337D26"},
