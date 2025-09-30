@@ -93,10 +93,10 @@ const Work: FC = () => {
                             initial={{ scale: 1 }}
                             whileHover={{ scale: 1.1 }}
                           >
-                            <span>Learn More</span>
+                            <span>Website</span>
                             <Image
                               src="/images/skills/arrowupward.svg"
-                              alt="Learn More"
+                              alt="Website"
                               width={24}
                               height={24}
                             />

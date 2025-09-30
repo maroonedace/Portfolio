@@ -30,7 +30,7 @@ const Project = () => {
         </h2>
 
         {isProjectsFetched && projects && skills && isSkillsFetched && (
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p) => (
               <motion.article
                 key={p.name}
@@ -38,21 +38,21 @@ const Project = () => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                className="rounded-2xl py-4 px-2 bg-zinc-800"
+                className="rounded-2xl p-6 bg-zinc-800 flex flex-col items-center sm:items-start sm:flex-row gap-4"
               >
-                <div className="flex items-center justify-center">
+                <div className="flex-shrink-0">
                   <Image
                     src={p.logo}
                     alt={`${p.name} Logo`}
                     priority
-                    width="256"
-                    height="256"
-                    className="transition-transform duration-300"
+                    width="200"
+                    height="200"
+                    className="transition-transform duration-300 rounded-2xl"
                   />
                 </div>
-                <div className="p-6 flex flex-col">
-                  <div className="flex flex-col gap-4">
-                    <h3 className="font-semibold text-lg">{p.name}</h3>
+                <div className="flex flex-col h-full">
+                  <h3 className="font-semibold text-xl mb-2">{p.name}</h3>
+                  <div className="flex flex-col gap-4 h-full">
                     <div className="flex flex-wrap gap-2 text-xs font-medium">
                       {p.skills.map((skillName) => {
                         const skill = skills.find((s) => s.name === skillName);
@@ -74,52 +74,54 @@ const Project = () => {
                                 loading="lazy"
                               />
                             </div>
-                            <span>{skillName}</span>
+                            <span className="text-sm">{skillName}</span>
                           </div>
                         );
                       })}
                     </div>
-                    <p className="text-md">{p.description}</p>
-                  </div>
-                  <div className="flex gap-4 pt-6">
-                    {p.github && (
-                      <motion.a
-                        href={p.github}
-                        target="_blank"
-                        tabIndex={0}
-                        rel="noopener noreferrer"
-                        className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <Image
-                          src="/images/skills/github.svg"
-                          alt="github"
-                          width="24"
-                          height="24"
-                        />
-                        <span className="text-sm font-medium">Repo</span>
-                      </motion.a>
-                    )}
-                    {p.embedLink && (
-                      <motion.a
-                        href={p.embedLink}
-                        target="_blank"
-                        tabIndex={0}
-                        rel="noopener noreferrer"
-                        className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <span className="text-sm font-medium">Demo</span>
-                        <Image
-                          src="/images/skills/arrowupward.svg"
-                          alt="github"
-                          width="24"
-                          height="24"
-                        />
-                      </motion.a>
-                    )}
+                    <div className="flex flex-col justify-between grow gap-4">
+                      <p className="text-sm">{p.description}</p>
+                      <div className="flex gap-4">
+                        {p.github && (
+                          <motion.a
+                            href={p.github}
+                            target="_blank"
+                            tabIndex={0}
+                            rel="noopener noreferrer"
+                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                            initial={{ scale: 1 }}
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            <Image
+                              src="/images/skills/github.svg"
+                              alt="github"
+                              width="24"
+                              height="24"
+                            />
+                            <span className="text-sm font-medium">Repo</span>
+                          </motion.a>
+                        )}
+                        {p.embedLink && (
+                          <motion.a
+                            href={p.embedLink}
+                            target="_blank"
+                            tabIndex={0}
+                            rel="noopener noreferrer"
+                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
+                            initial={{ scale: 1 }}
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            <span className="text-sm font-medium">Demo</span>
+                            <Image
+                              src="/images/skills/arrowupward.svg"
+                              alt="github"
+                              width="24"
+                              height="24"
+                            />
+                          </motion.a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.article>
