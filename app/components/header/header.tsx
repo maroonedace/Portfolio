@@ -3,16 +3,16 @@
 import Image from "next/image";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import MotionWrapper from "../motionWrapper";
 import { onLinkClick } from "../body/utils";
 import Link from "next/link";
+import MotionWrapper from "../reusable/motionWrapper";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "home" },
+  { label: "About", href: "about" },
+  { label: "Work", href: "work" },
+  { label: "Projects", href: "projects" },
+  { label: "Contact", href: "contact" },
 ];
 
 const Header: FC = () => {
@@ -82,7 +82,7 @@ const Header: FC = () => {
     // Create sentinel element at the bottom of the header
     const heroSection = document.getElementById("home");
     const header = headerRef.current;
-    if (!heroSection  || !header) return;
+    if (!heroSection || !header) return;
 
     const sentinel = document.createElement("div");
     sentinel.style.cssText = `
@@ -127,28 +127,30 @@ const Header: FC = () => {
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <span onClick={() => onLinkClick("home")} aria-label="Home">
-          <Image
-            width={40}
-            height={48}
-            className="w-10 h-auto mr-6"
-            priority
-            src="/images/header/marace.png"
-            alt="Brand Logo"
-          />
+          <div className="w-10 h-12 mr-6 relative cursor-pointer">
+            <Image
+              fill
+              priority
+              src="/images/header/marace.png"
+              alt="Brand Logo"
+            />
+          </div>
         </span>
 
         {/* Desktop navigation */}
         <div className="hidden sm:flex items-center justify-between w-full">
           <div className="flex items-center gap-4">
             {navItems.map((item) => (
-              <Link
+              <button
+                onClick={() => {
+                  onLinkClick(item.href);
+                }}
                 key={item.href}
-                href={item.href}
                 tabIndex={0}
                 className="text-sm font-medium underline-offset-4 rounded-2xl text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>

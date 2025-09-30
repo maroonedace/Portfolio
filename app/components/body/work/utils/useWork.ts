@@ -7,7 +7,7 @@ export type WorkType = {
   logo: string;
   skills: string[];
   period: string;
-  description: string;
+  description: string[];
   website?: string;
 };
 

@@ -9,13 +9,13 @@ interface SkillProps {
 const SkillLabel: FC<SkillProps> = ({ skill }) => {
   return (
     <div
-      className="bg-gray-800 py-1 px-2 md:py-2 md:px-4 rounded flex flex-row items-center gap-2 mr-2 md:mr-4"
+      className="bg-gray-800 py-2 px-4 rounded flex flex-row items-center gap-2 mr-2 md:mr-4"
       key={skill.name}
     >
-      <div className="h-6 w-6 md:h-12 md:w-12 relative">
+      <div className="h-8 w-8 md:h-12 md:w-12 relative">
         <Image fill src={skill.src} alt={skill.name} loading="lazy" />
       </div>
-      <span className="text-white text-sm md:text-xl">{skill.name}</span>
+      <span className="text-white text-md md:text-xl">{skill.name}</span>
     </div>
   );
 };

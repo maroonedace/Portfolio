@@ -5,8 +5,12 @@
       "title": "Software Engineer",
       "logo": "/images/work/mercor.png",
       "period": "2025 - Present",
-      "skills": ["TypeScript", "JavaScript", "React"],
-      "description": "Developed and enhanced web applications used to evaluate machine-learning model performance, contributing prompt libraries and curated datasets to improve test coverage. Reported and tracked UI/UX defects while collaborating with distributed teams to refine evaluation workflows. Ensured that code reviews and test suites were well-scoped and properly addressed the issue.",
+      "skills": ["React", "TypeScript", "JavaScript"],
+      "description": [
+        "Developed and enhanced web applications used to evaluate machine-learning model performance, contributing prompt libraries and curated datasets to improve test coverage.",
+        "Reported and tracked UI/UX defects while collaborating with distributed teams to refine evaluation workflows.",
+        "Ensured that code reviews and test suites were well-scoped and properly addressed the issue."
+      ],
       "website": "https://www.mercor.com"
     },
     {
@@ -14,8 +18,12 @@
       "title": "Senior Software Engineer",
       "logo": "/images/work/opLogo.jpeg",
       "period": "2024 - Present",
-      "skills": ["Next.js", "Tailwind CSS", "Node.js", "Supabase", "Vercel"],
-      "description": "Directed a three-developer team to build and launch a full-stack content subscription platform using Next.js, Node.js, and Supabase. Designed and implemented backend API routes for dynamic content retrieval, while integrating Tailwind CSS and Framer Motion to deliver a responsive and visually engaging interface. Drove a 30% increase in user engagement through UI/UX improvements such as advanced search filtering, streamlined navigation, and smooth animations.",
+      "skills": ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
+      "description": [
+        "Directed a three-developer team to build and launch a full-stack content subscription platform using Next.js, Node.js, and Supabase.",
+        "Designed and implemented backend API routes for dynamic content retrieval, while integrating Tailwind CSS and Framer Motion to deliver a responsive and visually engaging interface.",
+        "Drove a 30% increase in user engagement through UI/UX improvements such as advanced search filtering, streamlined navigation, and smooth animations."
+      ],
       "website": "https://www.oceansideperspective.org"
     },
     {
@@ -24,7 +32,12 @@
       "logo": "/images/work/nZero.svg",
       "period": "2021 - 2024",
       "website": "https://nzero.com",
-      "description": "Promoted twice for consistently delivering across the full stack with React, Rails, and PostgreSQL. Led development of a data-management portal that cut manual data handling by 60%, introduced new metric visualizations, client filtering, and unit-conversion features in a complete UI refresh. Improved API performance using React Query, increased unit-test coverage by 35% with Jest and RSpec, and established CI/CD pipelines via GitHub Actions. Deployed and maintained infrastructure on AWS EC2/S3, following earlier deployments on Heroku.",
+      "description": [
+        "Promoted twice for consistently delivering across the full stack with React, Rails, and PostgreSQL.",
+        "Led development of a data-management portal that cut manual data handling by 60%, introduced new metric visualizations, client filtering, and unit-conversion features in a complete UI refresh.",
+        "Improved API performance using React Query, increased unit-test coverage by 35% with Jest and RSpec, and established CI/CD pipelines via GitHub Actions.",
+        "Deployed and maintained infrastructure on AWS EC2/S3, following earlier deployments on Heroku."
+      ],
       "skills": ["React", "Material UI", "Rails", "PostgreSQL", "AWS"]
     }
   ]

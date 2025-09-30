@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 
-import MotionWrapper from "../../motionWrapper";
 import { onLinkClick } from "../utils";
 import Image from "next/image";
+import MotionWrapper from "../../reusable/motionWrapper";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({

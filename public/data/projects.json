@@ -33,7 +33,7 @@
     },
     {
       "name": "The Necessity for Nutrition",
-      "logo": "/images/skills/jupyter.svg",
+      "logo": "/images/projects/theNecessityForNutrition.png",
       "skills": ["Sckit-learn", "Numpy", "Jupyter", "Anaconda", "Pandas", "Matplotlib"],
       "description": "Developed a classification model using decision trees, logistic regression, and SVMs to analyze datasets of cereal, McDonald's, and Starbucks products. The project revealed a correlation between food popularity and higher levels of unhealthy ingredients.",
       "github": "https://github.com/maroonedace/The-Necessity-for-Nutrition"

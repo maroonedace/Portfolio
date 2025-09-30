@@ -24,7 +24,7 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
             <div className="relative border-l border-white pl-6">
               {works.map((exp) => (
                 <div key={exp.name} className="mb-12 ml-4">
-                  <div className="flex flex-col md:flex-row">
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                     <div className="md:w-1/2">
                       <span className="absolute -left-[8px] mt-8 h-4 w-4 rounded-full ring-4 ring-white" />
 
@@ -39,12 +39,12 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                               fill
                             />
                           </div>
-                          <div>
+                          <div className="flex flex-col">
                             <h3 className="font-semibold">{exp.title}</h3>
                             <span>{exp.name}</span>
+                            <time>{exp.period}</time>
                           </div>
                         </div>
-                        {/* <time>{exp.period}</time> */}
                       </div>
                       <div className="mt-4 flex flex-wrap gap-2">
                         {exp.skills.map((skillName) => {
@@ -76,7 +76,11 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                       </div>
                     </div>
                     <div className="mt-4 md:w-1/2 flex flex-col gap-4">
-                      <p className="text-md">{exp.description}</p>
+                      <ul className="list-disc">
+                        {exp.description.map((bullet, index) => {
+                          return <li key={`${exp.name}-bullet-${index}`}>{bullet}</li>;
+                        })}
+                      </ul>
                       <div className="flex">
                         <motion.a
                           href={exp.website}
