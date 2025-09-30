@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 import Image from "next/image";
-import Link from "next/link";
 import useProjects from "./utils/useProjects";
 import useSkills from "../skills/utils/useSkills";
 import skillColorMap from "../models/colors";
@@ -16,15 +15,7 @@ const Project = () => {
       className="px-4 flex flex-col gap-8 items-center justify-center py-10 md:py-20 scroll-mt-[32px]"
       id="projects"
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.1 } },
-        }}
-      >
+      <div>
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Featured Projects
         </h2>
@@ -32,12 +23,8 @@ const Project = () => {
         {isProjectsFetched && projects && skills && isSkillsFetched && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p) => (
-              <motion.article
+              <div
                 key={p.name}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
                 className="rounded-2xl p-6 bg-zinc-800 flex flex-col items-center sm:items-start sm:flex-row gap-4"
               >
                 <div className="flex-shrink-0">
@@ -124,11 +111,11 @@ const Project = () => {
                     </div>
                   </div>
                 </div>
-              </motion.article>
+              </div>
             ))}
           </div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 };

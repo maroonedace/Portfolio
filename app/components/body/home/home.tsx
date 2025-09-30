@@ -34,7 +34,7 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(0)}
         >
-          Software Engineer
+          Anthony Ostia
         </motion.h1>
 
         {/* Headline */}
@@ -44,7 +44,7 @@ const Home: FC = () => {
           animate="visible"
           variants={fadeUp(1)}
         >
-          Anthony Ostia
+          Software Engineer
         </motion.h1>
 
         {/* Call‑to‑action buttons */}
