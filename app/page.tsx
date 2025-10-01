@@ -6,7 +6,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const metadata: Metadata = {
   title: "Anthony Ostia | Software Engineer",
   description:
-    "Hi, I'm Anthony Ostia. Always looking for new opportunities to grow and engage in insightful conversations.",
+    "Always looking for new opportunities to grow and engage in insightful conversations.",
   authors: [{ name: "Anthony Ostia" }],
   keywords: [
     "Anthony Ostia",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Anthony Ostia | Software Engineer",
     description:
-      "Hi, I'm Anthony Ostia. Always looking for new opportunities to grow and engage in insightful conversations.",
+      "Always looking for new opportunities to grow and engage in insightful conversations.",
     images: [
       {
         url: `${baseUrl}/preview.png`,
