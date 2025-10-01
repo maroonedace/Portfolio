@@ -16,7 +16,7 @@ interface WorkProps {
 const Project: FC<WorkProps> = ({projects, skills}) => {
   return (
     <section
-      className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-[76px]"
+      className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-8"
       id="projects"
     >
       <div>
