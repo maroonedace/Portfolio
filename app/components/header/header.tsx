@@ -4,7 +4,6 @@ import Image from "next/image";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { onLinkClick } from "../body/utils";
-import Link from "next/link";
 import MotionWrapper from "../reusable/motionWrapper";
 
 const navItems = [
@@ -121,8 +120,8 @@ const Header: FC = () => {
   return (
     <header
       ref={headerRef}
-      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300
-          ${isOverThreshold ? "bg-zinc-800" : ""}
+      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300 bg-zinc-800
+          ${isOverThreshold ? "sm:bg-zinc-800" : "sm:bg-transparent"}
         `}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
