@@ -16,7 +16,7 @@ interface WorkProps {
 const Project: FC<WorkProps> = ({projects, skills}) => {
   return (
     <section
-      className="px-6 flex flex-col gap-8 items-center justify-center py-6  scroll-mt-[32px]"
+      className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-[76px]"
       id="projects"
     >
       <div>
@@ -65,13 +65,13 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                                 loading="lazy"
                               />
                             </div>
-                            <span className="text-sm">{skillName}</span>
+                            <span className="text-base">{skillName}</span>
                           </div>
                         );
                       })}
                     </div>
                     <div className="flex flex-col justify-between grow gap-4">
-                      <p className="text-sm">{p.description}</p>
+                      <p className="text-lg">{p.description}</p>
                       <div className="flex gap-4">
                         {p.github && (
                           <motion.a
@@ -86,10 +86,10 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                             <Image
                               src="/images/skills/github.svg"
                               alt="github"
-                              width="24"
-                              height="24"
+                              width="32"
+                              height="32"
                             />
-                            <span className="text-sm font-medium">Repo</span>
+                            <span className="text-lg font-medium">Repo</span>
                           </motion.a>
                         )}
                         {p.embedLink && (
@@ -102,12 +102,12 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                             initial={{ scale: 1 }}
                             whileHover={{ scale: 1.1 }}
                           >
-                            <span className="text-sm font-medium">Demo</span>
+                            <span className="text-lg font-medium">Demo</span>
                             <Image
                               src="/images/skills/arrowupward.svg"
                               alt="github"
-                              width="24"
-                              height="24"
+                              width="32"
+                              height="32"
                             />
                           </motion.a>
                         )}

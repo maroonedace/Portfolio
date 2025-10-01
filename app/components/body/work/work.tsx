@@ -14,7 +14,7 @@ interface WorkProps {
 
 const Work: FC<WorkProps> = ({ works, skills }) => {
   return (
-    <section className="px-6 pt-16 md:pt-24 scroll-mt-[32px]" id="work">
+    <section className="px-6 py-6 scroll-mt-[76px]" id="work">
       <div className="px-4 md:px-8 py-16 bg-zinc-800 rounded-lg flex flex-col">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Professional Experience
@@ -30,19 +30,18 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <div className="flex items-center gap-4">
-                          <div className="w-20 h-20 flex-none rounded-md bg-white relative">
+                          <div className="w-28 h-28 flex-none rounded-md bg-white relative">
                             <Image
                               src={exp.logo}
                               alt={`${exp.name} logo`}
-                              sizes="80px"
                               className="p-2"
                               fill
                             />
                           </div>
                           <div className="flex flex-col">
-                            <h3 className="font-semibold">{exp.title}</h3>
-                            <span>{exp.name}</span>
-                            <time>{exp.period}</time>
+                            <h3 className="font-semibold text-lg">{exp.title}</h3>
+                            <span className="text-lg">{exp.name}</span>
+                            <time className="text-lg italic">{exp.period}</time>
                           </div>
                         </div>
                       </div>
@@ -69,7 +68,7 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                                   loading="lazy"
                                 />
                               </div>
-                              <span className="text-sm">{skillName}</span>
+                              <span className="text-base">{skillName}</span>
                             </div>
                           );
                         })}
@@ -78,7 +77,7 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                     <div className="mt-4 md:w-1/2 flex flex-col gap-4">
                       <ul className="list-disc">
                         {exp.description.map((bullet, index) => {
-                          return <li key={`${exp.name}-bullet-${index}`}>{bullet}</li>;
+                          return <li key={`${exp.name}-bullet-${index}`} className="text-lg">{bullet}</li>;
                         })}
                       </ul>
                       <div className="flex">
@@ -87,16 +86,16 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                           target="_blank"
                           tabIndex={0}
                           rel="noopener noreferrer"
-                          className="flex gap-2 bg-gray-500 rounded-2xl py-2 px-4 focus-ring"
+                          className="flex gap-2 bg-gray-700 rounded-2xl py-2 px-4 focus-ring items-center"
                           initial={{ scale: 1 }}
                           whileHover={{ scale: 1.1 }}
                         >
-                          <span>Website</span>
+                          <span className="text-lg ">Website</span>
                           <Image
                             src="/images/skills/arrowupward.svg"
                             alt="Website"
-                            width={24}
-                            height={24}
+                            width={32}
+                            height={32}
                           />
                         </motion.a>
                       </div>

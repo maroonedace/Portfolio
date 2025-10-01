@@ -199,7 +199,7 @@ const Header: FC = () => {
                   <button
                     onClick={() => onNavItemClick(item.href)}
                     key={item.href}
-                    className="text-lg font-medium text-cyan-400 hover:text-cyan-300"
+                    className="text-lg font-medium text-white/90 hover:text-zinc-300 "
                   >
                     {item.label}
                   </button>

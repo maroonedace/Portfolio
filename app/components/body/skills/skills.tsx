@@ -10,7 +10,7 @@ interface SkillsProp {
 
 const Skills: FC<SkillsProp> = ({ skills }) => {
   return (
-    <section className="px-6 py-6" id="skills">
+    <section className="px-6 py-6 scroll-mt-[76px]" id="skills">
       <div className="rounded-lg flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl text-white/90 font-bold text-center mb-10">
           Skills
