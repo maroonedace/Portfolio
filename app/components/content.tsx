@@ -11,6 +11,7 @@ import useWork from "./body/work/utils/useWork";
 import WorkType from "./body/work/work";
 import Footer from "./footer/footer";
 import Header from "./header/header";
+import Contact from "./body/contact/contact";
 
 const Content = () => {
   const { works, isWorkFetched } = useWork();
@@ -33,6 +34,7 @@ const Content = () => {
       <Skills skills={skills} />
       <WorkType works={works} skills={skills} />
       <Project projects={projects} skills={skills} />
+      <Contact />
       <Footer />
     </>
   );
