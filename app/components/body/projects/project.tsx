@@ -7,13 +7,14 @@ import { ProjectType } from "./utils/useProjects";
 import { Skill } from "../skills/utils/useSkills";
 import skillColorMap from "../models/colors";
 import { FC } from "react";
+import Link from "next/link";
 
 interface WorkProps {
-  projects: ProjectType[]
-  skills: Skill[]
+  projects: ProjectType[];
+  skills: Skill[];
 }
 
-const Project: FC<WorkProps> = ({projects, skills}) => {
+const Project: FC<WorkProps> = ({ projects, skills }) => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-8"
@@ -74,14 +75,12 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                       <p className="text-lg">{p.description}</p>
                       <div className="flex gap-4">
                         {p.github && (
-                          <motion.a
+                          <Link
                             href={p.github}
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
-                            initial={{ scale: 1 }}
-                            whileHover={{ scale: 1.1 }}
+                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl hover:scale-110 active:scale-95"
                           >
                             <Image
                               src="/images/skills/github.svg"
@@ -90,17 +89,15 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                               height="32"
                             />
                             <span className="text-lg font-medium">Repo</span>
-                          </motion.a>
+                          </Link>
                         )}
                         {p.embedLink && (
-                          <motion.a
+                          <Link
                             href={p.embedLink}
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl"
-                            initial={{ scale: 1 }}
-                            whileHover={{ scale: 1.1 }}
+                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl hover:scale-110 active:scale-95"
                           >
                             <span className="text-lg font-medium">Demo</span>
                             <Image
@@ -109,7 +106,7 @@ const Project: FC<WorkProps> = ({projects, skills}) => {
                               width="32"
                               height="32"
                             />
-                          </motion.a>
+                          </Link>
                         )}
                       </div>
                     </div>

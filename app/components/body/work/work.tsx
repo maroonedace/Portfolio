@@ -6,6 +6,7 @@ import Image from "next/image";
 import skillColorMap from "../models/colors";
 import { Skill } from "../skills/utils/useSkills";
 import { WorkType } from "../work/utils/useWork";
+import Link from "next/link";
 
 interface WorkProps {
   works: WorkType[];
@@ -81,14 +82,12 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                         })}
                       </ul>
                       <div className="flex">
-                        <motion.a
+                        <Link
                           href={exp.website}
                           target="_blank"
                           tabIndex={0}
                           rel="noopener noreferrer"
-                          className="flex gap-2 bg-gray-700 rounded-2xl py-2 px-4 focus-ring items-center"
-                          initial={{ scale: 1 }}
-                          whileHover={{ scale: 1.1 }}
+                          className="flex gap-2 bg-gray-700 rounded-2xl py-2 px-4 focus-ring items-center hover:scale-110 active:scale-95"
                         >
                           <span className="text-lg ">Website</span>
                           <Image
@@ -97,7 +96,7 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                             width={32}
                             height={32}
                           />
-                        </motion.a>
+                        </Link>
                       </div>
                     </div>
                   </div>
