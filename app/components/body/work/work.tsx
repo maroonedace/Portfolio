@@ -31,7 +31,7 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
 
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <div className="flex items-center gap-4">
-                          <div className="w-28 h-28 flex-none rounded-md bg-white relative">
+                          <div className="w-24 h-24 flex-none rounded-md bg-white relative">
                             <Image
                               src={exp.logo}
                               alt={`${exp.name} logo`}
@@ -87,9 +87,9 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                           target="_blank"
                           tabIndex={0}
                           rel="noopener noreferrer"
-                          className="flex gap-2 bg-gray-700 rounded-2xl py-2 px-4 focus-ring items-center hover:scale-110 active:scale-95"
+                          className="flex gap-2 bg-gray-700 rounded-2xl py-2 px-4 focus-ring items-center transition hover:scale-110 active:scale-95"
                         >
-                          <span className="text-lg ">Website</span>
+                          <span className="text-lg">Website</span>
                           <Image
                             src="/images/skills/arrowupward.svg"
                             alt="Website"

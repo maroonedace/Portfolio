@@ -57,14 +57,14 @@ const Home: FC = () => {
           <button
             onClick={() => onLinkClick("work")}
             tabIndex={0}
-            className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring"
+            className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring hover:scale-110 active:scale-95"
           >
             View Work
           </button>
           <button
             onClick={() => onLinkClick("contact")}
             tabIndex={0}
-            className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-ring"
+            className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-ring hover:scale-110 active:scale-95"
           >
             Let's Connect
           </button>
@@ -79,10 +79,10 @@ const Home: FC = () => {
         >
           <span
             onClick={() => onLinkClick("about")}
-            className="flex flex-col items-center cursor-pointer gap-2 focus-ring hover:text-zinc-400"
+            className="flex cursor-pointer focus-ring hover:text-zinc-400"
             tabIndex={0}
           >
-            <i className="ph-fill ph-arrow-down text-[40px] motion-safe:animate-bounce" />
+             <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />
           </span>
         </motion.div>
       </section>
