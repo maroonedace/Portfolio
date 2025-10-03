@@ -4,9 +4,9 @@ import Image from "next/image";
 const Contact = () => {
   return (
     <div className="flex justify-center items-center p-4" id="contact">
-      <div className="bg-zinc-800 flex flex-col gap-2 items-center w-full md:w-1/2 py-4 rounded-2xl">
-        <h3 className="text-2xl font-semibold uppercase">Get in touch</h3>
-        <div className="flex gap-4">
+      <div className="bg-zinc-800 flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
+        <h3 className="text-2xl font-semibold uppercase">Let's Connect</h3>
+        <div className="flex gap-8">
           <Link
             href="mailto:aostia815@gmail.com"
             tabIndex={0}
