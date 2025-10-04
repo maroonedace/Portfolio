@@ -4,11 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 export type WorkType = {
   name: string;
   title: string;
-  logo: string;
+  logoUrl: string;
   skills: string[];
-  period: string;
-  description: string[];
-  website?: string;
+  startDate: string;
+  endDate: string | null;
+  descriptions: string[];
+  website: string;
 };
 
 const fetchWork = async (): Promise<WorkType[]> => {

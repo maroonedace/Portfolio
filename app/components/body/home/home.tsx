@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { onLinkClick } from "../utils";
 import Image from "next/image";
@@ -18,6 +18,7 @@ const fadeUp = (i: number) => ({
 });
 
 const Home: FC = () => {
+
   return (
     <MotionWrapper>
       <section
@@ -82,7 +83,7 @@ const Home: FC = () => {
             className="flex cursor-pointer focus-ring hover:text-zinc-400"
             tabIndex={0}
           >
-             <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />
+            <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />
           </span>
         </motion.div>
       </section>

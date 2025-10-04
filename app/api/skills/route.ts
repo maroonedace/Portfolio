@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { Skill } from "../../components/body/skills/utils/useSkills";
+import { createSupabaseClient } from "../../utils/supabase/server";
 
 export async function GET() {
-  const file = await fs.readFile(
-    path.join(process.cwd(), "public/data/skills.json"),
-    "utf-8"
-  );
-  return NextResponse.json(JSON.parse(file));
+  const supabase = await createSupabaseClient();
+  const { data } = await supabase.from("skills").select();
+
+  const skills: Skill[] = data.map((skill) => ({
+    name: skill.name,
+    logoUrl: skill.logo_url,
+    slug: skill.slug,
+  }));
+  return NextResponse.json({ skills });
 }

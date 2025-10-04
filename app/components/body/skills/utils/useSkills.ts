@@ -3,8 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export type Skill = {
   name: string;
-  src: string;
-  bgColor: string;
+  logoUrl: string;
   slug: string;
 };
 

@@ -34,7 +34,7 @@ const Project: FC<WorkProps> = ({ projects, skills }) => {
               >
                 <div className="flex-shrink-0">
                   <Image
-                    src={p.logo}
+                    src={p.logoUrl}
                     alt={`${p.name} Logo`}
                     priority
                     width="200"
@@ -61,7 +61,7 @@ const Project: FC<WorkProps> = ({ projects, skills }) => {
                             <div className="h-6 w-6 relative">
                               <Image
                                 fill
-                                src={skill.src}
+                                src={skill.logoUrl}
                                 alt={skill.name}
                                 loading="lazy"
                               />
@@ -72,7 +72,7 @@ const Project: FC<WorkProps> = ({ projects, skills }) => {
                       })}
                     </div>
                     <div className="flex flex-col justify-between grow gap-4">
-                      <p className="text-lg">{p.description}</p>
+                      <p className="text-lg">{p.descriptions}</p>
                       <div className="flex gap-4">
                         {p.github && (
                           <Link

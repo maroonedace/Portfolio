@@ -3,9 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 
 export type ProjectType = {
   name: string;
-  logo: string;
+  logoUrl: string;
   skills: string[];
-  description: string;
+  descriptions: string;
   embedLink?: string;
   github?: string;
 };
