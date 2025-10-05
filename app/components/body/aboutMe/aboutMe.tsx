@@ -6,7 +6,7 @@ import Image from "next/image";
 const AboutMe: FC = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 pb-6 pt-12 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-8"
+      className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 pb-6 pt-12 bg-gradient-to-b from-zinc-900 to-cyan-900 scroll-mt-20"
       id="about"
     >
       <Image
