@@ -8,7 +8,7 @@ export type Skill = {
 };
 
 const fetchSkills = async (): Promise<Skill[]> => {
-  const res = await fetch("/api/skills", { cache: "no-store" });
+  const res = await fetch("/api/skills");
   if (!res.ok) throw new Error("Failed to load /api/skills");
   const json = await res.json();
   return json.skills;
@@ -23,6 +23,8 @@ const useSkills = () => {
   return {
     skills: data,
     isSkillsFetched: isFetched,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   };
 };
 
