@@ -69,7 +69,7 @@ const Project: FC<WorkProps> = ({ projects}) => {
                       })}
                     </div>
                     <div className="flex flex-col justify-between grow gap-4">
-                      <p className="text-lg">{p.descriptions}</p>
+                      <p className="text-lg">{p.description}</p>
                       <div className="flex gap-4">
                         {p.github && (
                           <Link

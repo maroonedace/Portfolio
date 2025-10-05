@@ -35,7 +35,7 @@ const Work: FC<WorkProps> = ({ works }) => {
                                <span className="absolute -left-12 top-10 h-4 w-4 rounded-full ring-4 ring-white" />
                               <Image
                                 src={exp.logoUrl}
-                                sizes="16px"
+                                sizes="64px"
                                 alt={`${exp.name} logo`}
                                 className="p-2"
                                 fill
