@@ -13,12 +13,11 @@ const fadeUp = (i: number) => ({
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.08, duration: 0.35, ease: "easeOut" },
+    transition: { delay: (i * 0.08) + 0.25, duration: 0.35, ease: "easeOut" },
   },
 });
 
 const Home: FC = () => {
-
   return (
     <MotionWrapper>
       <section
