@@ -11,18 +11,24 @@ import WorkType from "./body/work/work";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Contact from "./body/contact/contact";
+import SplashScreen from "./splashScreen";
 
 const Content = () => {
   const { works, isWorkFetched } = useWork();
   const { projects, isProjectsFetched } = useProjects();
 
-  useEffect(() => {
-    if (!isProjectsFetched || !isWorkFetched) return;
-    const section = window.location.hash.replace("#", "");
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-  }, [isProjectsFetched, isWorkFetched]);
+  const isDataLoaded = isWorkFetched && isProjectsFetched;
 
-  if (!isProjectsFetched || !isWorkFetched) return;
+  useEffect(() => {
+    if (!isDataLoaded) return;
+    
+    const section = window.location.hash.replace("#", "");
+    if (section) {
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [isDataLoaded]);
+
+  if (!isDataLoaded) return <SplashScreen />;
 
   return (
     <>
