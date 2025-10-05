@@ -129,6 +129,7 @@ const Header: FC = () => {
           <div className="w-10 h-12 mr-6 relative cursor-pointer">
             <Image
               fill
+              sizes="40px"
               priority
               src="/images/header/marace.png"
               alt="Brand Logo"

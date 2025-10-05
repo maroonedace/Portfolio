@@ -12,19 +12,25 @@ import WorkType from "./body/work/work";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Contact from "./body/contact/contact";
+import SplashScreen from "./splashScreen";
 
 const Content = () => {
   const { works, isWorkFetched } = useWork();
   const { projects, isProjectsFetched } = useProjects();
   const { skills, isSkillsFetched } = useSkills();
 
-  useEffect(() => {
-    if (!isProjectsFetched || !isWorkFetched || !isSkillsFetched) return;
-    const section = window.location.hash.replace("#", "");
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-  }, [isProjectsFetched, isWorkFetched, isSkillsFetched]);
+  const isDataLoaded = isWorkFetched && isProjectsFetched && isSkillsFetched;
 
-  if (!isProjectsFetched || !isWorkFetched || !isSkillsFetched) return;
+  useEffect(() => {
+    if (!isDataLoaded) return;
+    
+    const section = window.location.hash.replace("#", "");
+    if (section) {
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [isDataLoaded]);
+
+  if (!isDataLoaded) return <SplashScreen />;
 
   return (
     <>

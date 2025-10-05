@@ -1,7 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import skillColorMap from "../models/colors";
 import { Skill } from "../skills/utils/useSkills";
@@ -31,13 +30,13 @@ const Work: FC<WorkProps> = ({ works, skills }) => {
                   <div key={exp.name} className="mb-12 ml-4">
                     <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                       <div className="md:w-1/2">
-                        <span className="absolute -left-[8px] mt-8 h-4 w-4 rounded-full ring-4 ring-white" />
-
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                           <div className="flex items-center gap-4">
                             <div className="w-24 h-24 flex-none rounded-md bg-white relative">
+                               <span className="absolute -left-12 top-10 h-4 w-4 rounded-full ring-4 ring-white" />
                               <Image
                                 src={exp.logoUrl}
+                                sizes="16px"
                                 alt={`${exp.name} logo`}
                                 className="p-2"
                                 fill
