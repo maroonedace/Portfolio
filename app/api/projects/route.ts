@@ -10,9 +10,7 @@ export async function GET() {
     name: project.name,
     logoUrl: project.logo_url,
     skills: project.skills || [],
-    descriptions: Array.isArray(project.descriptions)
-      ? project.descriptions
-      : [project.descriptions].filter(Boolean),
+    description: project.description.join(" "),
     embedLink: project.embed_link,
     github: project.github,
   }));

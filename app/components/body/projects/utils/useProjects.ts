@@ -5,7 +5,7 @@ export type ProjectType = {
   name: string;
   logoUrl: string;
   skills: string[];
-  descriptions: string;
+  description: string;
   embedLink?: string;
   github?: string;
 };
