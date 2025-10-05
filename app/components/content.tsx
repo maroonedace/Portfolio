@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AboutMe from "./body/aboutMe/aboutMe";
 import Home from "./body/home/home";
 import Project from "./body/projects/project";
@@ -17,30 +17,63 @@ const Content = () => {
   const { works, isWorkFetched } = useWork();
   const { projects, isProjectsFetched } = useProjects();
 
+  const [isVisible, setIsVisible] = useState(false);
+
   const isDataLoaded = isWorkFetched && isProjectsFetched;
 
   useEffect(() => {
     if (!isDataLoaded) return;
-    
-    const section = window.location.hash.replace("#", "");
-    if (section) {
-      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [isDataLoaded]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
+
+  useEffect(() => {
+    if (!isDataLoaded) return;
+    const savedPosition = sessionStorage.getItem("scrollPosition");
+    if (savedPosition) {
+      window.scrollTo(0, parseInt(savedPosition));
     }
   }, [isDataLoaded]);
 
-  if (!isDataLoaded) return <SplashScreen />;
-
   return (
-    <>
-      <Header />
-      <Home />
-      <AboutMe />
-      <Skills />
-      <WorkType works={works} />
-      <Project projects={projects} />
-      <Contact />
-      <Footer />
-    </>
+    <div className="relative">
+      <div
+        className={`transition-opacity duration-500 ease-in-out ${
+          isVisible ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <SplashScreen />
+      </div>
+      {isDataLoaded && (
+        <div
+          className={`transition-opacity duration-500 ease-in-out ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Header />
+          <Home />
+          <AboutMe />
+          <Skills />
+          <WorkType works={works} />
+          <Project projects={projects} />
+          <Contact />
+          <Footer />
+        </div>
+      )}
+    </div>
   );
 };
 
