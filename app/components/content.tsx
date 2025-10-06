@@ -7,11 +7,11 @@ import Project from "./body/projects/project";
 import useProjects from "./body/projects/utils/useProjects";
 import Skills from "./body/skills/skills";
 import useWork from "./body/work/utils/useWork";
-import WorkType from "./body/work/work";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Contact from "./body/contact/contact";
 import SplashScreen from "./splashScreen";
+import Work from "./body/work/work";
 
 const Content = () => {
   const { works, isWorkFetched } = useWork();
@@ -68,7 +68,7 @@ const Content = () => {
           <Home />
           <AboutMe />
           <Skills />
-          <WorkType works={works} />
+          <Work works={works} />
           <Project projects={projects} />
           <Contact />
           <Footer />

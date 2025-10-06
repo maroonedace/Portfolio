@@ -3,10 +3,10 @@
 import { FC } from "react";
 import Image from "next/image";
 import skillColorMap from "../models/colors";
-import { WorkType } from "../work/utils/useWork";
 import Link from "next/link";
 import { format } from "date-fns";
 import { skills } from "../../../data/skills";
+import { WorkType } from "../../../types";
 
 interface WorkProps {
   works: WorkType[];

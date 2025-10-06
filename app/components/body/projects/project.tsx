@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { ProjectType } from "./utils/useProjects";
 import skillColorMap from "../models/colors";
 import { FC } from "react";
 import Link from "next/link";
 import { skills } from "../../../data/skills";
+import { ProjectType } from "../../../types";
 
 interface WorkProps {
   projects: ProjectType[];

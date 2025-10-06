@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { WorkType } from "../../components/body/work/utils/useWork";
 import { createSupabaseClient } from "../../utils/supabase/server";
+import { WorkType } from "../../types";
 
 export async function GET() {
   const supabase = await createSupabaseClient();

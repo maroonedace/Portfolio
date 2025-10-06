@@ -1,16 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-
-export type WorkType = {
-  name: string;
-  title: string;
-  logoUrl: string;
-  skills: string[];
-  startDate: string;
-  endDate: string | null;
-  descriptions: string[];
-  website: string;
-};
+import { WorkType } from "../../../../types";
 
 const fetchWork = async (): Promise<WorkType[]> => {
   const res = await fetch("/api/work");

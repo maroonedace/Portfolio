@@ -1,14 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-
-export type ProjectType = {
-  name: string;
-  logoUrl: string;
-  skills: string[];
-  description: string;
-  embedLink?: string;
-  github?: string;
-};
+import { ProjectType } from "../../../../types";
 
 const fetchProjects = async (): Promise<ProjectType[]> => {
   const res = await fetch("/api/projects");
