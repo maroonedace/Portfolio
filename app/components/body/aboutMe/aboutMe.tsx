@@ -25,7 +25,7 @@ const AboutMe: FC = () => {
           {aboutData.descriptions.map((desc, index) => (
             <p
               key={index}
-              className="text-lg md:text-xl max-w-4xl text-center mb-8"
+              className="text-lg md:text-xl max-w-5xl text-center mb-8"
             >
               {desc}
             </p>
