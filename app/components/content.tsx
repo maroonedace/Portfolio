@@ -21,6 +21,7 @@ const Content = () => {
 
   const isDataLoaded = isWorkFetched && isProjectsFetched;
 
+
   useEffect(() => {
     if (!isDataLoaded) return;
 
