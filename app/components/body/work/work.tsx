@@ -1,27 +1,25 @@
 "use client";
 
 import { FC } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import skillColorMap from "../models/colors";
-import { Skill } from "../skills/utils/useSkills";
 import { WorkType } from "../work/utils/useWork";
 import Link from "next/link";
 import { format } from "date-fns";
+import { skills } from "../../../data/skills";
 
 interface WorkProps {
   works: WorkType[];
-  skills: Skill[];
 }
 
-const Work: FC<WorkProps> = ({ works, skills }) => {
+const Work: FC<WorkProps> = ({ works }) => {
   return (
     <section className="px-6 py-6 scroll-mt-8" id="work">
       <div className="px-4 md:px-8 py-16 bg-zinc-800 rounded-lg flex flex-col">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Professional Experience
         </h2>
-        {works && skills && (
+        {works && (
           <div className="px-4 md:px-12">
             <div className="relative border-l border-white pl-6">
               {works.map((exp) => {

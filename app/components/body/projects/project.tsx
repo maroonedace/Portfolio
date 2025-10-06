@@ -1,20 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import Image from "next/image";
 import { ProjectType } from "./utils/useProjects";
-import { Skill } from "../skills/utils/useSkills";
 import skillColorMap from "../models/colors";
 import { FC } from "react";
 import Link from "next/link";
+import { skills } from "../../../data/skills";
 
 interface WorkProps {
   projects: ProjectType[];
-  skills: Skill[];
 }
 
-const Project: FC<WorkProps> = ({ projects, skills }) => {
+const Project: FC<WorkProps> = ({ projects}) => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-8"
@@ -25,7 +22,7 @@ const Project: FC<WorkProps> = ({ projects, skills }) => {
           Featured Projects
         </h2>
 
-        {projects && skills && (
+        {projects && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((p) => (
               <div

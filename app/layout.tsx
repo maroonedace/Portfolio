@@ -43,14 +43,6 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
       <head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-        <link
-          rel="stylesheet"
           type="text/css"
           href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
         />
