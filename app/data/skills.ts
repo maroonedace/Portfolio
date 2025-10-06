@@ -20,6 +20,8 @@ export const skills: Skill[] = [
   { name: "Vite", slug: "vite", logoUrl: "/images/skills/vitejs.svg" },
   { name: "Node.js", slug: "node", logoUrl: "/images/skills/nodejs.svg" },
   { name: "Rails", slug: "rails", logoUrl: "/images/skills/rails.svg" },
+  { name: "FastAPI", slug: "fastapi", logoUrl: "/images/skills/fastapi.svg" },
+  { name: "Django", slug: "django", logoUrl: "/images/skills/django.svg" },
   { name: "Tauri", slug: "tauri", logoUrl: "/images/skills/tauri.svg" },
   { name: "Electron", slug: "electron", logoUrl: "/images/skills/electron.svg" },
   { name: "PostgreSQL", slug: "pgsql", logoUrl: "/images/skills/postgresql.svg" },
