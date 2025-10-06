@@ -162,9 +162,12 @@ const Header: FC = () => {
           aria-label="Toggle Navigation"
           aria-expanded={isModalOpen}
         >
-          <span className="material-icons" style={{ fontSize: 32 }}>
-            menu
-          </span>
+          <Image
+            src="/images/header/menu.svg"
+            alt="Menu Button"
+            width={32}
+            height={32}
+          />
         </button>
       </nav>
 
@@ -186,9 +189,12 @@ const Header: FC = () => {
               aria-label="Close navigation"
               className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-400"
             >
-              <span className="material-icons" style={{ fontSize: 32 }}>
-                close
-              </span>
+              <Image
+                src="/images/header/close.svg"
+                alt="Close Button"
+                width={32}
+                height={32}
+              />
             </button>
             <div
               className="bg-zinc-800/95 px-12 py-6 rounded-2xl"
