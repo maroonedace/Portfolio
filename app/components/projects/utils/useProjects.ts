@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { ProjectType } from "../../../../types";
+import { ProjectType } from "../../../types";
 
 const fetchProjects = async (): Promise<ProjectType[]> => {
   const res = await fetch("/api/projects");

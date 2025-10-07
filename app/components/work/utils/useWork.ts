@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { WorkType } from "../../../../types";
+import { WorkType } from "../../../types";
 
 const fetchWork = async (): Promise<WorkType[]> => {
   const res = await fetch("/api/work");
