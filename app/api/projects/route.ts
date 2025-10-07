@@ -9,7 +9,7 @@ export async function GET() {
   const projects: ProjectType[] = data.map((project) => ({
     name: project.name,
     logoUrl: project.logo_url,
-    skills: project.skills || [],
+    skillNames: project.skills || [],
     description: project.description.join(" "),
     embedLink: project.embed_link,
     github: project.github,

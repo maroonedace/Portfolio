@@ -1,3 +1,5 @@
+"use client"
+
 const SplashScreen = () => {
   return (
     <div className="fixed inset-0 flex flex-col gap-4 items-center justify-center bg-zinc-700 z-50">

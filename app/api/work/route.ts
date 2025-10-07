@@ -13,7 +13,7 @@ export async function GET() {
     startDate: workItem.start_date,
     endDate: workItem.end_date,
     logoUrl: workItem.logo_url,
-    skills: workItem.skills || [],
+    skillNames: workItem.skills || [],
     descriptions: workItem.descriptions || [],
   }));
   return NextResponse.json({ work });

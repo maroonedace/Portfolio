@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { onLinkClick } from "../../utils/utils";
-import MotionWrapper from "../motionWrapper";
+import MotionWrapper from "../reusable/motionWrapper";
 
 const navItems = [
   { label: "Home", href: "home" },

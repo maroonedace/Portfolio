@@ -3,15 +3,14 @@
 import Image from "next/image";
 import { FC } from "react";
 import Link from "next/link";
-import skillColorMap from "../../models/colors";
 import { ProjectType } from "../../types";
-import { skills } from "../../../public/data/skills";
+import SkillLabels from "../reusable/skillLabels";
 
 interface ProjectProps {
   projects: ProjectType[];
 }
 
-const Project: FC<ProjectProps> = ({ projects}) => {
+const Project: FC<ProjectProps> = ({ projects }) => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-20"
@@ -43,30 +42,7 @@ const Project: FC<ProjectProps> = ({ projects}) => {
                   <h3 className="font-semibold text-xl mb-2">{p.name}</h3>
                   <div className="flex flex-col gap-4 h-full">
                     <div className="flex flex-wrap gap-2 text-xs font-medium">
-                      {p.skills.map((skillName) => {
-                        const skill = skills.find((s) => s.name === skillName);
-                        const colorConfig = skillColorMap[skill.slug] || {
-                          bg: "#6B7280",
-                          text: "#FFFFFF",
-                        };
-                        return (
-                          <div
-                            key={skillName}
-                            style={{ backgroundColor: colorConfig.bg }}
-                            className="rounded-xl bg-cyan-500/10 px-2 py-1 flex gap-2 items-center"
-                          >
-                            <div className="h-6 w-6 relative">
-                              <Image
-                                fill
-                                src={skill.logoUrl}
-                                alt={skill.name}
-                                loading="lazy"
-                              />
-                            </div>
-                            <span className="text-base">{skillName}</span>
-                          </div>
-                        );
-                      })}
+                      <SkillLabels projectSkills={p.skillNames}/>
                     </div>
                     <div className="flex flex-col justify-between grow gap-4">
                       <p className="text-lg">{p.description}</p>

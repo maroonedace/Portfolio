@@ -2,7 +2,7 @@ export interface WorkType {
   name: string;
   title: string;
   logoUrl: string;
-  skills: string[];
+  skillNames: string[];
   startDate: string;
   endDate: string | null;
   descriptions: string[];
@@ -12,7 +12,7 @@ export interface WorkType {
 export interface ProjectType {
   name: string;
   logoUrl: string;
-  skills: string[];
+  skillNames: string[];
   description: string;
   embedLink?: string;
   github?: string;
