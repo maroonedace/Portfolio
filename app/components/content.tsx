@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AboutMe from "./body/aboutMe/aboutMe";
-import Home from "./body/home/home";
-import Project from "./body/projects/project";
-import useProjects from "./body/projects/utils/useProjects";
-import Skills from "./body/skills/skills";
-import useWork from "./body/work/utils/useWork";
-import Footer from "./footer/footer";
-import Header from "./header/header";
-import Contact from "./body/contact/contact";
+import AboutMe from "./aboutMe/page";
+import Home from "./home/page";
+import Footer from "./footer/page";
+import Header from "./header/page";
+import Contact from "./contact/page";
 import SplashScreen from "./splashScreen";
-import Work from "./body/work/work";
+import Project from "./projects/page";
+import useProjects from "./projects/utils/useProjects";
+import Skills from "./skills/page";
+import Work from "./work/page";
+import useWork from "./work/utils/useWork";
 
 const Content = () => {
   const { works, isWorkFetched } = useWork();

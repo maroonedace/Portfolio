@@ -1,4 +1,9 @@
-function chunkArray<T>(arr: T[], chunks: number): T[][] {
+export const onLinkClick = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
+
+export function chunkArray<T>(arr: T[], chunks: number): T[][] {
   const perChunk = Math.ceil(arr.length / chunks);
   const result: T[][] = [];
   for (let i = 0; i < chunks; i++) {
@@ -8,5 +13,3 @@ function chunkArray<T>(arr: T[], chunks: number): T[][] {
   }
   return result;
 }
-
-export default chunkArray

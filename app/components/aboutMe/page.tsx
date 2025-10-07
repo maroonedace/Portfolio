@@ -1,6 +1,8 @@
+"use client";
+
 import { FC } from "react";
 import Image from "next/image";
-import { aboutData } from "../../../data/about";
+import { aboutData } from "../../data/about";
 
 const AboutMe: FC = () => {
   return (
