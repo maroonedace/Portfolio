@@ -1,13 +1,3 @@
-export interface AboutData {
-  descriptions: string[];
-}
-
-export interface Skill {
-  name: string;
-  slug: string;
-  logoUrl: string;
-}
-
 export interface WorkType {
   name: string;
   title: string;

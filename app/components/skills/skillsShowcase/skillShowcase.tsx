@@ -1,4 +1,4 @@
-import { skills } from "../../../data/skills";
+import { skills } from "../../../../public/data/skills";
 import { chunkArray } from "../../../utils/utils";
 import Marquee from "./marquee";
 import SkillLabel from "./skillLabel";

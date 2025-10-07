@@ -4,8 +4,8 @@ import Image from "next/image";
 import { FC } from "react";
 import Link from "next/link";
 import { ProjectType } from "../../types";
-import { skills } from "../../data/skills";
 import skillColorMap from "../../models/colors";
+import { skills } from "../../../public/data/skills";
 
 interface WorkProps {
   projects: ProjectType[];

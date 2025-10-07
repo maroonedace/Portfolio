@@ -1,4 +1,6 @@
-import { AboutData } from "../types/index";
+export interface AboutData {
+  descriptions: string[];
+}
 
 export const aboutData: AboutData = {
   descriptions: [
