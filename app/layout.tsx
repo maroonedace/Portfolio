@@ -39,21 +39,21 @@ const clashDisplay = localFont({
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.className}`}>
-      <head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-        />
-      </head>
+    <ReactQueryProvider>
+      <html lang="en" className={`${inter.className}`}>
+        <head>
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+          />
+        </head>
 
-      <body className={`${clashDisplay.variable} font-clash`}>
-        <ReactQueryProvider>
+        <body className={`${clashDisplay.variable} font-clash`}>
           {children}
-        </ReactQueryProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ReactQueryProvider>
   );
 };
 
