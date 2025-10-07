@@ -77,7 +77,7 @@ const Project: FC<WorkProps> = ({ projects}) => {
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            className="focus-ring flex items-center gap-2 bg-zinc-700 px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
                             <Image
                               src="/images/skills/github.svg"
@@ -94,7 +94,7 @@ const Project: FC<WorkProps> = ({ projects}) => {
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            className="focus-ring flex items-center gap-2 bg-zinc-700 px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
                             <span className="text-lg font-medium">Demo</span>
                             <Image
