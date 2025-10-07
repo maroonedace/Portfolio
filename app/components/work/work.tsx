@@ -15,7 +15,7 @@ interface WorkProps {
 const Work: FC<WorkProps> = ({ works }) => {
   return (
     <section className="px-6 py-6 scroll-mt-20" id="work">
-      <div className="px-4 md:px-8 py-16 bg-zinc-800 rounded-lg flex flex-col">
+      <div className="px-4 md:px-8 py-16 bg-zinc-700 rounded-lg flex flex-col">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Professional Experience
         </h2>

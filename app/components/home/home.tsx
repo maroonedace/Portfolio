@@ -24,7 +24,7 @@ const Home: FC = () => {
         className="relative flex flex-col items-center justify-center gap-8 min-h-dvh text-center px-6"
         id="home"
       >
-        <div className="absolute inset-0 z-[-30] bg-zinc-800">
+        <div className="absolute inset-0 z-[-30] bg-zinc-700">
           <Image src="/images/hero/hero.jpg" alt="Background" fill />
         </div>
         {/* Headline */}
@@ -57,7 +57,7 @@ const Home: FC = () => {
           <button
             onClick={() => onLinkClick("work")}
             tabIndex={0}
-            className="rounded-xl bg-cyan-500 text-zinc-900 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring hover:scale-110 active:scale-95"
+            className="rounded-xl bg-cyan-500 text-zinc-700 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring hover:scale-110 active:scale-95"
           >
             View Work
           </button>
@@ -79,7 +79,7 @@ const Home: FC = () => {
         >
           <span
             onClick={() => onLinkClick("about")}
-            className="flex cursor-pointer focus-ring hover:text-zinc-400"
+            className="flex cursor-pointer focus-ring hover:text-zinc-300"
             tabIndex={0}
           >
             <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />

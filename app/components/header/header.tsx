@@ -120,8 +120,8 @@ const Header: FC = () => {
   return (
     <header
       ref={headerRef}
-      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300 bg-zinc-800
-          ${isOverThreshold ? "sm:bg-zinc-800" : "sm:bg-transparent"}
+      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300 bg-zinc-700
+          ${isOverThreshold ? "sm:bg-zinc-700" : "sm:bg-transparent"}
         `}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
@@ -179,7 +179,7 @@ const Header: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-zinc-800/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-zinc-700/60 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
           >
@@ -187,7 +187,7 @@ const Header: FC = () => {
               onClick={onMenuClose}
               onPointerDownCapture={(e) => e.stopPropagation()}
               aria-label="Close navigation"
-              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-400"
+              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-300"
             >
               <Image
                 src="/images/header/close.svg"
@@ -197,7 +197,7 @@ const Header: FC = () => {
               />
             </button>
             <div
-              className="bg-zinc-800/95 px-12 py-6 rounded-2xl"
+              className="bg-zinc-700/95 px-12 py-6 rounded-2xl"
               ref={panelRef}
             >
               <div className="flex flex-col items-center gap-6 py-6">

@@ -27,7 +27,7 @@ const Project: FC<ProjectProps> = ({ projects}) => {
             {projects.map((p) => (
               <div
                 key={p.name}
-                className="rounded-2xl p-6 bg-zinc-800 flex flex-col items-center sm:items-start sm:flex-row gap-4"
+                className="rounded-2xl p-6 bg-zinc-700 flex flex-col items-center sm:items-start sm:flex-row gap-4"
               >
                 <div className="flex-shrink-0">
                   <Image

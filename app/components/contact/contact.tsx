@@ -24,7 +24,7 @@ const contactInfo = [
 const Contact = () => {
   return (
     <div className="flex justify-center items-center p-4" id="contact">
-      <div className="bg-zinc-800 flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
+      <div className="bg-zinc-700 flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
         <h3 className="text-2xl font-semibold uppercase">Let's Connect</h3>
         <div className="flex gap-8">
           {contactInfo.map((info) => (
