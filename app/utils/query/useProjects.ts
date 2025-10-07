@@ -1,6 +1,5 @@
-"use client";
 import { useQuery } from "@tanstack/react-query";
-import { ProjectType } from "../../../../types";
+import { ProjectType } from "../../types";
 
 const fetchProjects = async (): Promise<ProjectType[]> => {
   const res = await fetch("/api/projects");
@@ -18,8 +17,6 @@ const useProjects = () => {
   return {
     projects: data,
     isProjectsFetched: isFetched,
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
   };
 };
 

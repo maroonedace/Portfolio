@@ -1,4 +1,8 @@
-import { Skill } from "../types/index";
+export interface Skill {
+  name: string;
+  slug: string;
+  logoUrl: string;
+}
 
 export const skills: Skill[] = [
   { name: "JavaScript", slug: "js", logoUrl: "/images/skills/javascript.svg" },

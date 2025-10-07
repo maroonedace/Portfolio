@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import { Skill } from "../../../../types";
+import { Skill } from "../../../../public/data/skills";
 
 interface SkillProps {
   skill: Skill;

@@ -1,8 +1,8 @@
-import chunkArray from "../../../../utils/utils";
+import { skills } from "../../../../public/data/skills";
+import { chunkArray } from "../../../utils/utils";
 import Marquee from "./marquee";
 import SkillLabel from "./skillLabel";
 import { FC } from "react";
-import { skills } from "../../../../data/skills";
 
 const SkillShowcase: FC= () => {
   const skillArray = chunkArray(skills, 3);

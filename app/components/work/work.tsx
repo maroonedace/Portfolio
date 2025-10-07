@@ -2,11 +2,11 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import skillColorMap from "../models/colors";
 import Link from "next/link";
 import { format } from "date-fns";
-import { skills } from "../../../data/skills";
-import { WorkType } from "../../../types";
+import skillColorMap from "../../models/colors";
+import { WorkType } from "../../types";
+import { skills } from "../../../public/data/skills";
 
 interface WorkProps {
   works: WorkType[];

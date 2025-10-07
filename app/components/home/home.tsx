@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
-import { onLinkClick } from "../utils";
 import Image from "next/image";
-import MotionWrapper from "../../reusable/motionWrapper";
+import { onLinkClick } from "../../utils/utils";
+import MotionWrapper from "../motionWrapper";
 
 // Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
@@ -29,7 +29,7 @@ const Home: FC = () => {
         </div>
         {/* Headline */}
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
           initial="hidden"
           animate="visible"
           variants={fadeUp(0)}
@@ -39,7 +39,7 @@ const Home: FC = () => {
 
         {/* Headline */}
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
           initial="hidden"
           animate="visible"
           variants={fadeUp(1)}

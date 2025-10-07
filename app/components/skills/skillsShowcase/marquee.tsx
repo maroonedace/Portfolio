@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";

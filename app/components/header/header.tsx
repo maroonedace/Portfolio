@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { onLinkClick } from "../body/utils";
-import MotionWrapper from "../reusable/motionWrapper";
+import { onLinkClick } from "../../utils/utils";
+import MotionWrapper from "../motionWrapper";
 
 const navItems = [
   { label: "Home", href: "home" },

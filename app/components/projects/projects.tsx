@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import skillColorMap from "../models/colors";
 import { FC } from "react";
 import Link from "next/link";
-import { skills } from "../../../data/skills";
-import { ProjectType } from "../../../types";
+import skillColorMap from "../../models/colors";
+import { ProjectType } from "../../types";
+import { skills } from "../../../public/data/skills";
 
-interface WorkProps {
+interface ProjectProps {
   projects: ProjectType[];
 }
 
-const Project: FC<WorkProps> = ({ projects}) => {
+const Project: FC<ProjectProps> = ({ projects}) => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-20"

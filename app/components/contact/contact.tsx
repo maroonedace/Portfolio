@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,6 +30,7 @@ const Contact = () => {
           {contactInfo.map((info) => (
             <Link
               href={info.href}
+              key={info.alt}
               tabIndex={0}
               className="bg-white focus-ring p-2 rounded-full flex hover:scale-110 active:scale-95 transition motion-reduce:transform-none"
             >

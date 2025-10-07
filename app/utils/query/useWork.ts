@@ -1,6 +1,5 @@
-"use client";
 import { useQuery } from "@tanstack/react-query";
-import { WorkType } from "../../../../types";
+import { WorkType } from "../../types";
 
 const fetchWork = async (): Promise<WorkType[]> => {
   const res = await fetch("/api/work");
@@ -13,8 +12,6 @@ const useWork = () => {
   const { data, isFetched } = useQuery({
     queryKey: ["work"],
     queryFn: fetchWork,
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
   });
 
   return {
