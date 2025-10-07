@@ -2,7 +2,6 @@ export const onLinkClick = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
 
-
 export function chunkArray<T>(arr: T[], chunks: number): T[][] {
   const perChunk = Math.ceil(arr.length / chunks);
   const result: T[][] = [];
