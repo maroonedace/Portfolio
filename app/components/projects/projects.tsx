@@ -3,15 +3,15 @@
 import Image from "next/image";
 import { FC } from "react";
 import Link from "next/link";
-import { ProjectType } from "../../types";
 import skillColorMap from "../../models/colors";
+import { ProjectType } from "../../types";
 import { skills } from "../../../public/data/skills";
 
-// interface ProjectProps {
-//   projects: ProjectType[];
-// }
+interface ProjectProps {
+  projects: ProjectType[];
+}
 
-const Project = ({ projects}) => {
+const Project: FC<ProjectProps> = ({ projects}) => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-20"
