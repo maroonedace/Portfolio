@@ -29,7 +29,7 @@ const Home: FC = () => {
         </div>
         {/* Headline */}
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
           initial="hidden"
           animate="visible"
           variants={fadeUp(0)}
@@ -39,7 +39,7 @@ const Home: FC = () => {
 
         {/* Headline */}
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
           initial="hidden"
           animate="visible"
           variants={fadeUp(1)}
