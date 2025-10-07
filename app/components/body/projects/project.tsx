@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import skillColorMap from "../models/colors";
 import { FC } from "react";

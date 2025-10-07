@@ -1,7 +1,5 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 import { onLinkClick } from "../utils";
 import Image from "next/image";
