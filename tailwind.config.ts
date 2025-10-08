@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 /** @type {import('tailwindcss').Config} */
 const tailwindConfig = {
   content: [
@@ -11,9 +13,10 @@ const tailwindConfig = {
         clash: ["var(--font-clash-display)"],
         nunito: ["Nunito", "sans-serif"],
       },
+
       colors: {
-        linkedIn: "#0A66C2",
-        nZero: "#19181a",
+        primary: "#272B2E",
+        secondary: "#D3CAB7",
         js: "#CAB307",
         ts: "#2A66A7",
         python: "#28567B",

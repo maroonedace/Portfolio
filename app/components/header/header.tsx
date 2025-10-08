@@ -37,8 +37,6 @@ const Header: FC = () => {
   useEffect(() => {
     if (!isModalOpen) return;
 
-    // One AbortController lets us register multiple event types
-    // and clean them up in a single call.
     const controller = new AbortController();
     const { signal } = controller;
 
@@ -120,8 +118,8 @@ const Header: FC = () => {
   return (
     <header
       ref={headerRef}
-      className={`fixed inset-x-0 top-0 flex z-40 transition duration-300 bg-zinc-700
-          ${isOverThreshold ? "sm:bg-zinc-700" : "sm:bg-transparent"}
+      className={`fixed inset-x-0 flex z-40 transition duration-300 bg-primary
+          ${isOverThreshold ? "sm:bg-primary" : "sm:bg-transparent"}
         `}
     >
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
@@ -147,7 +145,7 @@ const Header: FC = () => {
                 }}
                 key={item.href}
                 tabIndex={0}
-                className="text-sm font-medium underline-offset-4 rounded-2xl text-white/90 hover:text-zinc-300 hover:underline p-2 focus-ring"
+                className="text-sm font-medium underline-offset-4 rounded-2xl text-white/90 hover:text-white/60 hover:underline p-2 focus-ring"
               >
                 {item.label}
               </button>
@@ -157,16 +155,14 @@ const Header: FC = () => {
 
         {/* Mobile toggle */}
         <button
-          className={`sm:hidden p-2 focus-ring flex hover:text-zinc-300 ${isModalOpen ? "invisible" : ""}`}
+          className={`sm:hidden p-2 focus-ring flex hover:text-white/60 ${isModalOpen ? "invisible" : ""}`}
           onClick={onMenuOpen}
-          aria-label="Toggle Navigation"
-          aria-expanded={isModalOpen}
         >
           <Image
             src="/images/header/menu.svg"
             alt="Menu Button"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
           />
         </button>
       </nav>
@@ -179,33 +175,31 @@ const Header: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-zinc-700/60 backdrop-blur-sm"
-            role="dialog"
-            aria-modal="true"
+            className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-primary/60 backdrop-blur-sm"
           >
             <button
               onClick={onMenuClose}
               onPointerDownCapture={(e) => e.stopPropagation()}
-              aria-label="Close navigation"
-              className="absolute top-4 right-4 p-2 focus-ring hover:text-zinc-300"
+              className="absolute top-4 right-4 p-2 focus-ring hover:text-white/60"
             >
               <Image
                 src="/images/header/close.svg"
-                alt="Close Button"
-                width={32}
-                height={32}
+                alt="Close Navigation Button"
+                width={40}
+                height={40}
               />
             </button>
             <div
-              className="bg-zinc-700/95 px-12 py-6 rounded-2xl"
+              className="bg-primary px-12 py-6 rounded-2xl flex flex-col items-center"
               ref={panelRef}
             >
-              <div className="flex flex-col items-center gap-6 py-6">
+              <h3 className="text-white">Navigation</h3>
+              <div className="flex flex-col items-center gap-6 p-6">
                 {navItems.map((item) => (
                   <button
                     onClick={() => onNavItemClick(item.href)}
                     key={item.href}
-                    className="text-lg font-medium text-white/90 hover:text-zinc-300 "
+                    className="text-xl font-medium text-white/80 hover:text-white/60 hover:underline focus-ring"
                   >
                     {item.label}
                   </button>
