@@ -56,7 +56,7 @@ const SkillLabels: FC<SkillLabelsProps> = ({ projectSkills }) => {
     return (
       <div
         key={skillName}
-        className={`${colorConfig} rounded-xl bg-cyan-500/10 px-2 py-1 flex gap-2 items-center`}
+        className={`${colorConfig} rounded-xl px-2 py-1 flex gap-2 items-center`}
       >
         <div className="h-6 w-6 relative">
           <Image fill src={skill.logoUrl} alt={skill.name} />
