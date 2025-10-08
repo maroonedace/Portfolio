@@ -31,9 +31,10 @@ const Contact = () => {
               href={info.href}
               key={info.alt}
               tabIndex={0}
-              className="bg-secondary text-primary focus-ring p-2 rounded-full flex hover:scale-110 active:scale-95 transition motion-reduce:transform-none"
+              className="bg-secondary text-primary focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
             >
               <i className={`ph-fill ${info.src} text-[48px]`} />
+              <span className="hidden md:inline font-medium">{info.alt}</span>
             </Link>
           ))}
         </div>

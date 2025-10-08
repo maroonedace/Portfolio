@@ -20,7 +20,7 @@ const Project: FC<ProjectProps> = ({ projects }) => {
         <h2 className="mb-12 text-center">Featured Projects</h2>
 
         {projects && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((p) => (
               <div
                 key={p.name}
