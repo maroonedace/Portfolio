@@ -72,12 +72,9 @@ const Work: FC<WorkProps> = ({ works }) => {
                             rel="noopener noreferrer"
                             className="flex gap-2 bg-secondary text-primary rounded-2xl py-2 px-4 focus-ring items-center transition hover:scale-110 active:scale-95"
                           >
-                            <span className="text-lg">Website</span>
-                            <span
-                              className="flex"
-                            >
-                              <i className="ph-fill ph-arrow-up-right text-[32px]" />
-                            </span>
+                            <span className="text-lg font-medium">Website</span>
+
+                            <i className="ph-fill ph-arrow-up-right text-[32px]" />
                           </Link>
                         </div>
                       </div>
