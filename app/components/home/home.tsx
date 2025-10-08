@@ -24,7 +24,7 @@ const Home: FC = () => {
         id="home"
       >
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/hero/hero.jpg" alt="Background" fill className="object-cover sm:object-fill" />
+          <Image src="/images/hero/hero.jpg" alt="Background" fill />
         </div>
         <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 sm:pt-10">
           <div className="flex flex-col gap-4">
