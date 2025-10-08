@@ -53,12 +53,7 @@ const Project: FC<ProjectProps> = ({ projects }) => {
                             rel="noopener noreferrer"
                             className="focus-ring flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
-                            <Image
-                              src="/images/skills/github.svg"
-                              alt="github"
-                              width="32"
-                              height="32"
-                            />
+                            <i className="ph-fill ph-git-branch text-[32px]" />
                             <span className="text-lg font-medium">Repo</span>
                           </Link>
                         )}
