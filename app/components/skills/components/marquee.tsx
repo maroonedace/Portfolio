@@ -7,7 +7,7 @@ type MarqueeProps = {
   direction: "left" | "right";
 };
 
-const MARQUEE_SPEED = 32;
+const MARQUEE_SPEED = 28;
 const REPEAT = 3;
 
 const Marquee = ({ children, direction }: MarqueeProps) => {
@@ -48,7 +48,7 @@ const Marquee = ({ children, direction }: MarqueeProps) => {
           return (
             <div
               key={index}
-              className={`flex flex-row flex-shrink-0`}
+              className="flex flex-row flex-shrink-0"
             >
               {child}
             </div>

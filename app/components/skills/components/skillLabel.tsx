@@ -9,7 +9,7 @@ interface SkillProps {
 const SkillLabel: FC<SkillProps> = ({ skill }) => {
   return (
     <div
-      className="bg-zinc-700 py-2 px-4 rounded flex flex-row items-center gap-2 mr-2 md:mr-4"
+      className="bg-primary py-2 px-4 rounded flex flex-row items-center gap-2 mr-2 md:mr-4"
       key={skill.name}
     >
       <div className="h-8 w-8 md:h-12 md:w-12 relative">
