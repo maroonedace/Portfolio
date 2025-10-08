@@ -158,12 +158,7 @@ const Header: FC = () => {
           className={`sm:hidden p-2 focus-ring flex hover:text-white/60 ${isModalOpen ? "invisible" : ""}`}
           onClick={onMenuOpen}
         >
-          <Image
-            src="/images/header/menu.svg"
-            alt="Menu Button"
-            width={40}
-            height={40}
-          />
+          <i className="ph ph-list text-[40px]" />
         </button>
       </nav>
 
@@ -182,12 +177,7 @@ const Header: FC = () => {
               onPointerDownCapture={(e) => e.stopPropagation()}
               className="absolute top-4 right-4 p-2 focus-ring hover:text-white/60"
             >
-              <Image
-                src="/images/header/close.svg"
-                alt="Close Navigation Button"
-                width={40}
-                height={40}
-              />
+              <i className="ph ph-x text-[40px]" />
             </button>
             <div
               className="bg-primary px-12 py-6 rounded-2xl flex flex-col items-center"

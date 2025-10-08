@@ -1,9 +1,9 @@
 import { FC, ReactNode } from "react";
 import localFont from "next/font/local";
 import ReactQueryProvider from "./utils/providers/reactQueryProvider";
- 
+
 import "./globals.css";
- 
+
 const clashDisplay = localFont({
   src: [
     {
@@ -42,13 +42,16 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           <link
             rel="stylesheet"
             type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
             href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
           />
         </head>
 
-        <body>
-          {children}
-        </body>
+        <body>{children}</body>
       </html>
     </ReactQueryProvider>
   );
