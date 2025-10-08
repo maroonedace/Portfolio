@@ -7,36 +7,47 @@
     @apply bg-cyan-900;
     @apply text-white;
   }
+
   html {
     @apply scroll-smooth;
   }
 
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-5xl lg:text-6xl font-bold;
   }
 
   h2 {
-    @apply text-3xl font-bold;
+    @apply text-4xl lg:text-5xl font-bold;
   }
 
   h3 {
-    @apply text-2xl font-bold;
+    @apply text-3xl lg:text-4xl font-bold;
   }
 
   h4 {
-    @apply text-xl font-bold;
+    @apply text-2xl lg:text-3xl font-bold;
   }
 
   h5 {
-    @apply text-lg font-bold;
+    @apply text-xl lg:text-2xl font-bold;
   }
 
   h6 {
-    @apply text-lg;
+    @apply text-xl lg:text-2xl;
   }
 
   p {
-    @apply text-base;
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+}
+
+@layer components {
+  .clickable-button {
+    @apply text-base lg:text-xl rounded-xl py-4 px-6 hover:scale-110 active:scale-95 transition focus-ring;
+  }
+
+  .home-button {
+    @apply bg-secondary text-primary font-semibold;
   }
 }
 

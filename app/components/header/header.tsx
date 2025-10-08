@@ -193,7 +193,7 @@ const Header: FC = () => {
               className="bg-primary px-12 py-6 rounded-2xl flex flex-col items-center"
               ref={panelRef}
             >
-              <h3 className="text-white">Navigation</h3>
+              <h4 className="text-white">Navigation</h4>
               <div className="flex flex-col items-center gap-6 p-6">
                 {navItems.map((item) => (
                   <button

@@ -7,13 +7,12 @@ import Image from "next/image";
 import { onLinkClick } from "../../utils/utils";
 import MotionWrapper from "../reusable/motionWrapper";
 
-// Simple stagger helper for sequential fade‑ins
 const fadeUp = (i: number) => ({
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: (i * 0.08) + 0.25, duration: 0.35, ease: "easeOut" },
+    transition: { delay: i * 0.08 + 0.25, duration: 0.35, ease: "easeOut" },
   },
 });
 
@@ -21,56 +20,46 @@ const Home: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="relative flex flex-col items-center justify-center gap-8 min-h-dvh text-center px-6"
+        className="relative flex items-center justify-center"
         id="home"
       >
-        <div className="absolute inset-0 z-[-30] bg-zinc-700">
-          <Image src="/images/hero/hero.jpg" alt="Background" fill />
+        <div className="absolute inset-0 -z-10">
+          <Image src="/images/hero/hero.jpg" alt="Background" fill objectFit="cover" />
         </div>
-        {/* Headline */}
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp(0)}
-        >
-          Anthony Ostia
-        </motion.h1>
+        <div className="flex flex-col items-center justify-center text-center gap-12 min-h-dvh">
+          <div className="flex flex-col gap-4">
+            <motion.h1 initial="hidden" animate="visible" variants={fadeUp(0)}>
+              Anthony Ostia
+            </motion.h1>
 
-        {/* Headline */}
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp(1)}
-        >
-          Software Engineer
-        </motion.h1>
+            <motion.h1 initial="hidden" animate="visible" variants={fadeUp(1)}>
+              Software Engineer
+            </motion.h1>
+          </div>
 
-        {/* Call‑to‑action buttons */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-4"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp(3)}
-        >
-          <button
-            onClick={() => onLinkClick("work")}
-            tabIndex={0}
-            className="rounded-xl bg-cyan-500 text-zinc-700 px-6 py-3 font-medium transition hover:bg-cyan-400 focus-ring hover:scale-110 active:scale-95"
+          <motion.div
+            className="flex flex-wrap justify-center gap-6"
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp(3)}
           >
-            View Work
-          </button>
-          <button
-            onClick={() => onLinkClick("contact")}
-            tabIndex={0}
-            className="rounded-xl border border-white px-6 py-3 font-medium text-white transition hover:bg-white/10 focus-ring hover:scale-110 active:scale-95"
-          >
-            Let's Connect
-          </button>
-        </motion.div>
+            <button
+              onClick={() => onLinkClick("work")}
+              className="clickable-button home-button"
+              tabIndex={0}
+            >
+              View Work
+            </button>
+            <button
+              onClick={() => onLinkClick("contact")}
+              className="clickable-button home-button"
+              tabIndex={0}
+            >
+              Let's Connect
+            </button>
+          </motion.div>
+        </div>
 
-        {/* Scroll down indicator */}
         <motion.div
           className="absolute bottom-8"
           initial="hidden"
@@ -79,7 +68,7 @@ const Home: FC = () => {
         >
           <span
             onClick={() => onLinkClick("about")}
-            className="flex cursor-pointer focus-ring hover:text-zinc-300"
+            className="flex cursor-pointer focus-ring hover:text-white/60"
             tabIndex={0}
           >
             <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />
