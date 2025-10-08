@@ -7,16 +7,17 @@ import { aboutData } from "../../../public/data/about";
 const AboutMe: FC = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 pb-6 pt-12 bg-gradient-to-b from-zinc-700 to-cyan-900 scroll-mt-20"
+      className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 pb-6 pt-12 bg-gradient-to-b from-primary to-cyan-900 scroll-mt-20"
       id="about"
     >
-      <Image
-        src="/images/aboutMe/portrait.jpg"
-        alt="Anthony Ostia headshot"
-        width={300}
-        height={400}
-        className="w-48 h-auto md:w-[300px] rounded mb-6"
-      />
+      <div className="w-[300px] h-[400px] relative">
+        <Image
+          src="/images/aboutMe/portrait.jpg"
+          alt="Anthony Ostia headshot"
+          fill
+          className="rounded-lg"
+        />
+      </div>
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           About Me
