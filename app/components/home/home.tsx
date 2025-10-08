@@ -20,13 +20,13 @@ const Home: FC = () => {
   return (
     <MotionWrapper>
       <section
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center min-h-dvh"
         id="home"
       >
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/hero/hero.jpg" alt="Background" fill objectFit="cover" />
+          <Image src="/images/hero/hero.jpg" alt="Background" fill className="object-cover sm:object-fill" />
         </div>
-        <div className="flex flex-col items-center justify-center text-center gap-12 min-h-dvh">
+        <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 sm:pt-10">
           <div className="flex flex-col gap-4">
             <motion.h1 initial="hidden" animate="visible" variants={fadeUp(0)}>
               Anthony Ostia
