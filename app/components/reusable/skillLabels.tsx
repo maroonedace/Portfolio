@@ -43,6 +43,7 @@ const skillColorMap: Record<string, string> = {
   pandas: "bg-pandas",
   electron: "bg-electron",
   godot: "bg-godot",
+  unity: "bg-unity",
 };
 
 interface SkillLabelsProps {

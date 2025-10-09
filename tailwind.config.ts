@@ -57,6 +57,7 @@ const tailwindConfig = {
         pandas: "#595959",
         electron: "#2A5779",
         godot: "#2A5779",
+        unity: "#181818",
       },
       screens: {
         xs: "425px",

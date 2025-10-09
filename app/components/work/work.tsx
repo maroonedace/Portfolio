@@ -47,7 +47,7 @@ const Work: FC<WorkProps> = ({ works }) => {
                             </time>
                           </div>
                         </div>
-                        <div className="mt-4 flex flex-wrap justify-center sm:justify-normal gap-2">
+                        <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
                           <SkillLabels projectSkills={exp.skillNames} />
                         </div>
                       </div>
@@ -64,7 +64,7 @@ const Work: FC<WorkProps> = ({ works }) => {
                             );
                           })}
                         </ul>
-                        <div className="flex">
+                        <div className="flex justify-center sm:justify-start">
                           <Link
                             href={exp.website}
                             target="_blank"

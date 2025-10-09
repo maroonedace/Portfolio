@@ -36,13 +36,13 @@ const Project: FC<ProjectProps> = ({ projects }) => {
                     className="rounded-xl"
                   />
                 </div>
-                <div className="flex flex-col h-full">
+                <div className="flex flex-col h-full text-center sm:text-start">
                   <h6 className="mb-2">{p.name}</h6>
                   <div className="flex flex-col gap-4 h-full">
-                    <div className="flex flex-wrap gap-2 text-xs font-medium">
+                    <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                       <SkillLabels projectSkills={p.skillNames} />
                     </div>
-                    <div className="flex flex-col justify-between grow gap-4">
+                    <div className="flex flex-col justify-between items-center sm:items-start gap-4">
                       <p className="text-lg">{p.description}</p>
                       <div className="flex gap-4">
                         {p.github && (
