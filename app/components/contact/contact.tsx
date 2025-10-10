@@ -22,7 +22,7 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <div className="flex justify-center items-center p-4" id="contact">
+    <div className="flex justify-center items-center px-6 pb-6" id="contact">
       <div className="bg-primary flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
         <h4 className="uppercase">Let's Connect</h4>
         <div className="flex gap-8">

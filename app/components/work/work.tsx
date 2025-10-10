@@ -13,7 +13,7 @@ interface WorkProps {
 
 const Work: FC<WorkProps> = ({ works }) => {
   return (
-    <section className="px-6 py-6 scroll-mt-20" id="work">
+    <section className="px-6 pb-12 scroll-mt-20" id="work">
       <div className="px-4 py-12 bg-primary rounded-lg flex flex-col">
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (

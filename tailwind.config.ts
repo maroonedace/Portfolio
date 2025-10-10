@@ -15,7 +15,7 @@ const tailwindConfig = {
       },
 
       colors: {
-        primary: "#272B2E",
+        primary: "#151616",
         secondary: "#D3CAB7",
         js: "#CAB307",
         ts: "#2A66A7",
@@ -57,7 +57,7 @@ const tailwindConfig = {
         pandas: "#595959",
         electron: "#2A5779",
         godot: "#2A5779",
-        unity: "#181818",
+        unity: "#2D2D2D",
       },
       screens: {
         xs: "425px",

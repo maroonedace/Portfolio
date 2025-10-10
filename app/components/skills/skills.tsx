@@ -9,9 +9,9 @@ import SkillLabel from "./components/skillLabel";
 const Skills: FC = () => {
   const skillArray = chunkArray(skills, 4);
   return (
-    <section className="px-6 py-6">
+    <section className="px-6 pb-12">
       <div className="rounded-lg flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl text-white/90 font-bold text-center mb-10">
+        <h2 className=" text-center mb-10">
           Skills
         </h2>
         <div className="flex flex-col gap-4">

@@ -13,7 +13,7 @@ interface ProjectProps {
 const Project: FC<ProjectProps> = ({ projects }) => {
   return (
     <section
-      className="px-6 flex flex-col gap-8 items-center justify-center py-6 scroll-mt-20"
+      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
       id="projects"
     >
       <div>
@@ -37,7 +37,7 @@ const Project: FC<ProjectProps> = ({ projects }) => {
                   />
                 </div>
                 <div className="flex flex-col h-full text-center sm:text-start">
-                  <h6 className="mb-2">{p.name}</h6>
+                  <h5 className="mb-2">{p.name}</h5>
                   <div className="flex flex-col gap-4 h-full">
                     <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                       <SkillLabels projectSkills={p.skillNames} />
