@@ -35,7 +35,7 @@ const Work: FC<WorkProps> = ({ works }) => {
                               src={exp.logoUrl}
                               sizes="64px"
                               alt={`${exp.name} logo`}
-                              className="p-2"
+                              className="p-2 h-full"
                               fill
                             />
                           </div>
