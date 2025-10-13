@@ -21,6 +21,7 @@ const tailwindConfig = {
         ts: "#2A66A7",
         python: "#28567B",
         ruby: "#AB2C26",
+        cloudflare: "#9C4A07",
         csharp: "#5A1B6E",
         rust: "#A30000",
         react: "#464D5D",

@@ -31,6 +31,7 @@ const skillColorMap: Record<string, string> = {
   circleci: "bg-circleci",
   git: "bg-git",
   figma: "bg-figma",
+  cloudflare: "bg-cloudflare",
   storybook: "bg-storybook",
   debian: "bg-debian",
   proxmox: "bg-proxmox",

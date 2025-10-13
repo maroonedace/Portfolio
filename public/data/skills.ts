@@ -36,6 +36,7 @@ export const skills: Skill[] = [
   { name: "Cypress", slug: "cypress", logoUrl: "/images/skills/cypressio.svg" },
   { name: "Postman", slug: "postman", logoUrl: "/images/skills/postman.svg" },
   { name: "AWS", slug: "aws", logoUrl: "/images/skills/aws.svg" },
+  { name: "Cloudflare", slug: "cloudflare", logoUrl: "/images/skills/cloudflare.svg" },
   { name: "Docker", slug: "docker", logoUrl: "/images/skills/docker.svg" },
   { name: "Vercel", slug: "vercel", logoUrl: "/images/skills/vercel.svg" },
   { name: "Heroku", slug: "heroku", logoUrl: "/images/skills/heroku.svg" },
