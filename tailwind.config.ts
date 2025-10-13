@@ -43,7 +43,7 @@ const tailwindConfig = {
         docker: "#0C5B97",
         vercel: "#595959",
         heroku: "#5B00D1",
-        circleci: "#696969",
+        circleci: "#3B3B3B",
         git: "#C22A0F",
         figma: "#C6370C",
         storybook: "#D10046",
