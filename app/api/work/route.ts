@@ -4,7 +4,9 @@ import { WorkType } from "../../types";
 
 export async function GET() {
   const supabase = await createSupabaseClient();
-  const { data } = await supabase.from("work").select().order("id");
+  const { data } = await supabase.from("work").select().order("start_date", {
+    ascending: false
+  });
 
   const work: WorkType[] = data.map((workItem) => ({
     name: workItem.name,

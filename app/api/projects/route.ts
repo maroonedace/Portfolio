@@ -4,7 +4,7 @@ import { ProjectType } from "../../types";
 
 export async function GET() {
   const supabase = await createSupabaseClient();
-  const { data } = await supabase.from("projects").select();
+  const { data } = await supabase.from("projects").select().order("id");
 
   const projects: ProjectType[] = data.map((project) => ({
     name: project.name,
