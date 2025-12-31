@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face{
+  font-family: "ClashDisplay";
+  src:local("ClashDisplay"),
+  url('./fonts/ClashDisplay/ClashDisplay-Variable.ttf') 
+}
+
+@theme {
+  --color-primary: #151616;
+  --font-clash-display: 'ClashDisplay', sans-serif;
+}
