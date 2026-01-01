@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime'
-import Header from './components/header/file'
-import AboutMe from './components/aboutMe/file'
-import Home from './components/home/file'
+import Header from './components/header'
+import Home from './components/home'
+import AboutMe from './components/aboutMe'
 
 function App() {
 
