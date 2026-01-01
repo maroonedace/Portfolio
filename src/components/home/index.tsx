@@ -10,7 +10,7 @@ const Home: FC = () => {
         id="home"
       >
         <div className="absolute inset-0 -z-10">
-          <img src="/img/hero.jpg" alt="Background" />
+          <img className="object-cover w-full h-full" src="/img/hero.jpg" alt="Background" />
         </div>
         <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 sm:pt-10">
           <div className="flex flex-col gap-4">

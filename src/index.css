@@ -27,3 +27,18 @@
     letter-spacing: var(--tracking-tight);
   }
 }
+
+@layer components {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-6xl lg:text-8xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100;
+  }
+
+  h2 {
+    @apply text-4xl lg:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100;
+  }
+}
