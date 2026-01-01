@@ -1,0 +1,77 @@
+import { type FC } from "react";
+
+// interface ProjectProps {
+//   projects: ProjectType[];
+// }
+
+const Project: FC = () => {
+  return (
+    <section
+      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
+      id="projects"
+    >
+      <div>
+        <h2 className="mb-12 text-center">Featured Projects</h2>
+{/* 
+        {projects && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {projects.map((p) => (
+              <div
+                key={p.name}
+                className="rounded-xl p-6 bg-primary flex flex-col items-center sm:items-start sm:flex-row gap-4"
+              >
+                <div className="flex-shrink-0 h-[200px] w-[200px] relative">
+                  <img
+                    src={p.logoUrl}
+                    alt={`${p.name} Logo`}
+                    sizes="160px"
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="flex flex-col h-full text-center sm:text-start">
+                  <h5 className="mb-2">{p.name}</h5>
+                  <div className="flex flex-col gap-4 h-full">
+                    <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                      <SkillLabels projectSkills={p.skillNames} />
+                    </div>
+                    <div className="flex flex-col justify-between items-center sm:items-start gap-4">
+                      <p className="text-lg">{p.description}</p>
+                      <div className="flex gap-4">
+                        {p.github && (
+                          <a
+                            href={p.github}
+                            target="_blank"
+                            tabIndex={0}
+                            rel="noopener noreferrer"
+                            className="focus-ring flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                          >
+                            <i className="ph-fill ph-git-branch text-[32px]" />
+                            <span className="text-lg font-medium">Repo</span>
+                          </a>
+                        )}
+                        {p.embedLink && (
+                          <a
+                            href={p.embedLink}
+                            target="_blank"
+                            tabIndex={0}
+                            rel="noopener noreferrer"
+                            className="focus-ring flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                          >
+                            <span className="text-lg font-medium">Demo</span>
+                            <i className="ph-fill ph-arrow-up-right text-[32px]" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )} */}
+      </div>
+    </section>
+  );
+};
+
+export default Project;

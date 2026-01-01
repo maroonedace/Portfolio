@@ -1,31 +1,34 @@
-import { useState, type FC } from "react";
-import { navItems } from "./utils";
+import { type FC } from "react";
+import { pageLinks } from "./constants";
+import { scrollToSection } from "../../utils";
 
 const Header: FC = () => {
   return (
-    <header
-      className={`fixed inset-x-0 flex z-40 transition duration-300 bg-primary`}
-    >
-      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <img
-          className="mr-4 cursor-pointer"
-          src="/img/marace.png"
-          alt="Brand Logo"
-        />
+    <header className="fixed w-full z-40 bg-primary">
+      <nav className="flex p-4 items-center w-full">
+        <a href="/" aria-label="Home">
+          <img
+            className="mr-4 cursor-pointer"
+            src="/img/marace.png"
+            alt="Brand Logo"
+          />
+        </a>
 
-        <div className="hidden sm:flex items-center justify-between w-full">
-          <div className="flex items-center gap-4">
-            {navItems.map((item) => (
-              <span
-                key={item.href}
-                tabIndex={0}
-                className="text-sm font-medium font-clash-display underline-offset-4 rounded-2xl cursor-pointer text-white/90 
-                hover:text-white/60 hover:underline p-2 focus-ring"
-              >
-                {item.label}
-              </span>
-            ))}
-          </div>
+        <div className="flex items-center gap-4">
+          {pageLinks.map((item) => (
+            <a
+              key={item.href}
+              tabIndex={0} 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+              }}
+              className="font-medium underline-offset-4 rounded-2xl cursor-pointer text-white/90 
+                hover:text-white/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-white/50"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </nav>
     </header>
