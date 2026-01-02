@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { scrollToSection } from "../../utils";
 
-const Home: FC = () => {
+const HomeSection: FC = () => {
   return (
     <section
       className="relative flex items-center justify-center min-h-dvh"
@@ -59,4 +59,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default HomeSection;

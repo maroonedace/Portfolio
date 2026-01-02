@@ -1,6 +1,6 @@
 import { type FC } from "react";
 
-const AboutMe: FC = () => {
+const AboutMeSection: FC = () => {
   return (
     <section
       className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 py-12 
@@ -29,4 +29,4 @@ const AboutMe: FC = () => {
   );
 };
 
-export default AboutMe;
+export default AboutMeSection;

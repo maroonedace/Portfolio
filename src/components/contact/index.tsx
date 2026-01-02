@@ -16,7 +16,7 @@ const contactInfo = [
   },
 ];
 
-const Contact = () => {
+const ContactSection = () => {
   return (
     <div className="flex justify-center items-center px-6 pb-6" id="contact">
       <div className="bg-primary flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
@@ -44,4 +44,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

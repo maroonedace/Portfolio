@@ -1,15 +1,47 @@
 import { type FC } from "react";
 
-// interface WorkProps {
-//   works: WorkType[];
-// }
+import { format } from "date-fns";
+import type { Work } from "./model";
+import SkillTile from "../skills/tile";
 
-const Work: FC = () => {
+const WorkSection: FC = () => {
+  const works: Work[] = [
+    {
+      name: "Mercor",
+      title: "Software Engineer",
+      website: "nzero.com",
+      logoUrl: "/img/work/mercor.png",
+      descriptions: ["12345343434334", "24323232323", "2323232323"],
+      skillNames: [],
+      startDate: "2024-06-01",
+      endDate: "2024-06-01",
+    },
+    {
+      name: "Oceanside Perspective",
+      title: "Senior Software Engineer",
+      website: "nzero.com",
+      logoUrl: "/img/work/opLogo.jpeg",
+      descriptions: ["12345343434334", "24323232323", "2323232323"],
+      skillNames: [],
+      startDate: "2024-06-01",
+      endDate: "2024-06-01",
+    },
+    {
+      name: "NZero",
+      title: "Software Engineer II",
+      website: "nzero.com",
+      logoUrl: "/img/work/nZero.svg",
+      descriptions: ["12345343434334", "24323232323", "2323232323"],
+      skillNames: [],
+      startDate: "2024-06-01",
+      endDate: "2024-06-01",
+    },
+  ];
   return (
     <section className="px-6 pb-12 scroll-mt-20" id="work">
       <div className="px-4 py-12 bg-primary rounded-lg flex flex-col">
         <h2 className="mb-12 text-center">Professional Experience</h2>
-        {/* {works && (
+        {works && (
           <div className="px-4 md:px-12">
             <div className="relative border-l border-white">
               {works.map((exp) => {
@@ -32,15 +64,15 @@ const Work: FC = () => {
                             />
                           </div>
                           <div className="flex flex-col">
-                            <h6>{exp.title}</h6>
-                            <span className="text-lg">{exp.name}</span>
-                            <time className="text-lg italic">
+                            <span className="text-white text-2xl">{exp.title}</span>
+                            <span className="text-white text-xl">{exp.name}</span>
+                            <time className=" text-white text-lg italic">
                               {startDate} - {endDate}
                             </time>
                           </div>
                         </div>
                         <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
-                          <SkillLabels projectSkills={exp.skillNames} />
+                          <SkillTile skill={{name: "React", logoUrl: "/img/work/nZero.svg"}} />
                         </div>
                       </div>
                       <div className="mt-4 ml-4 md:w-1/2 flex flex-col gap-4">
@@ -49,7 +81,7 @@ const Work: FC = () => {
                             return (
                               <li
                                 key={`${exp.name}-bullet-${index}`}
-                                className="text-lg"
+                                className="text-lg text-white"
                               >
                                 {bullet}
                               </li>
@@ -76,10 +108,10 @@ const Work: FC = () => {
               })}
             </div>
           </div>
-        )} */}
+        )}
       </div>
     </section>
   );
 };
 
-export default Work;
+export default WorkSection;

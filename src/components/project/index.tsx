@@ -4,7 +4,7 @@ import { type FC } from "react";
 //   projects: ProjectType[];
 // }
 
-const Project: FC = () => {
+const ProjectSection: FC = () => {
   return (
     <section
       className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
@@ -74,4 +74,4 @@ const Project: FC = () => {
   );
 };
 
-export default Project;
+export default ProjectSection;
