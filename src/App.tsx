@@ -8,7 +8,6 @@ import ContactSection from './components/contact'
 import Footer from './components/footer'
 
 const App = () => {
-
   return (
     <Fragment>
       <Header />
