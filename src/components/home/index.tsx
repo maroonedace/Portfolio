@@ -1,5 +1,4 @@
 import { type FC } from "react";
-import { scrollToSection } from "../../utils";
 import { ArrowDownIcon } from "@phosphor-icons/react";
 
 const HomeSection: FC = () => {
@@ -26,10 +25,6 @@ const HomeSection: FC = () => {
             href="#work"
             className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
-            tabIndex={0}
-            onClick={(event) => {
-              scrollToSection(event, "#work");
-            }}
           >
             View Work
           </a>
@@ -37,10 +32,6 @@ const HomeSection: FC = () => {
             href="#contact"
             className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
-            tabIndex={0}
-            onClick={(event) => {
-              scrollToSection(event, "#contact");
-            }}
           >
             Let's Connect
           </a>
@@ -49,7 +40,6 @@ const HomeSection: FC = () => {
 
       <button
         className="absolute bottom-8 flex hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground rounded-full"
-        onClick={(event) => scrollToSection(event, "#work")}
         aria-label="Scroll to work section"
       >
         <ArrowDownIcon

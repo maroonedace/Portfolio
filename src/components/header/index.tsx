@@ -1,25 +1,18 @@
 import {
-  useCallback,
   useEffect,
   useRef,
   useState,
   type FC,
-  type MouseEvent,
 } from "react";
 import { pageLinks } from "./constants";
-import { scrollToSection } from "../../utils";
 import { ListIcon, XIcon } from "@phosphor-icons/react";
 
 const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  const handleNavClick = (
-    event: MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
+  const handleNavClick = () => {
     setIsModalOpen(false);
-    scrollToSection(event, href);
   };
 
   useEffect(() => {
@@ -39,20 +32,11 @@ const Header: FC = () => {
     return () => controller.abort();
   }, [isModalOpen]);
 
-  useEffect(() => {
-    if (!isModalOpen) {
-      menuButtonRef.current?.focus();
-    }
-  }, [isModalOpen]);
-
   return (
     <header className="fixed w-full z-40 bg-background">
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <a
           href="#home"
-          onClick={(event) => {
-            scrollToSection(event, "#home");
-          }}
           aria-label="Go to home page"
         >
           <img
@@ -67,10 +51,6 @@ const Header: FC = () => {
             <a
               key={item.href}
               href={item.href}
-              tabIndex={0}
-              onClick={(event) => {
-                scrollToSection(event, item.href);
-              }}
               className="text-lg font-medium underline-offset-4 rounded-2xl cursor-pointer
                 hover:text-foreground/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             >
@@ -115,7 +95,6 @@ const Header: FC = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={(event) => handleNavClick(event, item.href)}
                   className="text-xl font-medium text-foreground/80
                     hover:text-foreground/60 hover:underline focus-ring"
                 >

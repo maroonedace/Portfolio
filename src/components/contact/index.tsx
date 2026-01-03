@@ -12,7 +12,6 @@ const ContactSection = () => {
         <div className="flex gap-4 sm:gap-8">
           <a
             href="mailto:aostia815@gmail.com"
-            tabIndex={0}
             target="_blank"
             className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >
@@ -21,7 +20,6 @@ const ContactSection = () => {
           </a>
           <a
             href="https://github.com/maroonedace"
-            tabIndex={0}
             target="_blank"
             className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >
@@ -32,7 +30,6 @@ const ContactSection = () => {
           </a>
           <a
             href="https://linkedin.com/in/aostia"
-            tabIndex={0}
             target="_blank"
             className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >

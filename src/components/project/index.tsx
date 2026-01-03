@@ -66,7 +66,6 @@ const ProjectSection: FC = () => {
                           <a
                             href={p.github}
                             target="_blank"
-                            tabIndex={0}
                             rel="noopener noreferrer"
                             className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
@@ -78,7 +77,6 @@ const ProjectSection: FC = () => {
                           <a
                             href={p.embedLink}
                             target="_blank"
-                            tabIndex={0}
                             rel="noopener noreferrer"
                             className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >

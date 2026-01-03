@@ -14,6 +14,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-cyan-800 text-foreground;
     font-family: var(--font-heading);

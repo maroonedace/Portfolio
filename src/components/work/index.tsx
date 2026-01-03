@@ -113,7 +113,6 @@ const WorkSection: FC = () => {
                           <a
                             href={exp.website}
                             target="_blank"
-                            tabIndex={0}
                             rel="noopener noreferrer"
                             className="flex gap-2 bg-foreground text-background rounded-2xl py-2 px-4 focus-ring items-center transition hover:scale-110 active:scale-95"
                           >
