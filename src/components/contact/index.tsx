@@ -1,43 +1,41 @@
-const contactInfo = [
-  {
-    href: "mailto:aostia815@gmail.com",
-    src: "ph-envelope",
-    alt: "Mail",
-  },
-  {
-    href: "https://github.com/maroonedace",
-    src: "ph-github-logo",
-    alt: "Github",
-  },
-  {
-    href: "https://linkedin.com/in/aostia",
-    src: "ph-linkedin-logo",
-    alt: "LinkedIn",
-  },
-];
+import {
+  EnvelopeIcon,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+} from "@phosphor-icons/react";
 
 const ContactSection = () => {
   return (
     <div className="flex justify-center items-center px-6 pb-6" id="contact">
-      <div className="bg-primary flex flex-col gap-4 items-center w-full sm:w-2/3 lg:w-1/2 py-4 rounded-2xl">
+      <div className="bg-cyan-800 flex flex-col gap-4 items-center w-full py-4 rounded-2xl">
         <h4 className="uppercase">Let's Connect</h4>
         <div className="flex gap-8">
-          {contactInfo.map((info) => {
-            const isGithub = info.alt === "Github";
-            return (
-              <a
-                href={info.href}
-                key={info.alt}
-                tabIndex={0}
-                className="bg-secondary text-primary focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
-              >
-                <div className={`${isGithub ? "p-2 rounded-full bg-primary text-secondary text-3xl" : "text-5xl"} w-12 h-12 flex items-center justify-center`}>
-                  <i className={`ph-fill ${info.src}`} />
-                </div>
-                <span className="hidden md:inline font-medium">{info.alt}</span>
-              </a>
-            );
-          })}
+          <a
+            href="mailto:aostia815@gmail.com"
+            tabIndex={0}
+            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+          >
+            <EnvelopeIcon size={48} weight="fill" />
+            <span className="font-medium">Mail</span>
+          </a>
+          <a
+            href="https://github.com/maroonedace"
+            tabIndex={0}
+            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+          >
+            <div className="rounded-full bg-background text-foreground p-2">
+              <GithubLogoIcon size={32} weight="fill" />
+            </div>
+            <span className="font-medium">Github</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/aostia"
+            tabIndex={0}
+            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+          >
+            <LinkedinLogoIcon size={48} weight="fill" />
+            <span className="font-medium">LinkedIn</span>
+          </a>
         </div>
       </div>
     </div>

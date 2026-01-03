@@ -1,6 +1,11 @@
 import { type FC } from "react";
 import type { Project } from "./type";
 import SkillTile from "../skills/tile";
+import {
+  ArrowUpRightIcon,
+  GitBranch,
+  GitBranchIcon,
+} from "@phosphor-icons/react";
 
 const projects: Project[] = [
   {
@@ -63,9 +68,9 @@ const ProjectSection: FC = () => {
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
-                            <i className="ph-fill ph-git-branch text-[32px]" />
+                            <GitBranchIcon size={32} weight="fill" />
                             <span className="text-lg font-medium">Repo</span>
                           </a>
                         )}
@@ -75,10 +80,10 @@ const ProjectSection: FC = () => {
                             target="_blank"
                             tabIndex={0}
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
                           >
                             <span className="text-lg font-medium">Demo</span>
-                            <i className="ph-fill ph-arrow-up-right text-[32px]" />
+                            <ArrowUpRightIcon size={32} weight="fill" />
                           </a>
                         )}
                       </div>
