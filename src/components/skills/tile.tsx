@@ -13,8 +13,8 @@ const SkillTile: FC<SkillProps> = ({ name }) => {
         className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 mr-2"
         key={skill.name}
       >
-        <img className="h-8 w-8" src={skill.logo} alt={skill.name} />
-        <span className="text-black">{skill.name}</span>
+        <img className="h-6 w-6" src={skill.logo} alt={skill.name} />
+        <span className="text-background font-medium">{skill.name}</span>
       </div>
     )
   );

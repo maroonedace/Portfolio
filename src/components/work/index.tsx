@@ -53,7 +53,7 @@ const works: Work[] = [
 
 const WorkSection: FC = () => {
   return (
-    <section className="px-6 pb-12 scroll-mt-20 bg-cyan-800" id="work">
+    <section className="px-6 pb-12 scroll-mt-28" id="work">
       <div className="px-4 py-12 bg-background rounded-lg flex flex-col">
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (
@@ -79,13 +79,13 @@ const WorkSection: FC = () => {
                             />
                           </div>
                           <div className="flex flex-col">
-                            <span className=" text-2xl">
+                            <span className="text-2xl">
                               {exp.title}
                             </span>
-                            <span className=" text-xl">
+                            <span className="text-xl">
                               {exp.name}
                             </span>
-                            <time className=" text-lg italic">
+                            <time className="text-lg italic">
                               {startDate} - {endDate}
                             </time>
                           </div>

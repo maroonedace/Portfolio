@@ -30,14 +30,14 @@ const projects: Project[] = [
 const ProjectSection: FC = () => {
   return (
     <section
-      className=" bg-cyan-800 px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
+      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
       id="projects"
     >
       <div>
         <h2 className="mb-12 text-center">Featured Projects</h2>
 
         {projects && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {projects.map((p) => (
               <div
                 key={p.name}
@@ -52,15 +52,15 @@ const ProjectSection: FC = () => {
                   />
                 </div>
                 <div className="flex flex-col h-full text-center">
-                  <span className="text-2xl mb-2">{p.name}</span>
-                  <div className="flex flex-col gap-4 h-full">
-                    <div className="flex flex-wrap justify-center gap-2">
+                  <span className="text-3xl font-medium text-center sm:text-left mb-2">{p.name}</span>
+                  <div className="flex flex-col justify-between gap-4 h-full">
+                    <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                       {p.skillNames.map((skill) => (
                         <SkillTile key={skill} name={skill} />
                       ))}
                     </div>
-                    <div className="flex flex-col justify-between items-center gap-4">
-                      <p className="text-lg">{p.description}</p>
+                    <div className="flex flex-col items-center sm:items-start gap-4">
+                      <p className="text-lg text-center sm:text-left">{p.description}</p>
                       <div className="flex gap-4">
                         {p.github && (
                           <a

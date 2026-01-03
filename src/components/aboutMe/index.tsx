@@ -15,7 +15,7 @@ const AboutMeSection: FC = () => {
       <div className="flex flex-col items-center justify-center">
         <h2 className="mb-8 mt-4">About Me</h2>
         <div className="flex flex-col gap-4 items-center justify-center max-w-4xl">
-          <p className="text-xl">
+          <p className="text-xl text-center">
             Software Engineer with over four years of experience developing
             full-stack web applications that deliver functional performance and
             engaging user experience. Proficient in designing responsive UIs,
@@ -24,7 +24,7 @@ const AboutMeSection: FC = () => {
             efficiency, and maintaining high-quality code through automated
             testing and CI/CD pipelines. Known for delivering maintainable
             solutions under tight deadlines and collaborating effectively across
-            distributed teams.{" "}
+            distributed teams.
           </p>
         </div>
       </div>

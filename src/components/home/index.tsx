@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import { scrollToSection } from "../../utils";
+import { ArrowDownIcon } from "@phosphor-icons/react";
 
 const HomeSection: FC = () => {
   return (
@@ -23,7 +24,7 @@ const HomeSection: FC = () => {
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#work"
-            className="bg-background text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             tabIndex={0}
             onClick={(event) => {
@@ -34,7 +35,7 @@ const HomeSection: FC = () => {
           </a>
           <a
             href="#contact"
-            className="bg-background text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             tabIndex={0}
             onClick={(event) => {
@@ -51,7 +52,11 @@ const HomeSection: FC = () => {
         onClick={(event) => scrollToSection(event, "#work")}
         aria-label="Scroll to work section"
       >
-        <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />
+        <ArrowDownIcon
+          className="motion-safe:animate-bounce cursor-pointer"
+          size={64}
+          weight="fill"
+        />
       </button>
     </section>
   );
