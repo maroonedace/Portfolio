@@ -4,39 +4,53 @@ import { format } from "date-fns";
 import type { Work } from "./model";
 import SkillTile from "../skills/tile";
 
+const works: Work[] = [
+  {
+    name: "Mercor",
+    title: "Software Engineer",
+    website: "nzero.com",
+    logoUrl: "/img/work/mercor.png",
+    descriptions: [
+      "Built and maintained web applications to assess and evaluate machine learning model performance",
+      "Identified and documented UI/UX issues and worked with cross-functional teams to improve evaluation workflows and data accuracy",
+      "Participated in code reviews and maintained test suites to ensure high-quality, well-scoped changes",
+    ],
+    skillNames: ["React", "Typescript", "Javascript"],
+    startDate: "2024-06-01",
+    endDate: "2024-06-01",
+  },
+  {
+    name: "Oceanside Perspective",
+    title: "Senior Software Engineer",
+    website: "nzero.com",
+    logoUrl: "/img/work/opLogo.jpeg",
+    descriptions: [
+      "Led a team of three developers to build and deploy a subscription-based content platform demo using Next.js and Vercel",
+      "Improved user engagement by 30% through enhanced search filtering, dynamic navigation components, and optimized UI animations",
+      "Designed RESTful API endpoints to fetch and serve dynamic content, integrating with Supabase for backend data storage and authentication",
+    ],
+    skillNames: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
+    startDate: "2024-06-01",
+    endDate: "2024-06-01",
+  },
+  {
+    name: "NZero",
+    title: "Software Engineer II",
+    website: "nzero.com",
+    logoUrl: "/img/work/nZero.svg",
+    descriptions: [
+      "Promoted twice within two years due to consistent ownership and delivery across the full stack using React, Rails, and PostgreSQL",
+      "Led development of a data management portal that reduced manual data entry time by 60%",
+      "Helped lead UI redesign efforts, implemented new metric visualizations, client filtering, and unit conversions",
+      "Optimized API performance using React Query and expanded frontend test coverage by 35% using Jest",
+    ],
+    skillNames: ["React", "Rails", "PostgreSQL", "AWS", "Docker"],
+    startDate: "2024-06-01",
+    endDate: "2024-06-01",
+  },
+];
+
 const WorkSection: FC = () => {
-  const works: Work[] = [
-    {
-      name: "Mercor",
-      title: "Software Engineer",
-      website: "nzero.com",
-      logoUrl: "/img/work/mercor.png",
-      descriptions: ["12345343434334", "24323232323", "2323232323"],
-      skillNames: [],
-      startDate: "2024-06-01",
-      endDate: "2024-06-01",
-    },
-    {
-      name: "Oceanside Perspective",
-      title: "Senior Software Engineer",
-      website: "nzero.com",
-      logoUrl: "/img/work/opLogo.jpeg",
-      descriptions: ["12345343434334", "24323232323", "2323232323"],
-      skillNames: [],
-      startDate: "2024-06-01",
-      endDate: "2024-06-01",
-    },
-    {
-      name: "NZero",
-      title: "Software Engineer II",
-      website: "nzero.com",
-      logoUrl: "/img/work/nZero.svg",
-      descriptions: ["12345343434334", "24323232323", "2323232323"],
-      skillNames: [],
-      startDate: "2024-06-01",
-      endDate: "2024-06-01",
-    },
-  ];
   return (
     <section className="px-6 pb-12 scroll-mt-20" id="work">
       <div className="px-4 py-12 bg-primary rounded-lg flex flex-col">
@@ -64,15 +78,21 @@ const WorkSection: FC = () => {
                             />
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-white text-2xl">{exp.title}</span>
-                            <span className="text-white text-xl">{exp.name}</span>
-                            <time className=" text-white text-lg italic">
+                            <span className=" text-2xl">
+                              {exp.title}
+                            </span>
+                            <span className=" text-xl">
+                              {exp.name}
+                            </span>
+                            <time className=" text-lg italic">
                               {startDate} - {endDate}
                             </time>
                           </div>
                         </div>
                         <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
-                          <SkillTile skill={{name: "React", logoUrl: "/img/work/nZero.svg"}} />
+                          {exp.skillNames.map((name) => {
+                            return <SkillTile name={name} />;
+                          })}
                         </div>
                       </div>
                       <div className="mt-4 ml-4 md:w-1/2 flex flex-col gap-4">

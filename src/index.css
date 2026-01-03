@@ -3,42 +3,40 @@
 @font-face{
   font-family: "ClashDisplay";
   src:local("ClashDisplay"),
-  url('./fonts/ClashDisplay/ClashDisplay-Variable.ttf') 
+      url('./fonts/ClashDisplay/ClashDisplay-Variable.ttf');
+  font-weight: 200 700;
 }
 
 @theme {
-  --color-primary: #151616;
-  --font-clash-display: 'ClashDisplay', sans-serif;
+  --color-background: #151616;
+  --color-foreground: #f5f5f5;
+  --font-heading: "ClashDisplay", sans-serif;
 
 }
 
 @layer base {
   body {
-    font-family: var(--font-clash-display);
+    @apply bg-(--color-background) text-(--color-foreground);
+    font-family: var(--font-heading);
+    line-height: 1.5;
   }
 
-  h1 {
-    font-weight: var(--font-semibold);
-    letter-spacing: var(--tracking-tight);
-  }
-
-  h2 {
-    font-weight: var(--font-semibold);
-    letter-spacing: var(--tracking-tight);
-  }
-}
-
-@layer components {
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     line-height: 1.2;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
   }
 
   h1 {
-    @apply text-6xl lg:text-8xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100;
+    @apply text-6xl lg:text-8xl font-semibold tracking-tight;
   }
 
   h2 {
-    @apply text-4xl lg:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100;
+    @apply text-4xl lg:text-6xl font-semibold tracking-tight;
   }
 }

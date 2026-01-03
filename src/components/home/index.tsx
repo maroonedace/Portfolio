@@ -16,14 +16,14 @@ const HomeSection: FC = () => {
       </div>
       <div className="flex flex-col items-center justify-center text-center gap-12 pt-20">
         <div className="flex flex-col gap-4">
-          <h1 className="text-white">Anthony Ostia</h1>
-          <h2 className="text-white">Software Engineer</h2>
+          <h1>Anthony Ostia</h1>
+          <h2>Software Engineer</h2>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#work"
-            className="bg-white text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-black text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
             tabIndex={0}
             onClick={(e) => {
@@ -35,7 +35,7 @@ const HomeSection: FC = () => {
           </a>
           <a
             href="#contact"
-            className="bg-white text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-black text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
             tabIndex={0}
             onClick={(e) => {
@@ -43,7 +43,7 @@ const HomeSection: FC = () => {
               scrollToSection("#contact");
             }}
           >
-            Let's Connect 
+            Let's Connect
           </a>
         </div>
       </div>

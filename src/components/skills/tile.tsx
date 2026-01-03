@@ -1,19 +1,22 @@
 import { type FC } from "react";
-import type { Skill } from "./model";
+import { skills } from "../../data/skill";
 
 interface SkillProps {
-  skill: Skill;
+  name: string;
 }
 
-const SkillTile: FC<SkillProps> = ({ skill }) => {
+const SkillTile: FC<SkillProps> = ({ name }) => {
+  const skill = skills.find((skill) => skill.name === name);
   return (
-    <div
-      className="bg-white py-2 px-4 rounded flex items-center justify-center gap-2 mr-2"
-      key={skill.name}
-    >
-      <img className="h-8 w-8" src={skill.logoUrl} alt={skill.name} />
-      <span className="text-black">{skill.name}</span>
-    </div>
+    skill && (
+      <div
+        className="bg-white py-2 px-4 rounded-xl flex items-center justify-center gap-2 mr-2"
+        key={skill.name}
+      >
+        <img className="h-8 w-8" src={skill.logo} alt={skill.name} />
+        <span className="text-black">{skill.name}</span>
+      </div>
+    )
   );
 };
 

@@ -4,7 +4,7 @@ import { scrollToSection } from "../../utils";
 
 const Header: FC = () => {
   return (
-    <header className="fixed w-full z-40 bg-primary">
+    <header className="fixed w-full z-40 bg-background">
       <nav className="flex p-4 items-center w-full">
         <a href="/" aria-label="Home">
           <img
@@ -23,7 +23,7 @@ const Header: FC = () => {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className="font-medium underline-offset-4 rounded-2xl cursor-pointer text-white/90 
+              className="font-medium underline-offset-4 rounded-2xl cursor-pointer
                 hover:text-white/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-white/50"
             >
               {item.label}
