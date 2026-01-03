@@ -6,8 +6,8 @@ import {
 
 const ContactSection = () => {
   return (
-    <div className="flex justify-center items-center px-6 pb-6" id="contact">
-      <div className="bg-cyan-800 flex flex-col gap-4 items-center w-full py-4 rounded-2xl">
+    <div className="flex justify-center items-center px-6 pb-6 bg-cyan-800" id="contact">
+      <div className="bg-background flex flex-col gap-4 items-center w-full py-4 rounded-2xl">
         <h4 className="uppercase">Let's Connect</h4>
         <div className="flex gap-8">
           <a

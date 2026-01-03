@@ -23,24 +23,22 @@ const HomeSection: FC = () => {
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#work"
-            className="bg-black text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="bg-background text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             tabIndex={0}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#work");
+            onClick={(event) => {
+              scrollToSection(event, "#work");
             }}
           >
             View Work
           </a>
           <a
             href="#contact"
-            className="bg-black text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="bg-background text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             tabIndex={0}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#contact");
+            onClick={(event) => {
+              scrollToSection(event, "#contact");
             }}
           >
             Let's Connect
@@ -49,8 +47,8 @@ const HomeSection: FC = () => {
       </div>
 
       <button
-        className="absolute bottom-8 flex hover:text-white/60 focus:outline-none focus:ring-2 focus:ring-white rounded-full"
-        onClick={() => scrollToSection("#work")}
+        className="absolute bottom-8 flex hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground rounded-full"
+        onClick={(event) => scrollToSection(event, "#work")}
         aria-label="Scroll to work section"
       >
         <i className="ph-fill ph-arrow-down text-[64px] motion-safe:animate-bounce" />

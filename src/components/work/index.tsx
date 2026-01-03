@@ -53,12 +53,12 @@ const works: Work[] = [
 
 const WorkSection: FC = () => {
   return (
-    <section className="px-6 pb-12 scroll-mt-20" id="work">
-      <div className="px-4 py-12 bg-primary rounded-lg flex flex-col">
+    <section className="px-6 pb-12 scroll-mt-20 bg-cyan-800" id="work">
+      <div className="px-4 py-12 bg-background rounded-lg flex flex-col">
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (
           <div className="px-4 md:px-12">
-            <div className="relative border-l border-white">
+            <div className="relative border-l border-foreground">
               {works.map((exp) => {
                 const startDate = format(new Date(exp.startDate), "MMM yyyy");
                 const endDate = exp.endDate
@@ -68,9 +68,9 @@ const WorkSection: FC = () => {
                   <div key={exp.name} className="ml-8 mb-8">
                     <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                       <div className="md:w-1/2 relative">
-                        <span className="absolute -left-10 top-10 h-4 w-4 rounded-full ring-4 ring-white" />
+                        <span className="absolute -left-10 top-10 h-4 w-4 rounded-full ring-4 ring-foreground" />
                         <div className="flex flex-col sm:flex-row items-center text-center sm:text-start gap-4">
-                          <div className="w-24 h-24 flex-none rounded-md bg-white relative">
+                          <div className="w-24 h-24 flex-none rounded-md bg-foreground relative">
                             <img
                               src={exp.logoUrl}
                               sizes="64px"
@@ -92,7 +92,7 @@ const WorkSection: FC = () => {
                         </div>
                         <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
                           {exp.skillNames.map((name) => {
-                            return <SkillTile name={name} />;
+                            return <SkillTile name={name} key={exp.name + name} />;
                           })}
                         </div>
                       </div>
@@ -102,7 +102,7 @@ const WorkSection: FC = () => {
                             return (
                               <li
                                 key={`${exp.name}-bullet-${index}`}
-                                className="text-lg text-white"
+                                className="text-lg text-foreground"
                               >
                                 {bullet}
                               </li>

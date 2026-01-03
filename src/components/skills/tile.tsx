@@ -10,7 +10,7 @@ const SkillTile: FC<SkillProps> = ({ name }) => {
   return (
     skill && (
       <div
-        className="bg-white py-2 px-4 rounded-xl flex items-center justify-center gap-2 mr-2"
+        className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 mr-2"
         key={skill.name}
       >
         <img className="h-8 w-8" src={skill.logo} alt={skill.name} />

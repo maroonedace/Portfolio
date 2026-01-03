@@ -30,7 +30,7 @@ const projects: Project[] = [
 const ProjectSection: FC = () => {
   return (
     <section
-      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
+      className=" bg-cyan-800 px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
       id="projects"
     >
       <div>
@@ -41,7 +41,7 @@ const ProjectSection: FC = () => {
             {projects.map((p) => (
               <div
                 key={p.name}
-                className="rounded-xl p-6 bg-cyan-900 flex flex-col items-center sm:items-start sm:flex-row gap-4"
+                className="rounded-xl p-6 bg-background flex flex-col items-center sm:items-start sm:flex-row gap-4"
               >
                 <div className="shrink-0 h-50 w-50 relative">
                   <img

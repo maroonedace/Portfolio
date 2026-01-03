@@ -16,7 +16,7 @@
 
 @layer base {
   body {
-    @apply bg-(--color-background) text-(--color-foreground);
+    @apply bg-background text-foreground;
     font-family: var(--font-heading);
     line-height: 1.5;
   }

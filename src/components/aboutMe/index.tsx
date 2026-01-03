@@ -4,7 +4,7 @@ const AboutMeSection: FC = () => {
   return (
     <section
       className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-6 py-12 
-      bg-linear-to-b from-primary to-cyan-800 scroll-mt-20"
+      bg-linear-to-b from-background to-cyan-800 scroll-mt-20"
       id="about"
     >
       <img
