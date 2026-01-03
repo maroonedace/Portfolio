@@ -7,7 +7,7 @@ import ProjectSection from './components/project'
 import ContactSection from './components/contact'
 import Footer from './components/footer'
 
-function App() {
+const App = () => {
 
   return (
     <Fragment>
