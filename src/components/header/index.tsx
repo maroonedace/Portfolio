@@ -11,10 +11,6 @@ const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  const handleNavClick = () => {
-    setIsModalOpen(false);
-  };
-
   useEffect(() => {
     if (!isModalOpen) return;
 

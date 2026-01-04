@@ -13,7 +13,8 @@ const ContactSection = () => {
           <a
             href="mailto:aostia815@gmail.com"
             target="_blank"
-            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+            className="bg-foreground text-background hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground
+             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >
             <EnvelopeIcon size={48} weight="fill" />
             <span className="font-medium hidden sm:block">Mail</span>
@@ -21,7 +22,8 @@ const ContactSection = () => {
           <a
             href="https://github.com/maroonedace"
             target="_blank"
-            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+            className="bg-foreground text-background hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground
+             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >
             <div className="rounded-full bg-background text-foreground p-2">
               <GithubLogoIcon size={32} weight="fill" />
@@ -31,7 +33,8 @@ const ContactSection = () => {
           <a
             href="https://linkedin.com/in/aostia"
             target="_blank"
-            className="bg-foreground text-background focus-ring p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+            className="bg-foreground text-background hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground
+             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
           >
             <LinkedinLogoIcon size={48} weight="fill" />
             <span className="font-medium hidden sm:block">LinkedIn</span>
