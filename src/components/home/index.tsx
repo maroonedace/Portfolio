@@ -42,7 +42,7 @@ const HomeSection: FC = () => {
       </div>
 
       <a
-        href="#aboutMe"
+        href="#about"
         aria-label="Scroll to about section"
         tabIndex={0}
         className="absolute bottom-8 p-2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
