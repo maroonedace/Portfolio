@@ -3,14 +3,14 @@
 @font-face {
   font-family: "PoppinsBlack";
   src: local("PoppinsBlack"),
-    url("./fonts/Poppins-Black.ttf");
+    url("./assets/fonts/Poppins-Black.ttf");
   font-weight: 200 700;
 }
 
 @font-face {
   font-family: "InterVariable";
   src: local("InterVariable"),
-    url("./fonts/Inter-Variable.ttf");
+    url("./assets/fonts/Inter-Variable.ttf");
   font-weight: 200 700;
 }
 
