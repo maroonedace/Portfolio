@@ -13,7 +13,7 @@ const AboutMeSection: FC = () => {
         className="rounded-lg w-75 h-100"
       />
       <div className="flex flex-col items-center justify-center">
-        <h2 className="mb-8 mt-4">About Me</h2>
+        <h2>About Me</h2>
         <div className="flex flex-col gap-4 items-center justify-center max-w-4xl">
           <p className="text-xl text-center">
             Software Engineer with over four years of experience developing

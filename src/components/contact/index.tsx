@@ -6,41 +6,43 @@ import {
 
 const ContactSection = () => {
   return (
-    <div className="flex justify-center items-center px-6 pb-4 bg-cyan-800" id="contact">
-      <div className="bg-background flex flex-col items-center w-full py-4 rounded-2xl">
-        <h3>Let's Connect</h3>
-        <div className="flex gap-4 sm:gap-8">
+    <div className="flex justify-center items-center px-6 py-12 bg-cyan-800" id="contact">
+      <div className="bg-background flex flex-col items-center w-full max-w-4xl py-8 px-6 rounded-2xl">
+        <h3 className="mb-8">Let's Connect</h3>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-auto">
           <a
             href="mailto:aostia815@gmail.com"
-            target="_blank"
+            aria-label="Send me an email"
             tabIndex={0}
             className="bg-foreground text-background focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background
-             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+             px-6 py-3 rounded-full flex items-center justify-center gap-3 over:scale-105 active:scale-95 transition-transform"
           >
-            <EnvelopeIcon size={48} weight="fill" />
-            <span className="text-lg font-medium hidden sm:block">Mail</span>
+            <EnvelopeIcon size={40} weight="fill" aria-hidden="true"/>
+            <span className="text-lg font-medium">Mail</span>
           </a>
           <a
             href="https://github.com/maroonedace"
             target="_blank"
+            rel="noopener noreferrer"
             tabIndex={0}
             className="bg-foreground text-background focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background
-             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+             px-6 py-3 rounded-full flex items-center justify-center gap-3 over:scale-105 active:scale-95 transition-transform"
           >
             <div className="rounded-full bg-background text-foreground p-2">
-              <GithubLogoIcon size={32} weight="fill" />
+              <GithubLogoIcon size={20} weight="fill" aria-hidden="true" />
             </div>
-            <span className="text-lg font-medium hidden sm:block">Github</span>
+            <span className="text-lg font-medium">Github</span>
           </a>
           <a
             href="https://linkedin.com/in/aostia"
             target="_blank"
+            rel="noopener noreferrer"
             tabIndex={0}
             className="bg-foreground text-background focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background
-             p-2 rounded-full flex items-center md:w-40 justify-center gap-2 hover:scale-110 active:scale-95 transition"
+             px-6 py-3 rounded-full flex items-center justify-center gap-3 over:scale-105 active:scale-95 transition-transform"
           >
-            <LinkedinLogoIcon size={48} weight="fill" />
-            <span className="text-lg font-medium hidden sm:block">LinkedIn</span>
+            <LinkedinLogoIcon size={40} weight="fill" aria-hidden="true" />
+            <span className="text-lg font-medium">LinkedIn</span>
           </a>
         </div>
       </div>

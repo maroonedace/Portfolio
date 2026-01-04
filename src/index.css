@@ -1,27 +1,38 @@
 @import "tailwindcss";
 
-@font-face{
-  font-family: "ClashDisplay";
-  src:local("ClashDisplay"),
-      url('./fonts/ClashDisplay/ClashDisplay-Variable.ttf');
+@font-face {
+  font-family: "PoppinsBlack";
+  src: local("PoppinsBlack"),
+    url("./fonts/Poppins-Black.ttf");
+  font-weight: 200 700;
+}
+
+@font-face {
+  font-family: "InterVariable";
+  src: local("InterVariable"),
+    url("./fonts/Inter-Variable.ttf");
   font-weight: 200 700;
 }
 
 @theme {
   --color-background: #151616;
   --color-foreground: #f5f5f5;
-  --font-heading: "ClashDisplay", sans-serif;
+  --font-heading: "PoppinsBlack", sans-serif;
+  --font-paragraph: "InterVariable", sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-cyan-800 text-foreground;
-    font-family: var(--font-heading);
     line-height: 1.5;
+  }
+
+  span, p, button, a {
+    font-family: var(--font-paragraph);
   }
 
   h1,
@@ -40,14 +51,20 @@
   }
 
   h2 {
-    @apply text-4xl md:text-6xl font-semibold tracking-tight;
+    @apply text-4xl md:text-6xl font-medium tracking-tight;
   }
 
   h3 {
-    @apply text-2xl md:text-4xl font-semibold tracking-tight;
+    @apply text-2xl md:text-4xl font-medium tracking-tight;
   }
 
   h4 {
-    @apply text-lg md:text-2xl font-semibold tracking-tight;
+    @apply text-lg md:text-2xl font-medium tracking-tight;
+  }
+}
+
+@layer utilites {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px black;
   }
 }

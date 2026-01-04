@@ -9,7 +9,7 @@ const works: Work[] = [
   {
     name: "Mercor",
     title: "Software Engineer",
-    website: "nzero.com",
+    website: "https://www.mercor.com",
     logoUrl: "/img/work/mercor.png",
     descriptions: [
       "Built and maintained web applications to assess and evaluate machine learning model performance",
@@ -23,7 +23,7 @@ const works: Work[] = [
   {
     name: "Oceanside Perspective",
     title: "Senior Software Engineer",
-    website: "nzero.com",
+    website: "https://www.oceansideperspective.org",
     logoUrl: "/img/work/opLogo.jpeg",
     descriptions: [
       "Led a team of three developers to build and deploy a subscription-based content platform demo using Next.js and Vercel",
@@ -37,7 +37,7 @@ const works: Work[] = [
   {
     name: "NZero",
     title: "Software Engineer II",
-    website: "nzero.com",
+    website: "https://nzero.com",
     logoUrl: "/img/work/nZero.svg",
     descriptions: [
       "Promoted twice within two years due to consistent ownership and delivery across the full stack using React, Rails, and PostgreSQL",
@@ -54,75 +54,80 @@ const works: Work[] = [
 const WorkSection: FC = () => {
   return (
     <section className="px-6 pb-12 scroll-mt-28" id="work">
-      <div className="px-4 py-12 bg-background rounded-lg flex flex-col">
+      <div className="px-4 py-12 bg-background rounded-lg">
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (
           <div className="px-4 md:px-12">
-            <div className="relative border-l border-foreground">
+            <div className="relative border-l-2 border-foreground space-y-12">
               {works.map((exp) => {
                 const startDate = format(new Date(exp.startDate), "MMM yyyy");
                 const endDate = exp.endDate
                   ? format(new Date(exp.endDate), "MMM yyyy")
                   : "Present";
+
                 return (
-                  <div key={exp.name} className="ml-8 mb-8">
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-                      <div className="md:w-1/2 relative">
-                        <span className="absolute -left-10 top-10 h-4 w-4 rounded-full ring-4 ring-foreground" />
-                        <div className="flex flex-col sm:flex-row items-center text-center sm:text-start gap-4">
-                          <div className="w-24 h-24 flex-none rounded-md bg-foreground relative">
-                            <img
-                              src={exp.logoUrl}
-                              sizes="64px"
-                              alt={`${exp.name} logo`}
-                              className="p-2 h-full"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-2xl">
-                              {exp.title}
-                            </span>
-                            <span className="text-xl">
-                              {exp.name}
-                            </span>
-                            <time className="text-lg italic">
-                              {startDate} - {endDate}
-                            </time>
-                          </div>
-                        </div>
-                        <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
-                          {exp.skillNames.map((name) => {
-                            return <SkillTile name={name} key={exp.name + name} />;
-                          })}
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8">
+                    <div className="md:w-1/2 relative">
+                      <span
+                        className="absolute -left-10 top-12 h-4 w-4 rounded-full bg-background ring-4 ring-foreground"
+                        aria-hidden="true"
+                      />
+                      <div className="flex flex-col sm:flex-row items-center text-center sm:text-start gap-4">
+                        <img
+                          src={exp.logoUrl}
+                          alt={`${exp.name} logo`}
+                          className="w-24 h-24 rounded-lg bg-foreground p-2"
+                        />
+                        <div className="flex flex-col">
+                          <span className="text-2xl font-semibold">
+                            {exp.title}
+                          </span>
+                          <span className="text-xl font-medium">
+                            {exp.name}
+                          </span>
+                          <time
+                            className="text-base italic mt-1"
+                            dateTime={exp.startDate}
+                          >
+                            {startDate} - {endDate}
+                          </time>
                         </div>
                       </div>
-                      <div className="mt-4 ml-4 md:w-1/2 flex flex-col gap-4">
-                        <ul className="list-disc">
-                          {exp.descriptions.map((bullet, index) => {
-                            return (
-                              <li
-                                key={`${exp.name}-bullet-${index}`}
-                                className="text-lg text-foreground"
-                              >
-                                {bullet}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                        <div className="flex justify-center sm:justify-start">
-                          <a
-                            href={exp.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            tabIndex={0}
-                            className="flex gap-2 bg-foreground text-background rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-foreground 
-                            focus:ring-offset-2 focus:ring-offset-background items-center transition hover:scale-110 active:scale-95"
+                      <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
+                        {exp.skillNames.map((name) => (
+                          <SkillTile name={name} key={`${exp.name}-${name}`} />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-4 md:mt-0 md:w-1/2 flex flex-col gap-4">
+                      <ul className="list-disc pl-5 space-y-2">
+                        {exp.descriptions.map((bullet, index) => (
+                          <li
+                            key={`${exp.name}-bullet-${index}`}
+                            className="text-lg leading-relaxed"
                           >
-                            <span className="text-lg font-medium">Website</span>
-
-                            <ArrowUpRightIcon size={32} weight="fill" />
-                          </a>
-                        </div>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex justify-center sm:justify-start mt-2">
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          tabIndex={0}
+                          aria-label={`Visit ${exp.name} website (opens in new tab)`}
+                          className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4 
+                          font-medium transition-transform hover:scale-105 active:scale-95
+                          focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                        >
+                          <span className="text-lg">Visit Website</span>
+                          <ArrowUpRightIcon
+                            size={20}
+                            aria-hidden="true"
+                            weight="fill"
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>

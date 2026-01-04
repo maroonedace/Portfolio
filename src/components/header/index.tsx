@@ -9,21 +9,23 @@ const Header: FC = () => {
   return (
     <header className="fixed w-full z-40 bg-background">
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <a href="#home" tabIndex={0} className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background mr-4">
-          <img
-            src="/img/marace.png"
-            alt="Brand Logo"
-          />
+        <a
+          href="#home"
+          tabIndex={0}
+          className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"
+          aria-label="Home"
+        >
+          <img src="/img/marace.png" />
         </a>
 
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-2">
           {pageLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              tabIndex={0} 
-              className="font-medium underline-offset-4 rounded-2xl cursor-pointer
-                hover:text-foreground/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              tabIndex={0}
+              className="font-medium px-4 py-2 rounded-lg hover:underline underline-offset-4 hover:text-foreground/70 focus:outline-none 
+              focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
             >
               {item.label}
             </a>
@@ -32,11 +34,12 @@ const Header: FC = () => {
 
         <button
           ref={menuButtonRef}
-          className={`sm:hidden p-2 focus-ring flex hover:text-foreground/60 ${
+          className={`sm:hidden p-2 flex hover:text-foreground/60 ${
             isModalOpen ? "invisible" : ""
           }`}
           aria-haspopup="dialog"
           aria-expanded={isModalOpen}
+          aria-label="Open navigation menu"
           onClick={() => setIsModalOpen(true)}
         >
           <ListIcon size={32} />

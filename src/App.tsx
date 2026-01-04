@@ -5,10 +5,11 @@ import WorkSection from './components/work'
 import ProjectSection from './components/project'
 import ContactSection from './components/contact'
 import Footer from './components/footer'
+import { Fragment } from 'react/jsx-runtime'
 
 const App = () => {
   return (
-    <>
+    <Fragment>
       <Header />
       <HomeSection/>
       <AboutMeSection />
@@ -16,7 +17,7 @@ const App = () => {
       <ProjectSection />
       <ContactSection />
       <Footer />
-    </>
+    </Fragment>
   )
 }
 
