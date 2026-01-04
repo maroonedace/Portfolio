@@ -4,7 +4,7 @@ import { ArrowDownIcon } from "@phosphor-icons/react";
 const HomeSection: FC = () => {
   return (
     <section
-      className="relative flex items-center justify-center min-h-dvh bg-[url(/img/hero.jpg)] bg-cover"
+      className="relative flex items-center justify-center min-h-lvh bg-[url(/img/hero.jpg)] bg-cover"
       id="home"
     >
       <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
