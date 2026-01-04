@@ -8,7 +8,7 @@ const ContactSection = () => {
   return (
     <div className="flex justify-center items-center px-6 py-12 bg-cyan-800" id="contact">
       <div className="bg-background flex flex-col items-center w-full max-w-4xl py-8 px-6 rounded-2xl">
-        <h3 className="mb-8">Let's Connect</h3>
+        <span className="text-3xl font-semibold mb-8">Let's Connect</span>
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-auto">
           <a
             href="mailto:aostia815@gmail.com"

@@ -69,7 +69,7 @@ const WorkSection: FC = () => {
                   <div className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8">
                     <div className="md:w-1/2 relative">
                       <span
-                        className="absolute -left-10 top-12 h-4 w-4 rounded-full bg-background ring-4 ring-foreground"
+                        className="absolute -left-10 top-11 h-4 w-4 rounded-full bg-background ring-4 ring-foreground"
                         aria-hidden="true"
                       />
                       <div className="flex flex-col items-center md:items-start md:flex-row text-center md:text-start gap-4">

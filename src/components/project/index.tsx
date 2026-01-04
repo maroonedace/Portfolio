@@ -43,7 +43,7 @@ const ProjectSection: FC = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-1">
-                  <span className="text-4xl font-semibold text-center md:text-left mb-2">
+                  <span className="text-3xl font-semibold text-center md:text-left mb-2">
                     {p.name}
                   </span>
                   <div className="flex flex-col justify-between gap-4 flex-1">
