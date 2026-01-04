@@ -25,7 +25,7 @@ const projects: Project[] = [
 
 const ProjectSection: FC = () => {
   return (
-    <section className="px-6 pb-12 scroll-mt-28" id="projects">
+    <section className="px-6 pb-6 scroll-mt-28" id="projects">
       <div>
         <h2 className="mb-12 text-center">Featured Projects</h2>
         {projects && (
@@ -33,7 +33,7 @@ const ProjectSection: FC = () => {
             {projects.map((p) => (
               <div
                 key={p.name}
-                className="rounded-xl p-6 bg-background flex flex-col sm:flex-row gap-4"
+                className="rounded-xl p-6 bg-background flex flex-col md:flex-row gap-4"
               >
                 <div className="flex justify-center">
                   <img
@@ -43,20 +43,20 @@ const ProjectSection: FC = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-1">
-                  <span className="text-3xl font-semibold text-center sm:text-left mb-2">
+                  <span className="text-4xl font-semibold text-center md:text-left mb-2">
                     {p.name}
                   </span>
                   <div className="flex flex-col justify-between gap-4 flex-1">
-                    <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2">
                       {p.skillNames.map((skill) => (
                         <SkillTile key={`${p.name}-${skill}`} name={skill} />
                       ))}
                     </div>
                     <div className="flex flex-col gap-4">
-                      <p className="text-lg leading-relaxed text-center sm:text-left">
+                      <p className="text-lg leading-relaxed text-center md:text-left">
                         {p.description}
                       </p>
-                      <div className="flex flex-wrap justify-center sm:justify-start gap-4">
+                      <div className="flex flex-wrap justify-center md:justify-start gap-4">
                         {p.github && (
                           <a
                             href={p.github}

@@ -58,7 +58,7 @@ const WorkSection: FC = () => {
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (
           <div className="px-4 md:px-12">
-            <div className="relative border-l-2 border-foreground space-y-12">
+            <div className="relative border-l-2 border-foreground space-y-20">
               {works.map((exp) => {
                 const startDate = format(new Date(exp.startDate), "MMM yyyy");
                 const endDate = exp.endDate
@@ -72,7 +72,7 @@ const WorkSection: FC = () => {
                         className="absolute -left-10 top-12 h-4 w-4 rounded-full bg-background ring-4 ring-foreground"
                         aria-hidden="true"
                       />
-                      <div className="flex flex-col sm:flex-row items-center text-center sm:text-start gap-4">
+                      <div className="flex flex-col items-center md:items-start md:flex-row text-center md:text-start gap-4">
                         <img
                           src={exp.logoUrl}
                           alt={`${exp.name} logo`}
@@ -93,7 +93,7 @@ const WorkSection: FC = () => {
                           </time>
                         </div>
                       </div>
-                      <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
+                      <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
                         {exp.skillNames.map((name) => (
                           <SkillTile name={name} key={`${exp.name}-${name}`} />
                         ))}
@@ -110,7 +110,7 @@ const WorkSection: FC = () => {
                           </li>
                         ))}
                       </ul>
-                      <div className="flex justify-center sm:justify-start mt-2">
+                      <div className="flex justify-center md:justify-start mt-2">
                         <a
                           href={exp.website}
                           target="_blank"

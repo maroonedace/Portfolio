@@ -8,7 +8,7 @@ const Header: FC = () => {
 
   return (
     <header className="fixed w-full z-40 bg-background">
-      <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
+      <nav className="flex p-4 items-center justify-between md:justify-normal w-full">
         <a
           href="#home"
           className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"
@@ -17,7 +17,7 @@ const Header: FC = () => {
           <img src="/img/marace.png" width={36} height={50} />
         </a>
 
-        <div className="hidden sm:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           {pageLinks.map((item) => (
             <a
               key={item.href}
@@ -33,7 +33,7 @@ const Header: FC = () => {
 
         <button
           ref={menuButtonRef}
-          className={`sm:hidden p-2 flex hover:text-foreground/60 ${
+          className={`md:hidden p-2 flex hover:text-foreground/60 ${
             isModalOpen ? "invisible" : ""
           }`}
           aria-haspopup="dialog"

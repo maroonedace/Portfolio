@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Roboto";
-  src: local("Roboto"),
-    url("./assets/fonts/Roboto.ttf");
+  font-family: "Urbanist";
+  src: local("Urbanist"),
+    url("./assets/fonts/Urbanist.ttf");
   font-weight: 200 700;
 }
 
 @theme {
   --color-background: #151616;
   --color-foreground: #f5f5f5;
-  --font-heading: "Roboto", sans-serif;
-  --font-paragraph: "Roboto", sans-serif;
+  --font-heading: "Urbanist", sans-serif;
+  --font-paragraph: "Urbanist", sans-serif;
 }
 
 @layer base {
