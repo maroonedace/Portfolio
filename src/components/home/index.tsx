@@ -10,6 +10,8 @@ const HomeSection: FC = () => {
       <div className="absolute inset-0 -z-10">
         <img
           className="object-cover w-full h-full"
+          width="1920"
+          height="1080"
           src="/img/hero.jpg"
           alt=""
           loading="eager"
@@ -17,8 +19,8 @@ const HomeSection: FC = () => {
       </div>
       <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
         <div className="flex flex-col gap-4">
-          <h1 className="font-outline-2">Anthony Ostia</h1>
-          <h2 className="font-outline-2">Software Engineer</h2>
+          <h1>Anthony Ostia</h1>
+          <h2>Software Engineer</h2>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -26,7 +28,7 @@ const HomeSection: FC = () => {
             href="#work"
             tabIndex={0}
             className="bg-foreground text-background text-base sm:text-xl font-semibold py-4 px-8 rounded-2xl hover:scale-105 active:scale-95 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
           >
             View Work
           </a>

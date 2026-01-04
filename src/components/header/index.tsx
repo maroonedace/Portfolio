@@ -11,11 +11,10 @@ const Header: FC = () => {
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
         <a
           href="#home"
-          tabIndex={0}
           className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"
           aria-label="Home"
         >
-          <img src="/img/marace.png" />
+          <img src="/img/marace.png" width={36} height={50} />
         </a>
 
         <div className="hidden sm:flex items-center gap-2">

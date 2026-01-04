@@ -17,8 +17,8 @@ const works: Work[] = [
       "Participated in code reviews and maintained test suites to ensure high-quality, well-scoped changes",
     ],
     skillNames: ["React", "Typescript", "Javascript"],
-    startDate: "2024-06-01",
-    endDate: "2024-06-01",
+    startDate: "2025-03",
+    endDate: "",
   },
   {
     name: "Oceanside Perspective",
@@ -31,8 +31,8 @@ const works: Work[] = [
       "Designed RESTful API endpoints to fetch and serve dynamic content, integrating with Supabase for backend data storage and authentication",
     ],
     skillNames: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
-    startDate: "2024-06-01",
-    endDate: "2024-06-01",
+    startDate: "2024-06",
+    endDate: "2025-03",
   },
   {
     name: "NZero",
@@ -46,8 +46,8 @@ const works: Work[] = [
       "Optimized API performance using React Query and expanded frontend test coverage by 35% using Jest",
     ],
     skillNames: ["React", "Rails", "PostgreSQL", "AWS", "Docker"],
-    startDate: "2024-06-01",
-    endDate: "2024-06-01",
+    startDate: "2021-10",
+    endDate: "2024-04",
   },
 ];
 
