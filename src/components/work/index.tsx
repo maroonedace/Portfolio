@@ -114,7 +114,9 @@ const WorkSection: FC = () => {
                             href={exp.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex gap-2 bg-foreground text-background rounded-2xl py-2 px-4 focus-ring items-center transition hover:scale-110 active:scale-95"
+                            tabIndex={0}
+                            className="flex gap-2 bg-foreground text-background rounded-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-foreground 
+                            focus:ring-offset-2 focus:ring-offset-background items-center transition hover:scale-110 active:scale-95"
                           >
                             <span className="text-lg font-medium">Website</span>
 

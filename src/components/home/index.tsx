@@ -23,31 +23,35 @@ const HomeSection: FC = () => {
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#work"
+            tabIndex={0}
             className="bg-foreground text-background text-md sm:text-xl font-semibold py-4 px-6 rounded-2xl hover:scale-110 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
+            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
           >
             View Work
           </a>
           <a
             href="#contact"
+            tabIndex={0}
             className="bg-foreground text-background text-md sm:text-xl font-semibold py-4 px-6 rounded-2xl hover:scale-110 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
+            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
           >
             Let's Connect
           </a>
         </div>
       </div>
 
-      <button
-        className="absolute bottom-8 flex hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground rounded-full"
-        aria-label="Scroll to work section"
+      <a
+        href="#aboutMe"
+        tabIndex={0}
+        className="absolute bottom-8 flex hover:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-foreground 
+        focus:ring-offset-2 focus:ring-offset-background rounded-full"
       >
         <ArrowDownIcon
           className="motion-safe:animate-bounce cursor-pointer"
           size={64}
           weight="fill"
         />
-      </button>
+      </a>
     </section>
   );
 };

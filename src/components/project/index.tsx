@@ -67,7 +67,9 @@ const ProjectSection: FC = () => {
                             href={p.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            tabIndex={0}
+                            className="flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-foreground 
+                            focus:ring-offset-2 focus:ring-offset-background transition hover:scale-110 active:scale-95"
                           >
                             <GitBranchIcon size={32} weight="fill" />
                             <span className="text-lg font-medium">Repo</span>
@@ -78,7 +80,9 @@ const ProjectSection: FC = () => {
                             href={p.embedLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="focus-ring flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl transition hover:scale-110 active:scale-95"
+                            tabIndex={0}
+                            className="flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-foreground 
+                            focus:ring-offset-2 focus:ring-offset-background transition hover:scale-110 active:scale-95"
                           >
                             <span className="text-lg font-medium">Demo</span>
                             <ArrowUpRightIcon size={32} weight="fill" />

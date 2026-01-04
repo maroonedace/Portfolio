@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FC } from "react";
+import { useRef, useState, type FC } from "react";
 import { pageLinks } from "./constants";
 import { ListIcon, XIcon } from "@phosphor-icons/react";
 
@@ -6,29 +6,11 @@ const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (!isModalOpen) return;
-
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsModalOpen(false);
-        menuButtonRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown, { signal });
-
-    return () => controller.abort();
-  }, [isModalOpen]);
-
   return (
     <header className="fixed w-full z-40 bg-background">
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <a href="#home" aria-label="Go to home page">
+        <a href="#home" tabIndex={0} className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background mr-4">
           <img
-            className="mr-4 cursor-pointer"
             src="/img/marace.png"
             alt="Brand Logo"
           />
@@ -39,8 +21,9 @@ const Header: FC = () => {
             <a
               key={item.href}
               href={item.href}
+              tabIndex={0} 
               className="font-medium underline-offset-4 rounded-2xl cursor-pointer
-                hover:text-foreground/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-foreground/50"
+                hover:text-foreground/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
             >
               {item.label}
             </a>
