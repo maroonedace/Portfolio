@@ -23,14 +23,14 @@ const HomeSection: FC = () => {
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#work"
-            className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-foreground text-background text-md sm:text-xl font-semibold py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
           >
             View Work
           </a>
           <a
             href="#contact"
-            className="bg-background text-md sm:text-xl font-medium py-4 px-6 rounded-2xl hover:scale-110 
+            className="bg-foreground text-background text-md sm:text-xl font-semibold py-4 px-6 rounded-2xl hover:scale-110 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/50"
           >
             Let's Connect

@@ -30,7 +30,7 @@ const projects: Project[] = [
 const ProjectSection: FC = () => {
   return (
     <section
-      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-20"
+      className="px-6 flex flex-col gap-8 items-center justify-center pb-12 scroll-mt-28"
       id="projects"
     >
       <div>

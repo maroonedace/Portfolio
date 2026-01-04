@@ -1,9 +1,4 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type FC,
-} from "react";
+import { useEffect, useRef, useState, type FC } from "react";
 import { pageLinks } from "./constants";
 import { ListIcon, XIcon } from "@phosphor-icons/react";
 
@@ -31,10 +26,7 @@ const Header: FC = () => {
   return (
     <header className="fixed w-full z-40 bg-background">
       <nav className="flex p-4 items-center justify-between sm:justify-normal w-full">
-        <a
-          href="#home"
-          aria-label="Go to home page"
-        >
+        <a href="#home" aria-label="Go to home page">
           <img
             className="mr-4 cursor-pointer"
             src="/img/marace.png"
@@ -47,7 +39,7 @@ const Header: FC = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-lg font-medium underline-offset-4 rounded-2xl cursor-pointer
+              className="font-medium underline-offset-4 rounded-2xl cursor-pointer
                 hover:text-foreground/60 hover:underline p-2 focus:outline-none focus:ring-2 focus:ring-foreground/50"
             >
               {item.label}
@@ -78,21 +70,21 @@ const Header: FC = () => {
           >
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 p-2 focus-ring hover:text-foreground/60"
+              className="absolute top-4 right-4 p-2"
               aria-label="Close navigation menu"
             >
               <XIcon size={32} />
             </button>
 
-            <h4 className="text-white">Navigation</h4>
+            <h3>Navigation</h3>
 
             <div className="flex flex-col items-center gap-6 p-6">
               {pageLinks.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-xl font-medium text-foreground/80
-                    hover:text-foreground/60 hover:underline focus-ring"
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-xl font-medium text-foreground"
                 >
                   {item.label}
                 </a>
