@@ -4,32 +4,34 @@ import { ArrowDownIcon } from "@phosphor-icons/react";
 const HomeSection: FC = () => {
   return (
     <section
-      className="relative flex items-center justify-center min-h-lvh bg-[url(/img/hero.jpg)] bg-cover"
+      className="min-h-lvh bg-[url(/img/hero.jpg)] bg-cover relative"
       id="home"
     >
-      <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
-        <div className="flex flex-col gap-4">
-          <h1>Anthony Ostia</h1>
-          <h2 className="font-medium">Software Engineer</h2>
-        </div>
+      <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
+          <div className="flex flex-col gap-4">
+            <h1>Anthony Ostia</h1>
+            <h2 className="font-medium">Software Engineer</h2>
+          </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          <a
-            href="#work"
-            tabIndex={0}
-            className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
+          <div className="flex flex-wrap justify-center gap-6">
+            <a
+              href="#work"
+              tabIndex={0}
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
-          >
-            View Work
-          </a>
-          <a
-            href="#contact"
-            tabIndex={0}
-            className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
+            >
+              View Work
+            </a>
+            <a
+              href="#contact"
+              tabIndex={0}
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-          >
-            Let's Connect
-          </a>
+            >
+              Let's Connect
+            </a>
+          </div>
         </div>
       </div>
 
@@ -37,7 +39,7 @@ const HomeSection: FC = () => {
         href="#about"
         aria-label="Scroll to about section"
         tabIndex={0}
-        className="absolute bottom-8 p-2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
+        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
         focus:ring-offset-2 focus:ring-offset-background"
       >
         <ArrowDownIcon

@@ -53,7 +53,7 @@ const works: Work[] = [
 
 const WorkSection: FC = () => {
   return (
-    <section className="px-6 pb-12 scroll-mt-28" id="work">
+    <section className="px-6 py-12 scroll-mt-28" id="work">
       <div className="px-4 py-12 bg-background rounded-lg">
         <h2 className="mb-12 text-center">Professional Experience</h2>
         {works && (
