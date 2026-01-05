@@ -25,7 +25,7 @@ const projects: Project[] = [
 
 const ProjectSection: FC = () => {
   return (
-    <section className="px-6 pb-6 scroll-mt-28" id="projects">
+    <section className="px-4 pb-6 scroll-mt-28" id="projects">
       <div>
         <h2 className="mb-12 text-center">Featured Projects</h2>
         {projects && (

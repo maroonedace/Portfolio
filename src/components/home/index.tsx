@@ -18,7 +18,7 @@ const HomeSection: FC = () => {
             <a
               href="#work"
               tabIndex={0}
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
             >
               View Work
@@ -26,7 +26,7 @@ const HomeSection: FC = () => {
             <a
               href="#contact"
               tabIndex={0}
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-6 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
             duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
             >
               Let's Connect
