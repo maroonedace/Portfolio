@@ -1,4 +1,6 @@
 import { type FC } from "react";
+import { coreSkills } from "./constants";
+import SkillTile from "../skills/tile";
 
 const AboutMeSection: FC = () => {
   return (
@@ -12,20 +14,24 @@ const AboutMeSection: FC = () => {
         alt="Anthony Ostia headshot"
         className="rounded-lg w-75 h-100"
       />
-      <div className="flex flex-col items-center justify-center">
-        <h2 className="font-semibold">About Me</h2>
-        <div className="flex flex-col gap-4 items-center justify-center max-w-4xl">
-          <p className="text-base md:text-xl text-center">
-            Software Engineer with over four years of experience developing
-            full-stack web applications that deliver functional performance and
-            engaging user experience. Proficient in designing responsive UIs,
-            implementing scalable backend systems, and managing databases.
-            Experienced in leading development teams, improving system
-            efficiency, and maintaining high-quality code through automated
-            testing and CI/CD pipelines. Known for delivering maintainable
-            solutions under tight deadlines and collaborating effectively across
-            distributed teams.
-          </p>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="font-semibold">About Me</h2>
+          <div className="flex flex-col gap-4 items-center justify-center max-w-4xl">
+            <p className="text-base md:text-xl text-center">
+              Software Engineer with over four years of experience developing
+              full-stack web applications that deliver functional performance
+              and engaging user experience.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="font-semibold">Skills</h2>
+          <div className="flex flex-wrap gap-4 items-center justify-center max-w-2xl">
+            {coreSkills.map((skill) => (
+              <SkillTile name={skill} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

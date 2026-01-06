@@ -1,5 +1,15 @@
 import { type FC } from "react";
 import { ArrowDownIcon } from "@phosphor-icons/react";
+import { motion, easeInOut } from "motion/react";
+
+const fadeUp = (i: number) => ({
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15 + 0.25, duration: 0.35, ease: easeInOut },
+  },
+});
 
 const HomeSection: FC = () => {
   return (
@@ -10,37 +20,59 @@ const HomeSection: FC = () => {
       <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center">
         <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
           <div className="flex flex-col gap-4">
-            <h1>Anthony Ostia</h1>
-            <h2 className="font-medium">Software Engineer</h2>
+            <motion.h1 initial="hidden" animate="visible" variants={fadeUp(0)}>
+              Anthony Ostia
+            </motion.h1>
+            <motion.h2
+              className="font-medium"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp(1)}
+            >
+              Software Engineer
+            </motion.h2>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <a
+            <motion.a
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
+               focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
               href="#work"
               tabIndex={0}
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp(2)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               View Work
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
+               focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
               href="#contact"
               tabIndex={0}
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl hover:scale-105 active:scale-95 
-            duration-200 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp(2)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Let's Connect
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
 
-      <a
+      <motion.a
+        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
+        focus:ring-offset-2 focus:ring-offset-background"
         href="#about"
         aria-label="Scroll to about section"
         tabIndex={0}
-        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
-        focus:ring-offset-2 focus:ring-offset-background"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp(2)}
       >
         <ArrowDownIcon
           className="motion-safe:animate-bounce"
@@ -49,7 +81,7 @@ const HomeSection: FC = () => {
           aria-hidden="true"
           weight="fill"
         />
-      </a>
+      </motion.a>
     </section>
   );
 };
