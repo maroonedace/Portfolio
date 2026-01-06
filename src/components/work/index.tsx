@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import type { Work } from "./model";
 import SkillTile from "../skills/tile";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
+import { motion } from "motion/react";
 
 const works: Work[] = [
   {
@@ -22,7 +23,7 @@ const works: Work[] = [
   },
   {
     name: "Oceanside Perspective",
-    title: "Senior Software Engineer",
+    title: "Software Engineer",
     website: "https://www.oceansideperspective.org",
     logoUrl: "/img/work/opLogo.jpeg",
     descriptions: [
@@ -32,7 +33,7 @@ const works: Work[] = [
     ],
     skillNames: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
     startDate: "2024-06",
-    endDate: "2025-03",
+    endDate: "2025-02",
   },
   {
     name: "NZero",
@@ -45,7 +46,7 @@ const works: Work[] = [
       "Helped lead UI redesign efforts, implemented new metric visualizations, client filtering, and unit conversions",
       "Optimized API performance using React Query and expanded frontend test coverage by 35% using Jest",
     ],
-    skillNames: ["React", "Rails", "PostgreSQL", "AWS", "Docker"],
+    skillNames: ["React", "Rails", "PostgreSQL", "Docker"],
     startDate: "2021-10",
     endDate: "2024-04",
   },
@@ -66,7 +67,10 @@ const WorkSection: FC = () => {
                   : "Present";
 
                 return (
-                  <div className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8">
+                  <div
+                    className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8"
+                    key={exp.name}
+                  >
                     <div className="md:w-1/2 relative">
                       <span
                         className="absolute -left-10 top-11 h-4 w-4 rounded-full bg-background ring-4 ring-foreground"
@@ -93,7 +97,7 @@ const WorkSection: FC = () => {
                           </time>
                         </div>
                       </div>
-                      <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
+                      <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-4">
                         {exp.skillNames.map((name) => (
                           <SkillTile name={name} key={`${exp.name}-${name}`} />
                         ))}
@@ -111,15 +115,16 @@ const WorkSection: FC = () => {
                         ))}
                       </ul>
                       <div className="flex justify-center md:justify-start mt-2">
-                        <a
+                        <motion.a
                           href={exp.website}
                           target="_blank"
                           rel="noopener noreferrer"
                           tabIndex={0}
                           aria-label={`Visit ${exp.name} website (opens in new tab)`}
                           className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4 
-                          font-medium transition-transform hover:scale-105 active:scale-95
-                          focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                          font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                         >
                           <span className="text-lg">Visit Website</span>
                           <ArrowUpRightIcon
@@ -127,7 +132,7 @@ const WorkSection: FC = () => {
                             aria-hidden="true"
                             weight="fill"
                           />
-                        </a>
+                        </motion.a>
                       </div>
                     </div>
                   </div>

@@ -1,15 +1,7 @@
 import { type FC } from "react";
 import { ArrowDownIcon } from "@phosphor-icons/react";
-import { motion, easeInOut } from "motion/react";
-
-const fadeUp = (i: number) => ({
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15 + 0.25, duration: 0.35, ease: easeInOut },
-  },
-});
+import { motion } from "motion/react";
+import { fadeUp } from "../../utils";
 
 const HomeSection: FC = () => {
   return (
