@@ -3,15 +3,28 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
 } from "@phosphor-icons/react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+import { fadeUp } from "../../utils";
 
 const ContactSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
   return (
     <div
       className="flex justify-center items-center px-4 py-16 bg-cyan-800"
+      ref={ref}
       id="contact"
     >
-      <div className="bg-background flex flex-col items-center w-full max-w-xl py-8 px-4 rounded-2xl">
+      <motion.div
+        className="bg-background flex flex-col items-center w-full max-w-xl py-8 px-4 rounded-2xl"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={fadeUp(0)}
+      >
         <span className="text-3xl font-semibold mb-8">Let's Connect</span>
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-auto">
           <motion.a
@@ -55,7 +68,7 @@ const ContactSection = () => {
             <span className="text-lg font-medium">LinkedIn</span>
           </motion.a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

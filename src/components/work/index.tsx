@@ -1,29 +1,45 @@
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 
 import { format } from "date-fns";
 import SkillTile from "../skills/tile";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import useWorks from "../../services/useWorks";
+import { fadeUp } from "../../utils";
 
 const WorkSection: FC = () => {
   const { works } = useWorks();
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
   return (
-    <section className="px-4 py-16 scroll-mt-28" id="work">
-      <div className="px-4 py-16 bg-background rounded-lg">
-        <h2 className="mb-12 text-center">Professional Experience</h2>
+    <section className="px-4 py-16 scroll-mt-28" id="work" ref={ref}>
+      <div className="px-4 py-16 bg-background min-h-lvh rounded-lg">
+        <motion.h2
+          className="mb-12 text-center"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeUp(0)}
+        >
+          Professional Experience
+        </motion.h2>
         {works && (
           <div className="px-4 md:px-12">
             <div className="relative border-l-2 border-foreground space-y-20">
-              {works.map((exp) => {
+              {works.map((exp, index) => {
                 const startDate = format(new Date(exp.startDate), "MMM yyyy");
                 const endDate = exp.endDate
                   ? format(new Date(exp.endDate), "MMM yyyy")
                   : "Present";
 
                 return (
-                  <div
+                  <motion.div
                     className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8"
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    variants={fadeUp(index + 1)}
                     key={exp.name}
                   >
                     <div className="md:w-1/2 relative">
@@ -90,7 +106,7 @@ const WorkSection: FC = () => {
                         </motion.a>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

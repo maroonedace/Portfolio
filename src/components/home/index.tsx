@@ -1,24 +1,31 @@
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import { ArrowDownIcon } from "@phosphor-icons/react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
 
 const HomeSection: FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true,
+    amount: 0.3
+  });
+  
   return (
     <section
+      ref={ref}
       className="min-h-lvh bg-[url(/images/hero.jpg)] bg-cover relative"
       id="home"
     >
       <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center">
         <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
           <div className="flex flex-col gap-4">
-            <motion.h1 initial="hidden" animate="visible" variants={fadeUp(0)}>
+            <motion.h1 initial="hidden" animate={isInView ? "visible" : "hidden"}  variants={fadeUp(0)}>
               Anthony Ostia
             </motion.h1>
             <motion.h2
               className="font-medium"
               initial="hidden"
-              animate="visible"
+              animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp(1)}
             >
               Software Engineer
@@ -32,7 +39,7 @@ const HomeSection: FC = () => {
               href="#work"
               tabIndex={0}
               initial="hidden"
-              animate="visible"
+              animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp(2)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -45,7 +52,7 @@ const HomeSection: FC = () => {
               href="#contact"
               tabIndex={0}
               initial="hidden"
-              animate="visible"
+              animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp(2)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -63,8 +70,8 @@ const HomeSection: FC = () => {
         aria-label="Scroll to about section"
         tabIndex={0}
         initial="hidden"
-        animate="visible"
-        variants={fadeUp(2)}
+        animate={isInView ? "visible" : "hidden"} 
+        variants={fadeUp(3)}
       >
         <ArrowDownIcon
           className="motion-safe:animate-bounce"

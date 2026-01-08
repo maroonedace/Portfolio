@@ -1,21 +1,38 @@
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import SkillTile from "../skills/tile";
 import { ArrowUpRightIcon, GitBranchIcon } from "@phosphor-icons/react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import useProjects from "../../services/useProjects";
+import { fadeUp } from "../../utils";
 
 const ProjectSection: FC = () => {
   const { projects } = useProjects();
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3,
+  });
+  
   return (
-    <section className="px-4 pb-6 scroll-mt-28" id="projects">
+    <section className="px-4 pb-6 scroll-mt-28" id="projects" ref={ref}>
       <div>
-        <h2 className="mb-12 text-center">Featured Projects</h2>
+        <motion.h2
+          className="mb-12 text-center"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeUp(0)}
+        >
+          Featured Projects
+        </motion.h2>
         {projects && (
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            {projects.map((p) => (
-              <div
+            {projects.map((p, index) => (
+              <motion.div
                 key={p.name}
                 className="rounded-xl p-6 bg-background flex flex-col items-center md:items-start md:flex-row gap-4"
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={fadeUp(index + 1)}
               >
                 <img
                   src={p.logo}
@@ -85,7 +102,7 @@ const ProjectSection: FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
