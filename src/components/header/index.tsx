@@ -14,7 +14,7 @@ const Header: FC = () => {
           className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"
           aria-label="Home"
         >
-          <img src="/img/marace.png" width={36} height={50} />
+          <img src="/images/marace.png" width={36} height={50} />
         </a>
 
         <div className="hidden md:flex items-center gap-2">

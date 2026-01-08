@@ -1,58 +1,13 @@
 import { type FC } from "react";
 
 import { format } from "date-fns";
-import type { Work } from "./model";
 import SkillTile from "../skills/tile";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-
-const works: Work[] = [
-  {
-    name: "Mercor",
-    title: "Software Engineer",
-    website: "https://www.mercor.com",
-    logoUrl: "/img/work/mercor.png",
-    descriptions: [
-      "Built and maintained web applications to assess and evaluate machine learning model performance",
-      "Identified and documented UI/UX issues and worked with cross-functional teams to improve evaluation workflows and data accuracy",
-      "Participated in code reviews and maintained test suites to ensure high-quality, well-scoped changes",
-    ],
-    skillNames: ["React", "Typescript", "Javascript"],
-    startDate: "2025-03",
-    endDate: "",
-  },
-  {
-    name: "Oceanside Perspective",
-    title: "Software Engineer",
-    website: "https://www.oceansideperspective.org",
-    logoUrl: "/img/work/opLogo.jpeg",
-    descriptions: [
-      "Led a team of three developers to build and deploy a subscription-based content platform demo using Next.js and Vercel",
-      "Improved user engagement by 30% through enhanced search filtering, dynamic navigation components, and optimized UI animations",
-      "Designed RESTful API endpoints to fetch and serve dynamic content, integrating with Supabase for backend data storage and authentication",
-    ],
-    skillNames: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
-    startDate: "2024-06",
-    endDate: "2025-02",
-  },
-  {
-    name: "NZero",
-    title: "Software Engineer II",
-    website: "https://nzero.com",
-    logoUrl: "/img/work/nZero.svg",
-    descriptions: [
-      "Promoted twice within two years due to consistent ownership and delivery across the full stack using React, Rails, and PostgreSQL",
-      "Led development of a data management portal that reduced manual data entry time by 60%",
-      "Helped lead UI redesign efforts, implemented new metric visualizations, client filtering, and unit conversions",
-      "Optimized API performance using React Query and expanded frontend test coverage by 35% using Jest",
-    ],
-    skillNames: ["React", "Rails", "PostgreSQL", "Docker"],
-    startDate: "2021-10",
-    endDate: "2024-04",
-  },
-];
+import useWorks from "../../services/useWorks";
 
 const WorkSection: FC = () => {
+  const { works } = useWorks();
   return (
     <section className="px-4 py-16 scroll-mt-28" id="work">
       <div className="px-4 py-16 bg-background rounded-lg">

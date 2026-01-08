@@ -1,13 +1,14 @@
 import { type FC } from "react";
-import { skills } from "../../data/skill";
 import { motion } from "motion/react";
+import useSkills from "../../services/useSkills";
 
 interface SkillProps {
   name: string;
 }
 
 const SkillTile: FC<SkillProps> = ({ name }) => {
-  const skill = skills.find((skill) => skill.name === name);
+  const { skills } = useSkills();
+  const skill = skills?.find((skill) => skill.name === name);
   return (
     skill && (
       <motion.div

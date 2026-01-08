@@ -6,7 +6,7 @@ import { fadeUp } from "../../utils";
 const HomeSection: FC = () => {
   return (
     <section
-      className="min-h-lvh bg-[url(/img/hero.jpg)] bg-cover relative"
+      className="min-h-lvh bg-[url(/images/hero.jpg)] bg-cover relative"
       id="home"
     >
       <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center">

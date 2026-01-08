@@ -1,5 +1,5 @@
 export const coreSkills = [
-  "Typescript",
+  "TypeScript",
   "React",
   "Python",
   "Next.js",

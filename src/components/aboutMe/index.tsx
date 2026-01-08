@@ -12,7 +12,7 @@ const AboutMeSection: FC = () => {
       id="about"
     >
       <img
-        src="/img/pfp.jpg"
+        src="/images/pfp.jpg"
         alt="Anthony Ostia headshot"
         className="rounded-lg w-75 h-100"
       />

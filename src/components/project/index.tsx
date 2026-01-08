@@ -1,30 +1,11 @@
 import { type FC } from "react";
-import type { Project } from "./type";
 import SkillTile from "../skills/tile";
 import { ArrowUpRightIcon, GitBranchIcon } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-
-const projects: Project[] = [
-  {
-    name: "Criwin",
-    logo: "/img/project/criwin.png",
-    skillNames: ["Python", "Docker", "Proxmox", "Cloudflare"],
-    description: `Developed and containerized a Python-based Discord bot running on a Debian server to automate audio conversions 
-      and manage soundboard functionality, leveraging Cloudflare for sound file storage and delivery.`,
-    github: "https://github.com/maroonedace/Criwin/",
-  },
-  {
-    name: "Acedex",
-    logo: "/img/project/pokedexAce.png",
-    skillNames: ["React", "Rust", "Supabase", "Tauri"],
-    description: `Built a TCG-style Pokédex using Tauri and Rust to transform public API data into an interactive interface. 
-      Enabled real-time filtering of more than 1000+ entries within a modern, cross platform application.`,
-    github: "https://github.com/maroonedace/AceDex",
-    embedLink: "https://www.youtube.com/watch?v=saD8ZQIfyYg",
-  },
-];
+import useProjects from "../../services/useProjects";
 
 const ProjectSection: FC = () => {
+  const { projects } = useProjects();
   return (
     <section className="px-4 pb-6 scroll-mt-28" id="projects">
       <div>
