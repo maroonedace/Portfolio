@@ -1,7 +1,8 @@
+import type { Skill } from '../../components/skills/model';
 import type { SkillDB } from '../../types/database';
 import { supabase } from '../supabase';
 
-const getSkills = async (): Promise<SkillDB[]> => {
+const getSkills = async (): Promise<Skill[]> => {
   const { data, error } = await supabase
     .from('skills')
     .select('*')
@@ -10,7 +11,13 @@ const getSkills = async (): Promise<SkillDB[]> => {
     throw new Error(error.message);
   }
 
-  return data || [];
+  const formattedData: Skill[] =
+      data?.map((project: SkillDB) => ({
+        name: project.name,
+        logo: project.logo,
+      })) || [];
+  
+    return formattedData;
 }
 
 export default getSkills
