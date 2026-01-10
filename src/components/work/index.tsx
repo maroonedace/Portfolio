@@ -1,8 +1,4 @@
 import { useRef, type FC } from "react";
-
-import { format } from "date-fns";
-import SkillTile from "../skills/tile";
-import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { motion, useInView } from "motion/react";
 import useWorks from "../../services/useWorks";
 import { fadeUp } from "../../utils";
