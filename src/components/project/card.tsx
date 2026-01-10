@@ -14,7 +14,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.1,
+    amount: 0.05,
   });
 
   return (

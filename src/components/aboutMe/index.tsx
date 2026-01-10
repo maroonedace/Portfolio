@@ -10,8 +10,8 @@ const AboutMeSection: FC = () => {
   const sectionRef = useRef(null);
   const stackRef = useRef(null);
 
-  const isSectionInView = useInView(sectionRef, { once: true, amount: 0.1 });
-  const isStackInView = useInView(stackRef, { once: true, amount: 0.1 });
+  const isSectionInView = useInView(sectionRef, { once: true, amount: 0.05 });
+  const isStackInView = useInView(stackRef, { once: true, amount: 0.05 });
 
   const coreSkillsData = coreSkills
     .map((skillName) => skills?.find((skill) => skill.name === skillName))
@@ -19,7 +19,7 @@ const AboutMeSection: FC = () => {
 
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 px-4 py-16 
+      className="flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-12 px-4 py-16 
       bg-linear-to-b from-background to-cyan-800 scroll-mt-20"
       ref={sectionRef}
       id="about"
@@ -48,9 +48,9 @@ const AboutMeSection: FC = () => {
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(2)}
           >
-            Software Engineer with over four years of experience developing
-            full-stack web applications that deliver functional performance and
-            engaging user experience.
+            Software Engineer with four years of experience building responsive web applications in agile startup environments, 
+            specializing in full-stack development with React, Next.js, and Node.js. Proven track record of delivering measurable 
+            business impact through performance optimization, UI redesign, and scalable system architecture.
           </motion.p>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -72,18 +72,21 @@ const AboutMeSection: FC = () => {
                 initial="hidden"
                 animate={isStackInView ? "visible" : "hidden"}
                 variants={fadeUp(index)}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 cursor-default select-none"
               >
-                <img
-                  className="h-6 w-6"
-                  src={skill?.logo}
-                  alt={`${skill?.name} logo`}
-                  aria-hidden="true"
-                />
-                <span className="text-background font-medium">
-                  {skill?.name}
-                </span>
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="flex flex items-center justify-center gap-2 bg-foreground py-2 px-4 rounded-xl cursor-default select-none"
+                >
+                  <img
+                    className="h-6 w-6"
+                    src={skill?.logo}
+                    alt={`${skill?.name} logo`}
+                    aria-hidden="true"
+                  />
+                  <span className="text-background font-medium">
+                    {skill?.name}
+                  </span>
+                </motion.div>
               </motion.div>
             ))}
           </div>

@@ -9,7 +9,7 @@ const WorkSection: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.1,
+    amount: 0.05,
   });
   return (
     <section className="px-4 py-16 scroll-mt-28" id="work">
