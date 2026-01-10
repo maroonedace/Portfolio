@@ -1,8 +1,9 @@
 import { useRef, type FC } from "react";
 import { motion, useInView } from "motion/react";
-import useWorks from "../../services/useWorks";
 import { fadeUp } from "../../utils";
 import WorkCard from "./card";
+import useWorks from "../../services/useWorks";
+
 
 const WorkSection: FC = () => {
   const { works } = useWorks();
