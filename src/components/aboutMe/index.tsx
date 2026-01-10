@@ -10,8 +10,8 @@ const AboutMeSection: FC = () => {
   const sectionRef = useRef(null);
   const stackRef = useRef(null);
 
-  const isSectionInView = useInView(sectionRef, { once: true, amount: 0.3 });
-  const isStackInView = useInView(stackRef, { once: true, amount: 0.3 });
+  const isSectionInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const isStackInView = useInView(stackRef, { once: true, amount: 0.1 });
 
   const coreSkillsData = coreSkills
     .map((skillName) => skills?.find((skill) => skill.name === skillName))

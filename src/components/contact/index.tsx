@@ -11,7 +11,7 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
   });
   return (
     <div
