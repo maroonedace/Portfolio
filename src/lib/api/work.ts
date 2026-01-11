@@ -3,7 +3,10 @@ import type { WorkDB } from "../../types/database";
 import { supabase } from "../supabase";
 
 const getWork = async (): Promise<Work[]> => {
-  const { data, error } = await supabase.from("work").select("*");
+  const { data, error } = await supabase
+    .from("work")
+    .select("*")
+    .order("start_date", { ascending: false });
 
   if (error) {
     throw new Error(error.message);

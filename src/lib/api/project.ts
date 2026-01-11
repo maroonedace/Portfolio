@@ -3,7 +3,10 @@ import type { ProjectDB } from "../../types/database";
 import { supabase } from "../supabase";
 
 const getProjects = async (): Promise<Project[]> => {
-  const { data, error } = await supabase.from("projects").select("*");
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("id");
 
   if (error) {
     throw new Error(error.message);

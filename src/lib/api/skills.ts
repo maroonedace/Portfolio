@@ -5,7 +5,7 @@ import { supabase } from '../supabase';
 const getSkills = async (): Promise<Skill[]> => {
   const { data, error } = await supabase
     .from('skills')
-    .select('*')
+    .select('*');
 
   if (error) {
     throw new Error(error.message);
