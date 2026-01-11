@@ -40,7 +40,7 @@ const ContactSection = () => {
             <span className="text-lg font-medium">Mail</span>
           </motion.a>
           <motion.a
-            href="https://github.com/anthony-ostia"
+            href="https://github.com/maroonedace"
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={0}
