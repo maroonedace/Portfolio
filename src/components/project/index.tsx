@@ -13,7 +13,7 @@ const ProjectSection: FC = () => {
   });
 
   return (
-    <section className="px-4 pb-6 scroll-mt-28" id="projects">
+    <section className="px-4 pb-6 scroll-mt-8" id="projects">
       <motion.h2
         className="mb-12 text-center"
         initial="hidden"

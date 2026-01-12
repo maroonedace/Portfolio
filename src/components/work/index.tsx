@@ -13,7 +13,7 @@ const WorkSection: FC = () => {
     amount: 0.05,
   });
   return (
-    <section className="px-4 py-16 scroll-mt-28" id="work">
+    <section className="px-4 py-16 scroll-mt-8" id="work">
       <div className="px-4 py-16 bg-background min-h-lvh rounded-lg">
         <motion.h2
           className="mb-12 text-center"

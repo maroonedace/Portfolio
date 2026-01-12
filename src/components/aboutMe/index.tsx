@@ -48,9 +48,8 @@ const AboutMeSection: FC = () => {
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(2)}
           >
-            Software Engineer with four years of experience building responsive web applications in agile startup environments, 
-            specializing in full-stack development with React, Next.js, and Node.js. Proven track record of delivering measurable 
-            business impact through performance optimization, UI redesign, and scalable system architecture.
+            Software Engineer with four years of experience building responsive, full-stack web applications and automation frameworks in agile startup environments. 
+            Proven track record of delivering measurable business impact through performance optimization and automation solutions.
           </motion.p>
         </div>
         <div className="flex flex-col items-center justify-center">
