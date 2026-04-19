@@ -48,8 +48,10 @@ const AboutMeSection: FC = () => {
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(2)}
           >
-            Full Stack Software Engineer with four years of experience building responsive web applications across React, TypeScript, and Node.js.
-            Focus on performance optimization, clean architecture, and shipping maintainable code in fast-moving startup environments.
+            Full Stack Software Engineer with four years of experience building
+            responsive web applications across React, TypeScript, and Node.js.
+            Focus on performance optimization, clean architecture, and shipping
+            maintainable code in fast-moving startup environments.
           </motion.p>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -70,11 +72,11 @@ const AboutMeSection: FC = () => {
                 key={skill?.name}
                 initial="hidden"
                 animate={isStackInView ? "visible" : "hidden"}
-                variants={fadeUp(index)}
+                variants={fadeUp(3 + index)}
               >
                 <motion.div
                   whileHover={{ y: -4, scale: 1.02 }}
-                  className="flex flex items-center justify-center gap-2 bg-foreground py-2 px-4 rounded-xl cursor-default select-none"
+                  className="flex items-center justify-center gap-2 bg-foreground py-2 px-4 rounded-xl cursor-default select-none"
                 >
                   <img
                     className="h-6 w-6"
@@ -88,6 +90,37 @@ const AboutMeSection: FC = () => {
                 </motion.div>
               </motion.div>
             ))}
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <motion.h3
+            className="font-semibold"
+            initial="hidden"
+            animate={isSectionInView ? "visible" : "hidden"}
+            variants={fadeUp(4)}
+          >
+            Certificates
+          </motion.h3>
+          <div
+            className="flex flex-wrap gap-4 items-center justify-center"
+            ref={stackRef}
+          >
+            <motion.div
+              initial="hidden"
+              animate={isStackInView ? "visible" : "hidden"}
+              variants={fadeUp(4)}
+            >
+              <motion.div
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl cursor-default select-none"
+              >
+                <img
+                  width="128"
+                  height="128"
+                  src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
