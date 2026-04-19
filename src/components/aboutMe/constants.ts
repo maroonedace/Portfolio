@@ -1,10 +1,9 @@
 export const coreSkills = [
   "TypeScript",
   "React",
-  "Python",
   "Next.js",
   "Node.js",
-  "FastAPI",
+  "AWS",
   "PostgreSQL",
   "Cloudflare",
   "Docker",

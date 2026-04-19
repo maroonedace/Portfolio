@@ -6,7 +6,7 @@ const getProjects = async (): Promise<Project[]> => {
   const { data, error } = await supabase
     .from("projects")
     .select("*")
-    .order("id");
+    .order("order");
 
   if (error) {
     throw new Error(error.message);
