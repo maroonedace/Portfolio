@@ -16,6 +16,7 @@ const getProjects = async (): Promise<Project[]> => {
     data?.map((project: ProjectDB) => ({
       name: project.name,
       description: project.description,
+      github: project.github,
       skillNames: project.skills,
       logo: project.logo_url,
       embedLink: project.embed_link,

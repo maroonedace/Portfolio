@@ -25,8 +25,8 @@ const ProjectSection: FC = () => {
       </motion.h2>
       {projects && (
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-          {projects.map((p, index) => (
-            <ProjectCard key={p.name} project={p} index={index} />
+          {projects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
           ))}
         </div>
       )}

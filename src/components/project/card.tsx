@@ -7,7 +7,6 @@ import SkillTile from "../skills/tile";
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
@@ -27,7 +26,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
     >
       <img
         src={project.logo}
-        className="w-40 h-40 rounded-xl object-cover"
+        className="w-40 h-40 rounded-xl object-cover border-2 border-foreground"
         alt={`${project.name} logo`}
       />
       <div className="flex flex-col justify-between h-full gap-4 flex-1">
