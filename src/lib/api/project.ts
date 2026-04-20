@@ -5,7 +5,7 @@ import { fetchFromSupabase } from "../supabase";
 const getProjects = async (): Promise<Project[]> => {
   const data = await fetchFromSupabase<ProjectDB>(
     "projects",
-    "select=*&order=order.desc"
+    "select=*&order=order.asc"
   );
 
   return data.map((project) => ({
