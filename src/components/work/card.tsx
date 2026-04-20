@@ -1,10 +1,10 @@
-import { format } from "date-fns";
 import { motion, useInView } from "motion/react";
 import { useRef, type FC } from "react";
 import type { Work } from "./model";
 import { fadeUp } from "../../utils";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import SkillTile from "../skills/tile";
+import { formatMonthYear } from "../../lib/dates";
 
 interface WorkCardProps {
   work: Work;
@@ -17,10 +17,8 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
     amount: 0.05,
   });
 
-  const startDate = format(new Date(work.startDate), "MMM yyyy");
-  const endDate = work.endDate
-    ? format(new Date(work.endDate), "MMM yyyy")
-    : "Present";
+  const startDate = formatMonthYear(work.startDate);
+  const endDate = work.endDate ? formatMonthYear(work.endDate) : "Present";
   return (
     <motion.div
       className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8"

@@ -117,7 +117,7 @@ const AboutMeSection: FC = () => {
               rel="noopener noreferrer"
             >
               <motion.img
-                whileHover={{ y: -4, scale: 1.02 }}
+                whileHover={{ y: -4, scale: 1.05 }}
                 alt="AWS Certified Solutions Architect Associate badge"
                 className="cursor-pointer"
                 width="128"

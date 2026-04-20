@@ -12,12 +12,8 @@ const SkillTile: FC<SkillProps> = ({ name }) => {
   return (
     skill && (
       <motion.div
-        className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 cursor-default select-none"
+        className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 select-none"
         key={skill.name}
-        whileHover={{
-          y: -4,
-          scale: 1.02,
-        }}
       >
         <img className="h-6 w-6" src={skill.logo} alt={skill.name} />
         <span className="text-background font-medium">{skill.name}</span>
