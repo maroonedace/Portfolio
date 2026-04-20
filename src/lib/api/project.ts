@@ -1,28 +1,21 @@
 import type { Project } from "../../components/project/type";
 import type { ProjectDB } from "../../types/database";
-import { supabase } from "../supabase";
+import { fetchFromSupabase } from "../supabase";
 
 const getProjects = async (): Promise<Project[]> => {
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .order("order");
+  const data = await fetchFromSupabase<ProjectDB>(
+    "projects",
+    "select=*&order=order.desc"
+  );
 
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  const formattedData: Project[] =
-    data?.map((project: ProjectDB) => ({
-      name: project.name,
-      description: project.description,
-      github: project.github,
-      skillNames: project.skills,
-      logo: project.logo_url,
-      embedLink: project.embed_link,
-    })) || [];
-
-  return formattedData;
+  return data.map((project) => ({
+    name: project.name,
+    description: project.description,
+    github: project.github,
+    skillNames: project.skills,
+    logo: project.logo_url,
+    embedLink: project.embed_link,
+  }));
 };
 
 export default getProjects;

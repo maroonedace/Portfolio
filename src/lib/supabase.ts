@@ -1,10 +1,20 @@
-import { createClient } from '@supabase/supabase-js';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+export async function fetchFromSupabase<T>(
+  table: string,
+  params: string = "select=*"
+): Promise<T[]> {
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${params}`, {
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+  });
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${table}: ${response.statusText}`);
+  }
+
+  return response.json();
 }
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
