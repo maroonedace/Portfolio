@@ -53,10 +53,8 @@ const AboutMeSection: FC = () => {
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(2)}
           >
-            Full Stack Software Engineer with four years of experience building
-            responsive web applications across React, TypeScript, and Node.js.
-            Focus on performance optimization, clean architecture, and shipping
-            maintainable code in fast-moving startup environments.
+            Full Stack Software Engineer with four plus years building scalable web applications using React, Node, TypeScript, and SQL. 
+            Experienced in architecting reusable UI components, provisioning cloud infrastructure, optimizing performance, and standardizing API design.
           </motion.p>
         </div>
         <div className="flex flex-col items-center justify-center">
