@@ -16,8 +16,8 @@ const HomeSection: FC = () => {
       className="min-h-lvh bg-[url(/images/hero.jpg)] bg-cover relative"
       id="home"
     >
-      <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center text-center gap-12 pt-20 px-4">
+      <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center [@media(max-height:700px)]:py-36">
+        <div className="flex flex-col items-center justify-center text-center gap-8 md:gap-12 pt-20 px-4">
           <div className="flex flex-col gap-4">
             <motion.h1 initial="hidden" animate={isInView ? "visible" : "hidden"}  variants={fadeUp(0)}>
               Anthony Ostia
@@ -74,8 +74,7 @@ const HomeSection: FC = () => {
         variants={fadeUp(3)}
       >
         <ArrowDownIcon
-          className="motion-safe:animate-bounce"
-          size={64}
+          className="w-10 h-10 md:w-16 md:h-16 motion-safe:animate-bounce"
           strokeWidth={1.5}
           aria-hidden="true"
           weight="fill"
