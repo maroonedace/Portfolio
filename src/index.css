@@ -3,8 +3,9 @@
 @font-face {
   font-family: "Urbanist";
   src: local("Urbanist"),
-    url("./assets/fonts/Urbanist.ttf");
+    url("./assets/fonts/Urbanist.ttf") format("truetype");
   font-weight: 200 700;
+  font-display: swap;
 }
 
 @theme {
@@ -20,12 +21,8 @@
   }
 
   body {
-    @apply bg-cyan-800 text-foreground;
+    @apply bg-cyan-800 text-foreground font-paragraph;
     line-height: 1.5;
-  }
-
-  span, p, button, a {
-    font-family: var(--font-paragraph);
   }
 
   h1,
@@ -34,24 +31,22 @@
   h4,
   h5,
   h6 {
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
+    @apply font-heading font-semibold tracking-tight leading-tight text-balance;
   }
 
   h1 {
-    @apply text-6xl md:text-8xl font-semibold tracking-tight;
+    @apply text-6xl md:text-8xl;
   }
 
   h2 {
-    @apply text-4xl md:text-6xl font-semibold tracking-tight;
+    @apply text-4xl md:text-6xl;
   }
 
   h3 {
-    @apply text-2xl md:text-4xl font-semibold tracking-tight;
+    @apply text-2xl md:text-4xl;
   }
 
   h4 {
-    @apply text-lg md:text-2xl font-semibold tracking-tight;
+    @apply text-lg md:text-2xl;
   }
 }

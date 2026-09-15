@@ -17,19 +17,19 @@ const HomeSection: FC = () => {
       id="home"
     >
       <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center [@media(max-height:700px)]:py-36">
-        <div className="flex flex-col items-center justify-center text-center gap-8 md:gap-12 pt-20 px-4">
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center justify-center text-center gap-12 md:gap-16 pt-20 px-4">
+          <div className="flex flex-col gap-8">
             <motion.h1 initial="hidden" animate={isInView ? "visible" : "hidden"}  variants={fadeUp(0)}>
               Anthony Ostia
             </motion.h1>
-            <motion.h2
-              className="font-medium"
+            <motion.p
+              className="font-heading text-4xl md:text-6xl font-medium tracking-tight leading-tight text-balance"
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"} 
+              animate={isInView ? "visible" : "hidden"}
               variants={fadeUp(1)}
             >
               Software Engineer
-            </motion.h2>
+            </motion.p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">

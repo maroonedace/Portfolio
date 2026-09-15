@@ -1,5 +1,6 @@
 import { useRef, type FC } from "react";
-import { coreSkills } from "./constants";
+import { certificates, coreSkills } from "./constants";
+import CertificateItem from "./certificate";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
 import useSkills from "../../services/useSkills";
@@ -40,7 +41,7 @@ const AboutMeSection: FC = () => {
       <div className="flex flex-col gap-8 max-w-4xl">
         <div className="flex flex-col items-center justify-center">
           <motion.h2
-            className="font-semibold"
+            className="mb-4"
             initial="hidden"
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(1)}
@@ -59,7 +60,7 @@ const AboutMeSection: FC = () => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <motion.h3
-            className="font-semibold"
+            className="mb-4 text-3xl md:text-5xl"
             initial="hidden"
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(3)}
@@ -96,34 +97,28 @@ const AboutMeSection: FC = () => {
           className="flex flex-col items-center justify-center"
         >
           <motion.h3
-            className="font-semibold"
+            className="mb-4 text-3xl md:text-5xl"
             initial="hidden"
             animate={isCertificateInView ? "visible" : "hidden"}
             variants={fadeUp(4)}
           >
             Certificates
           </motion.h3>
-          <motion.div
+          <div
+            className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-8 items-start justify-center"
             ref={certificateRef}
-            initial="hidden"
-            animate={isCertificateInView ? "visible" : "hidden"}
-            variants={fadeUp(4)}
           >
-            <a
-              href="https://www.credly.com/badges/04b12fb8-445d-412e-a9bd-0963e6221af3/public_url"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.img
-                whileHover={{ y: -4, scale: 1.05 }}
-                alt="AWS Certified Solutions Architect Associate badge"
-                className="cursor-pointer"
-                width="128"
-                height="128"
-                src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
-              />
-            </a>
-          </motion.div>
+            {certificates.map((certificate, index) => (
+              <motion.div
+                key={certificate.url}
+                initial="hidden"
+                animate={isCertificateInView ? "visible" : "hidden"}
+                variants={fadeUp(4 + index)}
+              >
+                <CertificateItem certificate={certificate} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

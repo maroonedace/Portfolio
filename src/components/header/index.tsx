@@ -50,7 +50,7 @@ const Header: FC = () => {
           <div
             role="dialog"
             aria-modal="true"
-            aria-label="Navigation menu"
+            aria-labelledby="navigation-menu-title"
             className="bg-background px-12 py-6 rounded-2xl flex flex-col items-center"
           >
             <button
@@ -61,7 +61,9 @@ const Header: FC = () => {
               <XIcon size={32} />
             </button>
 
-            <h3>Navigation</h3>
+            <h2 id="navigation-menu-title" className="mb-4">
+              Navigation
+            </h2>
 
             <div className="flex flex-col items-center gap-6 p-6">
               {pageLinks.map((item) => (

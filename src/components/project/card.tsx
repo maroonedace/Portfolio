@@ -31,7 +31,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       />
       <div className="flex flex-col justify-between h-full gap-4 flex-1">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-6">
             <h3 className="text-center md:text-left">{project.name}</h3>
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {project.skillNames.map((skill) => (
