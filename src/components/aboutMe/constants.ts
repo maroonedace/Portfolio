@@ -24,18 +24,5 @@ export const certificates: Certificate[] = [
     url: "https://www.credly.com/badges/04b12fb8-445d-412e-a9bd-0963e6221af3/public_url",
     badgeUrl:
       "https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
-  },
-    {
-    name: "Frontend Developer (React)",
-    issuer: "HackerRank",
-    url: "https://www.hackerrank.com/certificates/a2ab09df9757",
-    issuerLogoUrl:
-      "/images/certificates/hackerrank.jpg",
-  },
-    {
-    name: "Introduction to Agents",
-    issuer: "Mercor",
-    url: "https://work.mercor.com/learn/verify/MRC-2026-8Z6YSDVR",
-    issuerLogoUrl: "/images/work/mercor.png",
-  },
+  }
 ];
