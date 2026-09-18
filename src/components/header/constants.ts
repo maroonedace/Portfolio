@@ -5,3 +5,5 @@ export const pageLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const resumeHref = "/resume.pdf";

@@ -1,6 +1,7 @@
 import { useRef, useState, type FC } from "react";
-import { pageLinks } from "./constants";
-import { ListIcon, XIcon } from "@phosphor-icons/react";
+import { motion } from "motion/react";
+import { pageLinks, resumeHref } from "./constants";
+import { FileTextIcon, ListIcon, XIcon } from "@phosphor-icons/react";
 
 const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,6 +31,20 @@ const Header: FC = () => {
             </a>
           ))}
         </div>
+
+        <motion.a
+          href={resumeHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View resume (opens in new tab)"
+          className="hidden md:inline-flex ml-auto items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
+                    font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FileTextIcon size={20} aria-hidden="true" weight="fill" />
+          <span>Resume</span>
+        </motion.a>
 
         <button
           ref={menuButtonRef}
@@ -76,6 +91,21 @@ const Header: FC = () => {
                   {item.label}
                 </a>
               ))}
+
+              <motion.a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View resume (opens in new tab)"
+                onClick={() => setIsModalOpen(false)}
+                className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
+                          font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FileTextIcon size={20} aria-hidden="true" weight="fill" />
+                <span className="text-xl">Resume</span>
+              </motion.a>
             </div>
           </div>
         </div>
