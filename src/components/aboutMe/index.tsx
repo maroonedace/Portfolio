@@ -25,7 +25,7 @@ const AboutMeSection: FC = () => {
       id="about"
     >
       <motion.img
-        src="/images/pfp.jpg"
+        src="/src/assets/images/headshot.jpg"
         alt="Anthony Ostia headshot"
         className="rounded-lg w-72 h-96"
         initial="hidden"

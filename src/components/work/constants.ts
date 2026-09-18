@@ -15,7 +15,7 @@ export const works: Work[] = [
   {
     name: "Oceanside Perspective",
     title: "Senior Software Engineer",
-    logoUrl: "/images/work/opLogo.jpeg",
+    logoUrl: "src/assets/images/work/opLogo.jpeg",
     startDate: new Date("2024-05-01"),
     endDate: null,
     skills: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
@@ -30,7 +30,7 @@ export const works: Work[] = [
   {
     name: "NZero",
     title: "Software Engineer II",
-    logoUrl: "/images/work/nZero.svg",
+    logoUrl: "src/assets/images/work/nZero.svg",
     startDate: new Date("2021-09-01"),
     endDate: new Date("2024-03-31"),
     skills: ["React", "Rails", "PostgreSQL", "Docker"],
