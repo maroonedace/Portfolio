@@ -26,7 +26,7 @@ const AboutMeSection: FC = () => {
   return (
     <section
       className="flex flex-col items-center justify-center gap-4 md:gap-12 px-4 py-16 
-      bg-linear-to-b from-background to-cyan-800 scroll-mt-20"
+      bg-linear-to-b from-background to-cyan-800"
       ref={sectionRef}
       id="about"
     >

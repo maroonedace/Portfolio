@@ -9,7 +9,7 @@ const Header: FC = () => {
 
   return (
     <header className="fixed w-full z-40 bg-background">
-      <nav className="flex p-4 items-center justify-between md:justify-normal w-full">
+      <nav className="flex h-header px-4 items-center justify-between md:justify-normal w-full">
         <a
           href="#home"
           className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"

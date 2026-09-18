@@ -13,11 +13,13 @@
   --color-foreground: #f5f5f5;
   --font-heading: "Urbanist", sans-serif;
   --font-paragraph: "Urbanist", sans-serif;
+  --spacing-header: 5rem;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--spacing-header);
   }
 
   body {
