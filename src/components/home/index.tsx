@@ -13,7 +13,7 @@ const HomeSection: FC = () => {
   return (
     <section
       ref={ref}
-      className="min-h-lvh bg-[url(/images/hero.jpg)] bg-cover relative"
+      className="min-h-lvh portrait:bg-[url(/images/mobile-hero.webp)] landscape:bg-[url(/images/hero.webp)] bg-cover bg-center relative"
       id="home"
     >
       <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center [@media(max-height:700px)]:py-36">
