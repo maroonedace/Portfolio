@@ -1,4 +1,6 @@
-export const coreSkills = [
+import type { SkillName } from "../../constants/skills";
+
+export const coreSkills: SkillName[] = [
   "TypeScript",
   "React",
   "Next.js",

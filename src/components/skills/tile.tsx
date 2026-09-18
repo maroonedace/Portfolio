@@ -1,24 +1,16 @@
 import { type FC } from "react";
-import { motion } from "motion/react";
-import useSkills from "../../services/useSkills";
+import { skillLogos, type SkillName } from "../../constants/skills";
 
 interface SkillProps {
-  name: string;
+  name: SkillName;
 }
 
 const SkillTile: FC<SkillProps> = ({ name }) => {
-  const { skills } = useSkills();
-  const skill = skills?.find((skill) => skill.name === name);
   return (
-    skill && (
-      <motion.div
-        className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 select-none"
-        key={skill.name}
-      >
-        <img className="h-6 w-6" src={skill.logo} alt={skill.name} />
-        <span className="text-background font-medium">{skill.name}</span>
-      </motion.div>
-    )
+    <div className="bg-foreground py-2 px-4 rounded-xl flex items-center justify-center gap-2 cursor-default select-none">
+      <img className="h-6 w-6" src={skillLogos[name]} alt="" />
+      <span className="text-background font-medium">{name}</span>
+    </div>
   );
 };
 

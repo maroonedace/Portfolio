@@ -18,8 +18,11 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: var(--spacing-header);
+
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

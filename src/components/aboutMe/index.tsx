@@ -3,11 +3,9 @@ import { certificates, coreSkills } from "./constants";
 import CertificateItem from "./certificate";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
-import useSkills from "../../services/useSkills";
+import SkillTile from "../skills/tile";
 
 const AboutMeSection: FC = () => {
-  const { skills } = useSkills();
-
   const sectionRef = useRef(null);
   const stackRef = useRef(null);
   const certificateRef = useRef(null);
@@ -18,10 +16,6 @@ const AboutMeSection: FC = () => {
     once: true,
     amount: 0.05,
   });
-
-  const coreSkillsData = coreSkills
-    .map((skillName) => skills?.find((skill) => skill.name === skillName))
-    .filter(Boolean);
 
   return (
     <section
@@ -71,24 +65,14 @@ const AboutMeSection: FC = () => {
             className="flex flex-wrap gap-4 items-center justify-center"
             ref={stackRef}
           >
-            {coreSkillsData.map((skill, index) => (
+            {coreSkills.map((name, index) => (
               <motion.div
-                key={skill?.name}
+                key={name}
                 initial="hidden"
                 animate={isStackInView ? "visible" : "hidden"}
                 variants={fadeUp(3 + index)}
               >
-                <div className="flex items-center justify-center gap-2 bg-foreground py-2 px-4 rounded-xl cursor-default select-none">
-                  <img
-                    className="h-6 w-6"
-                    src={skill?.logo}
-                    alt={`${skill?.name} logo`}
-                    aria-hidden="true"
-                  />
-                  <span className="text-background font-medium">
-                    {skill?.name}
-                  </span>
-                </div>
+                <SkillTile name={name} />
               </motion.div>
             ))}
           </div>

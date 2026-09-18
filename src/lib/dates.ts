@@ -4,7 +4,10 @@ const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone: "UTC",
 });
 
+export function formatMonthYear(date: Date): string {
+    return formatter.format(date);
+}
 
-export function formatMonthYear(date: string | Date): string {
-    return formatter.format(typeof date === "string" ? new Date(date) : date);
+export function toIsoMonth(date: Date): string {
+    return date.toISOString().slice(0, 7);
 }

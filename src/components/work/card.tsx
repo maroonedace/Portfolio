@@ -1,10 +1,10 @@
 import { motion, useInView } from "motion/react";
 import { useRef, type FC } from "react";
-import type { Work } from "./model";
 import { fadeUp } from "../../utils";
+import { type Work } from "./constants";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import SkillTile from "../skills/tile";
-import { formatMonthYear } from "../../lib/dates";
+import { formatMonthYear, toIsoMonth } from "../../lib/dates";
 
 interface WorkCardProps {
   work: Work;
@@ -17,8 +17,6 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
     amount: 0.05,
   });
 
-  const startDate = formatMonthYear(work.startDate);
-  const endDate = work.endDate ? formatMonthYear(work.endDate) : "Present";
   return (
     <motion.div
       className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8"
@@ -42,13 +40,23 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
           <div className="flex flex-col">
             <span className="text-2xl font-semibold">{work.title}</span>
             <span className="text-xl font-medium">{work.name}</span>
-            <time className="text-base italic mt-1" dateTime={work.startDate}>
-              {startDate} - {endDate}
-            </time>
+            <span className="text-base italic mt-1">
+              <time dateTime={toIsoMonth(work.startDate)}>
+                {formatMonthYear(work.startDate)}
+              </time>
+              {" - "}
+              {work.endDate ? (
+                <time dateTime={toIsoMonth(work.endDate)}>
+                  {formatMonthYear(work.endDate)}
+                </time>
+              ) : (
+                "Present"
+              )}
+            </span>
           </div>
         </div>
         <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-4">
-          {work.skillNames.map((name) => (
+          {work.skills.map((name) => (
             <SkillTile name={name} key={`${work.name}-${name}`} />
           ))}
         </div>
@@ -64,22 +72,24 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center md:justify-start mt-2">
-          <motion.a
-            href={work.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex={0}
-            aria-label={`Visit ${work.name} website (opens in new tab)`}
-            className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4 
-                          font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-lg">Visit Website</span>
-            <ArrowUpRightIcon size={20} aria-hidden="true" weight="fill" />
-          </motion.a>
-        </div>
+        {work.websiteUrl && (
+          <div className="flex justify-center md:justify-start mt-2">
+            <motion.a
+              href={work.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={0}
+              aria-label={`Visit ${work.name} website (opens in new tab)`}
+              className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
+                            font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-lg">Visit Website</span>
+              <ArrowUpRightIcon size={20} aria-hidden="true" weight="fill" />
+            </motion.a>
+          </div>
+        )}
       </div>
     </motion.div>
   );

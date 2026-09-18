@@ -2,11 +2,13 @@ import { useRef, type FC } from "react";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
 import WorkCard from "./card";
-import useWorks from "../../services/useWorks";
+import { works } from "./constants";
 
+const sortedWorks = [...works].sort(
+  (a, b) => b.startDate.getTime() - a.startDate.getTime()
+);
 
 const WorkSection: FC = () => {
-  const { works } = useWorks();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -24,15 +26,13 @@ const WorkSection: FC = () => {
         >
           Professional Experience
         </motion.h2>
-        {works && (
-          <div className="px-4 md:px-12">
-            <div className="relative border-l-2 border-foreground space-y-20">
-              {works.map((work) => {
-                return <WorkCard work={work} key={work.name} />;
-              })}
-            </div>
+        <div className="px-4 md:px-12">
+          <div className="relative border-l-2 border-foreground space-y-20">
+            {sortedWorks.map((work) => {
+              return <WorkCard work={work} key={work.name} />;
+            })}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

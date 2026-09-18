@@ -1,11 +1,10 @@
 import { useRef, type FC } from "react";
 import { motion, useInView } from "motion/react";
-import useProjects from "../../services/useProjects";
 import { fadeUp } from "../../utils";
 import ProjectCard from "./card";
+import { projects } from "./constants";
 
 const ProjectSection: FC = () => {
-  const { projects } = useProjects();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -23,13 +22,11 @@ const ProjectSection: FC = () => {
       >
         Featured Projects
       </motion.h2>
-      {projects && (
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        {projects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
+      </div>
     </section>
   );
 };
