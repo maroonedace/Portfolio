@@ -13,10 +13,10 @@ const HomeSection: FC = () => {
   return (
     <section
       ref={ref}
-      className="min-h-lvh portrait:bg-[url(/images/mobile-hero.webp)] landscape:bg-[url(/images/hero.webp)] bg-cover bg-center relative"
+      className="min-h-lvh hero-media relative"
       id="home"
     >
-      <div className="md:bg-black/20 min-h-lvh w-full flex items-center justify-center [@media(max-height:700px)]:py-36">
+      <div className="hero-scrim min-h-lvh w-full flex items-center justify-center [@media(max-height:700px)]:py-36">
         <div className="flex flex-col items-center justify-center text-center gap-12 md:gap-16 pt-20 px-4">
           <div className="flex flex-col gap-8">
             <motion.h1 initial="hidden" animate={isInView ? "visible" : "hidden"}  variants={fadeUp(0)}>

@@ -21,7 +21,7 @@
   }
 
   body {
-    @apply bg-cyan-800 text-foreground font-paragraph;
+    @apply bg-background text-foreground font-paragraph;
     line-height: 1.5;
   }
 
@@ -48,5 +48,46 @@
 
   h4 {
     @apply text-lg md:text-2xl;
+  }
+}
+
+@layer components {
+  .hero-scrim {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.30) 0%,
+    rgb(0 0 0 / 0.45) 35%,
+    rgb(0 0 0 / 0.45) 65%,
+    rgb(0 0 0 / 0.10) 100%
+  );
+}
+
+  .hero-media {
+    background-color: #928e84;
+    background-image: url("/images/hero.webp"),
+      linear-gradient(
+        to bottom,
+        #989ea8 10%,
+        #bfbdb6 30%,
+        #a09b8b 50%,
+        #928e84 70%,
+        #484a4b 90%
+      );
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (orientation: portrait) {
+    .hero-media {
+      background-image: url("/images/mobile-hero.webp"),
+        linear-gradient(
+          to bottom,
+          #a9acb4 10%,
+          #c4beae 30%,
+          #9f9a8c 50%,
+          #424447 70%,
+          #131416 90%
+        );
+    }
   }
 }
