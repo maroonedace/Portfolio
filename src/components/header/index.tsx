@@ -1,7 +1,9 @@
 import { useRef, useState, type FC } from "react";
 import { motion } from "motion/react";
 import { pageLinks, resumeHref } from "./constants";
-import { FileTextIcon, ListIcon, XIcon } from "@phosphor-icons/react";
+import { FileTextIcon } from "@phosphor-icons/react/FileText";
+import { ListIcon } from "@phosphor-icons/react/List";
+import { XIcon } from "@phosphor-icons/react/X";
 
 const Header: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

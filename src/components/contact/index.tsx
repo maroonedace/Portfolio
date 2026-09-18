@@ -1,8 +1,6 @@
-import {
-  EnvelopeIcon,
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-} from "@phosphor-icons/react";
+import { EnvelopeIcon } from "@phosphor-icons/react/Envelope";
+import { GithubLogoIcon } from "@phosphor-icons/react/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/LinkedinLogo";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { fadeUp } from "../../utils";

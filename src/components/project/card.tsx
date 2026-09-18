@@ -1,7 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef, type FC } from "react";
 import { fadeUp } from "../../utils";
-import { GitBranchIcon } from "@phosphor-icons/react";
+import { GitBranchIcon } from "@phosphor-icons/react/GitBranch";
 import SkillTile from "../skills/tile";
 import type { Project } from "./constants";
 

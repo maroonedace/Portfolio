@@ -1,5 +1,5 @@
 import { useRef, type FC } from "react";
-import { ArrowDownIcon } from "@phosphor-icons/react";
+import { ArrowDownIcon } from "@phosphor-icons/react/ArrowDown";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
 
