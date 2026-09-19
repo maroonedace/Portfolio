@@ -13,7 +13,7 @@ const ContactSection = () => {
   });
   return (
     <div
-      className="flex justify-center items-center px-4 py-16 bg-cyan-800"
+      className="flex justify-center items-center px-4 pt-16 pb-32 bg-linear-to-b from-cyan-800 to-background"
       ref={ref}
       id="contact"
     >
