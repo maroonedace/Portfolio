@@ -20,7 +20,7 @@ export const works: Work[] = [
     logoUrl: opLogo,
     startDate: new Date("2024-05-01"),
     endDate: null,
-    skills: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
+    skills: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Vercel", "Tailwind CSS"],
     descriptions: [
       "Architected and shipped a greenfield online learning platform using Next.js and Supabase, serving 80 to 120 students per quarter in a graduate level leadership course",
       "Built responsive, component-driven UI for authentication, search, and filtering using React Hooks",
@@ -35,7 +35,7 @@ export const works: Work[] = [
     logoUrl: nzeroLogo,
     startDate: new Date("2021-09-01"),
     endDate: new Date("2024-03-31"),
-    skills: ["React", "Rails", "PostgreSQL", "Docker"],
+    skills: ["React", "TypeScript", "Rails", "PostgreSQL", "Docker", "CircleCI"],
     descriptions: [
       "Built and maintained a scalable data management portal using React and TypeScript, serving 30+ enterprise clients tracking carbon emissions across multiple facilities",
       "Led UI redesign featuring interactive data visualizations, date range selectors, and streamlined filtering workflows, enabling users to reference reports directly within the platform",

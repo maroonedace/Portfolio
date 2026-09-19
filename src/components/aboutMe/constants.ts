@@ -3,13 +3,14 @@ import type { SkillName } from "../../constants/skills";
 export const coreSkills: SkillName[] = [
   "TypeScript",
   "React",
+  "Tailwind CSS",
   "Next.js",
+  "NestJS",
   "Node.js",
   "AWS",
   "PostgreSQL",
-  "Cloudflare",
   "Docker",
-  "CircleCI",
+  "GitHub Actions",
 ];
 
 // A certificate shows its own badge when it has one, otherwise the issuer's logo

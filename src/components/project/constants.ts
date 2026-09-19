@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     name: "Castaway",
     logoUrl: castawayLogo,
-    skills: ["NestJS", "PostgreSQL", "AWS", "Docker", "Cloudflare"],
+    skills: ["NestJS", "PostgreSQL", "Prisma", "React Native", "AWS", "Docker", "Cloudflare"],
     description:
       "A mobile music streaming app, similar to Spotify, where users can browse, play, and manage their own audio library.",
     githubUrl: "https://github.com/castaway-ace",
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     name: "Criwin",
     logoUrl: criwinLogo,
-    skills: ["Python", "PostgreSQL", "MinIO", "Docker"],
+    skills: ["Python", "PostgreSQL", "AWS", "Docker", "FastAPI"],
     description:
       "A Discord bot that lets users download short form videos and play audio on demand from platforms like YouTube, TikTok, Instagram, and Reddit.",
     githubUrl: "https://github.com/maroonedace/CriWin",
