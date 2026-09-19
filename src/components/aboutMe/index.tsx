@@ -4,6 +4,7 @@ import CertificateItem from "./certificate";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
 import SkillTile from "../skills/tile";
+import headshot from "../../assets/images/headshot.webp";
 
 const AboutMeSection: FC = () => {
   const sectionRef = useRef(null);
@@ -25,7 +26,7 @@ const AboutMeSection: FC = () => {
       id="about"
     >
       <motion.img
-        src="/src/assets/images/headshot.jpg"
+        src={headshot}
         alt="Anthony Ostia headshot"
         className="rounded-lg w-72 h-96"
         initial="hidden"

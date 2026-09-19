@@ -1,4 +1,6 @@
 import type { SkillName } from "../../constants/skills";
+import opLogo from "../../assets/images/work/op.svg";
+import nzeroLogo from "../../assets/images/work/nzero.svg";
 
 export interface Work {
   name: string;
@@ -15,7 +17,7 @@ export const works: Work[] = [
   {
     name: "Oceanside Perspective",
     title: "Senior Software Engineer",
-    logoUrl: "src/assets/images/work/opLogo.jpeg",
+    logoUrl: opLogo,
     startDate: new Date("2024-05-01"),
     endDate: null,
     skills: ["Next.js", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
@@ -30,7 +32,7 @@ export const works: Work[] = [
   {
     name: "NZero",
     title: "Software Engineer II",
-    logoUrl: "src/assets/images/work/nZero.svg",
+    logoUrl: nzeroLogo,
     startDate: new Date("2021-09-01"),
     endDate: new Date("2024-03-31"),
     skills: ["React", "Rails", "PostgreSQL", "Docker"],

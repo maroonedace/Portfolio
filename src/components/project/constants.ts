@@ -1,4 +1,6 @@
 import type { SkillName } from "../../constants/skills";
+import castawayLogo from "../../assets/images/projects/castaway.svg";
+import criwinLogo from "../../assets/images/projects/criwin.svg";
 
 export interface Project {
   name: string;
@@ -11,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "Castaway",
-    logoUrl: "/src/assets/images/projects/castaway.png",
+    logoUrl: castawayLogo,
     skills: ["NestJS", "PostgreSQL", "AWS", "Docker", "Cloudflare"],
     description:
       "A mobile music streaming app, similar to Spotify, where users can browse, play, and manage their own audio library.",
@@ -19,7 +21,7 @@ export const projects: Project[] = [
   },
   {
     name: "Criwin",
-    logoUrl: "/src/assets/images/projects/criwin.png",
+    logoUrl: criwinLogo,
     skills: ["Python", "PostgreSQL", "MinIO", "Docker"],
     description:
       "A Discord bot that lets users download short form videos and play audio on demand from platforms like YouTube, TikTok, Instagram, and Reddit.",
