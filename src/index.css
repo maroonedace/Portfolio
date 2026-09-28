@@ -16,6 +16,9 @@
   --spacing-header: 5rem;
 }
 
+@custom-variant short (@media (32rem < height <= 40rem));
+@custom-variant shorter (@media (height <= 32rem));
+
 @layer base {
   html {
     scroll-padding-top: var(--spacing-header);
