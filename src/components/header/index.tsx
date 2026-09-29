@@ -20,19 +20,20 @@ const Header: FC = () => {
           <img src="/logo.svg" width={48} height={48} alt="" />
         </a>
 
-        <div className="hidden md:flex items-center gap-2">
+        <ul role="list" className="hidden md:flex items-center gap-2">
           {pageLinks.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              tabIndex={0}
-              className="font-medium px-4 py-2 rounded-lg hover:underline underline-offset-4 hover:text-foreground/70 focus:outline-none 
-              focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-            >
-              {item.label}
-            </a>
+            <li key={item.href} className="flex">
+              <a
+                href={item.href}
+                tabIndex={0}
+                className="font-medium px-4 py-2 rounded-lg hover:underline underline-offset-4 hover:text-foreground/70 focus:outline-none
+                focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              >
+                {item.label}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <motion.a
           href={resumeHref}
@@ -83,16 +84,19 @@ const Header: FC = () => {
             </h2>
 
             <div className="flex flex-col items-center gap-6 p-6">
-              {pageLinks.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsModalOpen(false)}
-                  className="text-xl font-medium text-foreground"
-                >
-                  {item.label}
-                </a>
-              ))}
+              <ul role="list" className="flex flex-col items-center gap-6">
+                {pageLinks.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      onClick={() => setIsModalOpen(false)}
+                      className="text-xl font-medium text-foreground"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
               <motion.a
                 href={resumeHref}

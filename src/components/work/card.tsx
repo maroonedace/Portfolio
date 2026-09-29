@@ -18,13 +18,12 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
   });
 
   return (
-    <motion.div
+    <motion.li
       className="flex flex-col md:flex-row gap-4 md:gap-8 ml-8"
       initial="hidden"
       ref={ref}
       animate={isInView ? "visible" : "hidden"}
       variants={fadeUp(0)}
-      key={work.name}
     >
       <div className="md:w-1/2 relative">
         <span
@@ -34,13 +33,16 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
         <div className="flex flex-col items-center md:items-start md:flex-row text-center md:text-start gap-4">
           <img
             src={work.logoUrl}
-            alt={`${work.name} logo`}
+            alt=""
             className="w-24 h-24 rounded-lg bg-foreground p-2"
           />
           <div className="flex flex-col">
-            <span className="text-2xl font-semibold">{work.title}</span>
-            <span className="text-xl font-medium">{work.name}</span>
-            <span className="text-base italic mt-1">
+            <h3 className="flex flex-col tracking-normal">
+              <span className="text-2xl">{work.title}</span>
+              <span className="sr-only"> at </span>
+              <span className="text-xl font-medium">{work.name}</span>
+            </h3>
+            <p className="text-base italic mt-1">
               <time dateTime={toIsoMonth(work.startDate)}>
                 {formatMonthYear(work.startDate)}
               </time>
@@ -52,14 +54,19 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
               ) : (
                 "Present"
               )}
-            </span>
+            </p>
           </div>
         </div>
-        <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-4">
+        <ul
+          role="list"
+          className="mt-4 flex flex-wrap justify-center md:justify-start gap-4"
+        >
           {work.skills.map((name) => (
-            <SkillTile name={name} key={`${work.name}-${name}`} />
+            <li key={`${work.name}-${name}`}>
+              <SkillTile name={name} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
       <div className="mt-4 md:mt-0 md:w-1/2 flex flex-col gap-4">
         <ul className="list-disc pl-5 space-y-2">
@@ -91,7 +98,7 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
           </div>
         )}
       </div>
-    </motion.div>
+    </motion.li>
   );
 };
 

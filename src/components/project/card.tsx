@@ -19,7 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   });
 
   return (
-    <motion.div
+    <motion.li
       ref={ref}
       className="rounded-xl p-6 lg:p-8 bg-background flex flex-col md:flex-row items-center gap-6 lg:gap-10"
       initial="hidden"
@@ -34,15 +34,20 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           <img
             src={project.logoUrl}
             className="w-14 h-14 rounded-xl object-cover border-2 border-foreground"
-            alt={`${project.name} logo`}
+            alt=""
           />
           <h3>{project.name}</h3>
         </div>
-        <div className="flex flex-wrap justify-center md:justify-start gap-2">
+        <ul
+          role="list"
+          className="flex flex-wrap justify-center md:justify-start gap-2"
+        >
           {project.skills.map((skill) => (
-            <SkillTile key={`${project.name}-${skill}`} name={skill} />
+            <li key={`${project.name}-${skill}`}>
+              <SkillTile name={skill} />
+            </li>
           ))}
-        </div>
+        </ul>
         <p className="text-lg leading-relaxed text-center md:text-left">
           {project.description}
         </p>
@@ -75,7 +80,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           </div>
         )}
       </div>
-    </motion.div>
+    </motion.li>
   );
 };
 

@@ -12,8 +12,13 @@ const ProjectSection: FC = () => {
   });
 
   return (
-    <section className="px-4 py-8 bg-cyan-800" id="projects">
+    <section
+      className="px-4 py-8 bg-cyan-800"
+      id="projects"
+      aria-labelledby="projects-title"
+    >
       <motion.h2
+        id="projects-title"
         className="mb-12 text-center"
         initial="hidden"
         ref={ref}
@@ -22,11 +27,11 @@ const ProjectSection: FC = () => {
       >
         Featured Projects
       </motion.h2>
-      <div className="mx-auto flex max-w-5xl flex-col gap-8">
+      <ul role="list" className="mx-auto flex max-w-5xl flex-col gap-8">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

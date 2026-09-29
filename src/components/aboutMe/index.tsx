@@ -24,6 +24,7 @@ const AboutMeSection: FC = () => {
       bg-linear-to-b from-background to-cyan-800"
       ref={sectionRef}
       id="about"
+      aria-labelledby="about-title"
     >
       <motion.img
         src={headshot}
@@ -36,6 +37,7 @@ const AboutMeSection: FC = () => {
       <div className="flex flex-col gap-8 max-w-4xl">
         <div className="flex flex-col items-center justify-center">
           <motion.h2
+            id="about-title"
             className="mb-4"
             initial="hidden"
             animate={isSectionInView ? "visible" : "hidden"}
@@ -62,21 +64,22 @@ const AboutMeSection: FC = () => {
           >
             Core Stack
           </motion.h3>
-          <div
+          <ul
+            role="list"
             className="flex flex-wrap gap-4 items-center justify-center"
             ref={stackRef}
           >
             {coreSkills.map((name, index) => (
-              <motion.div
+              <motion.li
                 key={name}
                 initial="hidden"
                 animate={isStackInView ? "visible" : "hidden"}
                 variants={fadeUp(3 + index)}
               >
                 <SkillTile name={name} />
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </div>
         <div
           className="flex flex-col items-center justify-center"
@@ -89,21 +92,22 @@ const AboutMeSection: FC = () => {
           >
             Certificates
           </motion.h3>
-          <div
+          <ul
+            role="list"
             className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-8 items-start justify-center"
             ref={certificateRef}
           >
             {certificates.map((certificate, index) => (
-              <motion.div
+              <motion.li
                 key={certificate.url}
                 initial="hidden"
                 animate={isCertificateInView ? "visible" : "hidden"}
                 variants={fadeUp(4 + index)}
               >
                 <CertificateItem certificate={certificate} />
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

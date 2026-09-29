@@ -11,11 +11,13 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <HomeSection />
-      <AboutMeSection />
-      <WorkSection />
-      <ProjectSection />
-      <ContactSection />
+      <main>
+        <HomeSection />
+        <AboutMeSection />
+        <WorkSection />
+        <ProjectSection />
+        <ContactSection />
+      </main>
       <Footer />
     </Fragment>
   );
