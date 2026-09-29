@@ -78,7 +78,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
     >
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex flex-col gap-1 flex-1">
-          <label htmlFor="contact-name" className="text-sm font-medium">
+          <label htmlFor="contact-name" className="text-base font-medium">
             Name
           </label>
           <input
@@ -93,7 +93,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
           <FieldError id="contact-name-error" message={errors.name?.message} />
         </div>
         <div className="flex flex-col gap-1 flex-1">
-          <label htmlFor="contact-email" className="text-sm font-medium">
+          <label htmlFor="contact-email" className="text-base font-medium">
             Email
           </label>
           <input
@@ -112,7 +112,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        <label htmlFor="contact-message" className="text-sm font-medium">
+        <label htmlFor="contact-message" className="text-base font-medium">
           Message
         </label>
         <textarea
