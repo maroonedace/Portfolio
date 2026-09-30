@@ -1,27 +1,43 @@
-// Icon sets are pinned so upstream renames can't break logos on the deployed site
-const devicon = (path: string) =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/${path}`;
+import aws from "../assets/images/skills/aws.svg";
+import circleci from "../assets/images/skills/circleci.svg";
+import cloudflare from "../assets/images/skills/cloudflare.svg";
+import docker from "../assets/images/skills/docker.svg";
+import fastapi from "../assets/images/skills/fastapi.svg";
+import githubActions from "../assets/images/skills/githubActions.svg";
+import nestjs from "../assets/images/skills/nestjs.svg";
+import nextjs from "../assets/images/skills/nextjs.svg";
+import nodejs from "../assets/images/skills/nodejs.svg";
+import prisma from "../assets/images/skills/prisma.svg";
+import postgresql from "../assets/images/skills/postgresql.svg";
+import python from "../assets/images/skills/python.svg";
+import rails from "../assets/images/skills/rails.svg";
+import react from "../assets/images/skills/react.svg";
+import reactNative from "../assets/images/skills/reactNative.svg";
+import supabase from "../assets/images/skills/supabase.svg";
+import tailwindcss from "../assets/images/skills/tailwindcss.svg";
+import typescript from "../assets/images/skills/typescript.svg";
+import vercel from "../assets/images/skills/vercel.svg";
 
 export const skillLogos = {
-  AWS: devicon("amazonwebservices/amazonwebservices-original-wordmark.svg"),
-  CircleCI: devicon("circleci/circleci-plain.svg"),
-  Cloudflare: devicon("cloudflare/cloudflare-original.svg"),
-  Docker: devicon("docker/docker-original.svg"),
-  FastAPI: devicon("fastapi/fastapi-original.svg"),
-  "GitHub Actions": devicon("githubactions/githubactions-original.svg"),
-  NestJS: devicon("nestjs/nestjs-original.svg"),
-  "Next.js": devicon("nextjs/nextjs-original.svg"),
-  "Node.js": devicon("nodejs/nodejs-original.svg"),
-  Prisma: devicon("prisma/prisma-original.svg"),
-  PostgreSQL: devicon("postgresql/postgresql-original.svg"),
-  Python: devicon("python/python-original.svg"),
-  Rails: devicon("rails/rails-plain.svg"),
-  React: devicon("react/react-original.svg"),
-  "React Native": devicon("reactnative/reactnative-original.svg"),
-  Supabase: devicon("supabase/supabase-original.svg"),
-  "Tailwind CSS": devicon("tailwindcss/tailwindcss-original.svg"),
-  TypeScript: devicon("typescript/typescript-original.svg"),
-  Vercel: devicon("vercel/vercel-original.svg"),
+  AWS: aws,
+  CircleCI: circleci,
+  Cloudflare: cloudflare,
+  Docker: docker,
+  FastAPI: fastapi,
+  "GitHub Actions": githubActions,
+  NestJS: nestjs,
+  "Next.js": nextjs,
+  "Node.js": nodejs,
+  Prisma: prisma,
+  PostgreSQL: postgresql,
+  Python: python,
+  Rails: rails,
+  React: react,
+  "React Native": reactNative,
+  Supabase: supabase,
+  "Tailwind CSS": tailwindcss,
+  TypeScript: typescript,
+  Vercel: vercel,
 } satisfies Record<string, string>;
 
 export type SkillName = keyof typeof skillLogos;
