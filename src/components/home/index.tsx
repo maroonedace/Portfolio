@@ -36,9 +36,8 @@ const HomeSection: FC = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <motion.a
               className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
-               focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background active:ring-0 active:ring-offset-0"
+               focus-ring"
               href="#work"
-              tabIndex={0}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp(2)}
@@ -49,9 +48,8 @@ const HomeSection: FC = () => {
             </motion.a>
             <motion.a
               className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
-               focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+               focus-ring"
               href="#contact"
-              tabIndex={0}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp(2)}
@@ -65,11 +63,9 @@ const HomeSection: FC = () => {
       </div>
 
       <motion.a
-        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus:outline-none focus:ring-2 focus:ring-foreground 
-        focus:ring-offset-2 focus:ring-offset-background"
+        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus-ring"
         href="#about"
         aria-label="Scroll to about section"
-        tabIndex={0}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"} 
         variants={fadeUp(3)}

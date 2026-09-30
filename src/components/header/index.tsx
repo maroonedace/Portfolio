@@ -1,22 +1,29 @@
-import { useRef, useState, type FC } from "react";
+import { useRef, useState, type FC, type MouseEvent } from "react";
 import { motion } from "motion/react";
 import { pageLinks, resumeHref } from "./constants";
 import { FileTextIcon } from "@phosphor-icons/react/FileText";
 import { ListIcon } from "@phosphor-icons/react/List";
 import { XIcon } from "@phosphor-icons/react/X";
+import NewTabHint from "../newTabHint";
 
 const Header: FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDialogElement>(null);
+
+  const openMenu = () => {
+    menuRef.current?.showModal();
+    setIsMenuOpen(true);
+  };
+  const closeMenu = () => menuRef.current?.close();
+
+  const closeOnBackdropClick = (event: MouseEvent<HTMLDialogElement>) => {
+    if (event.target === event.currentTarget) closeMenu();
+  };
 
   return (
     <header className="fixed w-full z-40 bg-background">
       <nav className="flex h-header px-4 items-center justify-between md:justify-normal w-full">
-        <a
-          href="#home"
-          className="focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background rounded mr-4"
-          aria-label="Home"
-        >
+        <a href="#home" className="rounded mr-4 focus-ring" aria-label="Home">
           <img src="/logo.svg" width={48} height={48} alt="" />
         </a>
 
@@ -25,9 +32,7 @@ const Header: FC = () => {
             <li key={item.href} className="flex">
               <a
                 href={item.href}
-                tabIndex={0}
-                className="font-medium px-4 py-2 rounded-lg hover:underline underline-offset-4 hover:text-foreground/70 focus:outline-none
-                focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                className="font-medium px-4 py-2 rounded-lg hover:underline underline-offset-4 hover:text-foreground/70 focus-ring"
               >
                 {item.label}
               </a>
@@ -39,83 +44,89 @@ const Header: FC = () => {
           href={resumeHref}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="View resume (opens in new tab)"
           className="hidden md:inline-flex ml-auto items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
-                    font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                    font-medium focus-ring"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           <FileTextIcon size={20} aria-hidden="true" weight="fill" />
-          <span>Resume</span>
+          <span>
+            Resume
+            <NewTabHint />
+          </span>
         </motion.a>
 
         <button
-          ref={menuButtonRef}
-          className={`md:hidden p-2 flex hover:text-foreground/60 ${
-            isModalOpen ? "invisible" : ""
+          type="button"
+          className={`md:hidden p-2 flex rounded-lg hover:text-foreground/60 focus-ring ${
+            isMenuOpen ? "opacity-0" : ""
           }`}
           aria-haspopup="dialog"
-          aria-expanded={isModalOpen}
+          aria-expanded={isMenuOpen}
+          aria-controls="navigation-menu"
           aria-label="Open navigation menu"
-          onClick={() => setIsModalOpen(true)}
+          onClick={openMenu}
         >
-          <ListIcon size={32} />
+          <ListIcon size={32} aria-hidden="true" />
         </button>
       </nav>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 h-screen flex items-center justify-center bg-background/60 backdrop-blur-sm">
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="navigation-menu-title"
-            className="bg-background px-12 py-6 rounded-2xl flex flex-col items-center"
+      <dialog
+        ref={menuRef}
+        id="navigation-menu"
+        aria-labelledby="navigation-menu-title"
+        className="m-auto bg-background text-foreground rounded-2xl backdrop:bg-background/60 backdrop:backdrop-blur-sm"
+        onClick={closeOnBackdropClick}
+        onClose={() => setIsMenuOpen(false)}
+      >
+        <div className="px-12 py-6 flex flex-col items-center">
+          <button
+            type="button"
+            onClick={closeMenu}
+            className="fixed top-4 right-4 p-2 rounded-lg focus-ring"
+            aria-label="Close navigation menu"
           >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 p-2"
-              aria-label="Close navigation menu"
+            <XIcon size={32} aria-hidden="true" />
+          </button>
+
+          <h2 id="navigation-menu-title" className="mb-4">
+            Navigation
+          </h2>
+
+          <div className="flex flex-col items-center gap-6 p-6">
+            <ul role="list" className="flex flex-col items-center gap-6">
+              {pageLinks.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="text-xl font-medium text-foreground px-2 rounded-lg focus-ring"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <motion.a
+              href={resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
+                        font-medium focus-ring"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <XIcon size={32} />
-            </button>
-
-            <h2 id="navigation-menu-title" className="mb-4">
-              Navigation
-            </h2>
-
-            <div className="flex flex-col items-center gap-6 p-6">
-              <ul role="list" className="flex flex-col items-center gap-6">
-                {pageLinks.map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      onClick={() => setIsModalOpen(false)}
-                      className="text-xl font-medium text-foreground"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              <motion.a
-                href={resumeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View resume (opens in new tab)"
-                onClick={() => setIsModalOpen(false)}
-                className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
-                          font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FileTextIcon size={20} aria-hidden="true" weight="fill" />
-                <span className="text-xl">Resume</span>
-              </motion.a>
-            </div>
+              <FileTextIcon size={20} aria-hidden="true" weight="fill" />
+              <span className="text-xl">
+                Resume
+                <NewTabHint />
+              </span>
+            </motion.a>
           </div>
         </div>
-      )}
+      </dialog>
     </header>
   );
 };

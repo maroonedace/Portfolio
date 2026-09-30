@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import { motion } from "motion/react";
 import type { Certificate } from "./constants";
+import NewTabHint from "../newTabHint";
 
 interface CertificateItemProps {
   certificate: Certificate;
@@ -14,9 +15,7 @@ const CertificateItem: FC<CertificateItemProps> = ({ certificate }) => {
       href={certificate.url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`View ${certificate.name} certificate from ${certificate.issuer} (opens in new tab)`}
-      className="flex flex-col items-center gap-2 w-44 text-center rounded-xl
-      focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+      className="flex flex-col items-center gap-2 w-44 text-center rounded-xl focus-ring"
       whileHover={{ y: -4, scale: 1.05 }}
     >
       <img
@@ -29,7 +28,10 @@ const CertificateItem: FC<CertificateItemProps> = ({ certificate }) => {
       <span className="text-lg font-semibold leading-tight">
         {certificate.name}
       </span>
-      <span>{certificate.issuer}</span>
+      <span>
+        {certificate.issuer}
+        <NewTabHint />
+      </span>
     </motion.a>
   );
 };

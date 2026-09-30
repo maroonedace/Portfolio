@@ -5,13 +5,15 @@ import WorkSection from "./components/work";
 import ProjectSection from "./components/project";
 import ContactSection from "./components/contact";
 import Footer from "./components/footer";
-import { Fragment } from "react";
+import SkipLink from "./components/skipLink";
+import { MotionConfig } from "motion/react";
 
 const App = () => {
   return (
-    <Fragment>
+    <MotionConfig reducedMotion="user">
+      <SkipLink />
       <Header />
-      <main>
+      <main id="main" tabIndex={-1} className="outline-hidden">
         <HomeSection />
         <AboutMeSection />
         <WorkSection />
@@ -19,7 +21,7 @@ const App = () => {
         <ContactSection />
       </main>
       <Footer />
-    </Fragment>
+    </MotionConfig>
   );
 };
 

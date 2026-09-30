@@ -19,9 +19,17 @@
 @custom-variant short (@media (32rem < height <= 40rem));
 @custom-variant shorter (@media (height <= 32rem));
 
+@utility focus-ring {
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
 @layer base {
   html {
     scroll-padding-top: var(--spacing-header);
+
+    &:has(dialog[open]) {
+      overflow: hidden;
+    }
 
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;

@@ -4,6 +4,7 @@ import { fadeUp } from "../../utils";
 import { type Work } from "./constants";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ArrowUpRight";
 import SkillTile from "../skills/tile";
+import NewTabHint from "../newTabHint";
 import { formatMonthYear, toIsoMonth } from "../../lib/dates";
 
 interface WorkCardProps {
@@ -85,14 +86,16 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
               href={work.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              tabIndex={0}
-              aria-label={`Visit ${work.name} website (opens in new tab)`}
               className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
-                            font-medium focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+                            font-medium focus-ring"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-lg">Visit Website</span>
+              <span className="text-lg">
+                Visit Website
+                <span className="sr-only"> for {work.name}</span>
+                <NewTabHint />
+              </span>
               <ArrowUpRightIcon size={20} aria-hidden="true" weight="fill" />
             </motion.a>
           </div>

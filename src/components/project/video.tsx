@@ -67,7 +67,7 @@ const DemoVideo: FC<DemoVideoProps> = ({ src, label }) => {
         onClick={togglePlayback}
         aria-label={`${isUserPaused ? "Play" : "Pause"} ${label} demo`}
         className="absolute bottom-4 right-4 rounded-full bg-black/60 p-2 text-foreground backdrop-blur-sm cursor-pointer
-        hover:bg-black/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
+        hover:bg-black/80 focus-ring"
       >
         {isUserPaused ? (
           <PlayIcon className="size-4" weight="fill" aria-hidden="true" />

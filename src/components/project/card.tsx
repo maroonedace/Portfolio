@@ -5,6 +5,7 @@ import { GitBranchIcon } from "@phosphor-icons/react/GitBranch";
 import SkillTile from "../skills/tile";
 import DemoVideo from "./video";
 import PhoneFrame from "./phone";
+import NewTabHint from "../newTabHint";
 import type { Project } from "./constants";
 
 interface ProjectCardProps {
@@ -67,15 +68,16 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${project.name} code on GitHub (opens in new tab)`}
-              tabIndex={0}
-              className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-foreground
-                            focus:ring-offset-2 focus:ring-offset-background"
+              className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-xl focus-ring"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <GitBranchIcon size={20} weight="fill" aria-hidden="true" />
-              <span className="text-lg font-medium">View Code</span>
+              <span className="text-lg font-medium">
+                View Code
+                <span className="sr-only"> for {project.name} on GitHub</span>
+                <NewTabHint />
+              </span>
             </motion.a>
           </div>
         )}

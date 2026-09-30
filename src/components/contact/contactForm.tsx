@@ -19,8 +19,7 @@ const subscribeToWidth = (onChange: () => void) => {
 };
 const getIsWide = () => wideQuery.matches;
 
-const inputClass = `bg-foreground/5 border border-foreground/20 aria-invalid:border-red-400 rounded-xl px-4 py-2
- focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background`;
+const inputClass = `bg-foreground/5 border border-foreground/20 aria-invalid:border-red-400 rounded-xl px-4 py-2 focus-ring`;
 
 interface ContactFormProps {
   loadTurnstile: boolean;
@@ -85,6 +84,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
             id="contact-name"
             type="text"
             autoComplete="name"
+            required
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "contact-name-error" : undefined}
             className={inputClass}
@@ -100,6 +100,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
             id="contact-email"
             type="email"
             autoComplete="email"
+            required
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={inputClass}
@@ -118,6 +119,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
         <textarea
           id="contact-message"
           rows={5}
+          required
           aria-invalid={!!errors.message}
           aria-describedby={
             errors.message ? "contact-message-error" : undefined
@@ -153,8 +155,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
       <motion.button
         type="submit"
         disabled={isSubmitting}
-        className="bg-foreground text-background focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background
-         px-4 py-2 rounded-xl flex items-center justify-center gap-4 self-center disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-foreground text-background focus-ring px-4 py-2 rounded-xl flex items-center justify-center gap-4 self-center disabled:opacity-50 disabled:cursor-not-allowed"
         whileHover={isSubmitting ? undefined : { scale: 1.05 }}
         whileTap={isSubmitting ? undefined : { scale: 0.95 }}
       >
