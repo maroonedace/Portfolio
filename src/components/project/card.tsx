@@ -4,7 +4,6 @@ import { fadeUp } from "../../utils";
 import { GitBranchIcon } from "@phosphor-icons/react/GitBranch";
 import SkillTile from "../skills/tile";
 import DemoVideo from "./video";
-import PhoneFrame from "./phone";
 import NewTabHint from "../newTabHint";
 import type { Project } from "./constants";
 
@@ -27,9 +26,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       animate={isInView ? "visible" : "hidden"}
       variants={fadeUp(0)}
     >
-      <PhoneFrame>
-        <DemoVideo src={project.video} label={project.name} />
-      </PhoneFrame>
+      <DemoVideo src={project.video} label={project.name} />
       <div className="flex flex-col gap-6 flex-1 min-w-0">
         <div className="flex items-center justify-center md:justify-start gap-4">
           <img

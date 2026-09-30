@@ -51,7 +51,8 @@ const DemoVideo: FC<DemoVideoProps> = ({ src, label }) => {
   };
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative shrink-0 isolate overflow-hidden rounded-3xl bg-black shadow-2xl ring-1 ring-white/10
+      w-60 h-130 short:w-48 short:h-104 shorter:w-30 shorter:h-65">
       <video
         ref={videoRef}
         src={isNear ? src : undefined}
@@ -60,7 +61,7 @@ const DemoVideo: FC<DemoVideoProps> = ({ src, label }) => {
         muted
         loop
         playsInline
-        className="h-full w-full object-cover"
+        className="h-full w-full rounded-3xl object-cover"
       />
       <button
         type="button"
