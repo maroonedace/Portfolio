@@ -74,7 +74,7 @@ const AboutMeSection: FC = () => {
                 key={name}
                 initial="hidden"
                 animate={isStackInView ? "visible" : "hidden"}
-                variants={fadeUp(3 + index)}
+                variants={fadeUp(index)}
               >
                 <SkillTile name={name} />
               </motion.li>
@@ -88,7 +88,7 @@ const AboutMeSection: FC = () => {
             className="mb-4 text-3xl md:text-5xl"
             initial="hidden"
             animate={isCertificateInView ? "visible" : "hidden"}
-            variants={fadeUp(4)}
+            variants={fadeUp(0)}
           >
             Certificates
           </motion.h3>
@@ -102,7 +102,7 @@ const AboutMeSection: FC = () => {
                 key={certificate.url}
                 initial="hidden"
                 animate={isCertificateInView ? "visible" : "hidden"}
-                variants={fadeUp(4 + index)}
+                variants={fadeUp(index)}
               >
                 <CertificateItem certificate={certificate} />
               </motion.li>
