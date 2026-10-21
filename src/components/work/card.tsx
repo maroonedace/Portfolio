@@ -41,7 +41,23 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
             <h3 className="flex flex-col tracking-normal">
               <span className="text-2xl">{work.title}</span>
               <span className="sr-only"> at </span>
-              <span className="text-xl font-medium">{work.name}</span>
+              {work.websiteUrl ? (
+                <a
+                  href={work.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-center md:self-start inline-flex items-center gap-1 text-xl font-medium hover:underline
+                            underline-offset-4 hover:text-foreground/70 rounded focus-ring"
+                >
+                  <span>
+                    {work.name}
+                    <NewTabHint />
+                  </span>
+                  <ArrowUpRightIcon size={18} aria-hidden="true" weight="fill" />
+                </a>
+              ) : (
+                <span className="text-xl font-medium">{work.name}</span>
+              )}
             </h3>
             <p className="text-base italic mt-1">
               <time dateTime={toIsoMonth(work.startDate)}>
@@ -80,26 +96,6 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
             </li>
           ))}
         </ul>
-        {work.websiteUrl && (
-          <div className="flex justify-center md:justify-start mt-2">
-            <motion.a
-              href={work.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-foreground text-background rounded-xl py-2 px-4
-                            font-medium focus-ring"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-lg">
-                Visit Website
-                <span className="sr-only"> for {work.name}</span>
-                <NewTabHint />
-              </span>
-              <ArrowUpRightIcon size={20} aria-hidden="true" weight="fill" />
-            </motion.a>
-          </div>
-        )}
       </div>
     </motion.li>
   );
