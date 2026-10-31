@@ -3,26 +3,16 @@ import { CalendarDotsIcon } from "@phosphor-icons/react/CalendarDots";
 import { XIcon } from "@phosphor-icons/react/X";
 import { motion } from "motion/react";
 import { useRef, useState, type MouseEvent } from "react";
+import CalendlyEmbed from "./calendlyEmbed";
 import { turnstileSiteKey } from "./constants";
 import ErrorMessage from "./errorMessage";
 import { requestMeetingLink } from "./requestMeetingLink";
 import { useTurnstileSize } from "./useTurnstileSize";
 
-// Calendly's inline-embed parameters. The colors only apply on paid Calendly plans.
-const toEmbedUrl = (link: string) => {
-  const url = new URL(link);
-  url.searchParams.set("embed_domain", window.location.hostname);
-  url.searchParams.set("embed_type", "Inline");
-  url.searchParams.set("hide_gdpr_banner", "1");
-  url.searchParams.set("background_color", "151515");
-  url.searchParams.set("text_color", "f5f5f5");
-  return url.href;
-};
-
 const ScheduleCall = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [embedUrl, setEmbedUrl] = useState<string | null>(null);
+  const [calendlyUrl, setCalendlyUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [turnstileKey, setTurnstileKey] = useState(0);
@@ -52,7 +42,7 @@ const ScheduleCall = () => {
     const result = await requestMeetingLink(token);
     setIsLoading(false);
     if (result.ok) {
-      setEmbedUrl(toEmbedUrl(result.url));
+      setCalendlyUrl(result.url);
       return;
     }
 
@@ -101,12 +91,8 @@ const ScheduleCall = () => {
           </div>
 
           {isOpen &&
-            (embedUrl ? (
-              <iframe
-                src={embedUrl}
-                title="Schedule a 15-minute call with Anthony on Calendly"
-                className="flex-1 w-full rounded-xl"
-              />
+            (calendlyUrl ? (
+              <CalendlyEmbed url={calendlyUrl} />
             ) : (
               <div className="flex flex-col flex-1 items-center justify-center gap-4 text-center">
                 <p className="text-foreground/70">
