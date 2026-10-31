@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { contactSchema, type ContactResponse } from "../shared/contact";
+import type { MeetingResponse } from "../shared/meeting";
 
 const TURNSTILE_VERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -8,17 +9,20 @@ const VERIFICATION_FAILED = "Verification failed. Please try again.";
 const VERIFICATION_UNAVAILABLE =
   "Verification is unavailable right now. Please try again later.";
 const SEND_FAILED = "Failed to send.";
+const SCHEDULING_UNAVAILABLE =
+  "Scheduling is unavailable right now. Please try again later.";
 
-const requestSchema = contactSchema.extend({
-  token: z
-    .string(VERIFICATION_FAILED)
-    .min(1, VERIFICATION_FAILED)
-    .max(2048, VERIFICATION_FAILED),
-});
+const tokenSchema = z
+  .string(VERIFICATION_FAILED)
+  .min(1, VERIFICATION_FAILED)
+  .max(2048, VERIFICATION_FAILED);
+
+const contactRequestSchema = contactSchema.extend({ token: tokenSchema });
+const meetingRequestSchema = z.strictObject({ token: tokenSchema });
 
 type Verification = "passed" | "rejected" | "unavailable";
 
-const respond = (body: ContactResponse, status = 200) =>
+const respond = (body: ContactResponse | MeetingResponse, status = 200) =>
   Response.json(body, { status });
 
 const readBody = async (request: Request): Promise<string | null> => {
@@ -96,7 +100,13 @@ const verifyTurnstile = async (
   }
 };
 
-const handleContact = async (request: Request, env: Env) => {
+// Parses the JSON body with `schema` and verifies its Turnstile token.
+// Returns the parsed fields, or the error response to send back.
+const readVerifiedRequest = async <T extends { token: string }>(
+  request: Request,
+  env: Env,
+  schema: z.ZodType<T>,
+): Promise<T | Response> => {
   if (!env.TURNSTILE_SECRET_KEY) {
     console.error(
       "TURNSTILE_SECRET_KEY is not set. Run `wrangler secret put TURNSTILE_SECRET_KEY`.",
@@ -110,15 +120,14 @@ const handleContact = async (request: Request, env: Env) => {
     return respond({ ok: false, error: "Request too large." }, 413);
   }
 
-  const result = requestSchema.safeParse(parseJson(text));
+  const result = schema.safeParse(parseJson(text));
   if (!result.success) {
     return respond({ ok: false, error: result.error.issues[0].message }, 400);
   }
-  const { name, email, message, token } = result.data;
 
   const ip = request.headers.get("CF-Connecting-IP") ?? "";
   const verification = await verifyTurnstile(
-    token,
+    result.data.token,
     env.TURNSTILE_SECRET_KEY,
     ip,
     env.TURNSTILE_HOSTNAME,
@@ -129,6 +138,14 @@ const handleContact = async (request: Request, env: Env) => {
   if (verification === "unavailable") {
     return respond({ ok: false, error: VERIFICATION_UNAVAILABLE }, 503);
   }
+
+  return result.data;
+};
+
+const handleContact = async (request: Request, env: Env) => {
+  const fields = await readVerifiedRequest(request, env, contactRequestSchema);
+  if (fields instanceof Response) return fields;
+  const { name, email, message } = fields;
 
   try {
     await env.EMAIL.send({
@@ -147,10 +164,32 @@ const handleContact = async (request: Request, env: Env) => {
   return respond({ ok: true });
 };
 
+const handleMeeting = async (request: Request, env: Env) => {
+  if (!env.CALENDLY_URL) {
+    console.error(
+      "CALENDLY_URL is not set. Run `wrangler secret put CALENDLY_URL`.",
+    );
+    return respond({ ok: false, error: SCHEDULING_UNAVAILABLE }, 500);
+  }
+
+  const fields = await readVerifiedRequest(request, env, meetingRequestSchema);
+  if (fields instanceof Response) return fields;
+
+  return respond({ ok: true, url: env.CALENDLY_URL });
+};
+
+const routes = new Map<
+  string,
+  (request: Request, env: Env) => Promise<Response>
+>([
+  ["/api/contact", handleContact],
+  ["/api/meeting", handleMeeting],
+]);
+
 export default {
   async fetch(request, env) {
-    const { pathname } = new URL(request.url);
-    if (pathname !== "/api/contact") {
+    const handler = routes.get(new URL(request.url).pathname);
+    if (!handler) {
       return new Response("Not found", { status: 404 });
     }
     if (request.method !== "POST") {
@@ -159,6 +198,6 @@ export default {
         headers: { Allow: "POST" },
       });
     }
-    return handleContact(request, env);
+    return handler(request, env);
   },
 } satisfies ExportedHandler<Env>;

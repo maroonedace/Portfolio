@@ -2,22 +2,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { EnvelopeIcon } from "@phosphor-icons/react/Envelope";
 import { motion } from "motion/react";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema, type ContactFields } from "../../../shared/contact";
 import { turnstileSiteKey } from "./constants";
 import ErrorMessage from "./errorMessage";
 import FieldError from "./fieldError";
 import { sendContactMessage } from "./sendContactMessage";
+import { useTurnstileSize } from "./useTurnstileSize";
 
 const turnstilePending = "Please wait for the spam check to finish.";
-
-const wideQuery = window.matchMedia("(min-width: 360px)");
-const subscribeToWidth = (onChange: () => void) => {
-  wideQuery.addEventListener("change", onChange);
-  return () => wideQuery.removeEventListener("change", onChange);
-};
-const getIsWide = () => wideQuery.matches;
 
 const inputClass = `bg-foreground/5 border border-foreground/20 aria-invalid:border-red-400 rounded-xl px-4 py-2 focus-ring`;
 
@@ -38,8 +32,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
     formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(contactSchema) });
 
-  const isWide = useSyncExternalStore(subscribeToWidth, getIsWide);
-  const turnstileSize = isWide ? "flexible" : "compact";
+  const turnstileSize = useTurnstileSize();
 
   const handleTurnstileSuccess = (newToken: string) => {
     setToken(newToken);
