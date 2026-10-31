@@ -10,6 +10,7 @@
   "routes": [{ "pattern": "anthonyostia.com", "custom_domain": true }],
   "observability": { "enabled": true },
   "vars": {
+    "CALENDLY_URL": "https://calendly.com/aostia815/quick-intro-call",
     "CONTACT_FROM": "contact@anthonyostia.com",
     "CONTACT_TO": "aostia815@gmail.com",
     "TURNSTILE_HOSTNAME": "anthonyostia.com"
