@@ -3,11 +3,11 @@ import { CalendarDotsIcon } from "@phosphor-icons/react/CalendarDots";
 import { XIcon } from "@phosphor-icons/react/X";
 import { motion } from "motion/react";
 import { useRef, useState, type MouseEvent } from "react";
-import CalendlyEmbed from "./calendlyEmbed";
-import { turnstileSiteKey } from "./constants";
-import ErrorMessage from "./errorMessage";
+import { turnstileSiteKey } from "../common/constants";
+import ErrorMessage from "../common/errorMessage";
+import { useTurnstileSize } from "../common/useTurnstileSize";
+import CalendlyEmbed from "./embed";
 import { requestMeetingLink } from "./requestMeetingLink";
-import { useTurnstileSize } from "./useTurnstileSize";
 
 const ScheduleCall = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);

@@ -1,11 +1,10 @@
 import { motion, useInView } from "motion/react";
 import { useRef, type FC } from "react";
-import { fadeUp } from "../../utils";
+import { fadeUp, formatMonthYear, toIsoMonth } from "../../utils";
 import { type Work } from "./constants";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ArrowUpRight";
 import SkillTile from "../skills/tile";
 import NewTabHint from "../newTabHint";
-import { formatMonthYear, toIsoMonth } from "../../lib/dates";
 
 interface WorkCardProps {
   work: Work;

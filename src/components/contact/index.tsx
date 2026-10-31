@@ -1,9 +1,9 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { fadeUp } from "../../utils";
-import ContactForm from "./contactForm";
-import ScheduleCall from "./scheduleCall";
-import SuccessMessage from "./successMessage";
+import ContactForm from "./form";
+import ScheduleCall from "./calendly";
+import SuccessMessage from "./form/successMessage";
 
 const ContactSection = () => {
   const ref = useRef(null);

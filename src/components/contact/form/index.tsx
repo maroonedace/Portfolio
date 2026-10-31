@@ -4,12 +4,12 @@ import { EnvelopeIcon } from "@phosphor-icons/react/Envelope";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { contactSchema, type ContactFields } from "../../../shared/contact";
-import { turnstileSiteKey } from "./constants";
-import ErrorMessage from "./errorMessage";
+import { contactSchema, type ContactFields } from "../../../../shared/contact";
+import { turnstileSiteKey } from "../common/constants";
+import ErrorMessage from "../common/errorMessage";
+import { useTurnstileSize } from "../common/useTurnstileSize";
 import FieldError from "./fieldError";
 import { sendContactMessage } from "./sendContactMessage";
-import { useTurnstileSize } from "./useTurnstileSize";
 
 const turnstilePending = "Please wait for the spam check to finish.";
 
