@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { motion } from "motion/react";
 import type { Certificate } from "./constants";
-import NewTabHint from "../newTabHint";
+import NewTabHint from "../common/newTabHint";
 
 interface CertificateItemProps {
   certificate: Certificate;

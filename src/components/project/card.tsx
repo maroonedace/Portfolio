@@ -2,9 +2,9 @@ import { motion, useInView } from "motion/react";
 import { useRef, type FC } from "react";
 import { fadeUp } from "../../utils";
 import { GitBranchIcon } from "@phosphor-icons/react/GitBranch";
-import SkillTile from "../skills/tile";
+import SkillTile from "../common/skillTile";
 import DemoVideo from "./video";
-import NewTabHint from "../newTabHint";
+import NewTabHint from "../common/newTabHint";
 import type { Project } from "./constants";
 
 interface ProjectCardProps {

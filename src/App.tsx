@@ -5,7 +5,7 @@ import WorkSection from "./components/work";
 import ProjectSection from "./components/project";
 import ContactSection from "./components/contact";
 import Footer from "./components/footer";
-import SkipLink from "./components/skipLink";
+import SkipLink from "./components/common/skipLink";
 import { MotionConfig } from "motion/react";
 
 const App = () => {

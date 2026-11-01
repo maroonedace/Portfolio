@@ -3,8 +3,8 @@ import { useRef, type FC } from "react";
 import { fadeUp, formatMonthYear, toIsoMonth } from "../../utils";
 import { type Work } from "./constants";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ArrowUpRight";
-import SkillTile from "../skills/tile";
-import NewTabHint from "../newTabHint";
+import SkillTile from "../common/skillTile";
+import NewTabHint from "../common/newTabHint";
 
 interface WorkCardProps {
   work: Work;

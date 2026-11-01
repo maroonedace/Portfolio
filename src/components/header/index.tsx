@@ -4,7 +4,7 @@ import { pageLinks, resumeHref } from "./constants";
 import { FileTextIcon } from "@phosphor-icons/react/FileText";
 import { ListIcon } from "@phosphor-icons/react/List";
 import { XIcon } from "@phosphor-icons/react/X";
-import NewTabHint from "../newTabHint";
+import NewTabHint from "../common/newTabHint";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

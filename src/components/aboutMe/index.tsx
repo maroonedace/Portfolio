@@ -3,7 +3,7 @@ import { certificates, coreSkills } from "./constants";
 import CertificateItem from "./certificate";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
-import SkillTile from "../skills/tile";
+import SkillTile from "../common/skillTile";
 import headshot from "../../assets/images/headshot.webp";
 
 const AboutMeSection: FC = () => {
