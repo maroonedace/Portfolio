@@ -4,7 +4,7 @@ import { fadeUp } from "../../../utils";
 import { type Work } from "../constants";
 import CompanyName from "./companyName";
 import DateRange from "./dateRange";
-import SkillList from "./skillList";
+import SkillList from "../../common/skillList";
 import DescriptionList from "./descriptionList";
 
 interface WorkCardProps {
@@ -46,7 +46,7 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
             <DateRange startDate={work.startDate} endDate={work.endDate} />
           </div>
         </div>
-        <SkillList skills={work.skills} />
+        <SkillList skills={work.skills} className="mt-4" />
       </div>
       <div className="mt-4 md:mt-0 md:w-1/2 flex flex-col gap-4">
         <DescriptionList descriptions={work.descriptions} />
