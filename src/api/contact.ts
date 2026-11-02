@@ -1,23 +1,26 @@
-import type { ZodType } from "zod";
+import {
+  contactResponseSchema,
+  type ContactFields,
+  type ContactResponse,
+} from "../../shared/contact";
 
 const requestTimeoutMs = 15_000;
 const genericError = "Something went wrong.";
 
-type Failure = { ok: false; error: string };
-
-export const postJson = async <T extends { ok: boolean }>(
-  path: string,
-  body: unknown,
-  schema: ZodType<T>,
-): Promise<T | Failure> => {
+export const sendContactMessage = async (
+  fields: ContactFields,
+  token: string,
+): Promise<ContactResponse> => {
   try {
-    const response = await fetch(path, {
+    const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ ...fields, token }),
       signal: AbortSignal.timeout(requestTimeoutMs),
     });
-    const result = schema.safeParse(await response.json().catch(() => null));
+    const result = contactResponseSchema.safeParse(
+      await response.json().catch(() => null),
+    );
     if (!result.success || (result.data.ok && !response.ok)) {
       return { ok: false, error: genericError };
     }

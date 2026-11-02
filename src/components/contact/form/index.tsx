@@ -1,19 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { EnvelopeIcon } from "@phosphor-icons/react/Envelope";
-import { motion } from "motion/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema, type ContactFields } from "../../../../shared/contact";
-import { turnstileSiteKey } from "../common/constants";
 import ErrorMessage from "../common/errorMessage";
-import { useTurnstileSize } from "../common/useTurnstileSize";
-import FieldError from "./fieldError";
-import { sendContactMessage } from "./sendContactMessage";
+import SpamCheck from "../common/spamCheck";
+import TextField from "./textField";
+import SubmitButton from "./submitButton";
+import { sendContactMessage } from "../../../api/contact";
 
 const turnstilePending = "Please wait for the spam check to finish.";
-
-const inputClass = `bg-foreground/5 border border-foreground/20 aria-invalid:border-red-400 rounded-xl px-4 py-2 focus-ring`;
 
 interface ContactFormProps {
   loadTurnstile: boolean;
@@ -31,8 +26,6 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
     clearErrors,
     formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(contactSchema) });
-
-  const turnstileSize = useTurnstileSize();
 
   const handleTurnstileSuccess = (newToken: string) => {
     setToken(newToken);
@@ -69,73 +62,39 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
       className="flex flex-col gap-4 w-full"
     >
       <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex flex-col gap-1 flex-1">
-          <label htmlFor="contact-name" className="text-base font-medium">
-            Name
-          </label>
-          <input
-            id="contact-name"
-            type="text"
-            autoComplete="name"
-            required
-            aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? "contact-name-error" : undefined}
-            className={inputClass}
-            {...register("name")}
-          />
-          <FieldError id="contact-name-error" message={errors.name?.message} />
-        </div>
-        <div className="flex flex-col gap-1 flex-1">
-          <label htmlFor="contact-email" className="text-base font-medium">
-            Email
-          </label>
-          <input
-            id="contact-email"
-            type="email"
-            autoComplete="email"
-            required
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? "contact-email-error" : undefined}
-            className={inputClass}
-            {...register("email")}
-          />
-          <FieldError
-            id="contact-email-error"
-            message={errors.email?.message}
-          />
-        </div>
-      </div>
-      <div className="flex flex-col gap-1">
-        <label htmlFor="contact-message" className="text-base font-medium">
-          Message
-        </label>
-        <textarea
-          id="contact-message"
-          rows={5}
-          required
-          aria-invalid={!!errors.message}
-          aria-describedby={
-            errors.message ? "contact-message-error" : undefined
-          }
-          className={`${inputClass} resize-y`}
-          {...register("message")}
+        <TextField
+          id="contact-name"
+          label="Name"
+          type="text"
+          autoComplete="name"
+          registration={register("name")}
+          error={errors.name?.message}
+          className="flex-1"
         />
-        <FieldError
-          id="contact-message-error"
-          message={errors.message?.message}
+        <TextField
+          id="contact-email"
+          label="Email"
+          type="email"
+          autoComplete="email"
+          registration={register("email")}
+          error={errors.email?.message}
+          className="flex-1"
         />
       </div>
+      <TextField
+        id="contact-message"
+        label="Message"
+        multiline
+        registration={register("message")}
+        error={errors.message?.message}
+      />
       <div className="flex justify-center w-full min-h-16.25">
         {loadTurnstile && (
-          <Turnstile
+          <SpamCheck
             key={turnstileKey}
-            siteKey={turnstileSiteKey}
-            options={{ theme: "dark", size: turnstileSize }}
-            scriptOptions={{ onError: handleTurnstileError }}
             onSuccess={handleTurnstileSuccess}
             onExpire={() => setToken(null)}
             onError={handleTurnstileError}
-            onUnsupported={handleTurnstileError}
           />
         )}
       </div>
@@ -145,18 +104,7 @@ const ContactForm = ({ loadTurnstile, onSent }: ContactFormProps) => {
         </ErrorMessage>
       )}
       {errors.root && <ErrorMessage>{errors.root.message}</ErrorMessage>}
-      <motion.button
-        type="submit"
-        disabled={isSubmitting}
-        className="bg-foreground text-background focus-ring px-4 py-2 rounded-xl flex items-center justify-center gap-4 self-center disabled:opacity-50 disabled:cursor-not-allowed"
-        whileHover={isSubmitting ? undefined : { scale: 1.05 }}
-        whileTap={isSubmitting ? undefined : { scale: 0.95 }}
-      >
-        <EnvelopeIcon size={32} weight="fill" aria-hidden="true" />
-        <span className="text-lg font-medium">
-          {isSubmitting ? "Sending..." : "Send"}
-        </span>
-      </motion.button>
+      <SubmitButton isSubmitting={isSubmitting} />
     </form>
   );
 };

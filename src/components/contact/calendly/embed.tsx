@@ -1,23 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-
-const calendlyOrigin = "https://calendly.com";
-// Calendly draws its own loader at the top of the frame, so the frame stays hidden behind
-// a centered spinner until Calendly reports that the booking page has rendered.
-const readyEvent = "calendly.event_type_viewed";
-// Reveals the frame anyway if the ready message hasn't arrived this long after it loads.
-const revealFallbackMs = 3000;
-
-// Calendly's inline-embed parameters. Calendly only posts events to the parent page when
-// embed_domain and embed_type are both set. The colors only apply on paid Calendly plans.
-const toEmbedUrl = (link: string) => {
-  const url = new URL(link);
-  url.searchParams.set("embed_domain", window.location.hostname);
-  url.searchParams.set("embed_type", "Inline");
-  url.searchParams.set("hide_gdpr_banner", "1");
-  url.searchParams.set("background_color", "151515");
-  url.searchParams.set("text_color", "f5f5f5");
-  return url.href;
-};
+import { calendlyOrigin, readyEvent, revealFallbackMs } from "./constants";
+import { toEmbedUrl } from "./utils";
 
 const CalendlyEmbed = ({ url }: { url: string }) => {
   const frameRef = useRef<HTMLIFrameElement>(null);
