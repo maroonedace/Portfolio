@@ -4,7 +4,7 @@ import { pageLinks, resumeHref } from "./constants";
 import { FileTextIcon } from "@phosphor-icons/react/FileText";
 import { ListIcon } from "@phosphor-icons/react/List";
 import { XIcon } from "@phosphor-icons/react/X";
-import NewTabHint from "../common/newTabHint";
+import NewTabLabel from "../common/newTabLabel";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,10 +50,7 @@ const Header: FC = () => {
           whileTap={{ scale: 0.95 }}
         >
           <FileTextIcon size={20} aria-hidden="true" weight="fill" />
-          <span>
-            Resume
-            <NewTabHint />
-          </span>
+          <NewTabLabel>Resume</NewTabLabel>
         </motion.a>
 
         <button
@@ -119,10 +116,7 @@ const Header: FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <FileTextIcon size={20} aria-hidden="true" weight="fill" />
-              <span className="text-xl">
-                Resume
-                <NewTabHint />
-              </span>
+              <NewTabLabel className="text-xl">Resume</NewTabLabel>
             </motion.a>
           </div>
         </div>

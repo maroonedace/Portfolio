@@ -4,7 +4,7 @@ import { fadeUp } from "../../utils";
 import { GitBranchIcon } from "@phosphor-icons/react/GitBranch";
 import SkillTile from "../common/skillTile";
 import DemoVideo from "./video";
-import NewTabHint from "../common/newTabHint";
+import NewTabLabel from "../common/newTabLabel";
 import type { Project } from "./constants";
 
 interface ProjectCardProps {
@@ -70,11 +70,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               whileTap={{ scale: 0.95 }}
             >
               <GitBranchIcon size={20} weight="fill" aria-hidden="true" />
-              <span className="text-lg font-medium">
+              <NewTabLabel className="text-lg font-medium">
                 View Code
                 <span className="sr-only"> for {project.name} on GitHub</span>
-                <NewTabHint />
-              </span>
+              </NewTabLabel>
             </motion.a>
           </div>
         )}

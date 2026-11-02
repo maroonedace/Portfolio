@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { motion } from "motion/react";
 import type { Certificate } from "./constants";
-import NewTabHint from "../common/newTabHint";
+import NewTabLabel from "../common/newTabLabel";
 
 interface CertificateItemProps {
   certificate: Certificate;
@@ -28,10 +28,7 @@ const CertificateItem: FC<CertificateItemProps> = ({ certificate }) => {
       <span className="text-lg font-semibold leading-tight">
         {certificate.name}
       </span>
-      <span>
-        {certificate.issuer}
-        <NewTabHint />
-      </span>
+      <NewTabLabel>{certificate.issuer}</NewTabLabel>
     </motion.a>
   );
 };

@@ -4,7 +4,7 @@ import { fadeUp, formatMonthYear, toIsoMonth } from "../../utils";
 import { type Work } from "./constants";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ArrowUpRight";
 import SkillTile from "../common/skillTile";
-import NewTabHint from "../common/newTabHint";
+import NewTabLabel from "../common/newTabLabel";
 
 interface WorkCardProps {
   work: Work;
@@ -48,10 +48,7 @@ const WorkCard: FC<WorkCardProps> = ({ work }) => {
                   className="self-center md:self-start inline-flex items-center gap-1 text-xl font-medium hover:underline
                             underline-offset-4 hover:text-foreground/70 rounded focus-ring"
                 >
-                  <span>
-                    {work.name}
-                    <NewTabHint />
-                  </span>
+                  <NewTabLabel>{work.name}</NewTabLabel>
                   <ArrowUpRightIcon size={18} aria-hidden="true" weight="fill" />
                 </a>
               ) : (
