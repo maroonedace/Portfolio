@@ -1,7 +1,9 @@
 import { useRef, type FC } from "react";
-import { ArrowDownIcon } from "@phosphor-icons/react/ArrowDown";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
+import { heroLinks } from "./constants";
+import HeroLink from "./heroLink";
+import ScrollCue from "./scrollCue";
 
 const HomeSection: FC = () => {
   const ref = useRef(null);
@@ -34,49 +36,14 @@ const HomeSection: FC = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <motion.a
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
-               focus-ring"
-              href="#work"
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"} 
-              variants={fadeUp(2)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Work
-            </motion.a>
-            <motion.a
-              className="bg-foreground text-background text-lg md:text-xl font-semibold py-3 px-4 md:py-4 md:px-8 rounded-2xl
-               focus-ring"
-              href="#contact"
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"} 
-              variants={fadeUp(2)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let's Connect
-            </motion.a>
+            {heroLinks.map((link) => (
+              <HeroLink key={link.href} label={link.label} href={link.href} isInView={isInView} />
+            ))}
           </div>
         </div>
       </div>
 
-      <motion.a
-        className="absolute bottom-8 p-2 left-1/2 -translate-x-1/2 rounded-full hover:text-foreground/70 focus-ring"
-        href="#about"
-        aria-label="Scroll to about section"
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"} 
-        variants={fadeUp(3)}
-      >
-        <ArrowDownIcon
-          className="w-10 h-10 md:w-16 md:h-16 motion-safe:animate-bounce"
-          strokeWidth={1.5}
-          aria-hidden="true"
-          weight="fill"
-        />
-      </motion.a>
+      <ScrollCue isInView={isInView} />
     </section>
   );
 };
