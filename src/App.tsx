@@ -11,7 +11,7 @@ const App = () => {
   return (
     <MotionConfig reducedMotion="user">
       <Header />
-      <main id="main" tabIndex={-1} className="outline-hidden">
+      <main>
         <HomeSection />
         <AboutMeSection />
         <WorkSection />
