@@ -1,22 +1,13 @@
 import { useRef, type FC } from "react";
-import { certificates, coreSkills } from "./constants";
-import CertificateItem from "./certificate";
 import { motion, useInView } from "motion/react";
 import { fadeUp } from "../../utils";
-import SkillTile from "../common/skillTile";
+import CoreStack from "./coreStack";
+import CertificateList from "./certificateList";
 import headshot from "../../assets/images/headshot.webp";
 
 const AboutMeSection: FC = () => {
   const sectionRef = useRef(null);
-  const stackRef = useRef(null);
-  const certificateRef = useRef(null);
-
   const isSectionInView = useInView(sectionRef, { once: true, amount: 0.05 });
-  const isStackInView = useInView(stackRef, { once: true, amount: 0.05 });
-  const isCertificateInView = useInView(certificateRef, {
-    once: true,
-    amount: 0.05,
-  });
 
   return (
     <section
@@ -55,60 +46,8 @@ const AboutMeSection: FC = () => {
             Experienced in architecting reusable UI components, provisioning cloud infrastructure, optimizing performance, and standardizing API design.
           </motion.p>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <motion.h3
-            className="mb-4 text-3xl md:text-5xl"
-            initial="hidden"
-            animate={isSectionInView ? "visible" : "hidden"}
-            variants={fadeUp(3)}
-          >
-            Core Stack
-          </motion.h3>
-          <ul
-            role="list"
-            className="flex flex-wrap gap-4 items-center justify-center"
-            ref={stackRef}
-          >
-            {coreSkills.map((name, index) => (
-              <motion.li
-                key={name}
-                initial="hidden"
-                animate={isStackInView ? "visible" : "hidden"}
-                variants={fadeUp(index)}
-              >
-                <SkillTile name={name} />
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-        <div
-          className="flex flex-col items-center justify-center"
-        >
-          <motion.h3
-            className="mb-4 text-3xl md:text-5xl"
-            initial="hidden"
-            animate={isCertificateInView ? "visible" : "hidden"}
-            variants={fadeUp(0)}
-          >
-            Certificates
-          </motion.h3>
-          <ul
-            role="list"
-            className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-8 items-start justify-center"
-            ref={certificateRef}
-          >
-            {certificates.map((certificate, index) => (
-              <motion.li
-                key={certificate.url}
-                initial="hidden"
-                animate={isCertificateInView ? "visible" : "hidden"}
-                variants={fadeUp(index)}
-              >
-                <CertificateItem certificate={certificate} />
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+        <CoreStack isSectionInView={isSectionInView} />
+        <CertificateList />
       </div>
     </section>
   );

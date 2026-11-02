@@ -14,7 +14,6 @@ export const coreSkills: SkillName[] = [
   "GitHub Actions",
 ];
 
-// A certificate shows its own badge when it has one, otherwise the issuer's logo
 export type Certificate = {
   name: string;
   issuer: string;
