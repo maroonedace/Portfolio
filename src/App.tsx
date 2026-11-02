@@ -5,13 +5,11 @@ import WorkSection from "./components/work";
 import ProjectSection from "./components/project";
 import ContactSection from "./components/contact";
 import Footer from "./components/footer";
-import SkipLink from "./components/common/skipLink";
 import { MotionConfig } from "motion/react";
 
 const App = () => {
   return (
     <MotionConfig reducedMotion="user">
-      <SkipLink />
       <Header />
       <main id="main" tabIndex={-1} className="outline-hidden">
         <HomeSection />
