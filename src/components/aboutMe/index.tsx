@@ -42,8 +42,9 @@ const AboutMeSection: FC = () => {
             animate={isSectionInView ? "visible" : "hidden"}
             variants={fadeUp(2)}
           >
-            Full Stack Software Engineer with five plus years building scalable web applications using React, Node, TypeScript, and PostgreSQL. 
-            Experienced in architecting reusable UI components, provisioning cloud infrastructure, optimizing performance, and standardizing API design.
+            Full Stack Software Engineer with 5+ years building web applications using React, Node.js, TypeScript, and PostgreSQL. 
+            Experienced in owning features across the full lifecycle, architecting reusable UI components, optimizing performance, 
+            and designing RESTful APIs.
           </motion.p>
         </div>
         <CoreStack isSectionInView={isSectionInView} />

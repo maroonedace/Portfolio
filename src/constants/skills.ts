@@ -1,9 +1,11 @@
 import aws from "../assets/images/skills/aws.svg";
-import circleci from "../assets/images/skills/circleci.svg";
 import cloudflare from "../assets/images/skills/cloudflare.svg";
+import cypress from "../assets/images/skills/cypress.svg";
 import docker from "../assets/images/skills/docker.svg";
 import fastapi from "../assets/images/skills/fastapi.svg";
 import githubActions from "../assets/images/skills/githubActions.svg";
+import jest from "../assets/images/skills/jest.svg";
+import materialui from "../assets/images/skills/materialui.svg";
 import nestjs from "../assets/images/skills/nestjs.svg";
 import nextjs from "../assets/images/skills/nextjs.svg";
 import nodejs from "../assets/images/skills/nodejs.svg";
@@ -20,11 +22,13 @@ import vercel from "../assets/images/skills/vercel.svg";
 
 export const skillLogos = {
   AWS: aws,
-  CircleCI: circleci,
+  "Cypress": cypress,
   Cloudflare: cloudflare,
   Docker: docker,
   FastAPI: fastapi,
   "GitHub Actions": githubActions,
+  "Jest": jest,
+  "Material UI": materialui,
   NestJS: nestjs,
   "Next.js": nextjs,
   "Node.js": nodejs,
